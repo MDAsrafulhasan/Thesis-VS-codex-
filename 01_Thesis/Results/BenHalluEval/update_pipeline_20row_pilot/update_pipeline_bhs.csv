@@ -1,0 +1,2 @@
+﻿System,Rows,Track_A_Rows,Track_B_Rows,Track_A_FPR_pct,Track_B_FNR_pct,BenHalluScore_pct,Stage_Error_Rows,QG_Fallback_Rows,QG_Collapse_Rows,QA_Collapse_Rows,Logit_Error_Rows,Selected_C,Threshold_open,Threshold_closed,Memory_Overrides
+diagram_pipeline_5stage,20,10,10,30.0,0.0,15.0,0,0,0,0,0,1.0,0.42637318302784405,0.761995780650554,0

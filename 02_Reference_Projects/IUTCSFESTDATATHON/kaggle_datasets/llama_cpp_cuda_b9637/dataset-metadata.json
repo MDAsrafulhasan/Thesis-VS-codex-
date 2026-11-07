@@ -1,0 +1,11 @@
+{
+  "title": "llama.cpp CUDA b9637 for Kaggle T4",
+  "id": "seyamalam/bengali-hallucination-llama-cpp-cuda-b9637",
+  "licenses": [
+    {
+      "name": "MIT"
+    }
+  ],
+  "subtitle": "Offline llama-server b9637 for CUDA 12.8 and Tesla T4",
+  "description": "Static llama-server runtime used by the Bengali hallucination Phase 2 inference notebook. Built from ggml-org/llama.cpp release b9637, commit aedb2a5e9ca3d4064148bbb919e0ddc0c1b70ab3, with CUDA enabled for compute capability 7.5."
+}

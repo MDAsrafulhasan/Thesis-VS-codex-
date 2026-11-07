@@ -1,0 +1,23 @@
+{
+  "id": "seyamalam/bengali-hallucination-phase-2-t4x2-smoke",
+  "title": "Bengali Hallucination Phase 2 T4x2 Smoke",
+  "code_file": "phase2_t4_smoke.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_tpu": false,
+  "enable_internet": false,
+  "keywords": [
+    "benchmark",
+    "nlp"
+  ],
+  "dataset_sources": [],
+  "kernel_sources": [],
+  "competition_sources": [
+    "bengali-hallucination"
+  ],
+  "model_sources": [
+    "snowrab/qwen3-6-27b-q4-k-p/pyTorch/default/1"
+  ]
+}

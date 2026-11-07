@@ -1,0 +1,25 @@
+{
+  "id": "seyamalam/bengali-hallucination-gemma-cross-family-audit",
+  "title": "Bengali Hallucination Gemma Cross-Family Audit",
+  "code_file": "gemma_cross_family_audit.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": true,
+  "machine_shape": "NvidiaTeslaT4",
+  "enable_tpu": false,
+  "enable_internet": false,
+  "keywords": [
+    "bengali",
+    "gemma"
+  ],
+  "dataset_sources": [
+    "seyamalam/bengali-hallucination-llama-cpp-cuda-b9637"
+  ],
+  "competition_sources": [
+    "bengali-hallucination"
+  ],
+  "model_sources": [
+    "adityanathupadhyay/gemma-4-12b-it-qat-q4-0-gguf/Gguf/image-text-to-text/1"
+  ]
+}

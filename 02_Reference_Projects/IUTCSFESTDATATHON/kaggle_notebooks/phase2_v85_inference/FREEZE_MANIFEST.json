@@ -1,0 +1,46 @@
+{
+  "frozen_at": "2026-07-19T10:48:21+06:00",
+  "git_source_commit": "e537f5c",
+  "kaggle_notebook": {
+    "slug": "seyamalam/bengali-hallucination-v85-compliance-inference",
+    "frozen_version": 4,
+    "hardware": "Tesla T4 x2",
+    "internet": false,
+    "notebook_file": "phase2_v85_inference.ipynb",
+    "notebook_sha256": "e864c263363a2d84f2728a91858723ca2783376023b988e39b0bbc92d7746ffe",
+    "source_sha256": "17579c9ac16009c8eee4dfb081540398e6ef3ff7f31c835cd36435cb581e7294"
+  },
+  "competition_input": {
+    "literal_path": "/kaggle/input/competitions/bengali-hallucination/test set.csv"
+  },
+  "runtime_dataset": {
+    "slug": "seyamalam/bengali-hallucination-phase2-runtime-v85",
+    "local_archive_bytes": 63704608,
+    "local_archive_sha256": "c697e86adffecc30b730c077ae488efc9f9fe02fb21c2491e942ac597ce982f8"
+  },
+  "llama_server_dataset": {
+    "slug": "seyamalam/bengali-hallucination-llama-cpp-cuda-b9637",
+    "binary_bytes": 97306416,
+    "binary_sha256": "0efdf9109cc85b393cda46cc51f26008ca99567f6357cba1a34bd6ef6480c66f",
+    "llama_cpp_commit": "aedb2a5e9ca3d4064148bbb919e0ddc0c1b70ab3"
+  },
+  "model": {
+    "slug": "snowrab/qwen3-6-27b-q4-k-p/pyTorch/default/1",
+    "file": "Qwen3.6-27B-Q4_K_P.gguf",
+    "size_gib": 16.332
+  },
+  "reproduction": {
+    "reference_submission": 54640211,
+    "reference_public_macro_f1": 0.966,
+    "output_sha256": "19c5880021d6e3e9fd47c567d7b45898fbaee09d5f59009e96cf818c3737cb31",
+    "rows": 2516,
+    "label_counts": {
+      "0": 1176,
+      "1": 1340
+    },
+    "kaggle_version_3_seconds": 473.56422424900006,
+    "kaggle_version_4_seconds": 508.184872897,
+    "byte_identical_reruns": true,
+    "competition_submission_made": false
+  }
+}

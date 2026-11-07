@@ -1,0 +1,26 @@
+{
+  "id": "seyamalam/bengali-hallucination-source-recovery-audit",
+  "title": "Bengali Hallucination Source Recovery Audit",
+  "code_file": "source_recovery_audit.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": true,
+  "machine_shape": "NvidiaTeslaT4",
+  "enable_tpu": false,
+  "enable_internet": true,
+  "keywords": [
+    "bengali",
+    "hallucination",
+    "source-recovery"
+  ],
+  "dataset_sources": [
+    "seyamalam/bengali-hallucination-llama-cpp-cuda-b9637"
+  ],
+  "competition_sources": [
+    "bengali-hallucination"
+  ],
+  "model_sources": [
+    "snowrab/qwen3-6-27b-q4-k-p/pyTorch/default/1"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "seyamalam/bengali-relation-swap-verifier-training",
+  "title": "Bengali Relation-Swap Verifier Training",
+  "code_file": "relation_swap_verifier_training.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": true,
+  "machine_shape": "NvidiaTeslaT4",
+  "enable_tpu": false,
+  "enable_internet": true,
+  "keywords": [
+    "bengali",
+    "nlp"
+  ],
+  "dataset_sources": [],
+  "competition_sources": [
+    "bengali-hallucination"
+  ],
+  "model_sources": []
+}

@@ -1,0 +1,25 @@
+Model,Prompt_Mode,Hallucination_Type,Track_B_FNR (%),Collapse_Rate (%),Parse_Failure_Rate (%),N_Rows,N_Parsed
+mock-baseline,cot,Factualness,100.0,0.0,0.0,16,16
+mock-baseline,cot,Comprehension,100.0,0.0,0.0,15,15
+mock-baseline,cot,Specificity,100.0,0.0,0.0,14,14
+mock-baseline,cot,Inference,100.0,0.0,0.0,14,14
+mock-baseline,cot,Fabricated_Content,100.0,0.0,0.0,8,8
+mock-baseline,cot,Non_Factual_Addition,100.0,0.0,0.0,7,7
+mock-baseline,cot,Direct_Contradiction,100.0,0.0,0.0,8,8
+mock-baseline,cot,Arithmetic_Slip,100.0,0.0,0.0,2,2
+mock-baseline,cot,Formula_Misapplication,100.0,0.0,0.0,2,2
+mock-baseline,cot,Invalid_Deduction,100.0,0.0,0.0,2,2
+mock-baseline,cot,Hallucinated_Intermediate_Fact,100.0,0.0,0.0,1,1
+mock-baseline,cot,Semantic_Drift,100.0,0.0,0.0,1,1
+mock-baseline,zero_shot,Factualness,100.0,0.0,0.0,16,16
+mock-baseline,zero_shot,Comprehension,100.0,0.0,0.0,15,15
+mock-baseline,zero_shot,Specificity,100.0,0.0,0.0,14,14
+mock-baseline,zero_shot,Inference,100.0,0.0,0.0,14,14
+mock-baseline,zero_shot,Fabricated_Content,100.0,0.0,0.0,8,8
+mock-baseline,zero_shot,Non_Factual_Addition,100.0,0.0,0.0,7,7
+mock-baseline,zero_shot,Direct_Contradiction,100.0,0.0,0.0,8,8
+mock-baseline,zero_shot,Arithmetic_Slip,100.0,0.0,0.0,2,2
+mock-baseline,zero_shot,Formula_Misapplication,100.0,0.0,0.0,2,2
+mock-baseline,zero_shot,Invalid_Deduction,100.0,0.0,0.0,2,2
+mock-baseline,zero_shot,Hallucinated_Intermediate_Fact,100.0,0.0,0.0,1,1
+mock-baseline,zero_shot,Semantic_Drift,100.0,0.0,0.0,1,1

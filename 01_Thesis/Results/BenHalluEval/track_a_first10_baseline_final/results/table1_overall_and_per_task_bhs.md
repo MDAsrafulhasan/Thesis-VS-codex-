@@ -1,0 +1,22 @@
+| Model | Prompt_Mode | Task | Track_A_FPR (%) | Track_B_FNR (%) | BenHalluScore (%) | Collapse_Rate (%) | Parse_Failure_Rate (%) | Avg_Latency_ms | N_Rows | N_Parsed |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| bangla-ai-1.7b-q4 | zero_shot | OVERALL | 37.5000 | NA | NA | 20.0000 | 20.0000 | 36966.2517 | 10 | 8 |
+| bangla-ai-1.7b-q4 | zero_shot | bn_qa | 37.5000 | NA | NA | 20.0000 | 20.0000 | 36966.2517 | 10 | 8 |
+| bangla-ai-1.7b-q4 | zero_shot | codemixed_qa | NA | NA | NA | NA | NA | NA | 0 | 0 |
+| bangla-ai-1.7b-q4 | zero_shot | summarization | NA | NA | NA | NA | NA | NA | 0 | 0 |
+| bangla-ai-1.7b-q4 | zero_shot | math | NA | NA | NA | NA | NA | NA | 0 | 0 |
+| gemma3:1b | zero_shot | OVERALL | 25.0000 | NA | NA | 0.0000 | 20.0000 | 3022.4701 | 10 | 8 |
+| gemma3:1b | zero_shot | bn_qa | 25.0000 | NA | NA | 0.0000 | 20.0000 | 3022.4701 | 10 | 8 |
+| gemma3:1b | zero_shot | codemixed_qa | NA | NA | NA | NA | NA | NA | 0 | 0 |
+| gemma3:1b | zero_shot | summarization | NA | NA | NA | NA | NA | NA | 0 | 0 |
+| gemma3:1b | zero_shot | math | NA | NA | NA | NA | NA | NA | 0 | 0 |
+| qwen2.5:1.5b | zero_shot | OVERALL | 100.0000 | NA | NA | 0.0000 | 10.0000 | 6847.8068 | 10 | 9 |
+| qwen2.5:1.5b | zero_shot | bn_qa | 100.0000 | NA | NA | 0.0000 | 10.0000 | 6847.8068 | 10 | 9 |
+| qwen2.5:1.5b | zero_shot | codemixed_qa | NA | NA | NA | NA | NA | NA | 0 | 0 |
+| qwen2.5:1.5b | zero_shot | summarization | NA | NA | NA | NA | NA | NA | 0 | 0 |
+| qwen2.5:1.5b | zero_shot | math | NA | NA | NA | NA | NA | NA | 0 | 0 |
+| qwen3:1.7b | zero_shot | OVERALL | 10.0000 | NA | NA | 0.0000 | 0.0000 | 23322.7866 | 10 | 10 |
+| qwen3:1.7b | zero_shot | bn_qa | 10.0000 | NA | NA | 0.0000 | 0.0000 | 23322.7866 | 10 | 10 |
+| qwen3:1.7b | zero_shot | codemixed_qa | NA | NA | NA | NA | NA | NA | 0 | 0 |
+| qwen3:1.7b | zero_shot | summarization | NA | NA | NA | NA | NA | NA | 0 | 0 |
+| qwen3:1.7b | zero_shot | math | NA | NA | NA | NA | NA | NA | 0 | 0 |

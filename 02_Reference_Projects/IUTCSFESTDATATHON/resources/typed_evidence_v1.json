@@ -1,0 +1,38 @@
+[
+  {
+    "question": "এখানে 'তালকানা' বাগধারা/প্রবাদটির অর্থ কী?",
+    "intent": "figurative_meaning",
+    "accepted_answers": [
+      "কাণ্ডজ্ঞানহীন",
+      "অসাবধান",
+      "বিবেচনাবিহীন",
+      "ভালো-মন্দ জ্ঞানশূন্য"
+    ],
+    "rejected_answers": [
+      "ছন্দ বা তাল বুঝতে না পারা, বেসুরা",
+      "বেতাল হওয়া",
+      "তালজ্ঞানহীন"
+    ],
+    "sources": [
+      "https://www.kaggle.com/datasets/sakhadib/bangla-bagdhara",
+      "https://www.ajkerpatrika.com/epaper/ajpuetxjfsrr7"
+    ]
+  },
+  {
+    "question": "শিব রাত্রির সলতে – বাগধারটির অর্থ কী?",
+    "intent": "figurative_meaning",
+    "accepted_answers": [
+      "একমাত্র সন্তান",
+      "একমাত্র বংশধর",
+      "একমাত্র সন্তান বা জীবিত বংশধর, একমাত্র সম্বল"
+    ],
+    "rejected_answers": [
+      "শিবরাত্রির গুরুত্ব",
+      "শিবরাত্রির আলো"
+    ],
+    "sources": [
+      "https://www.kaggle.com/datasets/sakhadib/bangla-bagdhara",
+      "https://sattacademy.com/mcq/শিব-রাত্রির-সলতে-বাগধারটির-অর্থ-কী"
+    ]
+  }
+]

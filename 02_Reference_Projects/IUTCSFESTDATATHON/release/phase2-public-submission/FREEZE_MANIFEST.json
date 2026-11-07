@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "frozen_at": "2026-07-19T11:33:59+06:00",
+  "freeze_policy": "No notebook, runtime dataset, CUDA runtime, or model-version updates after this manifest.",
+  "source_repository": {
+    "visibility_at_freeze": "private",
+    "commit": "9e1bc53490c2934f86f4fc568d51ed2dfb60c99b",
+    "notebook_permalink": "https://github.com/Seyamalam/IUTCSFESTDATATHON/blob/9e1bc53490c2934f86f4fc568d51ed2dfb60c99b/kaggle_notebooks/phase2_v85_inference/phase2_v85_inference.ipynb"
+  },
+  "kaggle_notebook": {
+    "slug": "seyamalam/bengali-hallucination-v85-compliance-inference",
+    "url": "https://www.kaggle.com/code/seyamalam/bengali-hallucination-v85-compliance-inference",
+    "frozen_version": 4,
+    "status_at_freeze": "COMPLETE",
+    "hardware": "Tesla T4 x2",
+    "internet_enabled": false,
+    "executed_local_notebook_sha256": "e864c263363a2d84f2728a91858723ca2783376023b988e39b0bbc92d7746ffe",
+    "documented_notebook_sha256": "52fd4dcdcd53539847a06df207a065d64f379f0fd7491b06f480a0c43431c9a2",
+    "canonical_executable_cells_sha256": "944f80f84f589946dfd840f9fed23fa0b64f71beb02a25d943d3bf612c925b26",
+    "documentation_only_revision": true,
+    "executable_cells_changed": false,
+    "local_python_source_sha256": "17579c9ac16009c8eee4dfb081540398e6ef3ff7f31c835cd36435cb581e7294",
+    "kaggle_pulled_notebook_sha256": "dd663548c40dbfed1e7f011b95824a2cbb3d0a73f7d9f1c9f6b93669a9283abe",
+    "serialization_note": "Kaggle serializes cell source as strings; the tracked notebook serializes source as line arrays. Cell code and ordering are equivalent."
+  },
+  "competition_input": {
+    "literal_path": "/kaggle/input/competitions/bengali-hallucination/test set.csv",
+    "dynamic_path_discovery": false
+  },
+  "runtime_dataset": {
+    "dataset_id": 11171451,
+    "slug": "seyamalam/bengali-hallucination-phase2-runtime-v85",
+    "url": "https://www.kaggle.com/datasets/seyamalam/bengali-hallucination-phase2-runtime-v85",
+    "status_at_freeze": "ready",
+    "visibility_at_freeze": "private",
+    "uploaded_content_manifest_file": "kaggle_phase2_runtime_v85.manifest.json",
+    "uploaded_content_manifest_bytes": 4487,
+    "uploaded_content_manifest_sha256": "efcb4b3d537370c90fb15307660fc085f846d478c8ae3912cffbb171a6c8b804",
+    "contains_phase1_prediction_vector": false
+  },
+  "cuda_runtime_dataset": {
+    "dataset_id": 11173394,
+    "slug": "seyamalam/bengali-hallucination-llama-cpp-cuda-b9637",
+    "url": "https://www.kaggle.com/datasets/seyamalam/bengali-hallucination-llama-cpp-cuda-b9637",
+    "status_at_freeze": "ready",
+    "visibility_at_freeze": "private",
+    "llama_cpp_release": "b9637",
+    "llama_cpp_commit": "aedb2a5e9ca3d4064148bbb919e0ddc0c1b70ab3",
+    "binary_file": "llama-server",
+    "binary_bytes": 97306416,
+    "binary_sha256": "0efdf9109cc85b393cda46cc51f26008ca99567f6357cba1a34bd6ef6480c66f"
+  },
+  "model": {
+    "slug": "snowrab/qwen3-6-27b-q4-k-p/pyTorch/default/1",
+    "url": "https://www.kaggle.com/models/snowrab/qwen3-6-27b-q4-k-p/pyTorch/default/1",
+    "instance_id": 696468,
+    "version_id": 916129,
+    "version_number": 1,
+    "visibility_at_freeze": "public",
+    "license": "MIT",
+    "file": "Qwen3.6-27B-Q4_K_P.gguf",
+    "file_bytes": 17536279712,
+    "size_gib": 16.332
+  },
+  "reported_execution": {
+    "hardware": "Tesla T4 x2",
+    "runtime_hours_for_form": 0.15,
+    "conservative_measured_seconds": 508.184872897,
+    "faster_measured_seconds": 473.56422424900006,
+    "phase1_rows": 2516,
+    "same_mix_5000_row_projection_seconds": 1009.906,
+    "within_nine_hour_limit": true
+  },
+  "reproduction": {
+    "reference_submission_id": 54640211,
+    "reference_public_macro_f1": 0.966,
+    "output_sha256": "19c5880021d6e3e9fd47c567d7b45898fbaee09d5f59009e96cf818c3737cb31",
+    "rows": 2516,
+    "label_counts": {
+      "0": 1176,
+      "1": 1340
+    },
+    "byte_identical_reruns": true
+  }
+}

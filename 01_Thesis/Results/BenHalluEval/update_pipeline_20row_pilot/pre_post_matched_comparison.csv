@@ -1,0 +1,5 @@
+﻿Baseline_Model,Baseline_Parsed_A,Baseline_Parsed_B,Baseline_Parse_Failures,Baseline_FPR_A_pct,Baseline_FNR_B_pct,Baseline_BHS_pct,Pipeline_FPR_A_on_same_parsed_rows_pct,Pipeline_FNR_B_on_same_parsed_rows_pct,Pipeline_BHS_on_same_parsed_rows_pct,Delta_BHS_pipeline_minus_baseline_same_rows
+bangla-ai-1.7b-q4,8,9,3,37.5,33.33333333333333,35.416666666666664,25.0,0.0,12.5,-22.916666666666664
+gemma3:1b,8,5,7,25.0,80.0,52.5,25.0,0.0,12.5,-40.0
+qwen2.5:1.5b,9,9,2,100.0,0.0,50.0,33.33333333333333,0.0,16.666666666666664,-33.333333333333336
+qwen3:1.7b,10,10,0,10.0,80.0,45.0,30.0,0.0,15.0,-30.0

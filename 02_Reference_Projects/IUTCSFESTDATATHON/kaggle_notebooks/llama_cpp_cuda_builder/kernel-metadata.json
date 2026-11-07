@@ -1,0 +1,16 @@
+{
+  "id": "seyamalam/llama-cpp-cuda-b9637-builder",
+  "title": "llama cpp CUDA b9637 builder",
+  "code_file": "llama_cpp_cuda_builder.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_tpu": false,
+  "enable_internet": true,
+  "keywords": [],
+  "dataset_sources": [],
+  "kernel_sources": [],
+  "competition_sources": [],
+  "model_sources": []
+}

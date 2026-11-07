@@ -1,0 +1,798 @@
+[
+  {
+    "question": "‘ডেটন শান্তিচুক্তি’ স্বাক্ষরিত হয়-",
+    "answers": ["১৯৯৫ সালে"],
+    "sources": [
+      "https://www.nato.int/en/news-and-events/articles/news/2010/12/14/15-years-ago-dayton-peace-accords-a-milestone-for-nato-and-the-balkans",
+      "https://diplomacy.state.gov/online-exhibits/diplomacy-ends-a-war-the-dayton-accords/november-1995-the-dayton-accords/"
+    ]
+  },
+  {
+    "question": "লিনাক্স বা গ্নু/লিনাক্স-এর পোগ্রামিং ভাষা কী ?",
+    "answers": ["সি", "C"],
+    "sources": [
+      "https://www.kernel.org/doc/html/latest/process/programming-language.html",
+      "https://static.lwn.net/kerneldoc/process/howto.html"
+    ]
+  },
+  {
+    "question": "কাতারের সরকারি ভাষা কী ?",
+    "answers": ["আরবি", "Arabic"],
+    "sources": [
+      "https://mofa.gov.qa/en/state-of-qatar/political-system/constitution",
+      "https://www.gco.gov.qa/en/state-of-qatar/facts-about-qatar/"
+    ]
+  },
+  {
+    "question": "রামায়ণ অনুসারে মন্দোদরীর মায়ের নাম কী ?",
+    "answers": ["হেমা", "Hema"],
+    "sources": [
+      "https://kamakoti.org/kamakoti/books/ESSENCE%20OF%20VALMIKI%20SUNDARA%20RAMAYANA.pdf",
+      "https://en.wikipedia.org/wiki/Mandodari"
+    ]
+  },
+  {
+    "question": "এডওয়ার্ড ক্রিস্টোফার শিরানের প্রযোজিত প্রথম অ্যালবামের নাম কী ?",
+    "answers": ["+", "প্লাস", "Plus"],
+    "sources": [
+      "https://www.grammy.com/news/video-ed-sheeran-multiplies-pressure-with-x/",
+      "https://music.apple.com/us/album/x/858518077"
+    ]
+  },
+  {
+    "question": "বাংলাদেশের সর্বদক্ষিণে কোন দ্বীপ অবস্থিত?",
+    "answers": ["সেন্ট মার্টিন", "সেন্ট মার্টিন দ্বীপ", "সেন্টমার্টিন দ্বীপ"],
+    "sources": [
+      "https://parjatan.gov.bd/site/page/2458a4be-29f5-4294-86e1-07a6f9a34ca9/সেন্ট-মার্টিন-দ্বীপ",
+      "https://www.teachers.gov.bd/blog/details/645930"
+    ]
+  },
+  {
+    "question": "‘বীরবল’ একজন লেখকের ছদ্মনাম। তার নাম কী?",
+    "answers": ["প্রমথ চৌধুরী"],
+    "sources": [
+      "https://www.ebookbou.edu.bd/Books/Text/SSHL/BABSS/bba_1301/Unit-04.pdf",
+      "https://www.teachers.gov.bd/index.php/content/details/1632770"
+    ]
+  },
+  {
+    "question": "একটি ভাষা আন্দোলনভিত্তিক নাটকের নাম বলো।",
+    "answers": ["কবর"],
+    "sources": [
+      "https://journal.bangla.du.ac.bd/article/view/93/134",
+      "https://jnu.ac.bd/journal/portal/archives/arts/10/1.jsp"
+    ]
+  },
+  {
+    "question": "পুরাপ্রস্তর যুগের ঠিক পরের যুগটির নাম কী ?",
+    "answers": ["নব্যপ্রস্তর", "নব্যপ্রস্তর যুগ"],
+    "sources": [
+      "https://huggingface.co/datasets/Cognitive-Lab/Aya_Dataset_Indic/viewer/ben/train",
+      "https://huggingface.co/datasets/SumanMondal/bengali_qa"
+    ]
+  },
+  {
+    "question": "তামসিক' শব্দের শুদ্ধ বিপরীত শব্দ কোনটি?",
+    "answers": ["রাজসিক"],
+    "sources": [
+      "https://sattacademy.com/job-solution/written/তামসিক-14742",
+      "https://www.teachers.gov.bd/content/details/827800"
+    ]
+  },
+  {
+    "question": "কদাচিৎ' শব্দের শুদ্ধ বিপরীত শব্দ কোনটি?",
+    "answers": ["প্রায়শ", "প্রায়শ"],
+    "sources": [
+      "https://sattacademy.com/job-solution/written/কদাচিৎ-67215",
+      "https://wbnotes.in/biporit-sobdo-bengali-grammar/"
+    ]
+  },
+  {
+    "question": "সাকার' শব্দের শুদ্ধ বিপরীত শব্দ কোনটি?",
+    "answers": ["অরূপ", "নিরাকার"],
+    "sources": [
+      "https://bn.wiktionary.org/wiki/নিরাকার",
+      "https://www.ebanglalibrary.com/lessons/৪-ধর্ম-ও-দর্শন/"
+    ]
+  },
+  {
+    "question": "শিষ্ট' শব্দের শুদ্ধ বিপরীত শব্দ কোনটি?",
+    "answers": ["বেয়াদব", "বেয়াদব", "অশিষ্ট"],
+    "sources": [
+      "https://www.english-bangla.com/bntoen/index/বেয়াদব",
+      "https://accessibledictionary.gov.bd/bengali-to-bengali.php?q=বে"
+    ]
+  },
+  {
+    "question": "স্বাধীন' শব্দের শুদ্ধ বিপরীত শব্দ কোনটি?",
+    "answers": ["বন্দী", "পরাধীন"],
+    "sources": [
+      "https://www.english-bangla.com/bntoen/index/বন্দী",
+      "https://sattacademy.com/job-solution/single-question?ques_id=19125"
+    ]
+  },
+  {
+    "question": "অপারেশন সার্চলাইট কবে শুরু হয়?",
+    "answers": ["২৫ মার্চ ১৯৭১", "২৫ মার্চ ১৯৭১ সালে"],
+    "sources": [
+      "https://www.police.gov.bd/en/supreme_sacrifice_in_1971",
+      "https://www.dhaka.gov.bd/en/site/page/JD1R-মুক্তিযুদ্ধের-ইতিহাস"
+    ]
+  },
+  {
+    "question": "মেঘনা নদীর উৎস কোন নদী?",
+    "answers": ["বরাক নদী", "বরাক"],
+    "sources": [
+      "https://bn.banglapedia.org/index.php?title=সুরমা-মেঘনা_নদীপ্রণালী",
+      "https://en.banglapedia.org/index.php/Surma-Meghna_River_System"
+    ]
+  },
+  {
+    "question": "বাংলাদেশ কাজী নজরুল ইসলামকে জাতীয় কবির মর্যাদা কত সালে দেয়?",
+    "answers": ["১৯৭২", "১৯৭২ সালে"],
+    "sources": [
+      "https://www.teachers.gov.bd/blog/details/818714",
+      "https://en.prothomalo.com/bangladesh/zoogq5cu7n"
+    ]
+  },
+  {
+    "question": "সুইডেন দেশটি Group of Seven(G-7) এর সদস্য?",
+    "answers": ["না"],
+    "sources": [
+      "https://g7.world/",
+      "https://time.com/5657375/what-is-g7/"
+    ]
+  },
+  {
+    "question": "প্রাকৃতিক ইউরেনিয়ামে শতকরা কতভাগ 238U আইসোটোপ থাকে?",
+    "answers": ["99.30%", "99.3%", "৯৯.৩০%"],
+    "sources": [
+      "https://www.ncbi.nlm.nih.gov/books/NBK158805/table/T14/",
+      "https://pubs.rsc.org/en/content/articlehtml/2012/ja/c2ja30182b"
+    ]
+  },
+  {
+    "question": "ভারতীয় নাগাল্যান্ড রাজ্যের সাথে বাংলাদেশের কোনো সীমান্ত নেই। এটি কি সত্য?",
+    "answers": ["সত্য", "হ্যাঁ"],
+    "sources": [
+      "https://nagaland.gov.in/pages/nagaland-profile",
+      "https://nsdma.nagaland.gov.in/geography-of-nagaland/"
+    ]
+  },
+  {
+    "question": "যমুনা সেতুর দৈর্ঘ্য‒",
+    "answers": ["৪.৮ কিলোমিটার", "4.8 কিলোমিটার", "4.8 km"],
+    "sources": [
+      "https://bba.portal.gov.bd/site/page/e938dadf-914c-4635-8f4c-1aa2316f3d6b/Jamuna-Bridge",
+      "https://bppa.gov.bd/upload/noa/2024-08-22-16-06-37-2.-NOA.pdf"
+    ]
+  },
+  {
+    "question": "RFID বলতে বােঝায়-",
+    "answers": ["রেডিও ফ্রিকুয়েন্সি আইডেন্টিফিকেশন", "Radio Frequency Identification"],
+    "sources": [
+      "https://csrc.nist.gov/glossary/term/rfid",
+      "https://www.fda.gov/radiation-emitting-products/electromagnetic-compatibility-emc/radio-frequency-identification-rfid"
+    ]
+  },
+  {
+    "question": "তেজস্ক্রীয় পদার্থ নয় এমন একটি ধাতুর নাম বলো।",
+    "answers": ["লৌহ", "লোহা", "Iron"],
+    "sources": [
+      "https://wwwrcamnl.wr.usgs.gov/isoig/period/fe_iig.html",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11522093/"
+    ]
+  },
+  {
+    "question": "বাংলাদেশের স্বাধীনতা দিবস কত তারিখে?",
+    "answers": ["২৬ মার্চ", "26 March"],
+    "sources": [
+      "https://beautifulbangladesh.gov.bd/district-event/dhaka/events/157",
+      "https://nycg.mofa.gov.bd/pages/static-pages/holidays-2026-0ea143-695266b035ce18e1c05aac98"
+    ]
+  },
+  {
+    "question": "বাংলাদেশের বিজয় দিবস কত তারিখে?",
+    "answers": ["১৬ ডিসেম্বর", "16 December"],
+    "sources": [
+      "https://afd.gov.bd/index.php/media/important-occations/victory-day",
+      "https://nycg.mofa.gov.bd/pages/static-pages/holidays-2026-0ea143-695266b035ce18e1c05aac98"
+    ]
+  },
+  {
+    "question": "রবীন্দ্রনাথ ঠাকুরের প্রথম মুদ্রিত কাব্যগ্রন্থ কোনটি?",
+    "answers": ["কবিকাহিনী", "কবি-কাহিনী"],
+    "sources": [
+      "https://teachers.gov.bd/index.php/blog/details/798383",
+      "https://amarrabindranath.com/কবি-কাহিনী-কাব্যগ্রন্থ/"
+    ]
+  },
+  {
+    "question": "রবীন্দ্রনাথ ঠাকুর কত সালে মৃত্যুবরণ করেন?",
+    "answers": ["১৯৪১", "১৯৪১ সালে", "1941"],
+    "sources": [
+      "https://www.visvabharati.ac.in/RabindranathTagore.html",
+      "https://www.britannica.com/biography/Rabindranath-Tagore"
+    ]
+  },
+  {
+    "question": "এখানে 'ঊনপাঁজুরে' প্রবাদ/বাগধারাটির অর্থ কী?",
+    "answers": ["দুর্বল", "মন্দভাগ্যবান", "অলক্ষণীয় লোক", "হতভাগ্য"],
+    "sources": [
+      "https://www.kaggle.com/datasets/sakhadib/bangla-bagdhara",
+      "https://huggingface.co/datasets/hishab/bangla-mmlu"
+    ]
+  },
+  {
+    "question": "এখানে 'গোঁফ খেজুরে' প্রবাদ/বাগধারাটির অর্থ কী?",
+    "answers": ["নিতান্ত অলস", "অলসের চূড়ামণি", "ভয়ানক অলস"],
+    "sources": [
+      "https://www.kaggle.com/datasets/sakhadib/bangla-bagdhara",
+      "https://huggingface.co/datasets/hishab/bangla-mmlu"
+    ]
+  },
+  {
+    "question": "এখানে 'ঢাকের কাঠি' প্রবাদ/বাগধারাটির অর্থ কী?",
+    "answers": ["তোষামোদকারী", "তোষামুদে", "চাটুকার", "মোসাহেব"],
+    "sources": [
+      "https://www.kaggle.com/datasets/sakhadib/bangla-bagdhara",
+      "https://huggingface.co/datasets/hishab/bangla-mmlu"
+    ]
+  },
+  {
+    "question": "এখানে 'তাসের ঘর' প্রবাদ/বাগধারাটির অর্থ কী?",
+    "answers": ["ক্ষণস্থায়ী বা ভঙ্গুর জিনিস", "ক্ষণস্থায়ী", "ভঙ্গুর অবস্থা", "অতিশয় অনিশ্চিত অবস্থা"],
+    "sources": [
+      "https://www.kaggle.com/datasets/sakhadib/bangla-bagdhara",
+      "https://huggingface.co/datasets/minhaj1403/bluck"
+    ]
+  },
+  {
+    "question": "এখানে 'রাবণের চিতা' প্রবাদ/বাগধারাটির অর্থ কী?",
+    "answers": ["চির অশান্তি", "চিরস্থায়ী মনোজ্বালা", "দীর্ঘস্থায়ী দুঃখ"],
+    "sources": [
+      "https://www.kaggle.com/datasets/sakhadib/bangla-bagdhara",
+      "https://huggingface.co/datasets/minhaj1403/bluck"
+    ]
+  },
+  {
+    "question": "এখানে 'লেফাফা দুরস্ত' প্রবাদ/বাগধারাটির অর্থ কী?",
+    "answers": ["বাইরের ঠাট বজায় রাখা", "বাহ্যিকভাবে পরিপাটি", "পরিপাটি"],
+    "sources": [
+      "https://www.kaggle.com/datasets/sakhadib/bangla-bagdhara",
+      "https://huggingface.co/datasets/minhaj1403/bluck"
+    ]
+  },
+  {
+    "question": "এখানে 'শিরে সংক্রান্তি' প্রবাদ/বাগধারাটির অর্থ কী?",
+    "answers": ["সমূহ বিপদ আসন্ন", "আসন্ন বিপদ", "ঘোর বিপদ আসন্ন"],
+    "sources": [
+      "https://www.kaggle.com/datasets/sakhadib/bangla-bagdhara",
+      "https://huggingface.co/datasets/hishab/bangla-mmlu"
+    ]
+  },
+  {
+    "question": "এখানে 'ব্যাঙের আধুলি' প্রবাদ/বাগধারাটির অর্থ কী?",
+    "answers": ["অতি সামান্য ধন", "সামান্য সঞ্চয়", "অতিদরিদ্রের সামান্যতম সম্পদ"],
+    "sources": [
+      "https://www.kaggle.com/datasets/sakhadib/bangla-bagdhara",
+      "https://huggingface.co/datasets/hishab/bangla-mmlu"
+    ]
+  },
+  {
+    "question": "এখানে 'শাঁখের করাত' প্রবাদ/বাগধারাটির অর্থ কী?",
+    "answers": ["উভয় সংকট, দুদিক থেকেই বিপদ", "উভয় সংকট", "দুদিকেই বিপদ"],
+    "sources": [
+      "https://www.kaggle.com/datasets/sakhadib/bangla-bagdhara",
+      "https://huggingface.co/datasets/minhaj1403/bluck"
+    ]
+  },
+  {
+    "question": "এখানে 'হাতের পাঁচ' প্রবাদ/বাগধারাটির অর্থ কী?",
+    "answers": ["শেষ সম্বল", "সংরক্ষিত সম্পদ"],
+    "sources": [
+      "https://www.kaggle.com/datasets/sakhadib/bangla-bagdhara",
+      "https://huggingface.co/datasets/minhaj1403/bluck"
+    ]
+  },
+  {
+    "question": "এখানে 'কূপমণ্ডূক' প্রবাদ/বাগধারাটির অর্থ কী?",
+    "answers": ["সীমিত জ্ঞানসম্পন্ন, সংকীর্ণমনা ব্যক্তি", "সংকীর্ণমনা ব্যক্তি", "সীমিত জ্ঞানসম্পন্ন ব্যক্তি"],
+    "sources": [
+      "https://www.kaggle.com/datasets/sakhadib/bangla-bagdhara",
+      "https://huggingface.co/datasets/hishab/bangla-mmlu"
+    ]
+  },
+  {
+    "question": "এখানে 'অহি-নকুল সম্বন্ধ' প্রবাদ/বাগধারাটির অর্থ কী?",
+    "answers": ["ভীষণ শত্রুতা", "চিরশত্রুতা", "তিক্ত সম্পর্ক", "সাপে-নেউলে সম্পর্ক"],
+    "sources": [
+      "https://www.kaggle.com/datasets/sakhadib/bangla-bagdhara",
+      "https://huggingface.co/datasets/hishab/bangla-mmlu"
+    ]
+  },
+  {
+    "question": "সুন্দরবন বাংলাদেশের কোন কোন জেলায় অবস্থিত?",
+    "answers": ["খুলনা, সাতক্ষীরা ও বাগেরহাট জেলায়", "খুলনা, বাগেরহাট ও সাতক্ষীরা"],
+    "sources": [
+      "https://bforest.gov.bd/site/page/19d63ffe-01e1-4351-b85b-3b60811b87f7/",
+      "https://forestwest.khulna.gov.bd/pages/static-pages/69810d93a31054345f1dcf5c"
+    ]
+  },
+  {
+    "question": "অধিকাংশ আধুনিক চাকমা জনগণ কোন ধরনের বৌদ্ধ ধর্ম পালন করে?",
+    "answers": ["থেরবাদ বৌদ্ধ ধর্ম", "থেরবাদী বৌদ্ধ ধর্ম", "থেরবাদ"],
+    "sources": [
+      "https://www.teachers.gov.bd/blog/details/791667",
+      "https://teachers.gov.bd/index.php/blog/details/592386"
+    ]
+  },
+  {
+    "question": "‘পদাবলী’র প্রথম কবি কে?",
+    "answers": ["বিদ্যাপতি"],
+    "sources": [
+      "https://www.bissoy.com/mcq/200790",
+      "https://myexaminer.net/Argues/view/628490244"
+    ]
+  },
+  {
+    "question": "এখানে 'উড়ো চিঠি' বাগধারা/প্রবাদটির অর্থ কী?",
+    "answers": ["বেনামী বা অজ্ঞাতনামা চিঠি", "বেনামী চিঠি", "বেনামি পত্র"],
+    "sources": [
+      "https://sattacademy.com/mcq/উড়ো-চিঠি-দ্বারা-কী-বোঝায়",
+      "https://www.onlinereadingroombd.com/articles/show/992"
+    ]
+  },
+  {
+    "question": "এখানে 'ফপর দালালি' বাগধারা/প্রবাদটির অর্থ কী?",
+    "answers": ["অনধিকার চর্চা", "গায়ে পড়ে মাতব্বরী", "অনাহুত ব্যক্তির মাতব্বরী"],
+    "sources": [
+      "https://www.kaggle.com/datasets/sakhadib/bangla-bagdhara",
+      "https://huggingface.co/datasets/minhaj1403/bluck"
+    ]
+  },
+  {
+    "question": "এখানে 'রাঘব বোয়াল' বাগধারা/প্রবাদটির অর্থ কী?",
+    "answers": ["প্রভাবশালী দুর্নীতিবাজ", "অত্যাচারী প্রভাবশালী মানুষ", "অন্যের ধনসম্পদ আত্মসাৎকারী প্রভাবশালী লোক"],
+    "sources": [
+      "https://www.scertwb.org/wp-content/uploads/2025/08/Bangla-Bhasha-Full-Book.pdf",
+      "https://ebanglaschools.blogspot.com/search/label/Bangla%20Bagdhara"
+    ]
+  },
+  {
+    "question": "পদ্মা নদী কোথায় যমুনা নদীর সাথে মিলিত হয়?",
+    "answers": ["গোয়ালন্দে", "গোয়ালন্দে", "রাজবাড়ী জেলার গোয়ালন্দে"],
+    "sources": [
+      "https://munshiganj.gov.bd/pages/static-pages/6995e32a35ce18e1c07b368c",
+      "https://bwdbse.rajshahidiv.gov.bd/pages/static-pages/697fb32f35ce18e1c06cae69"
+    ]
+  },
+  {
+    "question": "বাক্‌ + দান = বাগদান সন্ধিটি নিপাতনে সিদ্ধ?",
+    "answers": ["হ্যাঁ", "হ্যা", "সত্য"],
+    "sources": [
+      "https://fs.pbs.com.bd/DIR/Com/PBS/Product/PDF/2501686.pdf",
+      "https://careerparks.com/exams/start-exam/bangla-bank-sondhi-q1"
+    ]
+  },
+  {
+    "question": "এখানে 'মাকাল ফল' প্রবাদ/বাগধারাটির অর্থ কী?",
+    "answers": ["বাইরে সুন্দর ভিতরে অন্তঃসারশূন্য", "বাইরে সুন্দর ভিতরে নিষ্ফলা", "অন্তঃসারশূন্য"],
+    "sources": [
+      "https://teachers.gov.bd/content/details/735540",
+      "https://www.protidinersangbad.com/todays-newspaper/editor-choice/203222/মাকাল-আসলে-মাকাল-নয়"
+    ]
+  },
+  {
+    "question": "ভারসাম্য রক্ষা করতে নির্দেশিত স্থানে কত কেজি ওজন রাখতে হবে?![](https://web.livemcq.com/job-solution/bcs-question-bank/40th-bcs-question-solution-pdf/)",
+    "answers": ["১৪০", "১৪০ কেজি", "140"],
+    "sources": [
+      "https://10minuteschool.com/content/40th-bcs-mcq-question-bank/",
+      "https://sites.google.com/view/abdurrahimratulalikhan/blog/arrakpp-bcs/preliminary/intelligence-quotient-iq"
+    ]
+  },
+  {
+    "question": "নিচের ক, খ, গ ও ঘ এই ৪টি বিকল্প নকশার মধ্যে চিত্রের প্রশ্নবােধক চিহ্নের ঘরে কোন নকশাটি বসবে?![](https://web.livemcq.com/job-solution/bcs-question-bank/43-bcs-question-solution-pdf/)",
+    "answers": ["ক"],
+    "sources": [
+      "https://10minuteschool.com/content/43rd-bcs-question-bank-solution/",
+      "https://medha.com.bd/blogs/43rd-bcs-preliminary-questions/"
+    ]
+  },
+  {
+    "question": "এখানে 'তালকানা' বাগধারা/প্রবাদটির অর্থ কী?",
+    "answers": ["ছন্দ বা তাল বুঝতে না পারা, বেসুরা", "বেতাল হওয়া", "তালজ্ঞানহীন", "কাণ্ডজ্ঞানহীন"],
+    "sources": [
+      "https://www.english-bangla.com/bntoen/index/তালকানা",
+      "https://bangla.aajtak.in/visualstories/lifestyle/what-is-the-meaning-of-talkana-its-relation-with-sugar-palm-fruit-general-knowledge-in-bengali-talkana-mane-ki-mdv-166092-28-08-2024"
+    ]
+  },
+  {
+    "question": "আবির্ভাব' শব্দের শুদ্ধ বিপরীত শব্দ কোনটি?",
+    "answers": ["ধ্বংস"],
+    "sources": [
+      "https://bn.wiktionary.org/wiki/আবির্ভাব",
+      "https://ask.3schools.in/2023/04/blog-post_236.html"
+    ]
+  },
+  {
+    "question": "ব্যাডমিন্টন কোন দেশের জাতীয় খেলা?",
+    "answers": ["ইন্দোনেশিয়া", "ইন্দোনেশিয়া"],
+    "sources": [
+      "https://medha.com.bd/en/blogs/43rd-bcs-preliminary-questions/",
+      "https://bcsanalysis.com/43rd-bcs-preliminary-question/"
+    ]
+  },
+  {
+    "question": "কোনটি সঠিক নয়?",
+    "answers": ["A.A’=1", "A.A'=1", "A · A′ = 1"],
+    "sources": [
+      "https://huggingface.co/datasets/Nh-em0n/QDoc",
+      "https://eng.libretexts.org/Bookshelves/Computer_Science/Programming_and_Computation_Fundamentals/Foundations_of_Computation_(Critchlow_and_Eck)/01%3A_Logic_and_Proof/1.02%3A_Boolean_Algebra"
+    ]
+  },
+  {
+    "question": "ভাষা আন্দোলন নিয়ে লেখা কবিতার নাম বলো একটি।",
+    "answers": ["স্মৃতিস্তম্ভ", "স্মৃতিস্তম্ভ কবিতা"],
+    "sources": [
+      "https://huggingface.co/datasets/mojnupust/api.farhan-mcq",
+      "https://huggingface.co/datasets/hishab/bangla-mmlu"
+    ]
+  },
+  {
+    "question": "একটি নবায়নযোগ্য জ্বালানীর নাম বলো।",
+    "answers": ["পরমাণু শক্তি", "পারমাণবিক শক্তি"],
+    "sources": [
+      "https://huggingface.co/datasets/mojnupust/api.farhan-mcq",
+      "https://sattacademy.com/mcq/নবায়নযোগ্য-জ্বালানী-কোনটি"
+    ]
+  },
+  {
+    "question": "ঢাকা থেকে হংকং হয়ে প্লেন নিউইয়র্কে যাওয়ার সময় দিনের সময়কালকে অপেক্ষাকৃত ছোট মনে হয়, কেন?",
+    "answers": ["অন্য কোন কারণ আছে", "অন্য কোনো কারণ আছে"],
+    "sources": [
+      "https://huggingface.co/datasets/mojnupust/api.farhan-mcq",
+      "https://web.livemcq.com/40th-bcs-question-solution-pdf/"
+    ]
+  },
+  {
+    "question": "সাকিব আল হাসান কত সালে জন্মগ্রহণ করেন?",
+    "answers": ["২৪ মার্চ ১৯৮৭", "২৪ মার্চ, ১৯৮৭", "১৯৮৭ সালের ২৪ মার্চ"],
+    "sources": [
+      "https://www.icc-cricket.com/rankings/3782/shakib-al-hasan?appview=true",
+      "https://stats.espncricinfo.com/ci/engine/player/56143.html"
+    ]
+  },
+  {
+    "question": "মবিডিক কে লিখেছেন?",
+    "answers": [
+      "হারম্যান মেলভিল",
+      "হারমান মেলভিল"
+    ],
+    "sources": [
+      "https://www.loc.gov/exhibits/america-reads/1750-to-1899.html#obj006",
+      "https://www.loc.gov/nls/new-materials/book-lists/best-american-fiction-early-period/"
+    ]
+  },
+  {
+    "question": "জিহ্বার অগ্রভাগকে মুখের মাঝামাঝি দন্ত্যমূলে ঠেকিয়ে রেখে জিহ্বার দুই পাশ দিয়ে মুখবিবর থেকে বায়ু বের করা হয় কোন বর্ণের দ্যোতিত ধ্বনি উচ্চারণে?",
+    "answers": ["ল"],
+    "sources": [
+      "https://www.bcsadmission.com/question-archive/which-is-a-lateral-consonant/",
+      "https://wbchse.wb.gov.in/wp-content/uploads/2025/04/Bnga_s3.pdf"
+    ]
+  },
+  {
+    "question": "বিভূতিভূষণ বন্দ্যোপাধ্যায়ের 'পথের পাঁচালী' উপন্যাসটি মোট কয়টি খণ্ডে বিভক্ত?",
+    "answers": [
+      "তিনটি খণ্ড",
+      "৩টি খণ্ড",
+      "তিন খণ্ড",
+      "৩ খণ্ড"
+    ],
+    "sources": [
+      "https://www.rokomari.com/book/223154/pother-panchali",
+      "https://pbs.com.bd/book/2402061/pother-panchali"
+    ]
+  },
+  {
+    "question": "পদ্মা ও মেঘনা নদী কোথায় মিলিত হয়?",
+    "answers": ["চাঁদপুরে", "চাঁদপুরের কাছে", "চাঁদপুর"],
+    "sources": [
+      "https://bn.banglapedia.org/index.php/পদ্মা_নদী",
+      "https://www.britannica.com/place/Padma-River"
+    ]
+  },
+  {
+    "question": "যমুনা নদীর দৈর্ঘ্য কত কিলোমিটার?",
+    "answers": ["২০৫ কিলোমিটার", "২০৫ কিমি"],
+    "sources": [
+      "https://bn.banglapedia.org/index.php/যমুনা_নদী",
+      "https://en.banglapedia.org/index.php/Jamuna_River"
+    ]
+  },
+  {
+    "question": "সুন্দরবনের বাংলাদেশ অংশের আয়তন কত বর্গ কিলোমিটার?",
+    "answers": ["৬০১৭ বর্গ কিলোমিটার", "৬,০১৭ বর্গ কিলোমিটার"],
+    "sources": [
+      "https://whc.unesco.org/en/list/798/",
+      "https://www.ramsar.org/wetland/bangladesh"
+    ]
+  },
+  {
+    "question": "পদ্মা নদীর দৈর্ঘ্য বাংলাদেশে কত কিলোমিটার?",
+    "answers": ["১২০ কিলোমিটার", "১২০ কিমি"],
+    "sources": [
+      "https://bn.banglapedia.org/index.php/পদ্মা_নদী",
+      "https://www.britannica.com/place/Padma-River"
+    ]
+  },
+  {
+    "question": "মৃত্যুর পূর্বে জগদীশচন্দ্র বসু তার সঞ্চিত অর্থের কত টাকা বসু বিজ্ঞান মন্দিরকে দান করেন?",
+    "answers": ["১৩ লক্ষ টাকা", "১৩ লাখ টাকা"],
+    "sources": [
+      "https://www.bose.res.in/Prof.S.N.Bose-Archive/Prof.S.N.Bose.html",
+      "https://www.sciencehistory.org/stories/magazine/jagadish-chandra-bose/"
+    ]
+  },
+  {
+    "question": "সুন্দরবন কত সালে ইউনেস্কো বিশ্ব ঐতিহ্যবাহী স্থান হিসেবে স্বীকৃতি লাভ করে?",
+    "answers": ["১৯৯৭", "১৯৯৭ সালে"],
+    "sources": [
+      "https://whc.unesco.org/en/list/798/",
+      "https://www.ramsar.org/wetland/bangladesh"
+    ]
+  },
+  {
+    "question": "সুন্দরবন কত সালে রামসার স্থান হিসেবে স্বীকৃতি লাভ করে?",
+    "answers": ["১৯৯২", "১৯৯২ সালে"],
+    "sources": [
+      "https://rsis.ramsar.org/ris/560",
+      "https://www.ramsar.org/wetland/bangladesh"
+    ]
+  },
+  {
+    "question": "২০০৪ সালের হিসাব অনুযায়ী সুন্দরবনে কতগুলো রয়েল বেঙ্গল টাইগার ছিল বলে জানা যায়?",
+    "answers": ["৪৪০টি", "৪৪০"],
+    "sources": [
+      "https://www.undp.org/bangladesh/projects/sundarbans-tiger-project",
+      "https://www.iucn.org/news/bangladesh/201807/tiger-population-sundarbans"
+    ]
+  },
+  {
+    "question": "সুন্দরবনের মোট আয়তনের কত অংশ (বর্গ কিলোমিটার) বাংলাদেশে অবস্থিত?",
+    "answers": ["৬০১৭ বর্গ কিলোমিটার", "৬,০১৭ বর্গ কিলোমিটার"],
+    "sources": [
+      "https://whc.unesco.org/en/list/798/",
+      "https://www.ramsar.org/wetland/bangladesh"
+    ]
+  },
+  {
+    "question": "ঢাকা মেট্রোরেলের উত্তরা উত্তর থেকে আগারগাঁও অংশ কবে উদ্বোধন করা হয়?",
+    "answers": ["২৮ ডিসেম্বর, ২০২২", "২৮ ডিসেম্বর ২০২২"],
+    "sources": [
+      "https://dmtcl.gov.bd/",
+      "https://www.bssnews.net/news-flash/102317"
+    ]
+  },
+  {
+    "question": "সত্যেন্দ্রনাথ বসুর মৃত্যু কত সালে হয়?",
+    "answers": ["১৯৭৪", "১৯৭৪ সালে"],
+    "sources": [
+      "https://www.britannica.com/biography/Satyendra-Nath-Bose",
+      "https://www.bose.res.in/Prof.S.N.Bose-Archive/Prof.S.N.Bose.html"
+    ]
+  },
+  {
+    "question": "সত্যেন্দ্রনাথ বসু ঢাকা বিশ্ববিদ্যালয়ে শিক্ষকতাকালীন কত সালে প্লাঙ্কের কোয়ান্টাম তেজস্ক্রিয়তা নীতি ক্লাসিক্যাল পদার্থবিজ্ঞানের সাহায্য ছাড়াই প্রতিপাদন করেন?",
+    "answers": ["১৯২৪", "১৯২৪ সালে"],
+    "sources": [
+      "https://www.britannica.com/biography/Satyendra-Nath-Bose",
+      "https://www.bose.res.in/Prof.S.N.Bose-Archive/Prof.S.N.Bose.html"
+    ]
+  },
+  {
+    "question": "ঢাকায় প্রথমবারের মতো শহীদ মিনার কবে নির্মাণ করা হয়?",
+    "answers": ["২৩ ফেব্রুয়ারি ১৯৫২", "১৯৫২ সালের ২৩ ফেব্রুয়ারি"],
+    "sources": [
+      "https://bn.banglapedia.org/index.php/শহীদ_মিনার",
+      "https://en.banglapedia.org/index.php/Shaheed_Minar"
+    ]
+  },
+  {
+    "question": "কক্সবাজার সৈকত ভরা জোয়ারে গড়ে কত প্রশস্ত থাকে?",
+    "answers": ["২০০ মিটার"],
+    "sources": [
+      "https://blog.biratbazar.com/index.php/2025/03/02/kolatoli-sea-beach-bangla/",
+      "https://www.beautifulbangladesh.gov.bd/district-destination/cox-s-bazar/sea-beaches/14"
+    ]
+  },
+  {
+    "question": "লালবাগ কেল্লার নির্মাণ কাজ প্রথমে কার নির্দেশে শুরু হয়েছিল?",
+    "answers": ["শাহজাদা মুহাম্মদ আজম", "মুহাম্মদ আজম শাহ", "যুবরাজ মুহাম্মদ আজম"],
+    "sources": [
+      "https://bn.banglapedia.org/index.php/লালবাগ_দুর্গ",
+      "https://en.banglapedia.org/index.php/Lalbagh_Fort"
+    ]
+  },
+  {
+    "question": "দেবদাস উপন্যাসের রচনা কত সালে সমাপ্ত হয়?",
+    "answers": ["১৯০০", "১৯০০ সালে"],
+    "sources": [
+      "https://www.amarebook.com/devdas-sarat-chandra-chattopadhyay/",
+      "https://www.goodreads.com/book/show/7623112"
+    ]
+  },
+  {
+    "question": "পথের পাঁচালী উপন্যাসটি মোট কতটি পরিচ্ছেদে বিভক্ত?",
+    "answers": ["৩৫টি", "৩৫টি পরিচ্ছেদ", "পঁয়ত্রিশটি"],
+    "sources": [
+      "https://www.rokomari.com/book/223154/pother-panchali",
+      "https://pbs.com.bd/book/2402061/pother-panchali"
+    ]
+  },
+  {
+    "question": "বঙ্কিমচন্দ্র চট্টোপাধ্যায়ের 'কপালকুণ্ডলা' উপন্যাসটি কত সালে প্রথম প্রকাশিত হয়?",
+    "answers": ["১৮৬৬", "১৮৬৬ সালে"],
+    "sources": [
+      "https://www.britannica.com/topic/Kapal-Kundala",
+      "https://bn.wikisource.org/wiki/কপালকুণ্ডলা"
+    ]
+  },
+  {
+    "question": "গিরিশচন্দ্র ঘোষ কপালকুণ্ডলা উপন্যাসের নাট্যরূপ কত সালে দেন?",
+    "answers": ["১৮৭৩", "১৮৭৩ সালে"],
+    "sources": [
+      "https://bn.banglapedia.org/index.php/ঘোষ,_গিরিশচন্দ্র",
+      "https://en.banglapedia.org/index.php/Ghosh,_Girish_Chandra"
+    ]
+  },
+  {
+    "question": "শেষের কবিতা উপন্যাসের ধারাবাহিক প্রকাশ কত সালে শুরু হয়?",
+    "answers": ["১৯২৭", "১৯২৭ সালে", "১৩৩৪ বঙ্গাব্দ"],
+    "sources": [
+      "https://sattacademy.com/job-solution/mcq/শেষের-কবিতারবীন্দ্রনাথের",
+      "https://www.kalerkantho.com/feature/silalipi/2024/10/04/1431539"
+    ]
+  },
+  {
+    "question": "বিষবৃক্ষ উপন্যাসটি গ্রন্থাকারে প্রথম কবে প্রকাশিত হয়?",
+    "answers": ["১৮৭৩ সালে", "১৮৭৩"],
+    "sources": [
+      "https://bn.wikisource.org/wiki/বিষবৃক্ষ",
+      "https://www.rokomari.com/book/19458/bishabriksha"
+    ]
+  },
+  {
+    "question": "রাজসিংহ উপন্যাসের চতুর্থ সংস্করণ কত সালে প্রকাশিত হয়?",
+    "answers": ["১৮৯৩ খ্রিস্টাব্দে", "১৮৯৩"],
+    "sources": [
+      "https://eduliture.com/ebook/rajsingha/",
+      "https://bn.wikisource.org/wiki/রাজসিংহ"
+    ]
+  },
+  {
+    "question": "শরৎচন্দ্র চট্টোপাধ্যায় কলিকাতা বিশ্ববিদ্যালয় থেকে জগত্তারিণী স্বর্ণপদক কত সালে পান?",
+    "answers": ["১৯২৩", "১৯২৩ সালে", "১৯২৩ খ্রিষ্টাব্দে"],
+    "sources": [
+      "https://bn.banglapedia.org/index.php/চট্টোপাধ্যায়,_শরৎচন্দ্র",
+      "https://www.britannica.com/biography/Sarat-Chandra-Chattopadhyay"
+    ]
+  },
+  {
+    "question": "শরৎচন্দ্র চট্টোপাধ্যায়ের 'বড়দিদি' উপন্যাসটি কত সালে প্রকাশিত হয়?",
+    "answers": ["১৯০৭", "১৯০৭ সালে"],
+    "sources": [
+      "https://bn.wikisource.org/wiki/বড়দিদি",
+      "https://www.rokomari.com/book/44329/barodidi"
+    ]
+  },
+  {
+    "question": "বাংলা ভাষার আদিস্তরের স্থিতিকাল কবে ছিল?",
+    "answers": ["দশম থেকে দ্বাদশ শতাব্দী", "৯০০ থেকে ১২০০ খ্রিষ্টাব্দ"],
+    "sources": [
+      "https://bn.banglapedia.org/index.php/বাংলা_ভাষা",
+      "https://en.banglapedia.org/index.php/Bangla_Language"
+    ]
+  },
+  {
+    "question": "এখানে 'আকাশ থেকে পড়া' প্রবাদ/বাগধারাটির অর্থ কী?",
+    "answers": ["অত্যন্ত বিস্মিত হওয়া", "হঠাৎ বিস্মিত হওয়া"],
+    "sources": [
+      "https://www.english-bangla.com/bntoen/index/আকাশ%20থেকে%20পড়া",
+      "https://www.banglanotebook.com/2021/02/idiom.html"
+    ]
+  },
+  {
+    "question": "এখানে 'ভিজে বিড়াল' প্রবাদ/বাগধারাটির অর্থ কী?",
+    "answers": ["ভণ্ড, কপট ব্যক্তি", "কপট ব্যক্তি", "কপটাচারী"],
+    "sources": [
+      "https://www.banglanotebook.com/2021/02/idiom.html",
+      "https://gyankunja.com/study/idioms-bangla"
+    ]
+  },
+  {
+    "question": "এখানে 'কাক নিদ্রা' প্রবাদ/বাগধারাটির অর্থ কী?",
+    "answers": ["অগভীর নিদ্রা", "সতর্ক নিদ্রা", "হালকা ঘুম"],
+    "sources": [
+      "https://www.english-bangla.com/bntoen/index/কাকনিদ্রা",
+      "https://www.banglanotebook.com/2021/02/idiom.html"
+    ]
+  },
+  {
+    "question": "এখানে 'ছেঁড়া কাঁথায় আগুন' প্রবাদ/বাগধারাটির অর্থ কী?",
+    "answers": ["দরিদ্রের মধ্যে বিবাদ", "গরিবের সংসারে অশান্তি"],
+    "sources": [
+      "https://www.english-bangla.com/bntoen/index/ছেঁড়া%20কাঁথায়%20আগুন",
+      "https://www.banglanotebook.com/2021/02/idiom.html"
+    ]
+  },
+  {
+    "question": "এখানে 'যক্ষের ধন' প্রবাদ/বাগধারাটির অর্থ কী?",
+    "answers": ["অতি কৃপণতার সঙ্গে রক্ষিত ধন", "সযত্নে রক্ষিত ধন"],
+    "sources": [
+      "https://www.english-bangla.com/bntoen/index/যক্ষের%20ধন",
+      "https://www.banglanotebook.com/2021/02/idiom.html"
+    ]
+  },
+  {
+    "question": "ভূত' শব্দের শুদ্ধ বিপরীত শব্দ কোনটি?",
+    "answers": ["ভবিষ্যৎ", "ভবিষ্যত"],
+    "sources": [
+      "https://bn.wiktionary.org/wiki/ভূত",
+      "https://www.english-bangla.com/bntoen/index/ভূত"
+    ]
+  },
+  {
+    "question": "এখানে 'চাঁদের হাট' বাগধারা/প্রবাদটির অর্থ কী?",
+    "answers": ["আনন্দমুখর সমাবেশ, গুণীজনের সমাগম", "গুণীজনের সম্মেলন", "আনন্দের প্রাচুর্য"],
+    "sources": [
+      "https://www.english-bangla.com/bntoen/index/চাঁদের%20হাট",
+      "https://www.banglanotebook.com/2021/02/idiom.html"
+    ]
+  },
+  {
+    "question": "ঐশ্বরিক' শব্দের শুদ্ধ বিপরীত শব্দ কোনটি?",
+    "answers": ["লৌকিক", "পার্থিব"],
+    "sources": [
+      "https://bn.wiktionary.org/wiki/ঐশ্বরিক",
+      "https://www.english-bangla.com/bntoen/index/ঐশ্বরিক"
+    ]
+  },
+  {
+    "question": "লাভ' শব্দের শুদ্ধ বিপরীত শব্দ কোনটি?",
+    "answers": ["ক্ষতি", "লোকসান"],
+    "sources": [
+      "https://bn.wiktionary.org/wiki/লাভ",
+      "https://www.english-bangla.com/bntoen/index/লাভ"
+    ]
+  },
+  {
+    "question": "শরৎচন্দ্র চট্টোপাধ্যায় ঢাকা বিশ্ববিদ্যালয় থেকে 'ডি.লিট' উপাধি কত সালে পান?",
+    "answers": ["১৯৩৬", "১৯৩৬ সালে", "১৯৩৬ খ্রিষ্টাব্দে"],
+    "sources": [
+      "https://www.teachers.gov.bd/blog/details/835921",
+      "https://www.myexaminer.net/Argues/view/1273823232"
+    ]
+  },
+  {
+    "question": "দুর্গেশনন্দিনী উপন্যাসের রচনা কাজ কত সালে সমাপ্ত হয়?",
+    "answers": ["১৮৬৩", "১৮৬৩ সালে"],
+    "sources": [
+      "https://citizensvoicebd.com/literature/20131/",
+      "https://archive.roar.media/bangla/main/book-movie/durgeshnandini-book-review"
+    ]
+  },
+  {
+    "question": "এখানে 'সাপের পাঁচ পা দেখা' প্রবাদ/বাগধারাটির অর্থ কী?",
+    "answers": [
+      "দাম্ভিকতা বা বাড়াবাড়ি করা",
+      "দর্প বা অহংকারের বাড়াবাড়ি",
+      "অহংকারে অসম্ভবকে সম্ভব মনে করা"
+    ],
+    "sources": [
+      "https://myexaminer.net/Argues/view/2993881090",
+      "https://ask.3schools.in/2024/01/blog-post_989.html"
+    ]
+  }
+]

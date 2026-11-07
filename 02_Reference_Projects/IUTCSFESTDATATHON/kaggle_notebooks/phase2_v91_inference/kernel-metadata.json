@@ -1,0 +1,27 @@
+{
+  "id": "seyamalam/bengali-hallucination-v91-compliance-inference",
+  "title": "Bengali Hallucination v91 Compliance Inference",
+  "code_file": "phase2_v91_inference.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": false,
+  "enable_gpu": true,
+  "machine_shape": "NvidiaTeslaT4",
+  "enable_tpu": false,
+  "enable_internet": false,
+  "keywords": [
+    "bengali",
+    "hallucination-detection",
+    "reproducibility"
+  ],
+  "dataset_sources": [
+    "seyamalam/bengali-hallucination-phase2-runtime-v91",
+    "seyamalam/bengali-hallucination-llama-cpp-cuda-b9637-public"
+  ],
+  "competition_sources": [
+    "bengali-hallucination"
+  ],
+  "model_sources": [
+    "snowrab/qwen3-6-27b-q4-k-p/pyTorch/default/1"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "qg_fallback_rows": 0,
+  "qg_collapse_rows": 0,
+  "qg_collapse_rate_pct": 0.0,
+  "qa_error_rows": 0,
+  "qa_collapse_rows": 0,
+  "qa_collapse_rate_pct": 0.0,
+  "llm_logit_error_rows": 0,
+  "collapse_by_model_and_stage": {
+    "qwen3:1.7b": {
+      "claim_generation": {
+        "collapsed_rows": 0,
+        "rows": 20
+      }
+    },
+    "gemma3:1b": {
+      "evidence_qa": {
+        "collapsed_rows": 0,
+        "rows": 20
+      }
+    }
+  },
+  "romanized_oov_tokens": [
+    "Carcharhinus",
+    "Euprotomicrus",
+    "Rhincodon",
+    "Shark",
+    "bispinatus",
+    "i",
+    "leucas",
+    "typus"
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "frozen_at": "2026-07-20T20:09:52+06:00",
+  "freeze_policy": "Do not update the notebook, runtime datasets, CUDA runtime, or model version after the organizer submission deadline.",
+  "source_repository": {
+    "visibility": "private",
+    "commit": "d1a64a673665169ce8613825731ab5a27046e58c"
+  },
+  "public_submission_repository": {
+    "repository": "Seyamalam/bengali-hallucination-v91-submission",
+    "visibility": "public"
+  },
+  "kaggle_notebook": {
+    "slug": "seyamalam/bengali-hallucination-v91-compliance-inference",
+    "url": "https://www.kaggle.com/code/seyamalam/bengali-hallucination-v91-compliance-inference",
+    "validated_versions": [
+      1,
+      2,
+      3
+    ],
+    "submitted_version": 3,
+    "hardware": "Tesla T4 x2",
+    "internet_enabled": false,
+    "notebook_sha256": "feb92671d131e27585d71eaca3f6f6c1d2fe0204e87167d59210a2a97a365bf1",
+    "canonical_executable_cells_sha256": "afa97b55ab380454e1b8ad3115b0f018d76e8e5ee8375df842dd75c3a0f77db5",
+    "python_source_sha256": "01b65580485d6a3333723adeb8015c9e9290bfb5599eea59655d55acec6d728a"
+  },
+  "competition_input": {
+    "literal_path": "/kaggle/input/competitions/bengali-hallucination/test set.csv",
+    "dynamic_path_discovery": false
+  },
+  "runtime_dataset": {
+    "dataset_id": 11271419,
+    "slug": "seyamalam/bengali-hallucination-phase2-runtime-v91",
+    "url": "https://www.kaggle.com/datasets/seyamalam/bengali-hallucination-phase2-runtime-v91",
+    "visibility": "public",
+    "version": 4,
+    "content_manifest_sha256": "c666668a607cc37434ecf0b6e2009d1d48c481f44170cf0179fce1a85bdbfa9a",
+    "contains_phase1_prediction_vector": false
+  },
+  "cuda_runtime_dataset": {
+    "dataset_id": 11271407,
+    "slug": "seyamalam/bengali-hallucination-llama-cpp-cuda-b9637-public",
+    "url": "https://www.kaggle.com/datasets/seyamalam/bengali-hallucination-llama-cpp-cuda-b9637-public",
+    "visibility": "public",
+    "version": 2,
+    "llama_cpp_release": "b9637",
+    "llama_cpp_commit": "aedb2a5e9ca3d4064148bbb919e0ddc0c1b70ab3",
+    "binary_bytes": 97306416,
+    "binary_sha256": "0efdf9109cc85b393cda46cc51f26008ca99567f6357cba1a34bd6ef6480c66f"
+  },
+  "model": {
+    "slug": "snowrab/qwen3-6-27b-q4-k-p/pyTorch/default/1",
+    "url": "https://www.kaggle.com/models/snowrab/qwen3-6-27b-q4-k-p/pyTorch/default/1",
+    "version": 1,
+    "visibility": "public",
+    "license": "Official Qwen3.6 base: Apache-2.0; Kaggle quantization publisher label: MIT",
+    "file": "Qwen3.6-27B-Q4_K_P.gguf"
+  },
+  "reported_execution": {
+    "hardware": "Tesla T4 x2",
+    "runtime_hours_for_form": 0.17,
+    "run_seconds": [
+      527.031869188,
+      440.8734130340001
+    ],
+    "phase1_rows": 2516,
+    "same_mix_5000_row_projection_seconds": [
+      1047.3606303418123,
+      876.1395330564391
+    ],
+    "within_nine_hour_limit": true
+  },
+  "reproduction": {
+    "reference_submission_id": 54836339,
+    "reference_public_macro_f1": 0.967,
+    "output_sha256": "0fec5d610f4e7b94ab6c46e2094d58e940b0f36781e9fa98d5466d2135474c28",
+    "rows": 2516,
+    "label_counts": {
+      "0": 1181,
+      "1": 1335
+    },
+    "byte_identical_reruns": true
+  }
+}

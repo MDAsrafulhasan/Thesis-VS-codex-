@@ -1,0 +1,12 @@
+.DS_Store
+.env
+__pycache__/
+*.pyc
+.venv/
+venv/
+submission*.csv
+outputs/
+tmp/
+kaggle_datasets/**/llama-server
+models/
+*.log.tmp

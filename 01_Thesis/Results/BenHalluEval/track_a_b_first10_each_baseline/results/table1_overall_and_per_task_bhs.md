@@ -1,0 +1,22 @@
+| Model | Prompt_Mode | Task | Track_A_FPR (%) | Track_B_FNR (%) | BenHalluScore (%) | Collapse_Rate (%) | Parse_Failure_Rate (%) | Avg_Latency_ms | N_Rows | N_Parsed |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| bangla-ai-1.7b-q4 | zero_shot | OVERALL | 37.5000 | 33.3333 | 35.4167 | 15.0000 | 15.0000 | 31707.5293 | 20 | 17 |
+| bangla-ai-1.7b-q4 | zero_shot | bn_qa | 37.5000 | 33.3333 | 35.4167 | 15.0000 | 15.0000 | 31707.5293 | 20 | 17 |
+| bangla-ai-1.7b-q4 | zero_shot | codemixed_qa | NA | NA | NA | NA | NA | NA | 0 | 0 |
+| bangla-ai-1.7b-q4 | zero_shot | summarization | NA | NA | NA | NA | NA | NA | 0 | 0 |
+| bangla-ai-1.7b-q4 | zero_shot | math | NA | NA | NA | NA | NA | NA | 0 | 0 |
+| gemma3:1b | zero_shot | OVERALL | 25.0000 | 80.0000 | 52.5000 | 0.0000 | 35.0000 | 2944.4590 | 20 | 13 |
+| gemma3:1b | zero_shot | bn_qa | 25.0000 | 80.0000 | 52.5000 | 0.0000 | 35.0000 | 2944.4590 | 20 | 13 |
+| gemma3:1b | zero_shot | codemixed_qa | NA | NA | NA | NA | NA | NA | 0 | 0 |
+| gemma3:1b | zero_shot | summarization | NA | NA | NA | NA | NA | NA | 0 | 0 |
+| gemma3:1b | zero_shot | math | NA | NA | NA | NA | NA | NA | 0 | 0 |
+| qwen2.5:1.5b | zero_shot | OVERALL | 100.0000 | 0.0000 | 50.0000 | 0.0000 | 10.0000 | 5103.7625 | 20 | 18 |
+| qwen2.5:1.5b | zero_shot | bn_qa | 100.0000 | 0.0000 | 50.0000 | 0.0000 | 10.0000 | 5103.7625 | 20 | 18 |
+| qwen2.5:1.5b | zero_shot | codemixed_qa | NA | NA | NA | NA | NA | NA | 0 | 0 |
+| qwen2.5:1.5b | zero_shot | summarization | NA | NA | NA | NA | NA | NA | 0 | 0 |
+| qwen2.5:1.5b | zero_shot | math | NA | NA | NA | NA | NA | NA | 0 | 0 |
+| qwen3:1.7b | zero_shot | OVERALL | 10.0000 | 80.0000 | 45.0000 | 0.0000 | 0.0000 | 19963.4385 | 20 | 20 |
+| qwen3:1.7b | zero_shot | bn_qa | 10.0000 | 80.0000 | 45.0000 | 0.0000 | 0.0000 | 19963.4385 | 20 | 20 |
+| qwen3:1.7b | zero_shot | codemixed_qa | NA | NA | NA | NA | NA | NA | 0 | 0 |
+| qwen3:1.7b | zero_shot | summarization | NA | NA | NA | NA | NA | NA | 0 | 0 |
+| qwen3:1.7b | zero_shot | math | NA | NA | NA | NA | NA | NA | 0 | 0 |

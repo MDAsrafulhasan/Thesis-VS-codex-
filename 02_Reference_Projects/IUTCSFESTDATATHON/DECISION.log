@@ -1,0 +1,435 @@
+# Decision Log
+
+## 2026-07-01
+
+- Initialized git for the datathon workspace.
+- Treating this as a generalization problem, not a conventional supervised task, because only 299 labeled examples are available.
+- Phase 2 reproducibility is a hard constraint: offline Kaggle, open weights, under 9 hours, target `2xT4`.
+- Model direction:
+  - Start with fast baselines and small models.
+  - Evaluate Gemma 4 12B QAT because it may offer a useful speed/quality point.
+  - Evaluate Qwen3.5/Qwen3.6 small-to-mid variants because of broad multilingual coverage and likely better Bangla tokenization than older model families.
+  - Use MTP/GGUF only as an inference-speed optimization; it does not directly improve classification quality.
+- Submission optimization should watch `label=0` performance, not only accuracy.
+- Local model execution will use PyTorch/MPS first. Unsloth CLI inference was tested with `unsloth/gemma-4-E2B-it-qat-GGUF`, but failed on this Mac because that backend reported support only for NVIDIA, AMD, and Intel GPUs.
+- Keep the PyTorch code portable to Kaggle CUDA. Use `device=auto` so local runs choose MPS and Kaggle runs choose CUDA.
+- Going forward, prefer upstream author repositories over Unsloth repacks for PyTorch experiments. Unsloth model downloads and cache entries were removed.
+
+## 2026-07-02
+
+- Submitted the local Gemma 12B QAT GGUF few-shot judge with context exact-support post-processing.
+- Kaggle public score: `0.742`, below local sample validation macro-F1 `0.7590` but above prior logged submissions.
+- Treat Gemma 12B QAT as the current strongest single judge, not the finish line.
+- Next improvement should target:
+  - prompt/model variance ensembles, because one deterministic LLM pass is brittle;
+  - no-context factuality, where local validation remains much weaker than context rows;
+  - category-specific calibration for numeric/date/person/place/language-meaning rows;
+  - preserving Phase 2 constraints: offline, open weights, under 9 hours, under 50 GB.
+- Adopted next-stage plan:
+  - use public/open Bengali and multilingual datasets where useful; rules allow this for training, validation, and feature engineering, but Phase 2 requires citation and offline Kaggle packaging;
+  - prioritize no-context RAG over more context overlap tuning, because context rows are already comparatively strong;
+  - build retrieval from Bengali Wikipedia, Wikidata facts, and licensed Bengali QA/dictionary/idiom resources;
+  - create synthetic hallucination data for controlled errors and train a compact encoder/reranker classifier;
+  - stack Gemma prompt votes, RAG evidence, rule features, and encoder probabilities with category-specific calibration.
+- Training, data generation, indexing, and calibration may be done outside Kaggle, but the final inference notebook must run offline on Kaggle `2xT4` or `P100` under 9 hours and under 50 GB of attached model weights. Any external artifacts needed for inference must be packaged as Kaggle datasets/model inputs.
+- For local discovery, MLX models in LM Studio are acceptable even though they are not directly Kaggle T4 inference artifacts. If an MLX-based submission scores well, translate the approach for Phase 2 by using a Kaggle-compatible open-weight Qwen/Gemma package, GGUF/CUDA runtime, or by distilling MLX teacher outputs into a smaller portable verifier.
+- Qwen 27B MLX materially improved local validation on no-context rows; Qwen 9B MLX did not.
+- Public leaderboard results from four Qwen 27B MLX submissions show local 299-row validation is too optimistic for prompt/vote selection:
+  - local-best vote ensemble scored `0.783`;
+  - best public Qwen variant was `noctx_fact` at `0.785`.
+- Stop spending submissions on tiny prompt/vote differences unless they change the evidence source or model behavior substantially. Next improvement needs new information: better retrieval/evidence, external open datasets, or trained/distilled verifier features.
+- Synthetic data is acceptable, but only controlled examples with known labels should be used. Do not trust validation that leaks synthetic examples derived from the held-out sample fold.
+- First no-leak synthetic verifier did not beat teacher models. Keep the scaffold, but prioritize richer evidence sources and teacher distillation over simple synthetic TF-IDF training.
+- Bengali Wikipedia retrieval works as an evidence cache for some no-context rows, especially idioms with list pages, but it is incomplete for dictionary/exam-style rows. Add Bengali dictionary, idiom, and public exam-QA resources next.
+
+## 2026-07-03
+
+- Re-read the competition overview/rules and adjusted the strategy away from optimizing the 299-row sample split.
+- The overview emphasizes generalization, C1 culturally situated facts, and Phase 2 held-out execution. The 299 labeled rows are a validation and error-analysis sample, not a reliable training or model-selection distribution.
+- The Qwen prompt-vote result is the main warning sign: local sample macro-F1 `0.8512` transferred to public `0.783`, while the simpler single `noctx_fact` prompt transferred slightly better at `0.785`.
+- Daily submissions are limited and only four remain today, so do not submit small prompt variants. Submit only when the system adds new evidence, a new model family, or a materially different calibrated decision layer.
+- Updated priority order:
+  - no-context C1 factuality first, because that is where the competition narrative and public-score gap point;
+  - retrieval/evidence before more closed-book prompting;
+  - context rows get targeted consistency checks, not broad prompt churn;
+  - compact verifier/distillation after evidence features exist, not before.
+- External data is allowed by the rules if public/open and cited. Training and index construction may happen anywhere, but Phase 2 inference must run offline on Kaggle `2xT4`/`P100`, under 9 hours and under 50 GB. Any retrieval corpus, trained verifier, or model weights used at inference must be attached as Kaggle datasets/model inputs.
+- Normalized 177,876 external Bengali QA/literature rows from accessible Hugging Face datasets. Treat this corpus as retrieval evidence and contrastive pair material, not as ground truth for the hidden competition labels.
+- Random LLM-generated data is acceptable only as controlled augmentation. Prefer evidence-backed or transformation-backed labels: answer swaps, wrong year/date/person/place, unsupported context, wrong-question answer, and literal-vs-idiom confusion.
+- Built the first packageable offline external-QA retrieval index and tested Qwen evidence-grounded judging. Raw external-QA evidence is not strong enough as a replacement for closed-book Qwen: sample combined macro-F1 fell from `0.8192` to `0.7920`.
+- Evidence still carries useful signal when retrieval confidence is high: a score-gated override at top-score `>=0.25` improved sample macro-F1 to `0.8342`, but this threshold is selected on only 299 rows. Treat `outputs/submission_mlx_qwen36_27b_noctx_fact_evidence025.csv` as a candidate, not the new default.
+- The next evidence work should target missing C1 source coverage, especially Bengali idioms/literal meanings, exam-answer keys, Bangladesh-specific GK, and recent/time-sensitive facts. The current external QA corpus often retrieves semantically adjacent but non-authoritative snippets for those categories.
+- Added the Bagdhara Bengali idiom dataset through KaggleHub. It covers 153 of the 155 unique no-context lexical terms seen across sample/test and provides literal and figurative meanings, alternatives, examples, and cultural fields.
+- For lexical rows, exact prompt matching is more reliable than generic answer-conditioned retrieval. The evidence retriever now supports prompt-only queries and exact-question injection so the requested term/task pair is forced to the top when present.
+- A deterministic lexical overlap override fixed all 21 labeled no-context `meaning`/`literal` sample rows. It improves current Qwen base local macro-F1 from `0.8192` to `0.8331`; layered on the broader evidence-gated candidate, local macro-F1 reaches `0.8480`. Treat these as promising but still public-LB-unverified.
+- Generated evidence-backed controlled lexical pairs from the lexical corpus for future distillation/training. Prefer these over arbitrary LLM-written examples because labels are anchored to public evidence rows: faithful answer, literal/figurative task flip, and same-task answer swap.
+- Keep the full 373k lexical pair file for local experiments, but package the balanced 80k subset for Kaggle-offline training artifacts. It is large enough for a verifier and small enough to attach/run quickly.
+- Trained the first compact portable verifier from the 80k lexical controlled pairs plus curated synthetic data. It is Kaggle-friendly and tiny (`portable_verifier.joblib` is about 2.3 MB), but it is not strong enough as a scoring model: OOF sample macro-F1 is `0.7879`, below Qwen no-context fact + context rule (`0.8192`) and below Qwen + lexical override (`0.8331`).
+- A high-confidence portable-verifier override improves the raw Qwen baseline locally to `0.8381`, but does not beat the evidence+lexical candidate (`0.8480`) and changes too many test labels when using the final model. Do not spend a Kaggle submission on the portable blend yet.
+- Adding source-balanced external QA answer-swap pairs improves the compact verifier to OOF `macro_f1=0.8227` with `f1_0=0.8203`, which is a real gain over the lexical-only verifier and roughly matches the raw Qwen baseline. It still does not beat lexical/evidence overrides, so it is a Kaggle-portable fallback path rather than the next Phase 1 submission.
+- Added a Wikidata Query Service pipeline for Bangladesh-specific public facts. It produces 9,053 CC0 evidence rows and 18,106 answer-swap training pairs, plus a small dedicated retrieval index. This directly targets the C1/C2 no-context gap but retrieval is still property-mismatch-prone, so use it as evidence/feature material rather than a direct override.
+- Adding Wikidata pairs to the compact verifier improves OOF macro-F1 from `0.8227` to `0.8261` and `f1_0` from `0.8203` to `0.8255`. That is a real incremental gain, but it still does not beat Qwen + lexical override (`0.8331`) or evidence+lexical (`0.8480`), and it predicts a very hallucination-heavy test distribution as a standalone candidate.
+- Added external-only context-contrastive pairs from public QA contexts: faithful answer, supported context span, unsupported same-source answer swap, and number corruption. This creates a large clean Phase 2 training artifact, but it does not improve total OOF beyond `0.8261`; it mainly strengthens context rows (`macro_f1=0.9000`) while no-context remains the bottleneck.
+- Public leaderboard feedback: both lexical candidates scored `0.797`, improving the previous public best `0.785` but far below the local validation estimates (`0.8331` and `0.8480`). Treat `0.797` as the current public best and stop spending submissions on deterministic retrieval/rule variants unless the candidate changes the model class or teacher signal.
+- The next training step should not be a generic TF-IDF verifier. If we train, use teacher distillation or LoRA/encoder fine-tuning with stronger labels: Qwen/Gemma teacher logits, retrieved evidence, context contradiction templates, and source-balanced public QA/GK data. The target remains a Kaggle `2xT4`/`P100` inference path.
+
+## 2026-07-10
+
+- The current public best is `0.797`, not the older `0.785` recorded in the README.
+- Stop applying `apply_context_rule` globally. It assumes every context is an authoritative answer passage, but the test contains a shifted block where context is a generic task instruction or a সমাস ব্যাসবাক্য. This forced nearly the whole block to label `0`.
+- Treat test structures with reusable task solvers, not row-specific labels. Competition rules prohibit hand predictions of test records, so all new decisions must come from general algorithms, released labels, public external data, or open-weight model inference.
+- The released synthetic context generator is not trustworthy validation for grounding: arbitrary sampled spans were labeled faithful even when they did not answer the prompt. Do not use its CV score as evidence that an extractive context rule generalizes.
+- Prefer source recovery and task decomposition over another generic judge prompt. Exact public-QA matches cover a large portion of the test and were `100/100` on the released sample slice they cover.
+- Build the next submission from the scored `0.797` Qwen/lexical base plus deterministic arithmetic, deterministic সমাস/উপসর্গ, a specialized structured-row judge, exact public-QA transfer, and exact-headword idiom evidence.
+- `outputs/submission_source_structured_v3.csv` is the primary unsubmitted candidate. It changes 181 base labels and has counts `{0: 1044, 1: 1472}`. Do not claim a projected leaderboard score before submission because the shifted grammar block is absent from the released 299 rows.
+- Longer-term research direction: hidden-state factuality probes are promising for a compact Phase 2 detector, but source/template exploitation is the more credible route for the current leaderboard window.
+- Only `dataset samples.json` is official labeled development data. The answer banks, QA corpora, dictionaries, indexes, and synthetic pairs in this workspace are external resources built or downloaded by our pipeline.
+- The public leaderboard covers only 30% of the test set. Use it to confirm large mechanisms, not to tune individual rows or small thresholds. The 70% private split makes source precision and abstention more important than public-only gains.
+- `outputs/submission_v39_benhallueval_provenance.csv` is the current private-safe anchor: public `0.961`, up from `0.797`; it adds exact released BenHalluEval provenance to v37.
+- Bengali NFKC normalization is mandatory before source indexing. It merges visually identical forms such as `য়` and `য়`, materially improving exact coverage and cross-source conflict detection.
+- Source quality must be modeled explicitly. High-reliability sources receive dominant weights; the low-precision `job_mcq` mirror can only support a decision and cannot overrule a trusted source.
+- Rejected layers:
+  - Qwen 27B semantic judging of source abstentions: `30/33` after adding context;
+  - open-QA fuzzy source matching: `37/40`;
+  - generic context Qwen 27B: below the deterministic context anchor on official sample rows.
+- Next error-reduction targets are the 77-row factual cluster, context entailment/presupposition errors, and Bengali antonym/idiom rows. Keep v15 unchanged until a new layer clears official-sample precision and produces a meaningful candidate.
+- Fix the shared digit canonicalizer before any more source-bank work. The previous table mixed Bengali and Persian glyphs and partially normalized some numbers. The corrected mapping adds one 100%-validated source decision and catches test ID 555 (`sqrt(15.6025)=3.95`, so response `3.85` is false).
+- For recurring factual clusters, use exact public pages plus relation-aware verification. A response appearing somewhere on a page is not enough because the benchmark deliberately swaps dates/numbers between related facts.
+- MediaWiki API extracts are too short and throttle-prone for this use case. Exact Bengali Wikipedia article HTML produced full compact text for 27/28 target topics and is the preferred offline corpus artifact.
+- Do not trust one evidence retrieval view. The sentence-chunk judge incorrectly treated Lalbagh's 1680 restart date as the original construction date; a title-selected full-page pass recovered the distinction. Require at least two high-confidence agreeing evidence views and no confident disagreement.
+- `outputs/submission_v21_fact_consensus.csv` is the strongest offline candidate as of this run. It layers the digit fix, 14 public-law decisions, and 57/63 factual consensus decisions on the scored v15 family, changing 30 rows versus v15. It has not been submitted because the daily quota is locked; do not claim a leaderboard gain yet.
+- `outputs/submission_v23_antonym_consensus.csv` supersedes v21 and is now the scored lead: public `0.945`, rank 4 immediately after scoring, `+0.011` over v15. The antonym layer acts only when two public sources agree; it changes three additional rows and abstains everywhere else. There is no official-sample coverage for this synthetic antonym block, so keep the two-source threshold fixed and do not tune it on the public leaderboard.
+- Reject `submission_v24_context_numeric.csv` despite 13/13 covered-sample precision. Test-trace audit showed that sentence-level numeric overlap still confuses multiple facts within one sentence. The strict cross-format version makes zero test changes and confirms v23 should remain the offline lead.
+- `outputs/submission_v37_verified_facts.csv` is the current unsubmitted research lead. It layers 52 evidence-backed changes on scored v23 and passes 85 tests; root `submission.csv` remains the scored v23 anchor.
+- Birth-date extraction must attach a date to an explicit birth field, a lead birth/death range, or a date immediately governing `জন্মগ্রহণ`; nearby career/death years are not evidence.
+- Establishment parsing must reject bare `প্রতিষ্ঠা` substring matches inside `প্রতিষ্ঠান`, three-digit quantities as years, related sub-entities, parent-organization dates, proposal dates, and person-as-organization presuppositions.
+- A same-surface numeric context override is allowed only when both response and the aligned evidence sentence contain exactly one numeric claim. This fixed two rows while retaining `11/11` official-sample precision.
+- Public answer-bank concatenation artifacts may be repaired only under unanimous cleaned-source equivalence. The conservative cleaner is `97/97` on covered official sample rows and changes only two test rows.
+- Internet-verified overrides require at least two recorded public sources per question. Five such decisions are stored in `resources/verified_fact_answers.json`; do not expand this bank from memory alone.
+- No Kaggle submission was made for v27-v37. Continue validation and evidence acquisition until the user explicitly authorizes submission.
+- The user subsequently authorized submission of v37. Submission ref `54558696` scored `0.961`, improving the previous v23 lead by `+0.016`; v37 is now the scored lead.
+- The positive result validates explicit relation repair as a useful mechanism, but not every one of the 52 changes individually. Continue from v37 and prioritize independently evidenced conflict rows rather than broadening heuristic thresholds.
+- Phase 2 now uses a selective cascade: validated deterministic/context rules and exact public-source answers first, a compact NLI cross-encoder second, and a 4-bit open-weight LLM only for unresolved or low-margin rows.
+- Added licensed Hugging Face coverage for Bengali NLI, Wikipedia, textbooks, news, and Bangladesh Legal Acts. Treat the official-laws-derived corpus as authoritative; the small newspaper legal-advice corpus has lower source weight.
+- Synthetic document pairs are auxiliary only. Source-held-out aggregate macro-F1 was `0.9279`, but the held-out IndicXNLI/law fold collapsed to `0.3572`, exposing shortcut learning.
+- Adding the first HF pairs to the portable TF-IDF verifier produced official OOF macro-F1 `0.8193`, below the existing `0.8261`; it remains rejected as a primary scorer.
+- The router resolves `171/299` official rows with `1.000` covered accuracy and abstains on 128. It is a high-precision front end, not a complete classifier.
+- `outputs/submission_v38_phase2_router_nosubmit.csv` changes zero labels versus scored v37. It validates integration but is not a new submission candidate.
+- Sparse retrieval supplies evidence rather than labels: two-source consensus correctly abstained on all 299 sample rows. Direct overrides still require exact facts or typed contradictions.
+- With one submission remaining, recovered the authors' public `AASani29/BanglaHalluEval` repository and its released GQA ground-truth and four-pattern hallucination files. Exact question+response provenance is `88/88` on overlapping official sample rows and resolves 725 test rows.
+- The released provenance exposes two v37 errors: test ID 930 (`গোহাটি` is the released factualness hallucination; ground truth `গৌহাটী`) and ID 1637 (`মিনাই` is a released hallucination; ground-truth pseudonym `আমির`). `submission_v39_benhallueval_provenance_nosubmit.csv` changes only these two labels from 1 to 0.
+- Reject Gemma 4 12B QAT as a broad final override: official sample macro-F1 `0.7524`; even high-confidence context-only macro-F1 `0.9230`, below the v37 precision requirement. Qwen 27B structured-output judging was also abandoned after runtime/format audits; prior prompt-only variants already transferred poorly.
+- Reject token-overlap expansion on the contextual idiom block. It confuses opposites sharing generic tokens (for example `সুসময়ের বন্ধু` vs `দুঃসময়ের বন্ধু`) and would undo correct v37 decisions.
+- Submitted v39 as the final available submission (ref `54567204`). Public score remains `0.961`, proving IDs 930 and 1637 are outside the 30% public subset or their effects round away. Because both are exact released hallucinations, v39 remains strictly preferable for the unseen 70% private set.
+- Added a mutually exclusive Phase 1 provenance map before any further modeling. It assigns 725 rows to released BenHalluEval provenance, 724 additional rows to exact answer banks, 150 to exact Bagdhara task/headword evidence, and 425 to deterministic rules. Exactly 492 rows remain unresolved.
+- Unresolved priority is now evidence-based: numeric/date 180, general QA 136, person/entity 70, antonym 52, other 30, place 19, English 3, and synonym 2. Recover these source families before training or expanding LLM overrides.
+- Bengali Wiktionary added 16 independently parsed antonym entries and increased two-source confirmations from four to nine test rows. Reject negative inference from answer-list inequality: it would falsely relabel valid alternatives such as `ঋজু → কুটিল` and `ক্ষণস্থায়ী → চিরস্থায়ী`. Antonym lists may now confirm a response only; rejection requires direct semantic contradiction evidence.
+- Counting the already validated reliability-weighted MCQ layer reduces genuinely unresolved Phase 1 rows from 492 to 289; the earlier report undercounted 203 source-backed conflict resolutions.
+- The unresolved audit found four certain false positives in v39. Exact arithmetic gives log expression `4` rather than `1`, conjugate cube sum `52` rather than `5√3`, polynomial parameter `k=0` rather than `-1`, and binary sum `10000₂` rather than `11000₂`. Keep all four deterministic v41 corrections; no broad LLM judgment is involved.
+- Two-source relation checking found four further false positives: IDs 865, 1146, 1352, and 1942. All are categorical swaps confirmed by government/education or museum/university sources. v42 layers these four evidence records on v41.
+- Provenance v4 imports all previously audited evidence traces and expands public antonym coverage. The genuine unresolved count is now 189, down from 492 at the start of this audit.
+- Five v42 lexical false negatives have direct paired-source support and are corrected in v44: `তামসিক→রাজসিক`, `সাকার→অরূপ`, `কদাচিৎ→প্রায়শ`, `শিষ্ট→বেয়াদব`, and `স্বাধীন→বন্দী`. These are accepted alternatives, not answer-key inequality guesses.
+- Three more factual false positives are directly contradicted by paired sources: Operation Searchlight began 25 March, Meghna's main source is the Barak, and Nazrul's national-poet status is effective from 1972 (1974 was his D.Litt). v45 applies these three corrections.
+- Source-artifact expansion recovers two additional faithful rows hidden by concatenated QA answers, but late-stage application must be confirmation-only. Without that guard it would incorrectly overwrite stronger BenHallu and verified-history corrections at IDs 930 and 1942.
+- Positive-only normalization of the synthetic idiom prompt wrapper adds three exact Bagdhara confirmations and never emits a negative from lexical distance. Together with the guarded source confirmations and v45 facts, provenance v5 reduces unresolved rows to 181.
+- WB Notes and Daily Model Test expand safe two-source antonym confirmations to 16. Three additional exact math families close IDs 1050, 1189, and 1936 without changing labels. Provenance v6 has 174 unresolved rows.
+- Paired authoritative sources confirm G7 non-membership, U-238 abundance, Nagaland borders, Jamuna Bridge length, the RFID expansion, and stable natural iron. Provenance v7 has 168 unresolved rows; v45 labels remain unchanged.
+- Government/institutional sources confirm Independence Day, Victory Day, `কবিকাহিনী` as Rabindranath's first printed collection, and his 1941 death. Provenance v8 has 164 unresolved rows.
+
+## 2026-07-13
+
+- Exact context is not sufficient for BenHallu source transfer. Require normalized exact question identity as well, because one passage can contain several QA records and one question's gold answer can be another question's generated distractor.
+- Approximate answer similarity may rank hallucinations for review but must not promote faithful labels: numeric and malformed-suffix controls show that near-string equality can reverse the fact.
+- Primary structured facts outrank internally contradictory retrieved prose when multiple independent authoritative sources agree. ID 333 regressed after a Wikipedia page contained both March 24 and March 23 for Shakib Al Hasan; ICC, ESPNcricinfo, Wikidata, Prothom Alo, and four local judges agree on March 24, 1987. v85 restores `333: 0→1`.
+- Full TyDiQA may confirm a faithful response only on normalized exact question+gold-answer identity. Do not promote answer containment or real-world aliases: BenHallu deliberately labels some defensible expansions (`আকবরী মোহর`, `ইয়াং সম্রাট ওয়েন`) as generated hallucinations.
+- When context is supplied, intrinsic grounding outranks a defensible external fact. ID 2216's `খ্রিস্টপূর্ব ৩০০` is historically plausible for Mahasthangarh, but its competition context explicitly states `খ্রিস্টপূর্ব ৭০০`; retain label 0.
+- The offline package must include the exact current answer banks, verified fact bank, v85 candidate, and every direct Python dependency of `phase2_pipeline.py`. A manifest that contains only old retrieval/verifier artifacts is not a valid reproduction package.
+- The selective judge must use constrained one-token binary decoding. Free-form generation plus `parse_label` silently maps malformed outputs to label 0 and creates an unauditable hallucination-class bias.
+## 2026-07-13 - Restore conservative fuzzy source routing
+
+- Added the previously validated near-duplicate MCQ matcher to the Phase 2 router as an explicit optional stage before the selective LLM.
+- It resolves 5 additional official controls at 5/5 accuracy and raises the Qwen-27B selective cascade from `0.92895` to `0.93572` macro-F1; hallucinated-class F1 rises from `0.92135` to `0.92884`.
+- On all 2,516 Phase 1 rows it resolves 25 additional rows, reduces uncertainty from 620 to 595, and reproduces v85 with zero label differences.
+- Keep the conservative `source_answer_bank.jsonl` fuzzy bank as the default. Broader banks require separate source-conflict auditing before promotion.
+## 2026-07-13 - Weighted source conflicts, exact lexical routing, and conservative judge consensus
+
+- Restored reliability-weighted resolution for exact answer-bank conflicts. It adds 21 official controls at 21/21 precision and 203 Phase 1 decisions without changing v85.
+- Restored the exact Bagdhara lexical verifier. It resolves all 21 official lexical controls correctly and 150 Phase 1 rows without changing v85.
+- No-context LLM fallback now requires unanimous positive decisions from fact, exam-key, and skeptical views; context rows retain the stronger context-NLI view.
+- The complete cascade reaches `macro_f1=0.97638`, `f1_0=0.97417`, and `accuracy=0.97659` on 299 controls. The deterministic router covers 214/299 at 100% precision.
+- Phase 1 uncertainty falls to 263 rows; router output remains exactly identical to v85. Keep this as the new Phase 2 architecture baseline.
+## 2026-07-13 - Scored v85 lead and strict released-lineage routing
+
+- Submitted the byte-equivalent v85 candidate as `outputs/submission_latest_lineage_consensus.csv`; Kaggle public macro-F1 is `0.966`, improving the prior `0.963` lead.
+- Added strict BenHallu exact context+question+response lineage routing. It covers 38/38 official controls and 721 Phase 1 rows with zero v85 disagreements.
+- Added conservative Bengali number-word range contradiction handling. It fixes the keyboard-range control while exact response containment prevents unrelated context numbers from overriding supported answers.
+- Latest local cascade reaches `macro_f1=0.97977`, `f1_0=0.97794`, and `accuracy=0.97993`; deterministic coverage remains 100% precise.
+
+## 2026-07-13 - Inline MCQ recovery and historical-alias grounding
+
+- Strip embedded Bengali `ক)/খ)/গ)/ঘ)` options only to recover an exact public-answer-bank question stem. Use normal conflict handling first and reliability-weighted voting only when exact sources conflict; do not lower global fuzzy thresholds.
+- Add a conservative intrinsic-context rule for the explicit form `X ছিল এর রাজধানী যা বর্তমান Y`: a historical `কী ছিল` question accepts `X` and rejects the modern alias `Y`.
+- Independently verified literary and phonetic facts fix the Moby-Dick author and Bengali lateral-consonant controls. The evidence bank records two public sources for each.
+- The complete cascade now reaches `macro_f1=0.99326`, `f1_0=0.99270`, `f1_1=0.99383`, and accuracy `0.99331`. Router coverage is `225/299` at perfect precision.
+- The two remaining errors (`competent→অযোগ্য` and the malformed Dimple Kapadia year/title item) are internally inconsistent annotation/source-key cases. Do not add row-specific rules to force 100% validation.
+- Phase 1 output remains byte-equivalent to scored v85 with zero changes, so this work does not justify another Kaggle submission.
+
+## 2026-07-13 - Authoritative legal-corpus routing and residual judge audit
+
+- Use the packaged CC-BY-4.0 Bangladesh Legal Acts corpus directly for section-level DNA Act, Right to Information Act, and Trademark Act verification. Add the official bdlaws 1929 Child Marriage Restraint Act sections 2 and 12 as a compact legacy extract because the normalized corpus omits the repealed act. Fourteen Phase 1 rows are resolved from government text with zero v85 label changes; uncertainty falls from 222 to 208.
+- The stronger Qwen3.6-27B context-NLI pass disagrees with v85 on only seven currently unresolved context rows. Six are synthetic idiom/antonym prompts whose context is merely a task wrapper; the seventh (`ঔদ্ধত্য→বিনয়`) is already correctly positive. Admit none of these changes.
+- Five independent Qwen evidence/prompt views plus Gemma unanimously oppose v85 on six no-context fact rows, but direct relation checking shows all six are field swaps (for example UNESCO vs Ramsar year, inauguration vs public opening, original builder vs later builder). Model unanimity is not evidence when all judges share the same relation error.
+- Exact raw-question source fingerprinting is `109/109` on official controls and covers 1,030 Phase 1 rows. It proposes only one v85 disagreement, the already researched QDoc/Farhan airplane-time source conflict; retain the stronger two-source v85 resolution.
+- The released BenHallu reasoning files have zero normalized question overlap with official sample or Phase 1 test. Do not add them merely because they share the benchmark name.
+
+## 2026-07-13 - v86 relation-swap repair and additional QA-bank audit
+
+- Official controls can expose cross-entity answer reuse even when a test prompt has no direct source hit. The official faithful answer `পদ্মা নদীর দৈর্ঘ্য ... ৩৪১ কিলোমিটার` reveals that Phase 1 ID 179 incorrectly reuses `৩৪১` for the Meghna; two independent Bengali education sources give Meghna as 330 km. v86 changes only `179: 1→0` and remains unsubmitted until its leaderboard value is measurable.
+- Exact lineage remains the only safe automatic policy for external QA banks. SQuAD-BN duplicates the already-covered TyDiQA slice; BanglaRQA and Bengali IndicQA add no exact question overlap; the 70K pair bank has one ambiguous answer-alias mismatch. None justifies a second label change.
+- A QA-bank mismatch must not emit label 0 because many datasets expose only one short gold alias. Only normalized exact question plus normalized exact answer may produce a positive provenance record.
+
+## 2026-07-13 - v87 leaderboard result
+
+- Submitted v87 with only the independently verified ID 179 and ID 367 `1→0` repairs. Kaggle reference `54639686` scored public macro-F1 `0.965`, compared with v85 at `0.966`.
+- Keep v85 as the scored Phase 1 lead. Do not promote v87 as the default merely because both factual corrections have strong external support: the 30% public fold reports only their combined effect and may reflect one harmful edit, two off-fold edits plus score rounding, or benchmark annotation lineage that differs from real-world facts.
+- Do not infer a per-row verdict from the combined two-edit score. Separate ablations are required before either repair can be attributed a leaderboard effect.
+
+## 2026-07-14 - Phase 2 Kaggle T4x2 deployment
+
+- Use Qwen3.6-27B Q4_K_P through a pinned CUDA llama.cpp server, split evenly across both T4 GPUs, with four parallel slots and deterministic grammar-constrained one-token decisions. Disable reasoning explicitly at both server and request level; otherwise this Qwen checkpoint may place its answer in hidden reasoning and return empty content.
+- Keep the deterministic router first. On the 2,516-row Phase 1 test it resolves 2,310 rows and sends only 206 rows to the judge. The measured end-to-end runtime is 727.31 seconds, including 162.60 seconds through model readiness; the 5,000-row linear estimate is 1,445.37 seconds. Model storage is 16.332 GiB and the complete attached payload remains below 17 GiB.
+- Package the pinned b9637 CUDA `llama-server` as a normal private Kaggle Dataset rather than depending on a private builder notebook's output. This makes the final notebook self-contained and shareable while retaining the separately reproducible builder kernel.
+- The raw-input notebook differs from the scored v85 vector on 37/2,516 rows. Do not describe this as an exact 0.966 reproduction until its generated CSV is scored. The saved v85 vector must not be attached or used as an inference base merely to force equality; Phase 2 must operate on unseen raw rows.
+- Preserve the current unanimous-positive no-context policy. It is supported by the 299-row official validation (`macro_f1=0.99326`, `f1_0=0.99270`) even though some Phase 1 pseudo-labels and annotation-lineage cases disagree with the factual judge.
+- Short-circuit no-context voting after the first zero, evaluating `exam_strict`, then `zero_bias`, then `noctx_fact`. This is exactly equivalent to unanimous-positive voting and reduced observed judge calls from 394 to 325. Pin `machine_shape=NvidiaTeslaT4`; `enable_gpu` alone allowed Kaggle to assign a single P100 on notebook version 5.
+- Route the Pather Panchali part/chapter relation through two-source verified evidence: the novel has three parts and 35 chapters, so `পঁয়ত্রিশটি খণ্ড` is a field swap. This removes the specific v4/v6 near-tie variance. Two other Qwen decisions varied in version 7, so do not promise bit-identical CUDA output; the observed Phase 1 variation is 2/2,516 rows and did not change schema or runtime compliance.
+
+## 2026-07-19 - Freeze the compliant v85 notebook
+
+- Freeze private Kaggle notebook `seyamalam/bengali-hallucination-v85-compliance-inference` at version 4 unless a packaging-only correction is required. Versions 3 and 4 produced byte-identical raw-input outputs and both match the scored v85 SHA-256 exactly.
+- Do not restore parallel llama-server slots or `as_completed` scheduling. A single fixed request stream, stable per-view seeds, fixed prompt order, and grammar-constrained binary decoding are the accepted reproducibility policy.
+- Do not attach, load, or branch on saved Phase 1 predictions. The exact reproduction comes from general deterministic stages, cited content-keyed evidence, and the open-weight judge.
+- Treat SHA-256 `19c5880021d6e3e9fd47c567d7b45898fbaee09d5f59009e96cf818c3737cb31` as the Phase 1 reproduction gate. Label counts alone are insufficient.
+- Use notebook version 4 and its frozen Kaggle input versions in the organizer package. Report T4x2 runtime conservatively as `0.142 hours` (508.185 seconds), even though the faster frozen run completed in 473.564 seconds.
+- No new leaderboard submission is necessary: byte identity links the notebook output to existing scored submission `54640211` at public macro-F1 `0.966`.
+
+## 2026-07-19 - Require source-origin evidence for Phase 1 conflict repairs
+
+- Do not replace a recovered benchmark answer merely because an independent calculation or current external source disagrees. Released-label controls show that Phase 1 preserves the originating QA key, including inherited oddities.
+- For prompts with conflicting public answer-bank keys, a candidate flip must first pass exact raw source-origin fingerprinting. Encoding cleanup may remove zero-width characters and whitespace noise; only a demonstrably empty serialized SVG placeholder may be removed. Punctuation and spelling remain part of the fingerprint.
+- The new audit is `11/11` on conflicted official controls. It identifies 98 exact conflicted Phase 1 origins and agrees with v85 on all 98, so it authorizes zero changes.
+- Quarantine the apparent rational-inequality, atmospheric-argon, and Parliament-seat corrections. They are defensible external-world answers but do not overcome the benchmark-lineage evidence.
+- Keep the four-submission budget untouched. A candidate still needs a mechanism-sized set of source-safe corrections before it can clear the requested `+0.005` submission gate.
+
+## 2026-07-19 - Reject the corrupted azminetoushikwasi Word-size key
+
+- The public `Olikbochon Answer Banks` bundle adds 4,858 records from two previously unaudited azminetoushikwasi BCS collections. Exact and conservative fuzzy decisions are perfect on all 18 covered released controls.
+- On Phase 1, 127 exact and 24 fuzzy decisions are available. Every decision agrees with v85 except test ID 473.
+- Do not flip ID 473. The `bcs_gk.json` record is visibly corrupted: it stores options `৪, 16, 4, 2`, omits the original `8`, and points its one-based answer index to the duplicated `4`. The original 38th BCS form and multiple independent answer keys retain `8, 16, 4, 2`; existing source-origin evidence supports the current v85 response `8`.
+- Treat these two BCS collections as additional Phase 2 retrieval coverage, not a Phase 1 correction layer. Do not alter the frozen notebook or runtime bundle from this audit.
+
+## 2026-07-19 - Reject repository-majority conflict overrides
+
+- A strict vote across distinct repositories is a useful diagnostic for exact-origin questions whose recovered public answer keys disagree. Duplicate copies from one repository count once, internally inconsistent repository votes abstain, and tied votes abstain.
+- The policy is `29/29` on released controls, but it proposes only three changes to v85: IDs 417, 1399, and 1694.
+- Reject all three changes. NATO records the Dayton Peace Accords as signed in 1995; the recovered 22nd BCS wording keys the unqualified “পদাবলী” question to বিদ্যাপতি; and Constitution article 55(2) places executive power with the Prime Minister or under the Prime Minister's authority. The current v85 labels are correct in all three cases.
+- Repository-majority agreement is therefore not an automatic override. It may rank conflicts for review, but a source key majority cannot displace direct primary or exam-origin evidence.
+- The four-submission budget remains untouched. No candidate CSV was generated.
+
+## 2026-07-19 - BenHallu normalized-lineage collision audit
+
+- The 721-row BenHallu lineage stage does not hide a mechanism-sized normalization collision. Of 5,000 source records, the audit finds 4,576 normalized triples and 4,614 raw triples, with zero label conflicts at either level.
+- Of the 721 Phase 1 matches, 720 are exact raw context-question-response matches. The sole normalized-only match is ID 1145, whose response `বাথ পার্টি` is the released gold answer to the Saddam Hussein party question and agrees with v85.
+- Retain the frozen lineage stage. Tightening it to raw-only would merely remove one correct provenance decision; loosening it would add no evidenced correction.
+- The EMNLP 2023 Bangla Word Analogy repository confirms five synthetic antonym pairs but exposes no v85 disagreement. Its repository has no declared license, so keep it audit-only and out of packaged runtime assets.
+- The newly indexed Hugging Face `ahnaf-jamil/bangla-hallucination-lexicon` is gated and inaccessible to the configured account. Do not bypass the gate, infer its contents, or make the Phase 2 runtime depend on it.
+
+## 2026-07-19 - Context-rule safety audit
+
+- The frozen context layer resolves 206 Phase 1 rows: 172 birth dates, 15 question-conditioned numeric equivalences, 13 entity/relation establishment years, and six narrow contradiction or status rules.
+- An independent strict date parser finds one parsing anomaly at ID 2480. The production regex reads `১লা ডিসেম্বর ১৯৮৫` as December 1 of year 985 because `লা` is absent from its suffix list and the month-first pattern can split a four-digit year. The same parse occurs for both evidence and response, so the correct faithful label is unchanged.
+- Re-evaluating all 172 birth-date decisions with the independent parser changes zero labels. All 206 context decisions also agree with v85. The non-birth relation cases were reviewed and preserve the requested relation: construction start versus completion, parent denomination versus local church, registration versus founding, person versus organization, and proposal versus establishment.
+- Do not modify the frozen production parser before organizer evaluation. The anomaly is documented technical debt with zero Phase 1 output impact; a future Phase 2 revision may add `লা` and require an explicit separator in the month-first date pattern after the frozen artifact is no longer under submission lock.
+- No candidate CSV was generated and no Kaggle submission was made.
+
+## 2026-07-19 - Quarantine transitive antonym alternatives
+
+- Re-auditing the 52 synthetic antonym rows surfaced three defensible but indirect positive alternatives currently labeled 0 by v85: `উন্মুখ→নিরাসক্ত` (standard antonym `বিমুখ`, with `নিরাসক্ত` as a synonym of `বিমুখ`), `বহিরঙ্গ→ঘনিষ্ঠ` (standard antonym `অন্তরঙ্গ`, with `ঘনিষ্ঠ` as a synonym of `অন্তরঙ্গ`), and `কনিষ্ঠ→বৃদ্ধ` (standard antonym `জ্যেষ্ঠ`, with `বৃদ্ধ` listed as a sense/synonym of `জ্যেষ্ঠ`).
+- Do not promote these three rows now. The released 299-row sample contains no controls from this synthetic antonym template, the evidence is a two-hop semantic chain rather than a direct pair, and three total changes cannot credibly guarantee the requested `+0.005` public improvement under a 30% public split.
+- Direct sources reinforce the strict-key interpretation for the other negatives: `উন্মুখ→বিমুখ`, `ঊর্ধ্বগামী→অধোগামী`, `ভূত→ভবিষ্যৎ`, `লাভ→ক্ষতি`, `ইহকাল→পরকাল`, and `আবির্ভাব→তিরোভাব`. Keep their v85 labels.
+- `আবির্ভাব→ধ্বংস` remains label 1: Bengali Wiktionary directly lists `ধ্বংস` among its antonyms, independently corroborated by an `উদ্ভব` antonym source. It is not a correction candidate.
+- Preserve the submission budget. Revisit the three transitive alternatives only if a larger independently validated synonym-equivalence mechanism emerges.
+
+## 2026-07-19 - Reject transitive answer-equivalence overrides
+
+- Tested semantic answer equivalence only inside exact-question source-bank abstentions. Conflicted repositories were excluded from embedding calibration so similarity to a bad answer key could not create a false positive.
+- `intfloat/multilingual-e5-small` scored 20 released non-conflict controls and 68 analogous Phase 1 rows. No threshold selected at least three faithful released controls at `1.000` precision. The highest-scoring false released row (`রংপুর জিলা স্কুল` versus `রংপুর জিলা স্কুলের`) outranked several valid translations and number paraphrases, demonstrating that semantic proximity does not model the benchmark label.
+- A separate Qwen3.6-27B MLX answer-key judge reached only `0.9250` released accuracy and `0.924953` macro-F1 on all 40 source-bank abstentions. It made three confident errors, including promoting the same `রংপুর জিলা স্কুল` negative.
+- On 265 Phase 1 abstentions, the Qwen judge disagreed with v85 only 18 times: five `0→1` and thirteen `1→0`. The five positive proposals were not a viable set:
+  - IDs 564 and 1904 contradict exact-origin or repository-vote evidence already audited in this repository.
+  - ID 937 changes the scientific species spelling `erota` to `eroto`.
+  - IDs 930 and 1526 are isolated spelling/paraphrase relaxations with no released-precision gate; the released false positive above shows that this rule cannot be promoted safely.
+- Reject both embedding thresholds and direct Qwen answer-key overrides. No candidate CSV is generated, v85 remains unchanged, and the frozen Phase 2 notebook/runtime is not modified.
+
+## 2026-07-19 - Close the broad source-recovery tail audit
+
+- Run future heavy model inference and training on Kaggle GPUs, not on the local Mac. Lightweight schema checks, trace analysis, tests, and documentation may remain local.
+- A deterministic Qwen3.6-27B source-recovery audit on Kaggle T4x2 evaluated all 299 released controls and the 170 unresolved Phase 1 rows. At confidence `>=0.95`, released accuracy was only `0.923729` and macro-F1 was `0.918826`; high self-reported confidence is not a safe correction rule.
+- The test audit produced 25 binary high-confidence decisions and every one agrees with v85. There are zero disagreements to review and zero calibration-gated candidates. The public-search channel recovered no exact-origin test match.
+- Treat this as a negative but useful result: generic web search plus a 27B evidence judge does not expose a safe Phase 1 improvement in the remaining tail. Do not rerun it with looser confidence, promote `none` rows, or submit any vector from this experiment.
+- Keep scored v85 and its frozen notebook/runtime unchanged. The four-submission budget remains untouched.
+
+## 2026-07-19 - Reject Gemma 4 12B as a correction judge
+
+- Gemma 4 12B QAT Q4_0 is fast and comfortably deployable on T4x2, but this checkpoint/prompt pair is not a viable Bengali hallucination verifier. Two-view released consensus macro-F1 is only `0.494182`, with label-1 F1 `0.319444` and a severe label-0 bias.
+- Relative to the current released cascade, Gemma makes 97 proposed corrections and every one is harmful. It fixes neither of the cascade's two errors. Correction precision is exactly zero in both flip directions.
+- Reject all 59 Gemma-v85 test disagreements. Do not inspect or selectively promote them as a group after seeing test content; the predeclared released correction gate blocks the entire mechanism.
+- Do not fine-tune or prompt-sweep this Gemma checkpoint merely to fit 299 controls. The historical Gemma experiments already transferred poorly, and the present cross-family audit provides no correction signal. A future Gemma experiment requires a materially different checkpoint or evidence architecture, not threshold relaxation.
+- Keep v85 frozen and preserve all four remaining submissions.
+
+## 2026-07-19 - Isolate the TalaKana literal-versus-figurative repair
+
+- The scored v85 bank treats `তালকানা`'s literal musical sense and figurative idiom sense as interchangeable. That is unsafe for the exact test row: the prompt explicitly asks for the `বাগধারা/প্রবাদ` meaning and the supplied sentence describes a person's `কাজকর্ম`, not music or rhythm.
+- The organizer-cited LREC 2026 Bangla Bagdhara dataset separates the literal meaning (`তালহীন ... ছন্দ`) from the expert-consensus figurative meaning (`অসাবধান; কাণ্ডজ্ঞানহীন ...`). Ajker Patrika, eBanglaLibrary, and standard Bengali exam references make the same distinction.
+- Admit one content-keyed candidate correction: the idiom prompt plus response `ছন্দ বা তাল বুঝতে না পারা, বেসুরা` receives label 0. The rule extracts Bengali idiom text and matches the normalized response; it does not contain or branch on Phase 1 row IDs.
+- Do not mutate the frozen v85 CSV, compliance notebook, or runtime bundle before leaderboard evidence. Keep this as a separate v88 candidate. If it improves the public score, integrate the same content rule and pinned source asset into the organizer notebook; otherwise retain frozen v85.
+- The remaining 58 idiom prompts produced no further defensible change. Several fuzzy source mismatches are spelling/alias noise, and conventional Bengali sources support the existing v85 decision.
+- Submitted v88 as Kaggle reference `54835039`; its public macro-F1 is `0.966`, unchanged from v85. Do not interpret the unchanged rounded score as a row-level label verdict: the correction may lie in the private 70%, or its single-row public effect may round away.
+- Preserve both v88 and v85 for final evaluation. They are the two most recent competition submissions, so neither is displaced by the failed v87 experiment.
+
+## 2026-07-19 - Diagnose the 0.966 ceiling and harden fuzzy relations
+
+- Do not make further Phase 1 submissions. Preserve v88 and v85 as the two most recent entries.
+- The strongest released cascade is already `297/299` with macro-F1 `0.993264`. Its two errors are malformed official positives, not ordinary reasoning failures: `competent→অযোগ্য`, and a year question answered by the film title `রুদালী`.
+- Exact SumanMondal lineage explains the second malformed key, but a nearly identical released year-question/film-title source record is labeled 0. Fuzzy malformed-source recovery therefore cannot reach a calibrated 100% gate and must abstain.
+- Treat the remaining ceiling as a source-lineage and annotation-consistency problem. Larger judges, high self-reported confidence, and fact checking cannot reliably recover corrupted benchmark keys.
+- Added relation-family compatibility to fuzzy source matching. Near-duplicate questions now abstain on `start/end`, `birth/death`, `written/published`, and `source/confluence` swaps while retaining all previously accepted Phase 1 decisions.
+- The hardened pipeline remains byte-identical to v85 and retains 170 runtime-uncertain rows. The change is a Phase 2 safety improvement, not a new Phase 1 score claim.
+
+## 2026-07-19 - Add optional typed evidence without mutating the freeze
+
+- Keep `resources/verified_fact_answers.json` unchanged for exact v85 reproduction. Its flat question-to-answer schema is now legacy compatibility, not the preferred format for new evidence.
+- New Phase 2 evidence should use `resources/typed_evidence_v1.json` through repeatable `--typed-evidence` arguments. Each record declares an inferred task intent, explicit accepted and rejected answers, optional context conditions, and at least two source URLs.
+- Typed evidence is exact and abstention-first. An unlisted response remains unresolved; it is never rejected merely for failing to equal one known alias. Conflicting typed records also abstain.
+- The initial controls separate figurative from literal senses for `তালকানা` and correctly reject the released `শিবরাত্রির গুরুত্ব` idiom distractor.
+- Without the new argument, the pipeline is byte-identical to v85. With version 1 enabled, it is byte-identical to v88 and changes only the previously documented `তালকানা` row.
+- Do not add the typed resource to the frozen notebook before organizer evaluation. It is a post-freeze Phase 2 development layer until the submitted artifact lock is lifted.
+
+## 2026-07-19 - Promote only unanimous corpus-backed idiom senses
+
+- Add the organizer-cited 10,359-record Bangla Bagdhara corpus as an optional `--idiom-dataset` router layer after exact typed evidence and before legacy flat evidence.
+- Exact headwords outrank aliases. Duplicate primary records are retained rather than overwritten, and the matcher abstains if any selected record is undecided or the records disagree. This prevents file order and alias collisions from becoming hidden prediction rules.
+- The clean calibration cohort contains 30,825 controlled rows where the prompt headword equals the source record. The matcher decides 15,977 rows at exactly `100%` precision and 51.83% coverage. Alias-derived controlled rows are excluded because the generator assigns the same alias to incompatible source records.
+- Admit `outputs/submission_v89_typed_idiom_nosubmit.csv` as a research candidate only. It changes five content-keyed labels relative to v85 (`13`, `27`, `164`, `180`, and `2274`, all `1→0`) and is supported by the requested-versus-opposite corpus fields. Do not submit it and do not modify the frozen v85 notebook/runtime.
+- Do not switch to the higher-coverage max-over-duplicates rule. Although it also fits the clean synthetic field labels, it would classify semantically inseparable senses such as `পা টিপে চলা` as hallucinated. Unanimous abstention is safer for Phase 2 generalization.
+
+## 2026-07-19 - Add textual context-span confirmation, exclude numeric claims
+
+- Admit exact answer spans only when the answer occurs inside one sentence/semicolon clause with at least two nontrivial prompt anchors and compatible typed relations.
+- Never use this generic layer for numeric or date questions. Integration testing caught three unsafe copied years tied to death, acquisition, and birth rather than the asked birth, establishment, and presidency relations. Those rows remain with the specialized numeric/date parsers and retain label 0.
+- The final textual-only gate is `14/14` on released controls. It adds 57 Phase 1 routing decisions, confirms the existing vector, and reduces the typed pipeline tail from 169 to 162 without changing any v89 label.
+- Keep the stage enabled in the general development router because it improves Phase 2 provenance and selective-judge efficiency. Frozen v85 output remains byte-identical and no frozen notebook/runtime file is changed.
+
+## 2026-07-19 - Extend numeric routing only with relation-bound signatures
+
+- Add exact multi-number signature support for ranges and positive quantities, plus single-number contradiction decisions only when one top-overlap relation-aligned clause supplies a unique different value.
+- Make `কবে` an answer-type condition rather than a shortcut around relation matching. A foundation-stone date cannot answer an establishment question merely because both are dates.
+- Split `এবং` only when both sides contain numeric evidence. Normalize inflected Bengali scale words and parse compound number phrases from 2 through 9,999 with collision-free token n-gram lookup.
+- Exclude superlatives such as `দীর্ঘতম`, `বৃহত্তম`, and `সর্বাধিক`; exact occurrence of one quantity does not prove a superlative claim.
+- The expanded mechanism is `19/19` on released controls and adds four Phase 1 tail confirmations with zero changes to v90. Keep it in the development router; no candidate score improvement is claimed and no submission is authorized.
+
+## 2026-07-19 - Submit v91 after explicit user override
+
+- The user explicitly replaced the earlier no-submission instruction and asked for the strongest current candidate to be submitted immediately.
+- Submit the already validated v91 vector. It differs from scored v85 only at IDs `13`, `27`, `164`, `180`, and `2274`, all `1→0`, using the exact requested literal/figurative fields of the cited idiom corpus.
+- Kaggle submission `54836339` scored public macro-F1 `0.967`, improving v85/v88 at `0.966`. Treat v91 as the current scored lead.
+- Do not infer that all five edits are public-fold corrections. The aggregate score proves a net public improvement only.
+- Keep the frozen v85 compliance notebook and runtime unchanged until a separately reproducible v91 organizer artifact is intentionally built and verified.
+
+## 2026-07-20 - Freeze and publish the reproducible v91 organizer submission
+
+- Keep every v85 artifact unchanged. Build a separate v91 runtime dataset and notebook that add only the content-keyed typed evidence and idiom router required to reproduce the scored five-row v91 delta.
+- Publish new Kaggle assets rather than changing the contents of a frozen version: public runtime dataset `seyamalam/bengali-hallucination-phase2-runtime-v91`, public CUDA dataset `seyamalam/bengali-hallucination-llama-cpp-cuda-b9637-public`, and public notebook `seyamalam/bengali-hallucination-v91-compliance-inference`.
+- Accept the v91 notebook only after two T4×2 versions reproduce SHA-256 `0fec5d610f4e7b94ab6c46e2094d58e940b0f36781e9fa98d5466d2135474c28`, counts `{0:1181,1:1335}`, and byte-identical CSV bytes. Versions 1 and 2 passed.
+- Report the conservative measured runtime as `0.17` hours. Do not reuse the older `0.15`-hour v85 estimate: v91 measured `593.43s` and `527.03s`.
+- Publish only the minimal notebook, manifest, citations, and data register in public repository `Seyamalam/bengali-hallucination-v91-submission`; keep the full competition repository private.
+- Freeze GitHub notebook commit `ff9a63d42beabd30b678cb6c6f09ab0038ff1fca` and Kaggle notebook version 2 for the organizer form.
+
+## 2026-07-20 - Record the final Phase 1 result
+
+- The final private leaderboard places Huntrix at rank `1` with macro-F1
+  `0.982`; v91's public score is `0.967`.
+- Keep the already frozen v91 notebook, runtime bundle, CUDA binary, model
+  version, and immutable GitHub commit unchanged. The private result validates
+  the frozen submission vector but does not authorize post-deadline artifact
+  changes.
+- Use private rank `1`, runtime `0.17` hours, GPU `T4×2`, Kaggle notebook
+  version `2`, and the pinned public Kaggle model/runtime links in the organizer
+  form.
+
+## 2026-07-20 - Final compliance refresh and disclosure
+
+- Preserve the scored v91 inference logic. Do not remove or silently rewrite
+  citation-backed fact records solely to make the package appear cleaner,
+  because that would no longer reproduce submission `54836339`.
+- Disclose the unresolved Rule 4(b) interpretation: 96 manually researched
+  prompts exactly match Phase 1 prompts, no hidden labels were available or
+  used, and organizer clarification has been requested but not received.
+- Publish original Huntrix code under MIT and retain upstream licenses. Include
+  the complete llama.cpp MIT notice, Apache-2.0 and GPL-3.0 texts, and a
+  third-party status table. Do not assert that public availability grants a
+  redistribution license for the three upstream repositories with no declared
+  license.
+- Repair the runtime dataset after Kaggle CLI version 2 skipped its directory.
+  Version 4 restores the complete tree using `--dir-mode zip`; version 3 used
+  the wrong archive mode and is not the submitted runtime version.
+- Accept Kaggle notebook version 3 only after its raw-input output is
+  byte-identical to scored v91. Freeze runtime dataset version 4, CUDA dataset
+  version 2, Kaggle notebook version 3, and public GitHub package commit
+  `26fefdbbd054d0069914bf66dcb79aa59d64fbc0`.
+
+## 2026-07-22 - Replace the draft report with an ACL-compliant four-page paper
+
+- Replace the former IEEE/US-Letter report with the unmodified official ACL
+  final template on A4 paper, pinned to upstream commit
+  `d5adc823ff0f80f98c80405ca0ab66c68e684409`.
+- Keep exactly four pages of main content. Begin the references on page 5 and
+  keep them in the same PDF, matching the organizer's "four pages excluding
+  references" requirement.
+- Add explicit methodology, failed-approach analysis, per-split results,
+  deployment measurements, held-out domain-shift handling, limitations, and
+  citations for the principal external Bengali resources.
+- Vendor `acl.sty`, `acl_natbib.bst`, and `references.bib` beside the public
+  source so the report compiles independently. Do not change the frozen
+  inference notebook, model, CUDA runtime, evidence dataset, or predictions.
+
+## 2026-07-23 - Package the final presentation
+
+- Keep the paper's ACL/EMNLP author-year citation convention. Use numbered
+  source markers only in the presentation, where compact citations are easier
+  to read, and provide the complete numbered source map in the rehearsal
+  script.
+- Publish a light-themed 15-slide scientific deck with native editable charts,
+  a routing decision tree, claim-level context verification, a provenance and
+  relation gate, embedded notes on every slide, four named presenter sections,
+  and a matching PDF review copy.
+- Report the deterministic and judge split explicitly: 2,358 of 2,516 rows
+  resolved before LLM inference, while 158 unique rows reached the judge.
+- Preserve the frozen notebook and all evaluation assets. The presentation is
+  documentation only and does not alter the submitted system.
+
+## 2026-07-23 - Replace Phase 2 projections with the measured held-out run
+
+- Treat the organizer-executed 5,000-row notebook as the authoritative runtime
+  measurement: 13,921.91 seconds, or 3:52:01.91, on Tesla T4 x2.
+- Report the distribution shift directly. Phase 1 deterministic coverage was
+  93.72%; Phase 2 deterministic coverage was 4.14%, leaving 4,793 of 5,000
+  rows for the judge.
+- Keep the older same-mix and all-uncertain numbers only as historical
+  experiment records. Do not present them as the Phase 2 result now that a
+  completed held-out execution exists.
+- Do not infer Phase 2 accuracy from runtime, label balance, or the 2,325 judge
+  changes. Wait for an organizer score or ground-truth evaluation.
+- Update documentation, paper, slides, and presenter notes only. Do not modify
+  the frozen inference notebook, model, runtime dataset, CUDA binary, or
+  predictions.

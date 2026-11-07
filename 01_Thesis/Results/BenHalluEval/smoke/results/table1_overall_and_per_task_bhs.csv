@@ -1,0 +1,11 @@
+Model,Prompt_Mode,Task,Track_A_FPR (%),Track_B_FNR (%),BenHalluScore (%),Collapse_Rate (%),Parse_Failure_Rate (%),Avg_Latency_ms,N_Rows,N_Parsed
+mock-baseline,cot,OVERALL,0.0,100.0,50.0,0.0,0.0,0.024825833346161136,120,120
+mock-baseline,cot,bn_qa,0.0,100.0,50.0,0.0,0.0,0.025975675738221536,37,37
+mock-baseline,cot,codemixed_qa,0.0,100.0,50.0,0.0,0.0,0.0213972973044194,37,37
+mock-baseline,cot,summarization,0.0,100.0,50.0,0.0,0.0,0.027012903164206598,31,31
+mock-baseline,cot,math,0.0,100.0,50.0,0.0,0.0,0.025926666724747822,15,15
+mock-baseline,zero_shot,OVERALL,0.0,100.0,50.0,0.0,0.0,0.024669166684058535,120,120
+mock-baseline,zero_shot,bn_qa,0.0,100.0,50.0,0.0,0.0,0.025248648705963057,37,37
+mock-baseline,zero_shot,codemixed_qa,0.0,100.0,50.0,0.0,0.0,0.019867567602518277,37,37
+mock-baseline,zero_shot,summarization,0.0,100.0,50.0,0.0,0.0,0.025099999953864985,31,31
+mock-baseline,zero_shot,math,0.0,100.0,50.0,0.0,0.0,0.03419333334022667,15,15

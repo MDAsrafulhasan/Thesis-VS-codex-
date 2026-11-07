@@ -1,0 +1,17 @@
+[
+  {
+    "idiom": "তালকানা",
+    "rejected_responses": [
+      "ছন্দ বা তাল বুঝতে না পারা, বেসুরা",
+      "বেতাল হওয়া",
+      "তালজ্ঞানহীন"
+    ],
+    "correct_label": 0,
+    "figurative_meaning_bn": "অসাবধান; কাণ্ডজ্ঞানহীন, বিবেচনাবিহীন; ভালো-মন্দ জ্ঞানশূন্য",
+    "reason": "The question asks for the Bengali idiom meaning, while these responses give the literal musical/rhythmic sense.",
+    "sources": [
+      "https://www.kaggle.com/datasets/sakhadib/bangla-bagdhara",
+      "https://www.ajkerpatrika.com/epaper/ajpuetxjfsrr7"
+    ]
+  }
+]

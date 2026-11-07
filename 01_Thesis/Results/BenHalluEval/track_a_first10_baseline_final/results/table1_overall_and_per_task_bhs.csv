@@ -1,0 +1,21 @@
+Model,Prompt_Mode,Task,Track_A_FPR (%),Track_B_FNR (%),BenHalluScore (%),Collapse_Rate (%),Parse_Failure_Rate (%),Avg_Latency_ms,N_Rows,N_Parsed
+bangla-ai-1.7b-q4,zero_shot,OVERALL,37.5,,,20.0,20.0,36966.251740000014,10,8
+bangla-ai-1.7b-q4,zero_shot,bn_qa,37.5,,,20.0,20.0,36966.251740000014,10,8
+bangla-ai-1.7b-q4,zero_shot,codemixed_qa,,,,,,,0,0
+bangla-ai-1.7b-q4,zero_shot,summarization,,,,,,,0,0
+bangla-ai-1.7b-q4,zero_shot,math,,,,,,,0,0
+gemma3:1b,zero_shot,OVERALL,25.0,,,0.0,20.0,3022.4700600000688,10,8
+gemma3:1b,zero_shot,bn_qa,25.0,,,0.0,20.0,3022.4700600000688,10,8
+gemma3:1b,zero_shot,codemixed_qa,,,,,,,0,0
+gemma3:1b,zero_shot,summarization,,,,,,,0,0
+gemma3:1b,zero_shot,math,,,,,,,0,0
+qwen2.5:1.5b,zero_shot,OVERALL,100.0,,,0.0,10.0,6847.8067799997925,10,9
+qwen2.5:1.5b,zero_shot,bn_qa,100.0,,,0.0,10.0,6847.8067799997925,10,9
+qwen2.5:1.5b,zero_shot,codemixed_qa,,,,,,,0,0
+qwen2.5:1.5b,zero_shot,summarization,,,,,,,0,0
+qwen2.5:1.5b,zero_shot,math,,,,,,,0,0
+qwen3:1.7b,zero_shot,OVERALL,10.0,,,0.0,0.0,23322.786579999913,10,10
+qwen3:1.7b,zero_shot,bn_qa,10.0,,,0.0,0.0,23322.786579999913,10,10
+qwen3:1.7b,zero_shot,codemixed_qa,,,,,,,0,0
+qwen3:1.7b,zero_shot,summarization,,,,,,,0,0
+qwen3:1.7b,zero_shot,math,,,,,,,0,0

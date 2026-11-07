@@ -1,0 +1,380 @@
+\documentclass[11pt]{article}
+
+% Official ACL style files, pinned in ACL_STYLE_SOURCE.md.
+\usepackage{acl}
+\usepackage{times}
+\usepackage{latexsym}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{microtype}
+\usepackage{inconsolata}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{pgfplots}
+
+\usetikzlibrary{arrows.meta,positioning,fit,shapes.geometric}
+\pgfplotsset{compat=1.18}
+
+\definecolor{huntrixblue}{HTML}{1F5A7A}
+\definecolor{huntrixteal}{HTML}{2A8C82}
+\definecolor{huntrixgold}{HTML}{D59B32}
+\definecolor{huntrixred}{HTML}{B5483A}
+\definecolor{huntrixgray}{HTML}{EEF2F4}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=huntrixblue,
+  citecolor=huntrixblue,
+  urlcolor=huntrixblue,
+  pdftitle={Evidence-First Bengali Hallucination Detection},
+  pdfauthor={Touhidul Alam Seyam, MD. Abtahee Kabir, Joyeta Barua Moni, and Noore Tamanna Orny},
+  pdfsubject={Four-page ACL-style report for the IUT 12th ICT FEST Datathon},
+  pdfkeywords={Bengali, hallucination detection, selective inference, evidence routing, reproducibility}
+}
+
+\newcommand{\labelzero}{\texttt{label=0}}
+\newcommand{\labelone}{\texttt{label=1}}
+\newcommand{\code}[1]{\texttt{#1}}
+
+\title{Evidence-First Bengali Hallucination Detection:\\
+A Deterministic Selective Cascade}
+
+\author{
+  \textbf{Touhidul Alam Seyam\textsuperscript{1}} \quad
+  \textbf{MD. Abtahee Kabir\textsuperscript{2}} \quad
+  \textbf{Joyeta Barua Moni\textsuperscript{2}} \\
+  \textbf{Noore Tamanna Orny\textsuperscript{2}} \\
+  \textsuperscript{1}BGC Trust University Bangladesh \quad
+  \textsuperscript{2}Chittagong University of Engineering \& Technology \\
+  Team Huntrix, IUT 12th ICT FEST Datathon, 2026
+}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We study selective inference for Bengali hallucination detection. Task-specific solvers, context grounding, and relation-typed evidence act first; a quantized open-weight model judges abstentions. Phase 1 public and private macro-F1 were 0.967 and 0.982. On 299 released labels, macro-F1 is 0.9933, with 225 deterministic rows classified without error. Three T4$\times$2 runs reproduced the scored 2,516-row output. In the organizer-executed 5,000-row Phase 2 run, 4,793 rows reached the judge and inference took 3~hours 52~minutes \citep{phase2run}. The official Phase 2 score was 0.90144, ranking seventh among 32 teams \citep{phase2results}. These results expose the trade-off between strict evidence admission, abstention, generalization, and runtime under source shift.
+\end{abstract}
+
+\section{Introduction}
+
+The Bengali LLM Hallucination Detection Challenge asks whether a candidate response is fabricated, unsupported, or factually wrong (\labelzero), or faithful (\labelone). A row contains a Bengali prompt, a response, and sometimes a supporting context. The released development set has 299 labels; Phase 1 contains 2,516 unlabeled rows. The held-out Phase 2 set contains approximately 5,000 rows from a wider range of sources \citep{competition,phase2}.
+
+This is not one homogeneous classification problem. The benchmark mixes context entailment, arithmetic, multiple-choice questions, morphology, idioms, legislation, history, literature, and civic information. It also inherits task diversity from Bengali hallucination research such as BenHalluEval \citep{benhallu}. A generic LLM prompt must solve all of these relations with one evidence policy, and our early judges were both prompt-sensitive and expensive.
+
+Our central decision was therefore to make the classifier selective. A deterministic component may label a row only when its scope, evidence source, and semantic relation are explicit. Otherwise it abstains and sends the row to a bounded LLM judge. This separation gives exact tasks to exact methods and reserves model capacity for genuine ambiguity. The final system has three goals: high recall for the hallucinated class, protection against semantically related but irrelevant retrieval, and reproducible offline execution on Kaggle T4$\times$2.
+
+\section{Method}
+
+Figure~\ref{fig:architecture} shows the frozen v91 cascade. For input row $x$, the router returns either a label $d(x)\in\{0,1\}$ with provenance or an abstention symbol $\bot$. The final prediction is
+\[
+\hat{y}(x)=
+\begin{cases}
+d(x), & d(x)\neq\bot,\\
+J(x), & d(x)=\bot,
+\end{cases}
+\]
+where $J$ is a fixed-order, grammar-constrained open-weight judge.
+
+\begin{figure*}[t]
+\centering
+\resizebox{0.96\textwidth}{!}{%
+\begin{tikzpicture}[
+  node distance=5.5mm and 7mm,
+  every node/.style={font=\small},
+  stage/.style={draw=huntrixblue, rounded corners=2pt, fill=huntrixgray,
+                minimum height=9mm, align=center, text width=27mm},
+  evidence/.style={draw=huntrixteal, rounded corners=2pt, fill=huntrixteal!8,
+                   minimum height=9mm, align=center, text width=30mm},
+  decision/.style={diamond, draw=huntrixgold!80!black, fill=huntrixgold!12,
+                   aspect=2.2, align=center, inner sep=2pt},
+  judge/.style={draw=huntrixred, rounded corners=2pt, fill=huntrixred!8,
+                minimum height=9mm, align=center, text width=29mm},
+  arrow/.style={-{Latex[length=2mm]}, thick, draw=black!68}
+]
+\node[stage] (input) {context, prompt, response};
+\node[stage, right=of input] (norm) {Unicode, digit, option, punctuation, and alias normalization};
+\node[evidence, right=of norm, yshift=14mm] (lineage) {exact source lineage and answer-bank consensus};
+\node[evidence, right=of norm] (structured) {numeric, MCQ, morphology, and context solvers};
+\node[evidence, right=of norm, yshift=-14mm] (typed) {idiom, legal, and two-source typed evidence};
+\node[decision, right=13mm of structured] (resolved) {resolved?};
+\node[stage, right=12mm of resolved, yshift=10mm] (emit) {emit binary label and provenance};
+\node[judge, right=12mm of resolved, yshift=-10mm] (llm) {fixed-order Qwen3.6 binary judge};
+\node[stage, right=of emit, yshift=-10mm] (csv) {\code{id,label} submission};
+
+\draw[arrow] (input) -- (norm);
+\draw[arrow] (norm.east) -- ++(3mm,0) |- (lineage.west);
+\draw[arrow] (norm) -- (structured);
+\draw[arrow] (norm.east) -- ++(3mm,0) |- (typed.west);
+\draw[arrow] (lineage.east) -- ++(3mm,0) |- (resolved.west);
+\draw[arrow] (structured) -- (resolved);
+\draw[arrow] (typed.east) -- ++(3mm,0) |- (resolved.west);
+\draw[arrow] (resolved) -- node[above,sloped]{yes} (emit);
+\draw[arrow] (resolved) -- node[below,sloped]{no} (llm);
+\draw[arrow] (emit) -- (csv);
+\draw[arrow] (llm) -- (csv);
+
+\node[draw=black!30, dashed, rounded corners=3pt, fit=(lineage)(structured)(typed),
+      label={[font=\small\bfseries]above:high-precision deterministic router},
+      inner sep=3mm] {};
+\end{tikzpicture}%
+}
+\caption{Frozen v91 inference path. Deterministic stages emit a label only for a relation-matched case; unresolved rows reach the open-weight judge.}
+\label{fig:architecture}
+\end{figure*}
+
+\subsection{Normalization and Routing}
+
+The first stage normalizes Bengali and Latin digits, Unicode punctuation, spacing, answer aliases, and inline answer options. It also distinguishes absent context, evidential context, and instructional text. The last distinction matters because a grammar instruction can mention the requested concept without providing the answer.
+
+Exact lineage checks match public benchmark or question-answer records only when normalized prompt, response, and applicable context fields agree. Reliability-weighted answer banks can resolve a row when the accepted answer relation is unambiguous. Approximate retrieval may nominate a candidate, but cannot overrule an exact source or an intrinsic context contradiction.
+
+\subsection{Structured and Context Solvers}
+
+Small solvers cover arithmetic, numeric ranges, Bengali compound number words, multiple-choice serialization, morphology, compounds, and prefixes. Relation guards bind dates or numbers to the clause containing the requested entity and predicate. This prevents a valid year elsewhere in a passage from answering the wrong birth, death, publication, or establishment question.
+
+For grounded rows, response claims are checked against the supplied passage. Exact answer spans are accepted only inside a semicolon-aware clause that also contains prompt anchors. Named entities, dates, negation, and alternatives are checked before external facts may contribute. Supplied context takes precedence over outside plausibility.
+
+\subsection{Evidence Admission and Conflict Resolution}
+
+Figure~\ref{fig:verification} formalizes the two main deterministic decisions. Idiom records distinguish figurative meaning from literal gloss, a known weakness in Bengali LLMs \citep{idiom}. Legal records require the named act and section. A free-form fact requires two independent public sources and a typed relation. These guards were added after broad retrieval repeatedly found relevant passages that answered a neighboring question.
+
+\begin{figure}[t]
+\centering
+\resizebox{\columnwidth}{!}{%
+\begin{tikzpicture}[
+  every node/.style={font=\scriptsize},
+  box/.style={draw=huntrixblue, rounded corners=1.5pt, fill=huntrixgray,
+              minimum height=6.8mm, align=center, text width=17mm},
+  gate/.style={draw=huntrixteal, rounded corners=1.5pt, fill=huntrixteal!9,
+               minimum height=6.8mm, align=center, text width=15mm},
+  outcome/.style={draw=huntrixgold!85!black, rounded corners=1.5pt,
+                  fill=huntrixgold!12, minimum height=6.8mm,
+                  align=center, text width=17mm},
+  arrow/.style={-{Latex[length=1.6mm]}, thick, draw=black!62}
+]
+\node[font=\small\bfseries, anchor=west] at (0,1.05) {(a) Claim-level context verification};
+\node[box] (clauses) at (0.9,0) {context\\clauses};
+\node[box] (claims) at (3.1,0) {atomic response\\claims $c_i$};
+\node[box] (anchors) at (5.3,0) {entity, number,\\negation, relation};
+\node[box] (align) at (7.5,0) {best applicable\\clause};
+\node[outcome] (state) at (9.7,0) {$s_i\in\{S,C,U\}$};
+\draw[arrow] (clauses) -- (claims);
+\draw[arrow] (claims) -- (anchors);
+\draw[arrow] (anchors) -- (align);
+\draw[arrow] (align) -- (state);
+\node[anchor=west, text width=104mm, align=center] at (0,-0.92)
+  {$\exists i:s_i=C\Rightarrow\labelzero$ \quad
+   $\forall i:s_i=S$ and no extra claim $\Rightarrow\labelone$ \quad
+   otherwise $\Rightarrow\bot$};
+
+\node[font=\small\bfseries, anchor=west] at (0,-2.0) {(b) Typed evidence admission};
+\node[box] (record) at (0.9,-3.05) {candidate record\\+ provenance};
+\node[gate] (entity) at (3.0,-3.05) {entity\\matches};
+\node[gate] (predicate) at (5.0,-3.05) {predicate\\matches};
+\node[gate] (value) at (7.0,-3.05) {value\\equivalent};
+\node[gate] (conflict) at (9.0,-3.05) {no equal-trust\\conflict};
+\node[outcome] (emit) at (11.15,-3.05) {label +\\decision trace};
+\draw[arrow] (record) -- (entity);
+\draw[arrow] (entity) -- (predicate);
+\draw[arrow] (predicate) -- (value);
+\draw[arrow] (value) -- (conflict);
+\draw[arrow] (conflict) -- (emit);
+\node[anchor=west, text width=104mm, align=center, text=huntrixred] at (0,-3.96)
+  {failure at any gate $\Rightarrow\bot$; fuzzy retrieval proposes candidates but never emits a label};
+\end{tikzpicture}%
+}
+\caption{Deterministic decision diagrams. (a) Context claims are aligned to an anchored clause and aggregated from supported ($S$), contradicted ($C$), or unknown ($U$) states. (b) External evidence must pass entity, predicate, value, and conflict gates; any failure produces abstention ($\bot$).}
+\label{fig:verification}
+\end{figure}
+
+Every proposal records source family, relation, and confidence. Intrinsic context contradiction has highest priority. Exact authoritative lineage follows, then relation-aligned parsing and consensus evidence. If sources describe different relations, neither decides the row. If they claim the same relation but disagree, the system requires a stronger exact source or abstains. We accepted a larger judge queue when that was safer than allowing weak retrieval to override a trusted decision.
+
+\subsection{Selective Open-Weight Judge}
+
+The final Phase 1 router leaves 158 rows unresolved. They are sorted by row ID and evaluated in fixed batches. Context rows receive one entailment view. No-context rows receive up to three short views: factual verification, strict exam grading, and a zero-bias check. A faithful decision requires unanimous positive votes; evaluation stops after the first zero.
+
+The judge is Qwen3.6-27B Q4\_K\_P, a 16.332~GiB GGUF checkpoint, served by pinned \texttt{llama.cpp} b9637 across two T4 GPUs \citep{qwen,llamacpp}. Thinking is disabled, and a grammar restricts generation to one binary token. Seeds, row order, prompt order, and batch boundaries are fixed.
+
+\section{Experiments}
+
+\subsection{Protocol}
+
+We used the 299 released labels for validation and error analysis, not as proof that a large fine-tune would generalize. We tracked macro-F1, per-class F1, accuracy, deterministic coverage, and context/no-context behavior. A candidate rule entered the system only when it expressed a reusable relation and passed the regression suite. The public leaderboard represented roughly 30\% of Phase 1, so a rounded score change was treated as aggregate evidence rather than a row label.
+
+\begin{figure*}[t]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+  at={(0,0)}, anchor=west,
+  width=0.61\textwidth, height=42mm,
+  xmin=0, xmax=10, ymin=0.64, ymax=0.985,
+  xtick={0,1,2,3,4,5,6,7,8,9,10},
+  xticklabels={Base,Gemma,Qwen,v6,v15,v23,v37,v60,v85,v87,v91},
+  x tick label style={font=\small,rotate=42,anchor=east},
+  ytick={0.65,0.75,0.85,0.95}, tick label style={font=\small},
+  ylabel={Public macro-F1}, label style={font=\small},
+  ymajorgrids, grid style={black!10}, axis line style={draw=black!55}
+]
+\addplot[huntrixblue, very thick, mark=*, mark size=2pt]
+coordinates {(0,0.657) (1,0.742) (2,0.797) (3,0.903) (4,0.934)
+ (5,0.945) (6,0.961) (7,0.963) (8,0.966) (9,0.965) (10,0.967)};
+\end{axis}
+\begin{axis}[
+  at={(0.66\textwidth,0)}, anchor=west,
+  width=0.29\textwidth, height=42mm,
+  ybar, bar width=7mm, ymin=0, ymax=680,
+  ylabel={Rows sent to judge}, label style={font=\small},
+  symbolic x coords={Early,v37,v85,v91}, xtick=data,
+  x tick label style={font=\small,rotate=35,anchor=east},
+  tick label style={font=\small}, nodes near coords,
+  nodes near coords style={font=\small}, ymajorgrids,
+  grid style={black!10}, axis line style={draw=black!55},
+  enlarge x limits=0.2
+]
+\addplot[fill=huntrixteal!70, draw=huntrixteal!90!black]
+coordinates {(Early,620) (v37,312) (v85,193) (v91,158)};
+\end{axis}
+\end{tikzpicture}
+\caption{Left: public evaluation across selected versions. Right: the Phase 1 judge queue as routing rules matured. v6 marks the pivot from uniform judging to source- and task-conditioned decisions; v87 records a regression that was reverted.}
+\label{fig:progress}
+\end{figure*}
+
+\subsection{Iteration and Error Analysis}
+
+Figure~\ref{fig:progress} and Table~\ref{tab:versions} summarize the experiment path. Character and embedding models established a 0.657 baseline; Gemma and Qwen improved factual reasoning but remained prompt-sensitive. v6 shifted the hypothesis from model selection to decision routing. v37 tightened provenance, v87 exposed weakly typed facts and was reverted, and v91 added relation guards. The curve records pivots and reversions, not monotonic progress.
+
+\begin{table}[t]
+\caption{Representative scored iterations.}
+\label{tab:versions}
+\centering
+\small
+\begin{tabularx}{\columnwidth}{@{}l r X@{}}
+\toprule
+Version & Public F1 & Main change \\
+\midrule
+Baseline & 0.657 & character and embedding models \\
+Gemma & 0.742 & 12B QAT generic judge \\
+Qwen & 0.797 & 27B factual judge \\
+v6 & 0.903 & source and structured routing \\
+v23 & 0.945 & provenance repair \\
+v37 & 0.961 & source-lineage audit \\
+v60 & 0.963 & conservative fact corrections \\
+v85 & 0.966 & reproducible two-source anchor \\
+v87 & 0.965 & plausible edits; reverted \\
+v91 & \textbf{0.967} & typed idiom and relation guards \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Several plausible approaches failed. Prompt voting reached 0.8512 locally but 0.783 publicly. TF-IDF reached 0.8261 out of fold but missed no-context cultural facts. QA retrieval often found the right entity and wrong relation; global substrings confused instructions with evidence. v87 made two plausible fact edits and regressed from 0.966 to 0.965, so we reverted it.
+
+The decision log converted these failures into policy: retrieval became proposal-only, context rules became relation-aware, and facts required provenance plus a typed predicate. Admitted changes had to emit a trace and preserve 249 regression tests, including 225 deterministic controls.
+
+\subsection{Results}
+
+Table~\ref{tab:results} separates released-label validation from aggregate leaderboard evaluation. The cascade makes two errors on 299 labels; both concern inconsistent controls that we did not patch row by row. The deterministic subset covers 225 rows without error. Phase 1 public and private macro-F1 were 0.967 and 0.982. The official Phase 2 score was 0.90144, placing Huntrix seventh among 32 teams \citep{phase2results}. These aggregate scores neither identify row-level errors nor isolate the effect of each v91 rule.
+
+\begin{table}[t]
+\caption{Validation and official leaderboard results.}
+\label{tab:results}
+\centering
+\small
+\begin{tabular}{@{}lrl@{}}
+\toprule
+Evaluation & Macro-F1 & Other result \\
+\midrule
+Released set (299) & 0.993264 & accuracy 0.993311 \\
+Deterministic (225) & 1.000000 & label-0 F1 1.000000 \\
+Phase 1 public & 0.967 & aggregate held-out split \\
+Phase 1 private & \textbf{0.982} & aggregate final split \\
+Phase 2 private & 0.90144 & rank 7 of 32 teams \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Reproducibility and Phase 2}
+
+\subsection{Frozen Inference and Determinism}
+
+The notebook reads the organizer's literal path:
+
+\begin{quote}
+\small\ttfamily
+/kaggle/input/competitions/\\
+bengali-hallucination/test set.csv
+\end{quote}
+
+It does not search for alternate filenames, branch on row count, call an external API, or load a saved Phase 1 prediction vector. The organizer can replace the file mounted at that path without editing a variable.
+
+Reproduction requires more than a seed. The notebook sorts unresolved IDs, fixes batch boundaries, pins both \texttt{llama.cpp} server commands, waits for health checks, and assigns each view to the same server. The CSV writer preserves incoming IDs and a fixed \code{id,label} column order. Three full runs produced byte-identical files matching scored submission 54836339.
+
+\begin{table}[t]
+\caption{Frozen deployment measurements.}
+\label{tab:runtime}
+\centering
+\small
+\begin{tabularx}{\columnwidth}{@{}p{0.34\columnwidth}X@{}}
+\toprule
+Property & Measurement \\
+\midrule
+Hardware & Kaggle Tesla T4$\times$2; offline \\
+Model & Qwen3.6-27B Q4\_K\_P; 16.332~GiB \\
+2,516-row runs & 440.87, 527.03, 593.43 seconds \\
+Phase 2 held-out run & 13,921.91 seconds (3:52:01.91) \\
+Phase 2 routing & 207 deterministic; 4,793 judged \\
+Phase 1 output & 1,181 zeros; 1,335 ones \\
+Regression suite & 249 tests passing at freeze \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{External Resources}
+
+The evidence inventory combines public Bengali resources rather than treating any one corpus as universal truth. QA lineage came from TyDi QA, Suman Bengali QA, BUFFET, SQuAD-BN, BanglaRQA, IndicQA, Aya Indic, and public Bengali QA collections \citep{tydi,sumanqa,buffet,squadbn,banglarqa,indicqa,ayaindic,qa70k}. Domain evidence included IndicXNLI, Bengali Wikipedia, textbooks, newspapers, Bangladesh legal corpora, history and literature QA, and public exam banks \citep{indicxnli,bnwiki,banglatextbook,banglanews,legalacts,lawqna,preindependence,bonolota,literatureqa,banglammlu,bcsqs,bcs1040}. Bengali idiom and lexical records came from Bangla Bagdhara, BLUCK, BengaliDictionary, and a word-analogy collection \citep{bagdhara,bluck,bengalidict,wordanalogy}. Wikidata supplied only corroborating structured facts \citep{wikidata}. Sources with unclear redistribution terms were used for audit or retrieval, not copied into the public package.
+
+\subsection{Held-Out Domain Shift}
+
+The organizer preview names Common Crawl, Bengali Wikipedia, Banglapedia, government service pages, recent newspapers, legislation, NCTB textbooks, and Bengali literature \citep{phase2}. The completed 5,000-row held-out run confirmed the expected shift: deterministic coverage fell from 93.72\% in Phase 1 to 4.14\% in Phase 2, and 4,793 rows reached the judge \citep{phase2run}. Despite this large transfer to the general judge, the official score was 0.90144 and rank was 7/32 \citep{phase2results}. Table~\ref{tab:shift} states the fallback policy.
+
+\begin{table}[t]
+\caption{Routing policy for announced Phase 2 sources.}
+\label{tab:shift}
+\centering
+\small
+\begin{tabularx}{\columnwidth}{@{}p{0.31\columnwidth}X@{}}
+\toprule
+Source family & Primary route; abstention trigger \\
+\midrule
+Common Crawl/news & Context check or judge; unsupported outside claim \\
+Wikipedia/\allowbreak Banglapedia & Exact entity-relation match; alias ambiguity \\
+Government services & Clause, date, fee, and office checks; stale page \\
+Legislation & Exact act and section; conflicting or absent provision \\
+NCTB/literature & Structured solver or exact work relation; edition mismatch \\
+Unknown & Skip lineage and invoke the fixed judge \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Unfamiliar sources bypass lineage and reach context reasoning or the judge; approximate matches are never forced. The measured Phase 2 run completed in 13,921.91 seconds, leaving 5~hours 7~minutes 58~seconds of headroom under the nine-hour limit.
+
+No fine-tuned checkpoint is required. The package pins the public Qwen quantization, CUDA runtime, evidence dataset, and inference notebook. The router contains short, citation-backed facts from public sources, but no hidden labels or manually assigned row-label vector. Every output is recomputed from the input row and frozen assets.
+
+\section{Conclusion}
+
+Matching the decision method to the task mattered more than enlarging the model. Provenance and typed solvers handled clear relations; the fixed judge handled uncertainty. The pipeline reproduced Phase 1, completed Phase 2 in 3:52, scored 0.90144 at rank 7/32, and retained a trace for every decision.
+
+\section*{Limitations}
+
+The Phase 2 score is aggregate; no row labels or per-domain breakdown were released. The 299 released labels are too small for reliable domain estimates, and exact lineage cannot replace reasoning on unfamiliar civic, legal, textbook, and news content. Evidence can age, conflict, or carry licensing constraints; high-stakes civic use still requires human escalation.
+
+% The organizer's four-page limit excludes references. This explicit page break
+% guarantees that the body occupies pages 1--4 and references begin afterward.
+\clearpage
+\bibliography{references}
+
+\end{document}

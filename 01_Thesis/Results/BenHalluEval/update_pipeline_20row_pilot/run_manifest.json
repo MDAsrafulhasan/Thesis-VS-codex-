@@ -1,0 +1,147 @@
+{
+  "created_at_utc": "2026-11-07T16:52:27Z",
+  "train_csv": "C:\\Users\\mdasr\\Desktop\\Thesis - VS\\01_Thesis\\Data\\BenHalluEval\\Processed\\Splits\\benhallu_stratified_10pct.csv",
+  "train_sha256": "df8521d3acdb709d62dee9efec150ef2363efb6dc57009d0e227d7fe6205e92e",
+  "evaluation_csv": "C:\\Users\\mdasr\\Desktop\\Thesis - VS\\01_Thesis\\Data\\BenHalluEval\\Processed\\Splits\\track_a_b_first10_each.csv",
+  "evaluation_sha256": "3e335d3c30f80004fe02db111e623c281b953b22a875ad01da061098ee7497d4",
+  "train_rows_available_after_question_group_exclusion": 1595,
+  "train_rows_used": 20,
+  "training_sample_size_argument": 20,
+  "evaluation_rows": 20,
+  "train_rows_removed_for_evaluation_question_overlap": 5,
+  "track_counts": {
+    "Track_A": 10,
+    "Track_B": 10
+  },
+  "training_track_counts": {
+    "Track_A": 10,
+    "Track_B": 10
+  },
+  "training_sampling": {
+    "requested_sample_size": 20,
+    "selection": "deterministic, approximately equal per-track sample; Track_A seed 42, Track_B seed 43"
+  },
+  "task_counts": {
+    "bn_qa": 20
+  },
+  "label_mapping": {
+    "0": "faithful / Track_A",
+    "1": "hallucinated / Track_B"
+  },
+  "weights": {
+    "w_a": 0.5,
+    "w_b": 0.5
+  },
+  "models": {
+    "e5": "intfloat/multilingual-e5-large",
+    "reranker": "BAAI/bge-reranker-v2-m3",
+    "nli": "MoritzLaurer/mDeBERTa-v3-base-mnli-xnli",
+    "xlmr": "FacebookAI/xlm-roberta-base",
+    "query_generator": "qwen3:1.7b",
+    "qa": "gemma3:1b",
+    "logit_judge": "qwen3:1.7b"
+  },
+  "model_cache_dir": "C:\\Users\\mdasr\\AppData\\Local\\Temp\\benhallu_update_models\\hub",
+  "model_repository_revisions": {
+    "e5": "3d7cfbdacd47fdda877c5cd8a79fbcc4f2a574f3",
+    "reranker": "953dc6f6f85a1b2dbfca4c34a2796e7dde08d41e",
+    "nli": "8adb042d524ecd5c26d3e3ba0e3fbcf7e2d0864c",
+    "xlmr": "e73636d4f797dec63c3081bb6ed5c7b0bb3f2089"
+  },
+  "ollama_model_digests": {
+    "qwen3:1.7b": "8f68893c685c3ddff2aa3fffce2aa60a30bb2da65ca488b61fff134a4d1730e7",
+    "gemma3:1b": "97558784bdc9175075a72655bf360b15da17df6b3b9e5182af9f8c0c8e58ba7c"
+  },
+  "retrieval": {
+    "rrf_k": 60,
+    "top_k": 60,
+    "evidence_top_n": 5
+  },
+  "meta_classifier": {
+    "selected_C": 1.0,
+    "threshold_open": 0.42637318302784405,
+    "threshold_closed": 0.761995780650554,
+    "training_oof_bhs_by_C": {
+      "0.1": 30.000000000000004,
+      "1.0": 30.000000000000004,
+      "10.0": 30.000000000000004
+    },
+    "training_oof_thresholds_by_C": {
+      "0.1": {
+        "open": 0.4308052219710058,
+        "closed": 0.5
+      },
+      "1.0": {
+        "open": 0.42637318302784405,
+        "closed": 0.761995780650554
+      },
+      "10.0": {
+        "open": 0.39269255948657056,
+        "closed": 0.8083014888355496
+      }
+    },
+    "seeds": [
+      42,
+      43,
+      44,
+      45,
+      46
+    ],
+    "folds": 5,
+    "memory_overrides": 0,
+    "training_rows": 20,
+    "evaluation_rows": 20
+  },
+  "decoding": {
+    "temperature": 0.0,
+    "seed": 42,
+    "qg_num_predict": 256,
+    "qa_num_predict": 256,
+    "logit_num_predict": 1
+  },
+  "feature_definitions": {
+    "16_semantic": [
+      "whole_entailment_p",
+      "whole_contradiction_p",
+      "whole_neutral_p",
+      "claim_entailment_mean",
+      "claim_entailment_min",
+      "claim_contradiction_max",
+      "claim_contradiction_mean",
+      "claim_neutral_mean",
+      "claim_margin_mean",
+      "claim_margin_min",
+      "claim_support_rate",
+      "claim_contradiction_rate",
+      "negated_claim_contradiction_mean",
+      "qa_answer_entailment_p",
+      "xlmr_bertscore_recall",
+      "e5_retrieval_margin"
+    ],
+    "3_logits": [
+      "p_hallucinated",
+      "logit_margin_hall_minus_faith",
+      "verdict_entropy"
+    ],
+    "10_lexical": [
+      "token_fertility",
+      "word_jaccard_answer_evidence",
+      "char3_jaccard_answer_evidence",
+      "word_precision_answer_evidence",
+      "word_recall_answer_evidence",
+      "word_f1_answer_evidence",
+      "numeric_match_ratio",
+      "negation_mismatch",
+      "bge_reranker_margin",
+      "question_answer_overlap"
+    ],
+    "char_tfidf": "character n-grams 2-5, max_features=25000, training-only vocabulary"
+  },
+  "limitations": [
+    "The architecture images do not provide the original feature specification; this run uses the documented features above.",
+    "The default Banglish map only transliterates listed words; unrecognized Latin words are retained and logged.",
+    "External retrieval uses the supplied row context or leakage-filtered training contexts; no separate external corpus was supplied.",
+    "mDeBERTa and XLM-R transfer scores are model features, not Bengali-specific calibrated probabilities.",
+    "The pipeline detects hallucinations; it does not rewrite or correct candidate answers."
+  ]
+}

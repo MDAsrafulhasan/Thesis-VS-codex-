@@ -1,0 +1,5 @@
+Model,Task,BHS_ZeroShot (%),BHS_CoT (%),Delta_BHS
+mock-baseline,bn_qa,50.0,50.0,0.0
+mock-baseline,codemixed_qa,50.0,50.0,0.0
+mock-baseline,summarization,50.0,50.0,0.0
+mock-baseline,math,50.0,50.0,0.0
