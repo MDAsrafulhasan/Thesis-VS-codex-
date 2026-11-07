@@ -1,0 +1,1781 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-11-06T13:00:31.338927+00:00",
+  "purpose": "Immutable pre-organization fingerprints; verify byte-for-byte preservation after moving. Do not refresh this baseline when rebuilding the catalog.",
+  "moves": {
+    "All data": "data/raw/benhallu",
+    "IUT_DATATHON_HALLU-main": "references/IUT_DATATHON_HALLU-main",
+    "IUTCSFESTDATATHON-main": "references/IUTCSFESTDATATHON-main",
+    "make_splits.py": "evaluation/make_splits.py",
+    "eval.py": "evaluation/eval.py",
+    "test_pipeline.py": "evaluation/test_pipeline.py"
+  },
+  "file_count": 294,
+  "total_bytes": 40585529,
+  "files": [
+    {
+      "original_path": "All data/Track-A/banglahallueval_qa_1000.csv",
+      "path": "data/raw/benhallu/Track-A/banglahallueval_qa_1000.csv",
+      "bytes": 1870840,
+      "sha256": "9a73c1b475226afdbe98391ee14f70b8a85dccdd205370a8745754e5baa8cde3"
+    },
+    {
+      "original_path": "All data/Track-A/banglahallueval_summarization_dataset_1000.csv",
+      "path": "data/raw/benhallu/Track-A/banglahallueval_summarization_dataset_1000.csv",
+      "bytes": 1202619,
+      "sha256": "c27367e4cdfaaf3310885cedd6845bb4ad540fbb46045c1eed753a72f1c6422b"
+    },
+    {
+      "original_path": "All data/Track-A/codemix_1000.csv",
+      "path": "data/raw/benhallu/Track-A/codemix_1000.csv",
+      "bytes": 2427965,
+      "sha256": "1703645428a036c7978147674f0c6d4de20f00c90b6de5777201301d2f54aa00"
+    },
+    {
+      "original_path": "All data/Track-A/somadhan_1000_main_ordered.csv",
+      "path": "data/raw/benhallu/Track-A/somadhan_1000_main_ordered.csv",
+      "bytes": 1955100,
+      "sha256": "6340e0eafd5b70e9321a4451f6f915186b326977987289f9c879457179a8a702"
+    },
+    {
+      "original_path": "All data/Track-B/codemix_4000.csv",
+      "path": "data/raw/benhallu/Track-B/codemix_4000.csv",
+      "bytes": 2820414,
+      "sha256": "4742e8fecbe8c5960fd4d0e5ed444fc7396dd4046dadef3398843115b07139a7"
+    },
+    {
+      "original_path": "All data/Track-B/qa_4000.csv",
+      "path": "data/raw/benhallu/Track-B/qa_4000.csv",
+      "bytes": 8197222,
+      "sha256": "fba5c27869540c7d79cd559fe96a0fcd226af704165c6e381df9deb20fe672f3"
+    },
+    {
+      "original_path": "All data/Track-B/reasoning_1000.csv",
+      "path": "data/raw/benhallu/Track-B/reasoning_1000.csv",
+      "bytes": 4618143,
+      "sha256": "7284ecf9d439119db4b0e657aa30453657e87fe689e535a1f3d086e876e47089"
+    },
+    {
+      "original_path": "All data/Track-B/summarization_3000_corrected.csv",
+      "path": "data/raw/benhallu/Track-B/summarization_3000_corrected.csv",
+      "bytes": 4976877,
+      "sha256": "af7a5ef3e4ff0d9166a8a551a17323b2a4771e2f08283dd0995fd6a16f492bcb"
+    },
+    {
+      "original_path": "IUT_DATATHON_HALLU-main/.gitignore",
+      "path": "references/IUT_DATATHON_HALLU-main/.gitignore",
+      "bytes": 4628,
+      "sha256": "fe07aeae2cfd1ff2ce4c0c5911dfbb550a3f1065e213175039abadfc3a5a15bb"
+    },
+    {
+      "original_path": "IUT_DATATHON_HALLU-main/CUET_AL_Masaar_inference_notebook.ipynb",
+      "path": "references/IUT_DATATHON_HALLU-main/CUET_AL_Masaar_inference_notebook.ipynb",
+      "bytes": 102806,
+      "sha256": "94edeeab4f35118ee2539384c2c0a2a333d80ea6ea95591f4b5c83c66ec1cb64"
+    },
+    {
+      "original_path": "IUT_DATATHON_HALLU-main/CUET_AL_Masaar_presentation.pdf",
+      "path": "references/IUT_DATATHON_HALLU-main/CUET_AL_Masaar_presentation.pdf",
+      "bytes": 653865,
+      "sha256": "f3cb5d7ee46cc459934e5766b5ae7cc1fb48e76c137319813442c7cc5c6bb512"
+    },
+    {
+      "original_path": "IUT_DATATHON_HALLU-main/CUET_AL_Masaar_report.pdf",
+      "path": "references/IUT_DATATHON_HALLU-main/CUET_AL_Masaar_report.pdf",
+      "bytes": 131039,
+      "sha256": "07d49a94f2a5af73a9d6483182914093ed220c353582aa2076b8c83aa065364e"
+    },
+    {
+      "original_path": "IUT_DATATHON_HALLU-main/LICENSE",
+      "path": "references/IUT_DATATHON_HALLU-main/LICENSE",
+      "bytes": 1070,
+      "sha256": "aaeb1233c843e1140dd2abb00e2c7e7b9c6182643daf3189c015711032267ca2"
+    },
+    {
+      "original_path": "IUT_DATATHON_HALLU-main/README.md",
+      "path": "references/IUT_DATATHON_HALLU-main/README.md",
+      "bytes": 7538,
+      "sha256": "f96a1a06158cbacd8421ec09a445c897c99bfb3f63f33a43435a8ddeaabf3e68"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/.gitignore",
+      "path": "references/IUTCSFESTDATATHON-main/.gitignore",
+      "bytes": 127,
+      "sha256": "33ffe059e9a6da1986053263d49746ae493410c3b6b11635a1232f302c979084"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/AGENTS.md",
+      "path": "references/IUTCSFESTDATATHON-main/AGENTS.md",
+      "bytes": 1525,
+      "sha256": "d229f71bd1d821af2aa7d70b1a04327f27c236f250e7abbbef0da740da455927"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/archive/legacy_docs/submission_v23.md",
+      "path": "references/IUTCSFESTDATATHON-main/archive/legacy_docs/submission_v23.md",
+      "bytes": 11839,
+      "sha256": "c5707f131a48616eee29979ed3606bc6b43136fc84559da38810e72f2f364dc4"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/archive/legacy_notebooks/best_gemma12_qat_submission.ipynb",
+      "path": "references/IUTCSFESTDATATHON-main/archive/legacy_notebooks/best_gemma12_qat_submission.ipynb",
+      "bytes": 16476,
+      "sha256": "3ce2d564b3a44f68ad5dc71b09e08a61c70e1a701d86891437eaefedfe4af510"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/archive/legacy_notebooks/starter-notebook-datathon.ipynb",
+      "path": "references/IUTCSFESTDATATHON-main/archive/legacy_notebooks/starter-notebook-datathon.ipynb",
+      "bytes": 175072,
+      "sha256": "35f3a4d83f777984e128a074df5f0b9f6e38e145c0934942f9972c583ad64dad"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/archive/README.md",
+      "path": "references/IUTCSFESTDATATHON-main/archive/README.md",
+      "bytes": 649,
+      "sha256": "9354265f3eb623e941f980fdba0e1bc33cbac516595a610e8316bb6d93352d90"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/bengali-hallucination/dataset samples.json",
+      "path": "references/IUTCSFESTDATATHON-main/bengali-hallucination/dataset samples.json",
+      "bytes": 289118,
+      "sha256": "f1540e702761aa451245abb6b5dcc3934f8f3d16c5baa8851b41dbc66da24b28"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/bengali-hallucination/sample submission.csv",
+      "path": "references/IUTCSFESTDATATHON-main/bengali-hallucination/sample submission.csv",
+      "bytes": 19029,
+      "sha256": "c02eaf0f12504c79cc2c8874cd012f4829bc1d2e00eea1ed0d50be1867541e55"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/bengali-hallucination/test set.csv",
+      "path": "references/IUTCSFESTDATATHON-main/bengali-hallucination/test set.csv",
+      "bytes": 2329947,
+      "sha256": "db75049956c6fa00e4d9c476716ee34bc4cc17a737f52ada06d2c0f80d567b81"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/DECISION.log",
+      "path": "references/IUTCSFESTDATATHON-main/DECISION.log",
+      "bytes": 63991,
+      "sha256": "5f391565e05f6348770f863c0f4eab61ae2b1a9fdb107ab066f0be56a43c302a"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/docs/assets/leaderboard_progression.png",
+      "path": "references/IUTCSFESTDATATHON-main/docs/assets/leaderboard_progression.png",
+      "bytes": 58333,
+      "sha256": "8bb8d83aa543335ac55cfea9edbe7ddbd5b91e5e67fdac26d5de76d9cd8d19ea"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/docs/assets/pipeline_architecture.png",
+      "path": "references/IUTCSFESTDATATHON-main/docs/assets/pipeline_architecture.png",
+      "bytes": 68003,
+      "sha256": "485763a6b3e71d1161fd251eeec146125325720cc180f6c09e2456254e581c82"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/docs/assets/uncertainty_reduction.png",
+      "path": "references/IUTCSFESTDATATHON-main/docs/assets/uncertainty_reduction.png",
+      "bytes": 43835,
+      "sha256": "0f7ce7d7d39771b9dc57dcdd291927f1733d94126b29e2a99d82bf0c550c2b70"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/docs/BOTTLENECK.md",
+      "path": "references/IUTCSFESTDATATHON-main/docs/BOTTLENECK.md",
+      "bytes": 8910,
+      "sha256": "cc853d80da2f9a0a913e8a1ab29b6bab20e4ffa60cac5441cc5a4004aa9fe819"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/docs/COMMIT_HISTORY.md",
+      "path": "references/IUTCSFESTDATATHON-main/docs/COMMIT_HISTORY.md",
+      "bytes": 8740,
+      "sha256": "3488371d13cf8b85b7e7d1719a766f097fb326afd352ae04cede37de8cbc7ed0"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/docs/COMPLIANCE_REVIEW.md",
+      "path": "references/IUTCSFESTDATATHON-main/docs/COMPLIANCE_REVIEW.md",
+      "bytes": 3477,
+      "sha256": "80714e83765430dba27e40921dcb3745f278c3e1bb71b93e041338c9f902d4cf"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/docs/DATA_SOURCES.md",
+      "path": "references/IUTCSFESTDATATHON-main/docs/DATA_SOURCES.md",
+      "bytes": 6944,
+      "sha256": "2f7ad13b902858d57df66d72ed8b73cc2674b08057a47095cb5939ef05553113"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/docs/FINAL_SUBMISSION_FREEZE.md",
+      "path": "references/IUTCSFESTDATATHON-main/docs/FINAL_SUBMISSION_FREEZE.md",
+      "bytes": 3761,
+      "sha256": "f9f89ead27da85b9b5ec74b2296c3b8b518edc8c85134b1785c3394310e0435c"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/docs/HUNTRIX_PRESENTATION_SCRIPT.md",
+      "path": "references/IUTCSFESTDATATHON-main/docs/HUNTRIX_PRESENTATION_SCRIPT.md",
+      "bytes": 12271,
+      "sha256": "de02cdbda822f74422cb987ae038300283a17e8772a98bcdf197101ebb7182d5"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/docs/JOURNEY.md",
+      "path": "references/IUTCSFESTDATATHON-main/docs/JOURNEY.md",
+      "bytes": 11483,
+      "sha256": "376cc336d0def4e8543ada368e73d1cc43130bba44fb42a79dfeca85ab68d4a3"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/docs/latex/acl.sty",
+      "path": "references/IUTCSFESTDATATHON-main/docs/latex/acl.sty",
+      "bytes": 11615,
+      "sha256": "19dfeddc2c0e448f3926a0bef048a9db3f3611b46265b760caabd7ada4f361de"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/docs/latex/acl_natbib.bst",
+      "path": "references/IUTCSFESTDATATHON-main/docs/latex/acl_natbib.bst",
+      "bytes": 45442,
+      "sha256": "6fbb306202290f4b68e74ac1460a8b27398500cb6dfeb4492e74c457eae7cd1e"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/docs/latex/ACL_STYLE_SOURCE.md",
+      "path": "references/IUTCSFESTDATATHON-main/docs/latex/ACL_STYLE_SOURCE.md",
+      "bytes": 595,
+      "sha256": "e1dccf97917d601282b0aea29fa05a38cb00b5a180ccda7c6371f26f27d5ad57"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/docs/latex/figures/architecture_standalone.tex",
+      "path": "references/IUTCSFESTDATATHON-main/docs/latex/figures/architecture_standalone.tex",
+      "bytes": 2675,
+      "sha256": "d5acb45ec214274b5fb5662081d8555a64f0e5c60529c6b689b30012d453f480"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/docs/latex/figures/context_verification_standalone.tex",
+      "path": "references/IUTCSFESTDATATHON-main/docs/latex/figures/context_verification_standalone.tex",
+      "bytes": 1613,
+      "sha256": "c63b75bc6f7527b98d02117e18265f0a04ff5793a180e2eecc143d87bd7c2a5d"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/docs/latex/figures/progress_standalone.tex",
+      "path": "references/IUTCSFESTDATATHON-main/docs/latex/figures/progress_standalone.tex",
+      "bytes": 1603,
+      "sha256": "b1da910f21a16fd2189011d77358b1b47e535bfecc8d412e6ea4ff08a29b89e1"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/docs/latex/figures/README.md",
+      "path": "references/IUTCSFESTDATATHON-main/docs/latex/figures/README.md",
+      "bytes": 1082,
+      "sha256": "dce9a991f286ec75eff6da613a439e1986c6a121db72c89268eee06e069d5454"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/docs/latex/figures/typed_evidence_standalone.tex",
+      "path": "references/IUTCSFESTDATATHON-main/docs/latex/figures/typed_evidence_standalone.tex",
+      "bytes": 1808,
+      "sha256": "26a12b46f369df67446c976abdb923caadba584c3991916ea27a5297e339c367"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/docs/latex/HUMANIZER_AUDIT.md",
+      "path": "references/IUTCSFESTDATATHON-main/docs/latex/HUMANIZER_AUDIT.md",
+      "bytes": 1400,
+      "sha256": "e6db9c9ebb4a84cb65e117a410bee9546aa119d947f65b058f6143a314fbf442"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/docs/latex/Huntrix_Technical_Report.tex",
+      "path": "references/IUTCSFESTDATATHON-main/docs/latex/Huntrix_Technical_Report.tex",
+      "bytes": 22978,
+      "sha256": "d42aa367d14a07ce30e9fd91b072c3c59598e314eb01284a48c5a7a591513b38"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/docs/latex/references.bib",
+      "path": "references/IUTCSFESTDATATHON-main/docs/latex/references.bib",
+      "bytes": 8723,
+      "sha256": "207cef2519118a1a8d45e8366f9422e83f477ce43bc4965732ca4ffddead622f"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/docs/paper/Huntrix_Technical_Report.docx",
+      "path": "references/IUTCSFESTDATATHON-main/docs/paper/Huntrix_Technical_Report.docx",
+      "bytes": 192448,
+      "sha256": "1bfa771f2ef6f2024929b40642f96814a67e13a0326abd9d9fe85547850ff994"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/docs/PHASE2_RUNTIME_EVIDENCE.md",
+      "path": "references/IUTCSFESTDATATHON-main/docs/PHASE2_RUNTIME_EVIDENCE.md",
+      "bytes": 2477,
+      "sha256": "a47c652841ce9e8de8ff45aa8d1dc4b0a1b36f2068a0e9573e1c6d93ba76fbaa"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/docs/scripts/build_project_docs.py",
+      "path": "references/IUTCSFESTDATATHON-main/docs/scripts/build_project_docs.py",
+      "bytes": 27067,
+      "sha256": "7563c1fcb321d2ba49e4159f626ccb777116e8ce62a9a69dec7d7561cabf78b5"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/docs/TECHNICAL_PAPER.md",
+      "path": "references/IUTCSFESTDATATHON-main/docs/TECHNICAL_PAPER.md",
+      "bytes": 2029,
+      "sha256": "0c1f222ba6fa3a384ebb3cfb030c98a526dc6fd5b50d934ccf52aa57b2363639"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/EXPERIMENT.log",
+      "path": "references/IUTCSFESTDATATHON-main/EXPERIMENT.log",
+      "bytes": 207283,
+      "sha256": "076c05f55fb520fd5f6b01d9c1792eea6c6f2f31724ae26ece85ea81e6112207"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/kaggle_datasets/llama_cpp_cuda_b9637/dataset-metadata.json",
+      "path": "references/IUTCSFESTDATATHON-main/kaggle_datasets/llama_cpp_cuda_b9637/dataset-metadata.json",
+      "bytes": 490,
+      "sha256": "869c52314388ffbcd09158bec417c910eacea6967804b7367b1f156f4c09d93d"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/kaggle_datasets/llama_cpp_cuda_b9637_public/dataset-metadata.json",
+      "path": "references/IUTCSFESTDATATHON-main/kaggle_datasets/llama_cpp_cuda_b9637_public/dataset-metadata.json",
+      "bytes": 529,
+      "sha256": "08239c547ef2352faed3b3a32281ef031c8021eab2517262f33f49bfb5b0768b"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/kaggle_datasets/llama_cpp_cuda_b9637_public/LICENSE.llama.cpp.txt",
+      "path": "references/IUTCSFESTDATATHON-main/kaggle_datasets/llama_cpp_cuda_b9637_public/LICENSE.llama.cpp.txt",
+      "bytes": 1078,
+      "sha256": "94f29bbed6a22c35b992c5c6ebf0e7c92f13b836b90f36f461c9cf2f0f1d010d"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/kaggle_notebooks/gemma_cross_family_audit/gemma_cross_family_audit.py",
+      "path": "references/IUTCSFESTDATATHON-main/kaggle_notebooks/gemma_cross_family_audit/gemma_cross_family_audit.py",
+      "bytes": 15209,
+      "sha256": "653cf204107ebb9a3adcbd9a0df02c8f18262e7d31e3a0d524c6175e38cfca72"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/kaggle_notebooks/gemma_cross_family_audit/kernel-metadata.json",
+      "path": "references/IUTCSFESTDATATHON-main/kaggle_notebooks/gemma_cross_family_audit/kernel-metadata.json",
+      "bytes": 661,
+      "sha256": "f8bff1b0b9ff35b5055450484b76f0a9a85cfb06e585a3937478289214bc0961"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/kaggle_notebooks/llama_cpp_cuda_builder/kernel-metadata.json",
+      "path": "references/IUTCSFESTDATATHON-main/kaggle_notebooks/llama_cpp_cuda_builder/kernel-metadata.json",
+      "bytes": 404,
+      "sha256": "e6c8bac0124ea6acd8ae0a9239d89e47ba615017b5ba81dd9cb1decc7b489b3b"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/kaggle_notebooks/llama_cpp_cuda_builder/llama_cpp_cuda_builder.py",
+      "path": "references/IUTCSFESTDATATHON-main/kaggle_notebooks/llama_cpp_cuda_builder/llama_cpp_cuda_builder.py",
+      "bytes": 3873,
+      "sha256": "ab3037fe331127021ce283599d62a5dafb2e77fc2ad90ae84cf6281cb78f2e6a"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/kaggle_notebooks/phase2_t4_smoke/kernel-metadata.json",
+      "path": "references/IUTCSFESTDATATHON-main/kaggle_notebooks/phase2_t4_smoke/kernel-metadata.json",
+      "bytes": 537,
+      "sha256": "0e8e0ab794c37ce8ae412a999fe660f5c150b1d5b12a80f89c60934ef04f78ef"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/kaggle_notebooks/phase2_t4_smoke/phase2_t4_smoke.py",
+      "path": "references/IUTCSFESTDATATHON-main/kaggle_notebooks/phase2_t4_smoke/phase2_t4_smoke.py",
+      "bytes": 3947,
+      "sha256": "5993dcbdda3d40492da97fbba3de0bcbf8a59431fa1bc86b0ff8cf922ebc3d1a"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/kaggle_notebooks/phase2_v85_inference/FREEZE_MANIFEST.json",
+      "path": "references/IUTCSFESTDATATHON-main/kaggle_notebooks/phase2_v85_inference/FREEZE_MANIFEST.json",
+      "bytes": 1704,
+      "sha256": "61b6f0e9536c8bc0c078c1bf80b9a521effc60d6b52bbc8b45ecfb4031d123cd"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/kaggle_notebooks/phase2_v85_inference/kernel-metadata.json",
+      "path": "references/IUTCSFESTDATATHON-main/kaggle_notebooks/phase2_v85_inference/kernel-metadata.json",
+      "bytes": 661,
+      "sha256": "89502312fa7ffe225ab9062fc96d384db75476fbddd9cb7af8ad7c1a964c8e4b"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/kaggle_notebooks/phase2_v85_inference/phase2_v85_inference.ipynb",
+      "path": "references/IUTCSFESTDATATHON-main/kaggle_notebooks/phase2_v85_inference/phase2_v85_inference.ipynb",
+      "bytes": 16071,
+      "sha256": "52fd4dcdcd53539847a06df207a065d64f379f0fd7491b06f480a0c43431c9a2"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/kaggle_notebooks/phase2_v85_inference/phase2_v85_inference.py",
+      "path": "references/IUTCSFESTDATATHON-main/kaggle_notebooks/phase2_v85_inference/phase2_v85_inference.py",
+      "bytes": 6692,
+      "sha256": "17579c9ac16009c8eee4dfb081540398e6ef3ff7f31c835cd36435cb581e7294"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/kaggle_notebooks/phase2_v91_inference/FREEZE_MANIFEST.json",
+      "path": "references/IUTCSFESTDATATHON-main/kaggle_notebooks/phase2_v91_inference/FREEZE_MANIFEST.json",
+      "bytes": 3165,
+      "sha256": "0d6fe073c64803bfb957821597524430089d792d0d75731423c29bcd0e07bab8"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/kaggle_notebooks/phase2_v91_inference/kernel-metadata.json",
+      "path": "references/IUTCSFESTDATATHON-main/kaggle_notebooks/phase2_v91_inference/kernel-metadata.json",
+      "bytes": 740,
+      "sha256": "4ae87555fe2aeb9f3252fea1984970c14f3b56ccbac1c5eae83d87e3a4fd19b5"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/kaggle_notebooks/phase2_v91_inference/phase2_v91_inference.ipynb",
+      "path": "references/IUTCSFESTDATATHON-main/kaggle_notebooks/phase2_v91_inference/phase2_v91_inference.ipynb",
+      "bytes": 16615,
+      "sha256": "feb92671d131e27585d71eaca3f6f6c1d2fe0204e87167d59210a2a97a365bf1"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/kaggle_notebooks/phase2_v91_inference/phase2_v91_inference.py",
+      "path": "references/IUTCSFESTDATATHON-main/kaggle_notebooks/phase2_v91_inference/phase2_v91_inference.py",
+      "bytes": 6901,
+      "sha256": "01b65580485d6a3333723adeb8015c9e9290bfb5599eea59655d55acec6d728a"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/kaggle_notebooks/relation_swap_verifier_training/kernel-metadata.json",
+      "path": "references/IUTCSFESTDATATHON-main/kaggle_notebooks/relation_swap_verifier_training/kernel-metadata.json",
+      "bytes": 506,
+      "sha256": "259fc17c277b9c0a5b9006327790d212bb8120f2b27fabab68bf9dbb9324cf8a"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/kaggle_notebooks/relation_swap_verifier_training/relation_swap_verifier_training.py",
+      "path": "references/IUTCSFESTDATATHON-main/kaggle_notebooks/relation_swap_verifier_training/relation_swap_verifier_training.py",
+      "bytes": 15261,
+      "sha256": "d27ae80dd844a9d0e74255899dd071bb91a03f3f7487a427c087b5c60fd83366"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/kaggle_notebooks/source_recovery_audit/kernel-metadata.json",
+      "path": "references/IUTCSFESTDATATHON-main/kaggle_notebooks/source_recovery_audit/kernel-metadata.json",
+      "bytes": 653,
+      "sha256": "4fa7003e90586ab770f6ad0b69a0ec005bbbb75b214a646319a5377191366494"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/kaggle_notebooks/source_recovery_audit/source_recovery_audit.py",
+      "path": "references/IUTCSFESTDATATHON-main/kaggle_notebooks/source_recovery_audit/source_recovery_audit.py",
+      "bytes": 18519,
+      "sha256": "fd798a026ac3dfac145ce49c4acfbbdea06e79d6aa7f4aca407d00f82f7b9f80"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/LICENSE",
+      "path": "references/IUTCSFESTDATATHON-main/LICENSE",
+      "bytes": 1069,
+      "sha256": "349b8b7ec9bfcf0a8134ef6f245c23f828be8bafa951061586df8553198e9cef"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/licenses/Apache-2.0.txt",
+      "path": "references/IUTCSFESTDATATHON-main/licenses/Apache-2.0.txt",
+      "bytes": 10273,
+      "sha256": "73ba74dfaa520b49a401b5d21459a8523a146f3b7518a833eea5efa85130bf68"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/licenses/GPL-3.0.txt",
+      "path": "references/IUTCSFESTDATATHON-main/licenses/GPL-3.0.txt",
+      "bytes": 35141,
+      "sha256": "589ed823e9a84c56feb95ac58e7cf384626b9cbf4fda2a907bc36e103de1bad2"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/output/pdf/Huntrix_Technical_Report.pdf",
+      "path": "references/IUTCSFESTDATATHON-main/output/pdf/Huntrix_Technical_Report.pdf",
+      "bytes": 74083,
+      "sha256": "a63ab2550ccda7e9b8c19e60822ca2ab7399901bdaf1d9546c10c07d47a6fe2c"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/output/presentation/assets/paper_figures/architecture.pdf",
+      "path": "references/IUTCSFESTDATATHON-main/output/presentation/assets/paper_figures/architecture.pdf",
+      "bytes": 11729,
+      "sha256": "488cde302fdc9cea43fc5650dd99406eae2b5d3748b3f57687c1f4c489c368e8"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/output/presentation/assets/paper_figures/architecture.png",
+      "path": "references/IUTCSFESTDATATHON-main/output/presentation/assets/paper_figures/architecture.png",
+      "bytes": 233410,
+      "sha256": "2de812a0527e09f1bb2dc30161bed214953dd4505cb4af8cf53a960b55a348a0"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/output/presentation/assets/paper_figures/architecture.svg",
+      "path": "references/IUTCSFESTDATATHON-main/output/presentation/assets/paper_figures/architecture.svg",
+      "bytes": 91195,
+      "sha256": "9cfa1c01b9248a60acac01d93637461fbbf171d58f3ef25e851c4f979de2bbc5"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/output/presentation/assets/paper_figures/context_verification.pdf",
+      "path": "references/IUTCSFESTDATATHON-main/output/presentation/assets/paper_figures/context_verification.pdf",
+      "bytes": 14855,
+      "sha256": "66c22075da1894bf4411ba72a41de2bedaf4746ea295e245b3ac089a723d103e"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/output/presentation/assets/paper_figures/context_verification.png",
+      "path": "references/IUTCSFESTDATATHON-main/output/presentation/assets/paper_figures/context_verification.png",
+      "bytes": 77413,
+      "sha256": "91c0291bf994d63745788098f80aeb3f7c789bbd1cd3879f232041378521068b"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/output/presentation/assets/paper_figures/context_verification.svg",
+      "path": "references/IUTCSFESTDATATHON-main/output/presentation/assets/paper_figures/context_verification.svg",
+      "bytes": 74607,
+      "sha256": "46c8ad350a582f305202859a373f6572a157072b6098f230871ca1af22df8afb"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/output/presentation/assets/paper_figures/progress.pdf",
+      "path": "references/IUTCSFESTDATATHON-main/output/presentation/assets/paper_figures/progress.pdf",
+      "bytes": 11414,
+      "sha256": "10768d54500c620a1a22fef77b6d944501392fcc2db7a0541ee349e3328808a1"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/output/presentation/assets/paper_figures/progress.png",
+      "path": "references/IUTCSFESTDATATHON-main/output/presentation/assets/paper_figures/progress.png",
+      "bytes": 84176,
+      "sha256": "1656fb60003430b6847ebeda6ede64811686a228806a9f724cfaf58be0f0a1bb"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/output/presentation/assets/paper_figures/progress.svg",
+      "path": "references/IUTCSFESTDATATHON-main/output/presentation/assets/paper_figures/progress.svg",
+      "bytes": 79494,
+      "sha256": "6c7704173477bb4fbd375853682a31696a021e4ad5205753e771e25a9e88f4dc"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/output/presentation/assets/paper_figures/typed_evidence.pdf",
+      "path": "references/IUTCSFESTDATATHON-main/output/presentation/assets/paper_figures/typed_evidence.pdf",
+      "bytes": 9710,
+      "sha256": "b6882febbcb3b522ab522b48d3ee9732b9e8a463519ae2309b8e0da2f3f23165"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/output/presentation/assets/paper_figures/typed_evidence.png",
+      "path": "references/IUTCSFESTDATATHON-main/output/presentation/assets/paper_figures/typed_evidence.png",
+      "bytes": 82653,
+      "sha256": "c4a4f88ff60f133f0330356cddf66e3f6ff16d0d5bd55731182fd4bcdf32f2aa"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/output/presentation/assets/paper_figures/typed_evidence.svg",
+      "path": "references/IUTCSFESTDATATHON-main/output/presentation/assets/paper_figures/typed_evidence.svg",
+      "bytes": 59809,
+      "sha256": "580bb24c7f358827a5729300a77f05c131425268e8b46176dda49933584d6aa1"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/output/presentation/Huntrix_Final_Presentation.pdf",
+      "path": "references/IUTCSFESTDATATHON-main/output/presentation/Huntrix_Final_Presentation.pdf",
+      "bytes": 515508,
+      "sha256": "4eca2350ae92becdbbae186d4eaa8162afdb0909e8aacb658fcacc535422ca53"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/output/presentation/Huntrix_Final_Presentation.pptx",
+      "path": "references/IUTCSFESTDATATHON-main/output/presentation/Huntrix_Final_Presentation.pptx",
+      "bytes": 86262,
+      "sha256": "c4a5a45e1a7ceb137af96e3428bde26c7375551371cf885f6e2b1a20102cd385"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/output/presentation/Huntrix_Final_Presentation_20_Slides.pdf",
+      "path": "references/IUTCSFESTDATATHON-main/output/presentation/Huntrix_Final_Presentation_20_Slides.pdf",
+      "bytes": 987598,
+      "sha256": "dfbf9d1ba29ee694e15f4a0d4ffcd577d6f96d86d93ea6222aab062292c45715"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/output/presentation/Huntrix_Final_Presentation_20_Slides.pptx",
+      "path": "references/IUTCSFESTDATATHON-main/output/presentation/Huntrix_Final_Presentation_20_Slides.pptx",
+      "bytes": 560610,
+      "sha256": "704b8b448ce7016883618d36dc0983f6ee569b53dcb991edce09e1fe282095c7"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/output/presentation/Huntrix_Presentation_Script.docx",
+      "path": "references/IUTCSFESTDATATHON-main/output/presentation/Huntrix_Presentation_Script.docx",
+      "bytes": 47249,
+      "sha256": "7ddfd60c7c70940971a107ec13c2fa8654af997e7705987548d1a7c6339db2c6"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/output/presentation/Huntrix_Presentation_Script.pdf",
+      "path": "references/IUTCSFESTDATATHON-main/output/presentation/Huntrix_Presentation_Script.pdf",
+      "bytes": 177478,
+      "sha256": "c49925d0435e3269e41aeb76a6642571d65465de1cf1baeb43b79523f06c30f4"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/output/qna/Huntrix_Judges_QA_Preparation.docx",
+      "path": "references/IUTCSFESTDATATHON-main/output/qna/Huntrix_Judges_QA_Preparation.docx",
+      "bytes": 66338,
+      "sha256": "1e8ee6fb3eb7b1ca6eb3aaf2d4bd64dde05b576fe2a892affbbdbac386478e9c"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/output/qna/Huntrix_Judges_QA_Preparation.pdf",
+      "path": "references/IUTCSFESTDATATHON-main/output/qna/Huntrix_Judges_QA_Preparation.pdf",
+      "bytes": 417947,
+      "sha256": "faaa93a0af0bbb25360ca00a41c84f8ddf041c56373614935c7fa03122bd1e3b"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/Problem.md",
+      "path": "references/IUTCSFESTDATATHON-main/Problem.md",
+      "bytes": 22002,
+      "sha256": "345fffa5b523a48eb21f7de97c5d56f4464d8367437800c2f51e41a48a2a1cfd"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/README.md",
+      "path": "references/IUTCSFESTDATATHON-main/README.md",
+      "bytes": 12511,
+      "sha256": "cf81a8663659dd5ab822843183cf5217eb19f3e0b3140db9a1a420ae261f08cb"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/release/phase2-public-submission/CITATIONS.md",
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-public-submission/CITATIONS.md",
+      "bytes": 2476,
+      "sha256": "504efdad3eda907bed85b4dbaf3bd967ee6b6b9f63c0471cb37eca4c684040ab"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/release/phase2-public-submission/FREEZE_MANIFEST.json",
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-public-submission/FREEZE_MANIFEST.json",
+      "bytes": 3885,
+      "sha256": "e05435ddf776803023af5610d854a78b2db7024894d991b8524ffb140f3e1a5b"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/release/phase2-public-submission/inference.ipynb",
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-public-submission/inference.ipynb",
+      "bytes": 16071,
+      "sha256": "52fd4dcdcd53539847a06df207a065d64f379f0fd7491b06f480a0c43431c9a2"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/release/phase2-public-submission/README.md",
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-public-submission/README.md",
+      "bytes": 2539,
+      "sha256": "12954ace114e4ec86674cb5020d5fd648c6136579f7bd6b3fcfbd049067a2cae"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/CITATIONS.md",
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/CITATIONS.md",
+      "bytes": 2298,
+      "sha256": "d9b560134fa0bbf57cd1fc080451f7f95c7cee7600f549e459899ee7cb056a33"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/DATA_SOURCES.md",
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/DATA_SOURCES.md",
+      "bytes": 6944,
+      "sha256": "2f7ad13b902858d57df66d72ed8b73cc2674b08057a47095cb5939ef05553113"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/form.md",
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/form.md",
+      "bytes": 1214,
+      "sha256": "97345df696d39753c04ef592edb6e15b74196e5de14754f270378fb8e463a327"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/FORM_VALUES.md",
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/FORM_VALUES.md",
+      "bytes": 2493,
+      "sha256": "a650881147252c623b7a45e0f63fa1aa92895aec1124d44770b5349f5bf0d8a7"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/FREEZE_MANIFEST.json",
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/FREEZE_MANIFEST.json",
+      "bytes": 3165,
+      "sha256": "4083bb875d8aaf73ac0df9710c46a3be5e7ba9a9fd5669ed593f15b82f1c0525"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/Huntrix_inference_notebook.ipynb",
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/Huntrix_inference_notebook.ipynb",
+      "bytes": 16615,
+      "sha256": "feb92671d131e27585d71eaca3f6f6c1d2fe0204e87167d59210a2a97a365bf1"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/Huntrix_presentation.pdf",
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/Huntrix_presentation.pdf",
+      "bytes": 987598,
+      "sha256": "dfbf9d1ba29ee694e15f4a0d4ffcd577d6f96d86d93ea6222aab062292c45715"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/Huntrix_report.pdf",
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/Huntrix_report.pdf",
+      "bytes": 74083,
+      "sha256": "a63ab2550ccda7e9b8c19e60822ca2ab7399901bdaf1d9546c10c07d47a6fe2c"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/LICENSE",
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/LICENSE",
+      "bytes": 1069,
+      "sha256": "349b8b7ec9bfcf0a8134ef6f245c23f828be8bafa951061586df8553198e9cef"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/METHODOLOGY_DISCLOSURE.md",
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/METHODOLOGY_DISCLOSURE.md",
+      "bytes": 3531,
+      "sha256": "e3a3b67d001b537b0f93fc91e05d07c22a056e8123d2913f41a501b92cf6e48f"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/PHASE2_RUNTIME_EVIDENCE.md",
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/PHASE2_RUNTIME_EVIDENCE.md",
+      "bytes": 2477,
+      "sha256": "a47c652841ce9e8de8ff45aa8d1dc4b0a1b36f2068a0e9573e1c6d93ba76fbaa"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/presentation/figures/architecture.pdf",
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/presentation/figures/architecture.pdf",
+      "bytes": 11729,
+      "sha256": "488cde302fdc9cea43fc5650dd99406eae2b5d3748b3f57687c1f4c489c368e8"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/presentation/figures/architecture.png",
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/presentation/figures/architecture.png",
+      "bytes": 233410,
+      "sha256": "2de812a0527e09f1bb2dc30161bed214953dd4505cb4af8cf53a960b55a348a0"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/presentation/figures/architecture.svg",
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/presentation/figures/architecture.svg",
+      "bytes": 91195,
+      "sha256": "9cfa1c01b9248a60acac01d93637461fbbf171d58f3ef25e851c4f979de2bbc5"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/presentation/figures/architecture_standalone.tex",
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/presentation/figures/architecture_standalone.tex",
+      "bytes": 2675,
+      "sha256": "d5acb45ec214274b5fb5662081d8555a64f0e5c60529c6b689b30012d453f480"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/presentation/figures/context_verification.pdf",
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/presentation/figures/context_verification.pdf",
+      "bytes": 14855,
+      "sha256": "66c22075da1894bf4411ba72a41de2bedaf4746ea295e245b3ac089a723d103e"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/presentation/figures/context_verification.png",
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/presentation/figures/context_verification.png",
+      "bytes": 77413,
+      "sha256": "91c0291bf994d63745788098f80aeb3f7c789bbd1cd3879f232041378521068b"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/presentation/figures/context_verification.svg",
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/presentation/figures/context_verification.svg",
+      "bytes": 74607,
+      "sha256": "46c8ad350a582f305202859a373f6572a157072b6098f230871ca1af22df8afb"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/presentation/figures/context_verification_standalone.tex",
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/presentation/figures/context_verification_standalone.tex",
+      "bytes": 1613,
+      "sha256": "c63b75bc6f7527b98d02117e18265f0a04ff5793a180e2eecc143d87bd7c2a5d"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/presentation/figures/progress.pdf",
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/presentation/figures/progress.pdf",
+      "bytes": 11414,
+      "sha256": "10768d54500c620a1a22fef77b6d944501392fcc2db7a0541ee349e3328808a1"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/presentation/figures/progress.png",
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/presentation/figures/progress.png",
+      "bytes": 84176,
+      "sha256": "1656fb60003430b6847ebeda6ede64811686a228806a9f724cfaf58be0f0a1bb"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/presentation/figures/progress.svg",
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/presentation/figures/progress.svg",
+      "bytes": 79494,
+      "sha256": "6c7704173477bb4fbd375853682a31696a021e4ad5205753e771e25a9e88f4dc"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/presentation/figures/progress_standalone.tex",
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/presentation/figures/progress_standalone.tex",
+      "bytes": 1603,
+      "sha256": "b1da910f21a16fd2189011d77358b1b47e535bfecc8d412e6ea4ff08a29b89e1"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/presentation/figures/README.md",
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/presentation/figures/README.md",
+      "bytes": 1082,
+      "sha256": "dce9a991f286ec75eff6da613a439e1986c6a121db72c89268eee06e069d5454"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/presentation/figures/typed_evidence.pdf",
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/presentation/figures/typed_evidence.pdf",
+      "bytes": 9710,
+      "sha256": "b6882febbcb3b522ab522b48d3ee9732b9e8a463519ae2309b8e0da2f3f23165"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/presentation/figures/typed_evidence.png",
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/presentation/figures/typed_evidence.png",
+      "bytes": 82653,
+      "sha256": "c4a4f88ff60f133f0330356cddf66e3f6ff16d0d5bd55731182fd4bcdf32f2aa"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/presentation/figures/typed_evidence.svg",
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/presentation/figures/typed_evidence.svg",
+      "bytes": 59809,
+      "sha256": "580bb24c7f358827a5729300a77f05c131425268e8b46176dda49933584d6aa1"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/presentation/figures/typed_evidence_standalone.tex",
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/presentation/figures/typed_evidence_standalone.tex",
+      "bytes": 1808,
+      "sha256": "26a12b46f369df67446c976abdb923caadba584c3991916ea27a5297e339c367"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/presentation/Huntrix_Final_Presentation_20_Slides.pptx",
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/presentation/Huntrix_Final_Presentation_20_Slides.pptx",
+      "bytes": 560610,
+      "sha256": "704b8b448ce7016883618d36dc0983f6ee569b53dcb991edce09e1fe282095c7"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/presentation/Huntrix_Presentation_Script.docx",
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/presentation/Huntrix_Presentation_Script.docx",
+      "bytes": 47249,
+      "sha256": "7ddfd60c7c70940971a107ec13c2fa8654af997e7705987548d1a7c6339db2c6"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/presentation/HUNTRIX_PRESENTATION_SCRIPT.md",
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/presentation/HUNTRIX_PRESENTATION_SCRIPT.md",
+      "bytes": 12271,
+      "sha256": "de02cdbda822f74422cb987ae038300283a17e8772a98bcdf197101ebb7182d5"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/presentation/Huntrix_Presentation_Script.pdf",
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/presentation/Huntrix_Presentation_Script.pdf",
+      "bytes": 177478,
+      "sha256": "c49925d0435e3269e41aeb76a6642571d65465de1cf1baeb43b79523f06c30f4"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/README.md",
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/README.md",
+      "bytes": 5951,
+      "sha256": "a5883042c7718592c452e751d3e72819c73fb854d895bcc429890a99ef018cf8"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/report/acl.sty",
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/report/acl.sty",
+      "bytes": 11615,
+      "sha256": "19dfeddc2c0e448f3926a0bef048a9db3f3611b46265b760caabd7ada4f361de"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/report/acl_natbib.bst",
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/report/acl_natbib.bst",
+      "bytes": 45442,
+      "sha256": "6fbb306202290f4b68e74ac1460a8b27398500cb6dfeb4492e74c457eae7cd1e"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/report/ACL_STYLE_SOURCE.md",
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/report/ACL_STYLE_SOURCE.md",
+      "bytes": 595,
+      "sha256": "e1dccf97917d601282b0aea29fa05a38cb00b5a180ccda7c6371f26f27d5ad57"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/report/Huntrix_Technical_Report.tex",
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/report/Huntrix_Technical_Report.tex",
+      "bytes": 22978,
+      "sha256": "d42aa367d14a07ce30e9fd91b072c3c59598e314eb01284a48c5a7a591513b38"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/report/README.md",
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/report/README.md",
+      "bytes": 773,
+      "sha256": "784496041c1457abafb12455610772a36fd36c2a7e23e365ad2bf24466b6bfa7"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/report/references.bib",
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/report/references.bib",
+      "bytes": 8723,
+      "sha256": "207cef2519118a1a8d45e8366f9422e83f477ce43bc4965732ca4ffddead622f"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/RUNBOOK.md",
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/RUNBOOK.md",
+      "bytes": 2251,
+      "sha256": "99018536468d50960cd6a9a0174ce33b62488ab7dd5ca7fec04ff11e341426c2"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/SUBMISSION_LINKS.md",
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/SUBMISSION_LINKS.md",
+      "bytes": 3101,
+      "sha256": "594ed14d7bcc31d864f4b773dcb724a1813e345150c706999b9942e279d9e381"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/THIRD_PARTY_NOTICES.md",
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/THIRD_PARTY_NOTICES.md",
+      "bytes": 3606,
+      "sha256": "5a51d3f7880484fa9ab3d9c1e3579a5e78566cf7f1fb192569b897fcb73d6125"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/requirements.txt",
+      "path": "references/IUTCSFESTDATATHON-main/requirements.txt",
+      "bytes": 203,
+      "sha256": "9853d3d4d9cb515c9b85c61c4d2e01c5e338cf13cfd5823baa7cac9c14a6bb29"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/resources/idiom_semantic_corrections.json",
+      "path": "references/IUTCSFESTDATATHON-main/resources/idiom_semantic_corrections.json",
+      "bytes": 754,
+      "sha256": "d0c7496dc339d099ee583b5a1b1a34fe5f229bbdfa4eab945db825f3075efd19"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/resources/legacy_law_acts.json",
+      "path": "references/IUTCSFESTDATATHON-main/resources/legacy_law_acts.json",
+      "bytes": 816,
+      "sha256": "b98ab4802e3572c643bd5a7cadfd89d5bd207a4ff2fdc34eb72ead8dabac40aa"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/resources/typed_evidence_v1.json",
+      "path": "references/IUTCSFESTDATATHON-main/resources/typed_evidence_v1.json",
+      "bytes": 1541,
+      "sha256": "6d72bf7556dc26703abe54defef9cccae1e2d7267b2bc3d411f3a8ec9c8380f3"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/resources/verified_fact_answers.json",
+      "path": "references/IUTCSFESTDATATHON-main/resources/verified_fact_answers.json",
+      "bytes": 42416,
+      "sha256": "6f928543d3faf48e4de7111049d7840f70a163d9af3b14aa0869c349cdfdf3b7"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/analyze_gemma_cross_family_audit.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/analyze_gemma_cross_family_audit.py",
+      "bytes": 8309,
+      "sha256": "53e3f57ce8443b5e4a78cf149b7017b0e7551d4e404460c740936c43b13f3733"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/analyze_source_recovery_audit.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/analyze_source_recovery_audit.py",
+      "bytes": 8970,
+      "sha256": "f64835dfc565490ce3805fd8eea5e4709928c2ead38e2e408250969a0d43bf21"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/antonym_evidence_overrides.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/antonym_evidence_overrides.py",
+      "bytes": 14862,
+      "sha256": "fc3110352b0247792dc7ab98cffe247492ebf38276bb75b05e8324cd510163fe"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/apply_lexical_overrides.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/apply_lexical_overrides.py",
+      "bytes": 4684,
+      "sha256": "9545d27cb50bfa9155441c18f36d9612f9f19912a0b46bb2bc2f69625d8ce396"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/apply_portable_verifier_blend.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/apply_portable_verifier_blend.py",
+      "bytes": 2221,
+      "sha256": "d16c055cc7917a30b7a39909a3fadbc198f6ac52c861474c6ba34ef7d80eef56"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/audit_additional_qa_banks.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/audit_additional_qa_banks.py",
+      "bytes": 6393,
+      "sha256": "60bc4914651ad1fabefd5fdf89acd02014b83aa9a1af4c05683566bbd25be298"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/audit_azmine_bcs.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/audit_azmine_bcs.py",
+      "bytes": 6174,
+      "sha256": "d2b4545f580c407b54dcedc7cbf84da145c5863fac1ae547219cd9d3d76d2e93"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/audit_benhallu_raw_lineage.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/audit_benhallu_raw_lineage.py",
+      "bytes": 6112,
+      "sha256": "395d7283d0578a26d666a5774ab4611ec22dc15b8f5eda591d7a4c5c67bb7430"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/audit_benhallueval_fiveway.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/audit_benhallueval_fiveway.py",
+      "bytes": 3712,
+      "sha256": "a61db33fe60d417470495cb889c2d6c77bb2db3c22ed2136509994e1ae2b14ae"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/audit_context_rule_safety.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/audit_context_rule_safety.py",
+      "bytes": 7243,
+      "sha256": "fdb5a97000f0f7e2ec05f04e7bbf9945ffd94f5389e8449082b8e53707f68c07"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/audit_external_lineage.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/audit_external_lineage.py",
+      "bytes": 6539,
+      "sha256": "896059c17cc4a0a3c8a085cd8c2cab28da428caaaafd432f44fc6823e1f9012f"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/audit_source_conflict_votes.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/audit_source_conflict_votes.py",
+      "bytes": 5251,
+      "sha256": "6258750d35571576face2c07501e516c40d2a074e53bed738227d6c910423403"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/audit_source_origin_conflicts.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/audit_source_origin_conflicts.py",
+      "bytes": 6738,
+      "sha256": "50034f987695af4f9aabc770e4616977d2a7c3b1cf2eea01a3dc2f4d4a16e4d8"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/audit_test_derived_pseudolabels.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/audit_test_derived_pseudolabels.py",
+      "bytes": 3329,
+      "sha256": "40f313a6790e3ab9df24f1cc539e2e117dda9c3fd63cb49b325d629237158f71"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/audit_transitive_answer_equivalence.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/audit_transitive_answer_equivalence.py",
+      "bytes": 12746,
+      "sha256": "fc4ecfdd829954e02754355c483a54d2e6471addb515971bb2865671b731614d"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/bcs_answer_bank.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/bcs_answer_bank.py",
+      "bytes": 7949,
+      "sha256": "969ed80e71ab1d9ce443b943bc2513fd7a27ed7a395dd0ea3747d275f06a2a81"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/benchmark_phase2_pipeline.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/benchmark_phase2_pipeline.py",
+      "bytes": 3732,
+      "sha256": "cf013da1e2fd4b83f5ec6ae4e2c5d89f0d5e027cfefe5dd8e571721066a5014b"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/benhallueval_provenance.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/benhallueval_provenance.py",
+      "bytes": 3536,
+      "sha256": "9b5e8318edc662091e99577d4a72e44dd5816e010c10b1c2347ee5776bf51f2a"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/birth_date_overrides.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/birth_date_overrides.py",
+      "bytes": 8856,
+      "sha256": "b5e7fa133d544789ae8211ad13526544a7cbd78e4850c90a0d324ecfa760c4de"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/bn_num2words.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/bn_num2words.py",
+      "bytes": 3511,
+      "sha256": "a82b3661bd56ed80a4480599a5d089dd5fb17f7bb55f9ab2cefd4f387bd59824"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/build_fact_page_corpus.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/build_fact_page_corpus.py",
+      "bytes": 5394,
+      "sha256": "b81d1d487bf427e99e3926c1f37dc0c1320e7bfa8cf0f26b2c7811dca0d0f74f"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/build_fact_page_html_corpus.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/build_fact_page_html_corpus.py",
+      "bytes": 3875,
+      "sha256": "5cb7b154fffdc7643522d5e191f9274a02afaf57f6c496531aef046643b5c582"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/build_judges_qna_docx.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/build_judges_qna_docx.py",
+      "bytes": 82075,
+      "sha256": "b262aec6cda963c2e3a2709644b5c99261d514ff7fea1620c54d4cef56d6ff0c"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/build_phase1_audit_ledger.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/build_phase1_audit_ledger.py",
+      "bytes": 6669,
+      "sha256": "e78420f12eb18535af60d63c87bd4b30b1065803f7b87ecd6b2b130ca54853d9"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/build_phase2_training.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/build_phase2_training.py",
+      "bytes": 4807,
+      "sha256": "50a1d57e4291f10247aad66f1b796394080bdfc408d3d9eb5b29a2bcf71ad3db"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/build_presentation_script_docx.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/build_presentation_script_docx.py",
+      "bytes": 16614,
+      "sha256": "4430ce96fe80488f67edf93fe25768ed0b2691d31c3d2a77216c587c8b246149"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/build_v91_compliance_notebook.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/build_v91_compliance_notebook.py",
+      "bytes": 4590,
+      "sha256": "8d32a41a613ed81fff4a7803bcab0a282c4533d7a3ccb7976d305871123cd092"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/combine_evidence_predictions.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/combine_evidence_predictions.py",
+      "bytes": 3285,
+      "sha256": "f071d99e64303bd85d275c379ad58c73b673969bf08195fe3ceff408e544e352"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/context_contrastive_pairs.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/context_contrastive_pairs.py",
+      "bytes": 6737,
+      "sha256": "3588b6ac4798c9f0726df10c7c4e24a82b9872abc081545a6a093fdb91846980"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/context_numeric_overrides.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/context_numeric_overrides.py",
+      "bytes": 16312,
+      "sha256": "0affa91183069ecab7983945108745df000be542606ac810dc433ef0f9460e93"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/context_span_overrides.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/context_span_overrides.py",
+      "bytes": 3330,
+      "sha256": "96151026890874d30bd17297ec3e7dbbcbb2993b669fb8506ca1461b3bf4e2ca"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/datathon_utils.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/datathon_utils.py",
+      "bytes": 7693,
+      "sha256": "50a41a3bbb3fc63bbab2926e0085bc6d0b935455be696a1d91a90ebf2a851bed"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/establishment_overrides.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/establishment_overrides.py",
+      "bytes": 12937,
+      "sha256": "90d590f1e1e759df2da8cf607709acd84e405000914d2c5595bd7ab24eeddb35"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/evaluate_grouped_verifier.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/evaluate_grouped_verifier.py",
+      "bytes": 3178,
+      "sha256": "97890eaf06ef663c4cce40a33661da2a1537cda9fe70c7fd09edac31a2eb085f"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/evaluate_judge_consensus.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/evaluate_judge_consensus.py",
+      "bytes": 2404,
+      "sha256": "22a50c99fbeb9cf28fe3f5bcace763d8283b53a80f181956dbf73c13a94ec2cf"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/evaluate_selective_cascade.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/evaluate_selective_cascade.py",
+      "bytes": 3808,
+      "sha256": "0a698d8aaf417b3d11ac2402a7f935372e21ea2f31319698bdebc7dbfbd3004a"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/evidence_controlled_pairs.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/evidence_controlled_pairs.py",
+      "bytes": 4665,
+      "sha256": "95cddde58d749f39d6a606b888df2335d299dad4ee4a7ce50964779e874fc2f3"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/evidence_index.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/evidence_index.py",
+      "bytes": 10572,
+      "sha256": "46b957f97801eed3640a54abefc8a0f58a08b4f99ee3bd44bc84092e946fd84b"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/external_data.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/external_data.py",
+      "bytes": 10645,
+      "sha256": "5d41abd6eaf2e7f427b01960e1692220254344c3b0cf7cc0d62627fec015f4ef"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/fact_page_consensus.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/fact_page_consensus.py",
+      "bytes": 3889,
+      "sha256": "c0a4447a8f851bf61bd143adb8af7f9c6328c2aee9fb4a1e636da57702ffd51c"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/freeze_v91_release.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/freeze_v91_release.py",
+      "bytes": 8483,
+      "sha256": "904ba63ff1a610627803a14e0e2703cfa5a585dba1560f1df1d243647eb527b4"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/fuzzy_source_overrides.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/fuzzy_source_overrides.py",
+      "bytes": 12155,
+      "sha256": "822558d665bcb10046581a506beb2b92cd20f685c0511bdbdbd39adfac76d3ea"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/gemma_ensemble.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/gemma_ensemble.py",
+      "bytes": 19309,
+      "sha256": "358fb0680d627ca4ddad6e09d5ba746200177bfdce20aa859f2fe212cbd6c16f"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/generate_curated_synthetic.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/generate_curated_synthetic.py",
+      "bytes": 10243,
+      "sha256": "e9bae6a86aa74029525b99d7aaaeac5ec341d058d8de37443ecbd2da3c57f9a0"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/gguf_selective_judge.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/gguf_selective_judge.py",
+      "bytes": 8950,
+      "sha256": "87eadf7238ff8e3bf1daeb6b55f595ba61dba1bf8fdc6e395eb99cf9b4bda982"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/hf_phase2_data.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/hf_phase2_data.py",
+      "bytes": 14672,
+      "sha256": "4c1062f3f65f6316b2f6ecf2177b1ea505ca602bf41a49b008438cac202982c8"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/hybrid_evidence_index.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/hybrid_evidence_index.py",
+      "bytes": 14066,
+      "sha256": "01123d581147f14999c73009e8d61e09eac519f532ceba120df72447a58b8ab0"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/idiom_semantic_overrides.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/idiom_semantic_overrides.py",
+      "bytes": 6280,
+      "sha256": "e5506cae537ae6c245781e3876f2413af6de0f6ca969dc0657f657a76e6f87a6"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/law_evidence_overrides.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/law_evidence_overrides.py",
+      "bytes": 14141,
+      "sha256": "1e3adff5696497a97d0da9113efd520e8b414aee1551c52ba61ceb30ab66f97b"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/lexical_data.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/lexical_data.py",
+      "bytes": 8083,
+      "sha256": "8e22d6dba55e4a49856cbec670e4cfa2348116ccbc60344c5c35a2ef2db3effa"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/lmstudio_hallucination_judge.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/lmstudio_hallucination_judge.py",
+      "bytes": 5612,
+      "sha256": "d8ee87443173b2340b609713c1941e56664870b70ef76e0d5199398bd0fa7381"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/make_lexical_candidates.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/make_lexical_candidates.py",
+      "bytes": 3976,
+      "sha256": "4cb25d1fb690afeb525c6df67ddb781fb56a9d42eb19880455e1c7167cf91f08"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/make_teacher_pool.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/make_teacher_pool.py",
+      "bytes": 4589,
+      "sha256": "64054c1645e2be99cdd4111f3e6f63bea1a13b0bf10c2cec7beed8032f579829"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/mlx_context_verifier.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/mlx_context_verifier.py",
+      "bytes": 9139,
+      "sha256": "55bafd2f0c4a6031be3bf3342dba2cb19950d7eae2348caf7dc1ad138b597de0"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/mlx_fact_page_judge.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/mlx_fact_page_judge.py",
+      "bytes": 10582,
+      "sha256": "7642786e245cb7fab000276c9e5cdd34d6612421495d1121b9074f4c39ee0c92"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/mlx_idiom_evidence_judge.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/mlx_idiom_evidence_judge.py",
+      "bytes": 9185,
+      "sha256": "0b065c56f8df823c0e9d58268f1de4a26fee48a2dfef0ea16c5cbd90caeb60c7"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/mlx_qwen_judge.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/mlx_qwen_judge.py",
+      "bytes": 17038,
+      "sha256": "d194c9cbed1881ade9c991a67e5c360445d9acc46308b37d855da0c0cd1a87ab"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/mlx_source_bank_judge.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/mlx_source_bank_judge.py",
+      "bytes": 8836,
+      "sha256": "bfd83bc4d70d5641214e29b5ed257817d3efd4e39202bccebee75868afe8706d"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/mlx_structured_judge.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/mlx_structured_judge.py",
+      "bytes": 8261,
+      "sha256": "fb2b802f6fce561baf98f22bc54d9879f0ca0ac49ed6c3574f697126e849512e"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/mlx_teacher_label.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/mlx_teacher_label.py",
+      "bytes": 6640,
+      "sha256": "b593bd7d8469f02d5c5e7597440acc331ee4cb8c66cf1f1f23aad8e174aa37d9"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/normalize_legal_acts.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/normalize_legal_acts.py",
+      "bytes": 2013,
+      "sha256": "a00e3a8c0bb716d57029eaa868c0753c6c80057ab71a7980cef92e63bd9e3a17"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/normalize_phase2_raw.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/normalize_phase2_raw.py",
+      "bytes": 5824,
+      "sha256": "224fa5560ba8c2fecb97d5b6f3edf137f0292346aaf99e3cefc52a1a70e17108"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/package_offline_artifacts.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/package_offline_artifacts.py",
+      "bytes": 15254,
+      "sha256": "52c34c6b8f8034a7735cbfc5d0f71b4ba2bb3f26b0f1d6621ca7e5772e42da7f"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/package_phase2_runtime.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/package_phase2_runtime.py",
+      "bytes": 5383,
+      "sha256": "12e1fdab3cc69ad3ab95b973a8e90663295ef13d364a8234aa2070b84380d5fc"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/phase1_provenance_report.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/phase1_provenance_report.py",
+      "bytes": 10824,
+      "sha256": "b8e8b8c48f01de70b188c2c1302c724552474ce10f7aa8ea677054f4d122c381"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/phase2_pipeline.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/phase2_pipeline.py",
+      "bytes": 18131,
+      "sha256": "03e9ac182f20d61d2b9d47d19e2090f8d7237150e57a3d50ccc40848cf5c46a5"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/prepare_teacher_distill.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/prepare_teacher_distill.py",
+      "bytes": 2523,
+      "sha256": "d1b3a7987c465888f8e683712c72d293e5d2d12e3b26655a90a531980ced4c74"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/released_set_diagnostic.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/released_set_diagnostic.py",
+      "bytes": 2557,
+      "sha256": "0365ebae105feb1d95b496a2229b0059357e144e32db9702e1cf11057d1c1943"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/retrieval_consensus_overrides.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/retrieval_consensus_overrides.py",
+      "bytes": 4620,
+      "sha256": "f42c1aa6b341631a05624e2e39631e6f2ef950d287aeaddd4c526e56b5fc0de0"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/run_phase2_cascade.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/run_phase2_cascade.py",
+      "bytes": 4088,
+      "sha256": "9cc38d0eced3c28b626668afc1f7ec83f8a0884983cdf8bd5bce202c78179ba3"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/selective_consensus_gate.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/selective_consensus_gate.py",
+      "bytes": 4044,
+      "sha256": "322c9bf92eb31dc8ce228bca5157b9cb66125d481a4df35f357fad579df0b3bd"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/selective_llm_judge.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/selective_llm_judge.py",
+      "bytes": 10674,
+      "sha256": "5967df2c4ac260c97153d08273d1736807efc830605924914181adaed2e1e14d"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/source_answer_bank.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/source_answer_bank.py",
+      "bytes": 23963,
+      "sha256": "41155082d9838da809192fb7307832bd3d3300b4037c9aee6735572e2094927f"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/source_artifact_overrides.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/source_artifact_overrides.py",
+      "bytes": 6138,
+      "sha256": "4d136da4ab6b4fa456f3165aab1926b3652292783c49eefefb553a3ce043fc94"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/structured_overrides.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/structured_overrides.py",
+      "bytes": 34011,
+      "sha256": "bb630f4f8920835d7c812fc698598f7a9d2c811f2763d4a393dec345229099f0"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/synthetic_data.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/synthetic_data.py",
+      "bytes": 7204,
+      "sha256": "bf4b7a5e599a455ac408001381b5efe42c1cbccb0c07cfd0f3499a1983265c37"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/topic_context_evidence.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/topic_context_evidence.py",
+      "bytes": 3967,
+      "sha256": "b458953040330bab8c25144ff60af7cc0da014837a02300395f4a639fc872708"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/train_nli_encoder.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/train_nli_encoder.py",
+      "bytes": 4725,
+      "sha256": "725f76b1a2f047f28285d71b6443e94c9780e05e00d613b8ff33dbf1cce2a5ae"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/train_portable_verifier.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/train_portable_verifier.py",
+      "bytes": 12934,
+      "sha256": "4378c130c00a283d68b483028c4c5ef4d57f7caad3b299dd88aa74ec526d9ee8"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/train_verifier.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/train_verifier.py",
+      "bytes": 11402,
+      "sha256": "9186fbc3487c28e78eb4e633295719414754dbb177b8fc765b96b645ef4296f8"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/typed_evidence.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/typed_evidence.py",
+      "bytes": 5734,
+      "sha256": "898da31cc2f2d95410e7839e5661232b1378872dd95972ee6b8d1a2a64ea94b9"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/typed_idiom_matcher.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/typed_idiom_matcher.py",
+      "bytes": 5457,
+      "sha256": "8c865c2c6f6f0f47d54644f901fe46dc08f2bb5e3f4f2d3ba20b85c1f1d9e5dd"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/verified_fact_overrides.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/verified_fact_overrides.py",
+      "bytes": 3340,
+      "sha256": "17cb6834c55cb0c0f71a20fb2201cfd3c157b146bb546dcb9792e5606297b607"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/weighted_source_overrides.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/weighted_source_overrides.py",
+      "bytes": 5803,
+      "sha256": "ac926b583749fd5f1cd4053964989d515512afeb301d6707b04ebc7b9bef2e40"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/wiki_evidence.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/wiki_evidence.py",
+      "bytes": 4901,
+      "sha256": "61f62f8a840d6b6b09228b6a0aa828f5abe356d90c5a27a9f4dae2d3f1e46e8f"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/scripts/wikidata_facts.py",
+      "path": "references/IUTCSFESTDATATHON-main/scripts/wikidata_facts.py",
+      "bytes": 14588,
+      "sha256": "3a448ecfb3a88df1e8d75cf5b26625ce76474f2b2fd4dc5cd6b8e5e0b03d80b3"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/tests/test_analyze_gemma_cross_family_audit.py",
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_analyze_gemma_cross_family_audit.py",
+      "bytes": 1795,
+      "sha256": "3e362e066a166d9dc5b8d29d03b5488593dc4167d5e02e0f02afb559f685a153"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/tests/test_analyze_source_recovery_audit.py",
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_analyze_source_recovery_audit.py",
+      "bytes": 2057,
+      "sha256": "02ba5b304871b2a5dbbef463f11d33af9d8798fca637b6251fe60905adf9a711"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/tests/test_antonym_evidence_overrides.py",
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_antonym_evidence_overrides.py",
+      "bytes": 3329,
+      "sha256": "04e7fd6681eb1a3c8d883cd99b50877256482c301913fa39aab909e7417a8665"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/tests/test_audit_additional_qa_banks.py",
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_audit_additional_qa_banks.py",
+      "bytes": 2204,
+      "sha256": "28ab3eaf3cdfff3c63f152515834ae3d64a37f3f95b0938ffeacdbe8d2db44af"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/tests/test_audit_azmine_bcs.py",
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_audit_azmine_bcs.py",
+      "bytes": 1954,
+      "sha256": "a7d904e51d36124ca3e8b5efa8e2f4159b77add254aa247c00baf6881fd41bac"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/tests/test_audit_benhallu_raw_lineage.py",
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_audit_benhallu_raw_lineage.py",
+      "bytes": 2308,
+      "sha256": "b259732de16644223c6cf88e05e20ce5c9cd982101f8c7ec059c8a8a581a72ea"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/tests/test_audit_benhallueval_fiveway.py",
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_audit_benhallueval_fiveway.py",
+      "bytes": 1882,
+      "sha256": "0bf6d20ca23a7963deeeec4916fb32e078f47107f368b824f005a0cbff3d961e"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/tests/test_audit_context_rule_safety.py",
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_audit_context_rule_safety.py",
+      "bytes": 1095,
+      "sha256": "731f456adb9d726c3190462ad8f3b25a35d900ce4507335517762c5db1dcc552"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/tests/test_audit_external_lineage.py",
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_audit_external_lineage.py",
+      "bytes": 1716,
+      "sha256": "f53c289490735f05c1d663ba566daf86787c8b06c452ecf0f66d092c8317a78c"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/tests/test_audit_source_conflict_votes.py",
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_audit_source_conflict_votes.py",
+      "bytes": 2365,
+      "sha256": "884a564fe09c0afe0d3539e309319ea44a1b816bc3bda6379d493211f3bcf534"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/tests/test_audit_source_origin_conflicts.py",
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_audit_source_origin_conflicts.py",
+      "bytes": 1929,
+      "sha256": "1880306fb54f495214efba318cfd41d29e7c4937d853c0e2af05a784ed99f16c"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/tests/test_audit_test_derived_pseudolabels.py",
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_audit_test_derived_pseudolabels.py",
+      "bytes": 1200,
+      "sha256": "74701484362c4c79780689a16c68e40709b26a6c4c5ba2ea62aaa9aa48bb2afe"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/tests/test_audit_transitive_answer_equivalence.py",
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_audit_transitive_answer_equivalence.py",
+      "bytes": 2153,
+      "sha256": "cdcb8c301a320882fa21c103afcdd523553330e93bb482c5aee6e47b796d50f8"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/tests/test_bcs_answer_bank.py",
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_bcs_answer_bank.py",
+      "bytes": 736,
+      "sha256": "2a31bb81e855201d9916b312a8bf4f4e39bad2fabf5d87fea8bb98fece96523b"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/tests/test_benhallueval_provenance.py",
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_benhallueval_provenance.py",
+      "bytes": 947,
+      "sha256": "fdea65ac508ea2e05b3094fd97f61527236bcae90059923c5edd70d170cec6da"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/tests/test_birth_date_overrides.py",
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_birth_date_overrides.py",
+      "bytes": 2991,
+      "sha256": "c41b946db6d87574a8b6e5f18c674847051e97f230f6a67cc314b35a1135897b"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/tests/test_bn_num2words.py",
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_bn_num2words.py",
+      "bytes": 642,
+      "sha256": "f812c21340893f5ed23dadd72efee5b48cf3a95b550ad8bfe0e0d8ff0707a58b"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/tests/test_build_fact_page_html_corpus.py",
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_build_fact_page_html_corpus.py",
+      "bytes": 531,
+      "sha256": "c949f4141eace391bb65e136ac0156165416acdd682144a7c389b136474f2b6d"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/tests/test_build_phase1_audit_ledger.py",
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_build_phase1_audit_ledger.py",
+      "bytes": 1266,
+      "sha256": "f23884114687434949e03cf031dde81d706f0fd9d344cb346da280953ad639ab"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/tests/test_build_phase2_training.py",
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_build_phase2_training.py",
+      "bytes": 419,
+      "sha256": "ea559506118a047f8b2f2297bdd3b3a30570c7420517cb2f012c42ba0ece8e05"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/tests/test_context_numeric_overrides.py",
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_context_numeric_overrides.py",
+      "bytes": 8800,
+      "sha256": "98681eea45889887433294967f4159068ddad71b58defcf52b02c7958113e1b7"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/tests/test_context_span_overrides.py",
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_context_span_overrides.py",
+      "bytes": 3296,
+      "sha256": "4d24d3b16777d60094e5601460966c060bd79e5726bb0bc18562403041762500"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/tests/test_datathon_utils.py",
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_datathon_utils.py",
+      "bytes": 389,
+      "sha256": "e3f40d4c62c6441f6f5a2df52fb0d635bdd5bb23544b3b6ba2d212c3c7f52530"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/tests/test_establishment_overrides.py",
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_establishment_overrides.py",
+      "bytes": 8151,
+      "sha256": "86b06062f1100d2e00c540e619aa812281a61708e55c88fd52d6b6c42a136164"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/tests/test_evaluate_judge_consensus.py",
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_evaluate_judge_consensus.py",
+      "bytes": 487,
+      "sha256": "13c84171af3011aa8be1ee51f4dccb92801f3070743c3b3e51455861b42d42ac"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/tests/test_fact_page_consensus.py",
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_fact_page_consensus.py",
+      "bytes": 851,
+      "sha256": "e760876ba787ef80c274b489d62ae45e7bb54244904f370759be3b40b87b8cca"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/tests/test_fuzzy_source_overrides.py",
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_fuzzy_source_overrides.py",
+      "bytes": 2519,
+      "sha256": "b7c5ebce0fb6686c493bd12a08c1f9b3da60413afa7e677e9a93c52258851623"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/tests/test_gguf_selective_judge.py",
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_gguf_selective_judge.py",
+      "bytes": 2307,
+      "sha256": "510772b4b7eb3038c8165f309f731cac96554d8b618794c0fa5ec692e1132952"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/tests/test_hf_phase2_data.py",
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_hf_phase2_data.py",
+      "bytes": 1424,
+      "sha256": "ffbb48c2b81f3c281fa8204de9bc2e391a0a98c6c153b35ca627d471f5dfdae2"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/tests/test_hybrid_evidence_index.py",
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_hybrid_evidence_index.py",
+      "bytes": 3321,
+      "sha256": "8291f19d86afa618442e9a53d42282741d75b7b3b4ae625f3fb5f4d012229f3f"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/tests/test_idiom_semantic_overrides.py",
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_idiom_semantic_overrides.py",
+      "bytes": 4560,
+      "sha256": "7dfa04a68c58b9e4902687111247b48325e15d565cb45105c1d55a8c20477457"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/tests/test_kaggle_gemma_cross_family_audit.py",
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_kaggle_gemma_cross_family_audit.py",
+      "bytes": 1485,
+      "sha256": "85538976e9bacdec2ad2b424747bb15cfe36b4fa09615e7ed33c2c39860b3da5"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/tests/test_kaggle_relation_swap_training.py",
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_kaggle_relation_swap_training.py",
+      "bytes": 2292,
+      "sha256": "05b90a5334420365bc6331059f73fd4661e661db7df5da46862373ebb08cb744"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/tests/test_kaggle_source_recovery_audit.py",
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_kaggle_source_recovery_audit.py",
+      "bytes": 1586,
+      "sha256": "ec940bb3b74540b2ff6228fabd5e85984bdc14b116a75ae5cebdf50e50db60e9"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/tests/test_law_evidence_overrides.py",
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_law_evidence_overrides.py",
+      "bytes": 3063,
+      "sha256": "0eddd4183f6732ae8def16569f9f33f6fec4f40b4c15376065361865d4dbfd1a"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/tests/test_mlx_fact_page_judge.py",
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_mlx_fact_page_judge.py",
+      "bytes": 2442,
+      "sha256": "349e39ec41b6bfdbe0e5d45053967d987c64504a90c49f35f37139b43b1c6188"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/tests/test_mlx_qwen_judge.py",
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_mlx_qwen_judge.py",
+      "bytes": 1272,
+      "sha256": "629f83870c8cc48cfb60d09c688f035166789c6b35e9ffe819febb72d67c37e6"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/tests/test_normalize_legal_acts.py",
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_normalize_legal_acts.py",
+      "bytes": 941,
+      "sha256": "9125ece0ba7af4e92b0597c2d3542ba69cc72becea615f0f7f76c2e542f3f151"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/tests/test_normalize_phase2_raw.py",
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_normalize_phase2_raw.py",
+      "bytes": 650,
+      "sha256": "c501d69e96ef3910c2abc44d59c7aa9112d2346875be9354d0c5c1a345703f2f"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/tests/test_package_offline_artifacts.py",
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_package_offline_artifacts.py",
+      "bytes": 1990,
+      "sha256": "874edc703c5c0719625d970e759e49aa12897407b3dffb0540d40cff1ed53a46"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/tests/test_package_phase2_runtime.py",
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_package_phase2_runtime.py",
+      "bytes": 1404,
+      "sha256": "c0c629a6c3d25f2eec03a8045c36117e576d9cf87c3c49e8ed117643750bdde2"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/tests/test_phase1_provenance_report.py",
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_phase1_provenance_report.py",
+      "bytes": 3413,
+      "sha256": "9666f2cf2224214cd60b6cd419b8b9349ed07186ee7b39a63b30a43535003cf9"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/tests/test_phase2_kaggle_inference.py",
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_phase2_kaggle_inference.py",
+      "bytes": 2670,
+      "sha256": "999e2f72b9ab7e01d60da1bcc37b4a9592de54e38aa42c09e8971e113d1520e4"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/tests/test_phase2_pipeline.py",
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_phase2_pipeline.py",
+      "bytes": 1834,
+      "sha256": "97fca459320675049a8dc85db9a0d2330e54e7b97ddf1fa79abcdadf192ddf31"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/tests/test_phase2_v91_kaggle_inference.py",
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_phase2_v91_kaggle_inference.py",
+      "bytes": 2546,
+      "sha256": "d6fd30389b04e51991f98218f12c975dfcf5a7dbd2e61b2443e8aff54f37dec6"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/tests/test_released_set_diagnostic.py",
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_released_set_diagnostic.py",
+      "bytes": 858,
+      "sha256": "a934e16e27aa182077a1763ec1dd559c7fb644bf0d51fa24ef45715e4eed519b"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/tests/test_retrieval_consensus_overrides.py",
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_retrieval_consensus_overrides.py",
+      "bytes": 1398,
+      "sha256": "83e93b5baa58112095b9bce5de8928fc7b422f1625e5f91dbe24cc154bea9d6b"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/tests/test_run_phase2_cascade.py",
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_run_phase2_cascade.py",
+      "bytes": 1662,
+      "sha256": "4167297c2527e09a527faa31efda1748dacf2c011f0cd660122d1904a2c08156"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/tests/test_selective_consensus_gate.py",
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_selective_consensus_gate.py",
+      "bytes": 1297,
+      "sha256": "888ac380b330bf91452a5731febb1a25338d6907e49147759556892c4ab4fa10"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/tests/test_selective_llm_judge.py",
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_selective_llm_judge.py",
+      "bytes": 1668,
+      "sha256": "21a631fa2d7c419dfe947000cb59ed206b63772297f8e6a178001616d5f0afa8"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/tests/test_source_answer_bank.py",
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_source_answer_bank.py",
+      "bytes": 5758,
+      "sha256": "de5b6c88ce34f51547f29abfbc6d9000a43348315dfbb27bb37d0828a6c7fe25"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/tests/test_source_artifact_overrides.py",
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_source_artifact_overrides.py",
+      "bytes": 1461,
+      "sha256": "302ba072a1f191681710d38850d805c8159486a553cf441ae8ad18d59c877f2d"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/tests/test_structured_overrides.py",
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_structured_overrides.py",
+      "bytes": 8644,
+      "sha256": "6e251356284b95a4a2e651a012fa866deafdc406077bb24528cff20a018b1537"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/tests/test_typed_evidence.py",
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_typed_evidence.py",
+      "bytes": 3442,
+      "sha256": "0a737963a6f6698502a97312430f01da2e879462f7cfc3f267dcd6b9636fddd3"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/tests/test_typed_idiom_matcher.py",
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_typed_idiom_matcher.py",
+      "bytes": 3279,
+      "sha256": "f3a1c5b0d96f8b71c51619969a7d150320b29c60df80afad35771fff643e5df5"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/tests/test_verified_fact_overrides.py",
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_verified_fact_overrides.py",
+      "bytes": 13684,
+      "sha256": "e53a0a7b47613d0f9e565cfccff0149b4a217526019d167d0028b13d03bb120b"
+    },
+    {
+      "original_path": "IUTCSFESTDATATHON-main/THIRD_PARTY_NOTICES.md",
+      "path": "references/IUTCSFESTDATATHON-main/THIRD_PARTY_NOTICES.md",
+      "bytes": 3567,
+      "sha256": "af9c10b259135f22ecf7e4fdc3e6cbb0dc4620f8fe42bd00f580d06c5786044d"
+    },
+    {
+      "original_path": "make_splits.py",
+      "path": "evaluation/make_splits.py",
+      "bytes": 47760,
+      "sha256": "d1d63a4896eb5c892daf493046dc43459d1cd4cf872fbaa4428c6d8e21325f13"
+    },
+    {
+      "original_path": "eval.py",
+      "path": "evaluation/eval.py",
+      "bytes": 48129,
+      "sha256": "4dccdd8dc51b0656914af7e8262df43a788b0f08ffea7d3452d310eeb11e3684"
+    },
+    {
+      "original_path": "test_pipeline.py",
+      "path": "evaluation/test_pipeline.py",
+      "bytes": 63701,
+      "sha256": "02ce3acd4a619ed4e61aab458ebb8ede44831e6d641859d4ee1116a63d733b47"
+    }
+  ]
+}

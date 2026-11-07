@@ -1,0 +1,452 @@
+# Workspace file index
+
+Generated UTC: 2026-11-07T19:48:55.403930+00:00
+
+Files: 409; bytes: 77516138.
+
+- Metadata only: no code execution, notebook outputs, or data row values.
+- Titles use filenames or the first Markdown heading, not README claims; slide counts, versions, and other README drift are not inferred.
+- All copies are retained, including outputs, releases, archives, and split data.
+- docs/catalog, symlinks/junctions, and standard VCS/environment/cache directories are excluded. No model-size or output-directory exclusions are applied.
+- find scans live paths and hashes; matching cached metadata may be reused. Run catalog after changes to refresh the published indexes.
+
+## Workspace
+
+### config
+
+- [.gitignore](../../.gitignore) — .gitignore; 680 bytes
+- [01_Thesis/Docs/catalog/file_catalog.json](../../01_Thesis/Docs/catalog/file_catalog.json) — file_catalog.json; 151007 bytes
+- [01_Thesis/Docs/catalog/original_files.json](../../01_Thesis/Docs/catalog/original_files.json) — original_files.json; 89039 bytes
+- [01_Thesis/Docs/catalog/preservation_migrations.json](../../01_Thesis/Docs/catalog/preservation_migrations.json) — preservation_migrations.json; 773 bytes
+- [01_Thesis/Results/BenHalluEval/update_pipeline_20row_pilot/meta_model_metadata.json](../../01_Thesis/Results/BenHalluEval/update_pipeline_20row_pilot/meta_model_metadata.json) — meta_model_metadata.json; 670 bytes
+- [01_Thesis/Results/BenHalluEval/update_pipeline_20row_pilot/run_manifest.json](../../01_Thesis/Results/BenHalluEval/update_pipeline_20row_pilot/run_manifest.json) — run_manifest.json; 4741 bytes
+- [01_Thesis/Results/BenHalluEval/update_pipeline_20row_pilot/stage_failure_audit.json](../../01_Thesis/Results/BenHalluEval/update_pipeline_20row_pilot/stage_failure_audit.json) — stage_failure_audit.json; 602 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/.gitignore](../../02_Reference_Projects/IUTCSFESTDATATHON/.gitignore) — .gitignore; 127 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/bengali-hallucination/dataset samples.json](../../02_Reference_Projects/IUTCSFESTDATATHON/bengali-hallucination/dataset%20samples.json) — dataset samples.json; 289118 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/kaggle_datasets/llama_cpp_cuda_b9637/dataset-metadata.json](../../02_Reference_Projects/IUTCSFESTDATATHON/kaggle_datasets/llama_cpp_cuda_b9637/dataset-metadata.json) — dataset-metadata.json; 490 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/kaggle_datasets/llama_cpp_cuda_b9637_public/dataset-metadata.json](../../02_Reference_Projects/IUTCSFESTDATATHON/kaggle_datasets/llama_cpp_cuda_b9637_public/dataset-metadata.json) — dataset-metadata.json; 529 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/kaggle_notebooks/gemma_cross_family_audit/kernel-metadata.json](../../02_Reference_Projects/IUTCSFESTDATATHON/kaggle_notebooks/gemma_cross_family_audit/kernel-metadata.json) — kernel-metadata.json; 661 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/kaggle_notebooks/llama_cpp_cuda_builder/kernel-metadata.json](../../02_Reference_Projects/IUTCSFESTDATATHON/kaggle_notebooks/llama_cpp_cuda_builder/kernel-metadata.json) — kernel-metadata.json; 404 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/kaggle_notebooks/phase2_t4_smoke/kernel-metadata.json](../../02_Reference_Projects/IUTCSFESTDATATHON/kaggle_notebooks/phase2_t4_smoke/kernel-metadata.json) — kernel-metadata.json; 537 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/kaggle_notebooks/phase2_v85_inference/FREEZE_MANIFEST.json](../../02_Reference_Projects/IUTCSFESTDATATHON/kaggle_notebooks/phase2_v85_inference/FREEZE_MANIFEST.json) — FREEZE_MANIFEST.json; 1704 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/kaggle_notebooks/phase2_v85_inference/kernel-metadata.json](../../02_Reference_Projects/IUTCSFESTDATATHON/kaggle_notebooks/phase2_v85_inference/kernel-metadata.json) — kernel-metadata.json; 661 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/kaggle_notebooks/phase2_v91_inference/FREEZE_MANIFEST.json](../../02_Reference_Projects/IUTCSFESTDATATHON/kaggle_notebooks/phase2_v91_inference/FREEZE_MANIFEST.json) — FREEZE_MANIFEST.json; 3165 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/kaggle_notebooks/phase2_v91_inference/kernel-metadata.json](../../02_Reference_Projects/IUTCSFESTDATATHON/kaggle_notebooks/phase2_v91_inference/kernel-metadata.json) — kernel-metadata.json; 740 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/kaggle_notebooks/relation_swap_verifier_training/kernel-metadata.json](../../02_Reference_Projects/IUTCSFESTDATATHON/kaggle_notebooks/relation_swap_verifier_training/kernel-metadata.json) — kernel-metadata.json; 506 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/kaggle_notebooks/source_recovery_audit/kernel-metadata.json](../../02_Reference_Projects/IUTCSFESTDATATHON/kaggle_notebooks/source_recovery_audit/kernel-metadata.json) — kernel-metadata.json; 653 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-public-submission/FREEZE_MANIFEST.json](../../02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-public-submission/FREEZE_MANIFEST.json) — FREEZE_MANIFEST.json; 3885 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/FREEZE_MANIFEST.json](../../02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/FREEZE_MANIFEST.json) — FREEZE_MANIFEST.json; 3165 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/requirements.txt](../../02_Reference_Projects/IUTCSFESTDATATHON/requirements.txt) — requirements.txt; 203 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/resources/idiom_semantic_corrections.json](../../02_Reference_Projects/IUTCSFESTDATATHON/resources/idiom_semantic_corrections.json) — idiom_semantic_corrections.json; 754 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/resources/legacy_law_acts.json](../../02_Reference_Projects/IUTCSFESTDATATHON/resources/legacy_law_acts.json) — legacy_law_acts.json; 816 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/resources/typed_evidence_v1.json](../../02_Reference_Projects/IUTCSFESTDATATHON/resources/typed_evidence_v1.json) — typed_evidence_v1.json; 1541 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/resources/verified_fact_answers.json](../../02_Reference_Projects/IUTCSFESTDATATHON/resources/verified_fact_answers.json) — verified_fact_answers.json; 42416 bytes
+- [02_Reference_Projects/IUT_Datathon_Hallu/.gitignore](../../02_Reference_Projects/IUT_Datathon_Hallu/.gitignore) — .gitignore; 4628 bytes
+- [environment/requirements-evaluation.txt](../../environment/requirements-evaluation.txt) — requirements-evaluation.txt; 248 bytes
+- [pytest.ini](../../pytest.ini) — pytest.ini; 136 bytes
+
+### data
+
+- [01_Thesis/Data/BenHalluEval/Processed/Splits/benhallu_full_16k.csv](../../01_Thesis/Data/BenHalluEval/Processed/Splits/benhallu_full_16k.csv) — benhallu_full_16k.csv; 22134186 bytes
+- [01_Thesis/Data/BenHalluEval/Processed/Splits/benhallu_micro_debug_120.csv](../../01_Thesis/Data/BenHalluEval/Processed/Splits/benhallu_micro_debug_120.csv) — benhallu_micro_debug_120.csv; 162349 bytes
+- [01_Thesis/Data/BenHalluEval/Processed/Splits/benhallu_stratified_10pct.csv](../../01_Thesis/Data/BenHalluEval/Processed/Splits/benhallu_stratified_10pct.csv) — benhallu_stratified_10pct.csv; 2196128 bytes
+- [01_Thesis/Data/BenHalluEval/Processed/Splits/track_a_b_first10_each.csv](../../01_Thesis/Data/BenHalluEval/Processed/Splits/track_a_b_first10_each.csv) — track_a_b_first10_each.csv; 34573 bytes
+- [01_Thesis/Data/BenHalluEval/Processed/Splits/track_a_first10_full.csv](../../01_Thesis/Data/BenHalluEval/Processed/Splits/track_a_first10_full.csv) — track_a_first10_full.csv; 18441 bytes
+- [01_Thesis/Data/BenHalluEval/Raw/Track-A/banglahallueval_qa_1000.csv](../../01_Thesis/Data/BenHalluEval/Raw/Track-A/banglahallueval_qa_1000.csv) — banglahallueval_qa_1000.csv; 1870840 bytes
+- [01_Thesis/Data/BenHalluEval/Raw/Track-A/banglahallueval_summarization_dataset_1000.csv](../../01_Thesis/Data/BenHalluEval/Raw/Track-A/banglahallueval_summarization_dataset_1000.csv) — banglahallueval_summarization_dataset_1000.csv; 1202619 bytes
+- [01_Thesis/Data/BenHalluEval/Raw/Track-A/codemix_1000.csv](../../01_Thesis/Data/BenHalluEval/Raw/Track-A/codemix_1000.csv) — codemix_1000.csv; 2427965 bytes
+- [01_Thesis/Data/BenHalluEval/Raw/Track-A/somadhan_1000_main_ordered.csv](../../01_Thesis/Data/BenHalluEval/Raw/Track-A/somadhan_1000_main_ordered.csv) — somadhan_1000_main_ordered.csv; 1955100 bytes
+- [01_Thesis/Data/BenHalluEval/Raw/Track-B/codemix_4000.csv](../../01_Thesis/Data/BenHalluEval/Raw/Track-B/codemix_4000.csv) — codemix_4000.csv; 2820414 bytes
+- [01_Thesis/Data/BenHalluEval/Raw/Track-B/qa_4000.csv](../../01_Thesis/Data/BenHalluEval/Raw/Track-B/qa_4000.csv) — qa_4000.csv; 8197222 bytes
+- [01_Thesis/Data/BenHalluEval/Raw/Track-B/reasoning_1000.csv](../../01_Thesis/Data/BenHalluEval/Raw/Track-B/reasoning_1000.csv) — reasoning_1000.csv; 4618143 bytes
+- [01_Thesis/Data/BenHalluEval/Raw/Track-B/summarization_3000_corrected.csv](../../01_Thesis/Data/BenHalluEval/Raw/Track-B/summarization_3000_corrected.csv) — summarization_3000_corrected.csv; 4976877 bytes
+- [01_Thesis/Data/BenHalluEval/SHA256_MANIFEST.csv](../../01_Thesis/Data/BenHalluEval/SHA256_MANIFEST.csv) — SHA256_MANIFEST.csv; 1350 bytes
+- [01_Thesis/Docs/catalog/duplicate_files.csv](../../01_Thesis/Docs/catalog/duplicate_files.csv) — duplicate_files.csv; 12473 bytes
+- [01_Thesis/Docs/catalog/file_catalog.csv](../../01_Thesis/Docs/catalog/file_catalog.csv) — file_catalog.csv; 96226 bytes
+- [01_Thesis/Results/BenHalluEval/smoke/outputs/mock-baseline_cot_benhallu_micro_debug_120.jsonl](../../01_Thesis/Results/BenHalluEval/smoke/outputs/mock-baseline_cot_benhallu_micro_debug_120.jsonl) — mock-baseline_cot_benhallu_micro_debug_120.jsonl; 260277 bytes
+- [01_Thesis/Results/BenHalluEval/smoke/outputs/mock-baseline_zero_shot_benhallu_micro_debug_120.jsonl](../../01_Thesis/Results/BenHalluEval/smoke/outputs/mock-baseline_zero_shot_benhallu_micro_debug_120.jsonl) — mock-baseline_zero_shot_benhallu_micro_debug_120.jsonl; 249347 bytes
+- [01_Thesis/Results/BenHalluEval/smoke/results/table1_overall_and_per_task_bhs.csv](../../01_Thesis/Results/BenHalluEval/smoke/results/table1_overall_and_per_task_bhs.csv) — table1_overall_and_per_task_bhs.csv; 948 bytes
+- [01_Thesis/Results/BenHalluEval/smoke/results/table2_granular_hallucination_types.csv](../../01_Thesis/Results/BenHalluEval/smoke/results/table2_granular_hallucination_types.csv) — table2_granular_hallucination_types.csv; 1486 bytes
+- [01_Thesis/Results/BenHalluEval/smoke/results/table3_cot_delta_ablation.csv](../../01_Thesis/Results/BenHalluEval/smoke/results/table3_cot_delta_ablation.csv) — table3_cot_delta_ablation.csv; 200 bytes
+- [01_Thesis/Results/BenHalluEval/smoke/results/table4_weight_sensitivity.csv](../../01_Thesis/Results/BenHalluEval/smoke/results/table4_weight_sensitivity.csv) — table4_weight_sensitivity.csv; 1273 bytes
+- [01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/outputs/bangla-ai-1.7b-q4_zero_shot_track_a_b_first10_each.jsonl](../../01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/outputs/bangla-ai-1.7b-q4_zero_shot_track_a_b_first10_each.jsonl) — bangla-ai-1.7b-q4_zero_shot_track_a_b_first10_each.jsonl; 53790 bytes
+- [01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/outputs/gemma3_1b_zero_shot_track_a_b_first10_each.jsonl](../../01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/outputs/gemma3_1b_zero_shot_track_a_b_first10_each.jsonl) — gemma3_1b_zero_shot_track_a_b_first10_each.jsonl; 53669 bytes
+- [01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/outputs/qwen2.5_1.5b_zero_shot_track_a_b_first10_each.jsonl](../../01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/outputs/qwen2.5_1.5b_zero_shot_track_a_b_first10_each.jsonl) — qwen2.5_1.5b_zero_shot_track_a_b_first10_each.jsonl; 48949 bytes
+- [01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/outputs/qwen3_1.7b_zero_shot_track_a_b_first10_each.jsonl](../../01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/outputs/qwen3_1.7b_zero_shot_track_a_b_first10_each.jsonl) — qwen3_1.7b_zero_shot_track_a_b_first10_each.jsonl; 48955 bytes
+- [01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/results/benhalluscore_20row_summary.csv](../../01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/results/benhalluscore_20row_summary.csv) — benhalluscore_20row_summary.csv; 534 bytes
+- [01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/results/table1_overall_and_per_task_bhs.csv](../../01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/results/table1_overall_and_per_task_bhs.csv) — table1_overall_and_per_task_bhs.csv; 1353 bytes
+- [01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/results/table2_granular_hallucination_types.csv](../../01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/results/table2_granular_hallucination_types.csv) — table2_granular_hallucination_types.csv; 2655 bytes
+- [01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/results/table3_cot_delta_ablation.csv](../../01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/results/table3_cot_delta_ablation.csv) — table3_cot_delta_ablation.csv; 50 bytes
+- [01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/results/table4_weight_sensitivity.csv](../../01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/results/table4_weight_sensitivity.csv) — table4_weight_sensitivity.csv; 2698 bytes
+- [01_Thesis/Results/BenHalluEval/track_a_first10_baseline/outputs/banglallama-3.2-3b-q4_zero_shot_track_a_first10.jsonl](../../01_Thesis/Results/BenHalluEval/track_a_first10_baseline/outputs/banglallama-3.2-3b-q4_zero_shot_track_a_first10.jsonl) — banglallama-3.2-3b-q4_zero_shot_track_a_first10.jsonl; 11890 bytes
+- [01_Thesis/Results/BenHalluEval/track_a_first10_baseline/outputs/gemma3_1b_zero_shot_track_a_first10.jsonl](../../01_Thesis/Results/BenHalluEval/track_a_first10_baseline/outputs/gemma3_1b_zero_shot_track_a_first10.jsonl) — gemma3_1b_zero_shot_track_a_first10.jsonl; 27939 bytes
+- [01_Thesis/Results/BenHalluEval/track_a_first10_baseline/outputs/qwen3_1.7b_zero_shot_track_a_first10.jsonl](../../01_Thesis/Results/BenHalluEval/track_a_first10_baseline/outputs/qwen3_1.7b_zero_shot_track_a_first10.jsonl) — qwen3_1.7b_zero_shot_track_a_first10.jsonl; 25583 bytes
+- [01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/outputs/bangla-ai-1.7b-q4_zero_shot_track_a_first10.jsonl](../../01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/outputs/bangla-ai-1.7b-q4_zero_shot_track_a_first10.jsonl) — bangla-ai-1.7b-q4_zero_shot_track_a_first10.jsonl; 27940 bytes
+- [01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/outputs/gemma3_1b_zero_shot_track_a_first10.jsonl](../../01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/outputs/gemma3_1b_zero_shot_track_a_first10.jsonl) — gemma3_1b_zero_shot_track_a_first10.jsonl; 27939 bytes
+- [01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/outputs/qwen2.5_1.5b_zero_shot_track_a_first10.jsonl](../../01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/outputs/qwen2.5_1.5b_zero_shot_track_a_first10.jsonl) — qwen2.5_1.5b_zero_shot_track_a_first10.jsonl; 25579 bytes
+- [01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/outputs/qwen3_1.7b_zero_shot_track_a_first10.jsonl](../../01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/outputs/qwen3_1.7b_zero_shot_track_a_first10.jsonl) — qwen3_1.7b_zero_shot_track_a_first10.jsonl; 25583 bytes
+- [01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/results/table1_overall_and_per_task_bhs.csv](../../01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/results/table1_overall_and_per_task_bhs.csv) — table1_overall_and_per_task_bhs.csv; 1233 bytes
+- [01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/results/table2_granular_hallucination_types.csv](../../01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/results/table2_granular_hallucination_types.csv) — table2_granular_hallucination_types.csv; 2398 bytes
+- [01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/results/table3_cot_delta_ablation.csv](../../01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/results/table3_cot_delta_ablation.csv) — table3_cot_delta_ablation.csv; 50 bytes
+- [01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/results/table4_weight_sensitivity.csv](../../01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/results/table4_weight_sensitivity.csv) — table4_weight_sensitivity.csv; 1 bytes
+- [01_Thesis/Results/BenHalluEval/update_pipeline_20row/intermediate/five_stage_rows.jsonl](../../01_Thesis/Results/BenHalluEval/update_pipeline_20row/intermediate/five_stage_rows.jsonl) — five_stage_rows.jsonl; 5873368 bytes
+- [01_Thesis/Results/BenHalluEval/update_pipeline_20row_pilot/features_29_dense.csv](../../01_Thesis/Results/BenHalluEval/update_pipeline_20row_pilot/features_29_dense.csv) — features_29_dense.csv; 24165 bytes
+- [01_Thesis/Results/BenHalluEval/update_pipeline_20row_pilot/intermediate/five_stage_rows.jsonl](../../01_Thesis/Results/BenHalluEval/update_pipeline_20row_pilot/intermediate/five_stage_rows.jsonl) — five_stage_rows.jsonl; 4393956 bytes
+- [01_Thesis/Results/BenHalluEval/update_pipeline_20row_pilot/meta_predictions.csv](../../01_Thesis/Results/BenHalluEval/update_pipeline_20row_pilot/meta_predictions.csv) — meta_predictions.csv; 2839 bytes
+- [01_Thesis/Results/BenHalluEval/update_pipeline_20row_pilot/pre_post_matched_comparison.csv](../../01_Thesis/Results/BenHalluEval/update_pipeline_20row_pilot/pre_post_matched_comparison.csv) — pre_post_matched_comparison.csv; 592 bytes
+- [01_Thesis/Results/BenHalluEval/update_pipeline_20row_pilot/update_pipeline_bhs.csv](../../01_Thesis/Results/BenHalluEval/update_pipeline_20row_pilot/update_pipeline_bhs.csv) — update_pipeline_bhs.csv; 337 bytes
+- [01_Thesis/Results/BenHalluEval/update_pipeline_20row_pilot/update_pipeline_bhs_fractional.csv](../../01_Thesis/Results/BenHalluEval/update_pipeline_20row_pilot/update_pipeline_bhs_fractional.csv) — update_pipeline_bhs_fractional.csv; 96 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/bengali-hallucination/sample submission.csv](../../02_Reference_Projects/IUTCSFESTDATATHON/bengali-hallucination/sample%20submission.csv) — sample submission.csv; 16513 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/bengali-hallucination/test set.csv](../../02_Reference_Projects/IUTCSFESTDATATHON/bengali-hallucination/test%20set.csv) — test set.csv; 2327431 bytes
+- [02_Reference_Projects/REFERENCE_FILE_MANIFEST.csv](../../02_Reference_Projects/REFERENCE_FILE_MANIFEST.csv) — REFERENCE_FILE_MANIFEST.csv; 42252 bytes
+
+### documentation
+
+- [01_Thesis/Code/Evaluation_Pipeline/README.md](../../01_Thesis/Code/Evaluation_Pipeline/README.md) — Evaluation pipeline guide; 5738 bytes
+- [01_Thesis/Data/BenHalluEval/README.md](../../01_Thesis/Data/BenHalluEval/README.md) — BenHalluEval data guide; 2450 bytes
+- [01_Thesis/Data/Dialect/README.md](../../01_Thesis/Data/Dialect/README.md) — Real dialect benchmark not yet supplied; 826 bytes
+- [01_Thesis/Docs/AUDIT_REPORT.md](../../01_Thesis/Docs/AUDIT_REPORT.md) — Evaluation Pipeline and Optimization Audit Report; 17117 bytes
+- [01_Thesis/Docs/CODE_REVIEW.md](../../01_Thesis/Docs/CODE_REVIEW.md) — Code review: evaluation, workspace tools, and preserved research; 18396 bytes
+- [01_Thesis/Docs/DATA_GUIDE.md](../../01_Thesis/Docs/DATA_GUIDE.md) — Data guide and integration boundaries; 7893 bytes
+- [01_Thesis/Docs/ORGANIZATION.md](../../01_Thesis/Docs/ORGANIZATION.md) — Workspace organization record; 3593 bytes
+- [01_Thesis/Docs/RESEARCH_REUSE.md](../../01_Thesis/Docs/RESEARCH_REUSE.md) — Research reuse map: Huntrix and CUET_AL_Masaar; 19050 bytes
+- [01_Thesis/Docs/WORKFLOW.md](../../01_Thesis/Docs/WORKFLOW.md) — Reproducible thesis workflow; 8748 bytes
+- [01_Thesis/Docs/catalog/FILE_INDEX.md](../../01_Thesis/Docs/catalog/FILE_INDEX.md) — Workspace file index; 66835 bytes
+- [01_Thesis/Experiments/README.md](../../01_Thesis/Experiments/README.md) — Experiment records; 1028 bytes
+- [01_Thesis/Experiments/TEMPLATE.md](../../01_Thesis/Experiments/TEMPLATE.md) — Experiment record; 3250 bytes
+- [01_Thesis/Experiments/reference_repairs/README.md](../../01_Thesis/Experiments/reference_repairs/README.md) — Reference Repairs and Adaptations; 1786 bytes
+- [01_Thesis/Experiments/reference_repairs/cuet/README.md](../../01_Thesis/Experiments/reference_repairs/cuet/README.md) — CUET_AL_Masaar Reference Adaptation; 962 bytes
+- [01_Thesis/Experiments/reference_repairs/huntrix/README.md](../../01_Thesis/Experiments/reference_repairs/huntrix/README.md) — Huntrix Reference Adaptation & Repairs; 1218 bytes
+- [01_Thesis/README.md](../../01_Thesis/README.md) — Thesis workspace; 2286 bytes
+- [01_Thesis/Results/BenHalluEval/smoke/results/table1_overall_and_per_task_bhs.md](../../01_Thesis/Results/BenHalluEval/smoke/results/table1_overall_and_per_task_bhs.md) — table1_overall_and_per_task_bhs.md; 1293 bytes
+- [01_Thesis/Results/BenHalluEval/smoke/results/table2_granular_hallucination_types.md](../../01_Thesis/Results/BenHalluEval/smoke/results/table2_granular_hallucination_types.md) — table2_granular_hallucination_types.md; 2202 bytes
+- [01_Thesis/Results/BenHalluEval/smoke/results/table3_cot_delta_ablation.md](../../01_Thesis/Results/BenHalluEval/smoke/results/table3_cot_delta_ablation.md) — table3_cot_delta_ablation.md; 328 bytes
+- [01_Thesis/Results/BenHalluEval/smoke/results/table4_weight_sensitivity.md](../../01_Thesis/Results/BenHalluEval/smoke/results/table4_weight_sensitivity.md) — table4_weight_sensitivity.md; 2007 bytes
+- [01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/benhalluscore_20row_report.md](../../01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/benhalluscore_20row_report.md) — BenHalluScore baseline: 10 rows per track; 2562 bytes
+- [01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/results/table1_overall_and_per_task_bhs.md](../../01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/results/table1_overall_and_per_task_bhs.md) — table1_overall_and_per_task_bhs.md; 2069 bytes
+- [01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/results/table2_granular_hallucination_types.md](../../01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/results/table2_granular_hallucination_types.md) — table2_granular_hallucination_types.md; 3832 bytes
+- [01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/results/table3_cot_delta_ablation.md](../../01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/results/table3_cot_delta_ablation.md) — table3_cot_delta_ablation.md; 94 bytes
+- [01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/results/table4_weight_sensitivity.md](../../01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/results/table4_weight_sensitivity.md) — table4_weight_sensitivity.md; 3915 bytes
+- [01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/run_manifest.md](../../01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/run_manifest.md) — Run manifest: BenHalluScore, 10 rows per track; 1801 bytes
+- [01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/results/table1_overall_and_per_task_bhs.md](../../01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/results/table1_overall_and_per_task_bhs.md) — table1_overall_and_per_task_bhs.md; 1985 bytes
+- [01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/results/table2_granular_hallucination_types.md](../../01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/results/table2_granular_hallucination_types.md) — table2_granular_hallucination_types.md; 3618 bytes
+- [01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/results/table3_cot_delta_ablation.md](../../01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/results/table3_cot_delta_ablation.md) — table3_cot_delta_ablation.md; 94 bytes
+- [01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/results/table4_weight_sensitivity.md](../../01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/results/table4_weight_sensitivity.md) — table4_weight_sensitivity.md; 10 bytes
+- [01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/run_manifest.md](../../01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/run_manifest.md) — Run manifest: Track-A first-10 baseline; 1633 bytes
+- [01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/track_a_first10_baseline_report.md](../../01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/track_a_first10_baseline_report.md) — Track-A first-10 baseline report; 2081 bytes
+- [01_Thesis/Results/BenHalluEval/update_pipeline_20row_pilot/update_pipeline_report.md](../../01_Thesis/Results/BenHalluEval/update_pipeline_20row_pilot/update_pipeline_report.md) — Updated BenHalluEval detector: 20-row Track-A/Track-B run; 6258 bytes
+- [01_Thesis/Writing/README.md](../../01_Thesis/Writing/README.md) — Thesis writing and publication assets; 1137 bytes
+- [01_Thesis/Writing/chapters/README.md](../../01_Thesis/Writing/chapters/README.md) — Original thesis chapters; 1025 bytes
+- [01_Thesis/Writing/tables/README.md](../../01_Thesis/Writing/tables/README.md) — Reviewed thesis tables; 475 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/AGENTS.md](../../02_Reference_Projects/IUTCSFESTDATATHON/AGENTS.md) — Agent Workflow; 1525 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/DECISION.log](../../02_Reference_Projects/IUTCSFESTDATATHON/DECISION.log) — DECISION.log; 63991 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/EXPERIMENT.log](../../02_Reference_Projects/IUTCSFESTDATATHON/EXPERIMENT.log) — EXPERIMENT.log; 207283 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/Problem.md](../../02_Reference_Projects/IUTCSFESTDATATHON/Problem.md) — Problem.md; 22002 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/README.md](../../02_Reference_Projects/IUTCSFESTDATATHON/README.md) — Huntrix · Bengali LLM Hallucination Detection; 12511 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/THIRD_PARTY_NOTICES.md](../../02_Reference_Projects/IUTCSFESTDATATHON/THIRD_PARTY_NOTICES.md) — Third-party notices; 3567 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/archive/README.md](../../02_Reference_Projects/IUTCSFESTDATATHON/archive/README.md) — Legacy archive; 649 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/archive/legacy_docs/submission_v23.md](../../02_Reference_Projects/IUTCSFESTDATATHON/archive/legacy_docs/submission_v23.md) — Huntrix — Bengali Hallucination Detection Submission; 11839 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/docs/BOTTLENECK.md](../../02_Reference_Projects/IUTCSFESTDATATHON/docs/BOTTLENECK.md) — Why the System Plateaus Near 0.967; 8910 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/docs/COMMIT_HISTORY.md](../../02_Reference_Projects/IUTCSFESTDATATHON/docs/COMMIT_HISTORY.md) — Complete Git chronology; 8740 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/docs/COMPLIANCE_REVIEW.md](../../02_Reference_Projects/IUTCSFESTDATATHON/docs/COMPLIANCE_REVIEW.md) — Phase 2 compliance review; 3477 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/docs/DATA_SOURCES.md](../../02_Reference_Projects/IUTCSFESTDATATHON/docs/DATA_SOURCES.md) — External data and evidence sources; 6944 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/docs/FINAL_SUBMISSION_FREEZE.md](../../02_Reference_Projects/IUTCSFESTDATATHON/docs/FINAL_SUBMISSION_FREEZE.md) — Final submission freeze; 3761 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/docs/JOURNEY.md](../../02_Reference_Projects/IUTCSFESTDATATHON/docs/JOURNEY.md) — From 0.657 to private 0.982: the Huntrix experiment journey; 11483 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/docs/PHASE2_RUNTIME_EVIDENCE.md](../../02_Reference_Projects/IUTCSFESTDATATHON/docs/PHASE2_RUNTIME_EVIDENCE.md) — Phase 2 organizer-run runtime evidence; 2477 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/docs/TECHNICAL_PAPER.md](../../02_Reference_Projects/IUTCSFESTDATATHON/docs/TECHNICAL_PAPER.md) — Evidence-First Bengali Hallucination Detection; 2029 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/docs/latex/ACL_STYLE_SOURCE.md](../../02_Reference_Projects/IUTCSFESTDATATHON/docs/latex/ACL_STYLE_SOURCE.md) — ACL style source; 595 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/docs/latex/HUMANIZER_AUDIT.md](../../02_Reference_Projects/IUTCSFESTDATATHON/docs/latex/HUMANIZER_AUDIT.md) — Humanizer audit: technical report; 1400 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/docs/latex/acl.sty](../../02_Reference_Projects/IUTCSFESTDATATHON/docs/latex/acl.sty) — acl.sty; 11615 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/docs/latex/acl_natbib.bst](../../02_Reference_Projects/IUTCSFESTDATATHON/docs/latex/acl_natbib.bst) — acl_natbib.bst; 45442 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/docs/paper/Huntrix_Technical_Report.docx](../../02_Reference_Projects/IUTCSFESTDATATHON/docs/paper/Huntrix_Technical_Report.docx) — Huntrix_Technical_Report.docx; 192448 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/licenses/Apache-2.0.txt](../../02_Reference_Projects/IUTCSFESTDATATHON/licenses/Apache-2.0.txt) — Apache-2.0.txt; 10273 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/licenses/GPL-3.0.txt](../../02_Reference_Projects/IUTCSFESTDATATHON/licenses/GPL-3.0.txt) — GPL-3.0.txt; 35141 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/output/qna/Huntrix_Judges_QA_Preparation.docx](../../02_Reference_Projects/IUTCSFESTDATATHON/output/qna/Huntrix_Judges_QA_Preparation.docx) — Huntrix_Judges_QA_Preparation.docx; 66338 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-public-submission/CITATIONS.md](../../02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-public-submission/CITATIONS.md) — Citations and licenses; 2476 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-public-submission/README.md](../../02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-public-submission/README.md) — Huntrix · Frozen Phase 2 inference; 2539 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/CITATIONS.md](../../02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/CITATIONS.md) — Citations and licenses; 2298 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/DATA_SOURCES.md](../../02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/DATA_SOURCES.md) — External data and evidence sources; 6944 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/FORM_VALUES.md](../../02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/FORM_VALUES.md) — Organizer Google Form values; 2493 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/METHODOLOGY_DISCLOSURE.md](../../02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/METHODOLOGY_DISCLOSURE.md) — Phase 2 compliance review; 3531 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/PHASE2_RUNTIME_EVIDENCE.md](../../02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/PHASE2_RUNTIME_EVIDENCE.md) — Phase 2 organizer-run runtime evidence; 2477 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/README.md](../../02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/README.md) — Huntrix — Olikbochon Onsite Submission; 5951 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/RUNBOOK.md](../../02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/RUNBOOK.md) — Run the frozen notebook on Kaggle; 2251 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/SUBMISSION_LINKS.md](../../02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/SUBMISSION_LINKS.md) — Submission links; 3101 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/THIRD_PARTY_NOTICES.md](../../02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/THIRD_PARTY_NOTICES.md) — Third-party notices; 3606 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/form.md](../../02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/form.md) — Huntrix Onsite Submission Form Values; 1214 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/report/ACL_STYLE_SOURCE.md](../../02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/report/ACL_STYLE_SOURCE.md) — ACL style source; 595 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/report/README.md](../../02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/report/README.md) — Build the technical report; 773 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/report/acl.sty](../../02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/report/acl.sty) — acl.sty; 11615 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/report/acl_natbib.bst](../../02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/report/acl_natbib.bst) — acl_natbib.bst; 45442 bytes
+- [02_Reference_Projects/IUT_Datathon_Hallu/README.md](../../02_Reference_Projects/IUT_Datathon_Hallu/README.md) — অলীকবচন — Bengali LLM Hallucination Detection (IUT 12th ICT Fest Datathon 2026); 7538 bytes
+- [02_Reference_Projects/README.md](../../02_Reference_Projects/README.md) — Reference projects: reading guide; 3218 bytes
+- [AGENTS.md](../../AGENTS.md) — Thesis workspace instructions; 4299 bytes
+- [README.md](../../README.md) — Bengali Hallucination Thesis Workspace; 3035 bytes
+- [docs/AUDIT_REPORT.md](../../docs/AUDIT_REPORT.md) — Evaluation Pipeline and Optimization Audit Report; 17117 bytes
+- [docs/CODE_REVIEW.md](../../docs/CODE_REVIEW.md) — Code review: evaluation, workspace tools, and preserved research; 18396 bytes
+- [docs/DATA_GUIDE.md](../../docs/DATA_GUIDE.md) — Data guide and integration boundaries; 7893 bytes
+- [docs/ORGANIZATION.md](../../docs/ORGANIZATION.md) — Workspace organization record; 3593 bytes
+- [docs/RESEARCH_REUSE.md](../../docs/RESEARCH_REUSE.md) — Research reuse map: Huntrix and CUET_AL_Masaar; 19050 bytes
+- [docs/WORKFLOW.md](../../docs/WORKFLOW.md) — Reproducible thesis workflow; 8748 bytes
+- [environment/README.md](../../environment/README.md) — Evaluation environment; 1983 bytes
+- [tools/README.md](../../tools/README.md) — Workspace navigation and integrity tools; 2202 bytes
+
+### figure
+
+- [01_Thesis/Writing/figures/README.md](../../01_Thesis/Writing/figures/README.md) — Reviewed thesis figures; 500 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/docs/assets/leaderboard_progression.png](../../02_Reference_Projects/IUTCSFESTDATATHON/docs/assets/leaderboard_progression.png) — leaderboard_progression.png; 58333 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/docs/assets/pipeline_architecture.png](../../02_Reference_Projects/IUTCSFESTDATATHON/docs/assets/pipeline_architecture.png) — pipeline_architecture.png; 68003 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/docs/assets/uncertainty_reduction.png](../../02_Reference_Projects/IUTCSFESTDATATHON/docs/assets/uncertainty_reduction.png) — uncertainty_reduction.png; 43835 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/docs/latex/figures/README.md](../../02_Reference_Projects/IUTCSFESTDATATHON/docs/latex/figures/README.md) — Paper figures reused in the presentation; 1082 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/docs/latex/figures/architecture_standalone.tex](../../02_Reference_Projects/IUTCSFESTDATATHON/docs/latex/figures/architecture_standalone.tex) — architecture_standalone.tex; 2675 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/docs/latex/figures/context_verification_standalone.tex](../../02_Reference_Projects/IUTCSFESTDATATHON/docs/latex/figures/context_verification_standalone.tex) — context_verification_standalone.tex; 1613 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/docs/latex/figures/progress_standalone.tex](../../02_Reference_Projects/IUTCSFESTDATATHON/docs/latex/figures/progress_standalone.tex) — progress_standalone.tex; 1603 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/docs/latex/figures/typed_evidence_standalone.tex](../../02_Reference_Projects/IUTCSFESTDATATHON/docs/latex/figures/typed_evidence_standalone.tex) — typed_evidence_standalone.tex; 1808 bytes
+
+### license
+
+- [01_Thesis/Experiments/reference_repairs/cuet/LICENSE](../../01_Thesis/Experiments/reference_repairs/cuet/LICENSE) — LICENSE; 1070 bytes
+- [01_Thesis/Experiments/reference_repairs/huntrix/LICENSE](../../01_Thesis/Experiments/reference_repairs/huntrix/LICENSE) — LICENSE; 1069 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/LICENSE](../../02_Reference_Projects/IUTCSFESTDATATHON/LICENSE) — LICENSE; 1069 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/kaggle_datasets/llama_cpp_cuda_b9637_public/LICENSE.llama.cpp.txt](../../02_Reference_Projects/IUTCSFESTDATATHON/kaggle_datasets/llama_cpp_cuda_b9637_public/LICENSE.llama.cpp.txt) — LICENSE.llama.cpp.txt; 1078 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/LICENSE](../../02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/LICENSE) — LICENSE; 1069 bytes
+- [02_Reference_Projects/IUT_Datathon_Hallu/LICENSE](../../02_Reference_Projects/IUT_Datathon_Hallu/LICENSE) — LICENSE; 1070 bytes
+
+### notebook
+
+- [01_Thesis/Experiments/reference_repairs/cuet/CUET_AL_Masaar_inference_notebook.repaired.ipynb](../../01_Thesis/Experiments/reference_repairs/cuet/CUET_AL_Masaar_inference_notebook.repaired.ipynb) — CUET_AL_Masaar_inference_notebook.repaired.ipynb; 102806 bytes
+- [01_Thesis/Experiments/reference_repairs/huntrix/best_gemma12_qat_submission.repaired.ipynb](../../01_Thesis/Experiments/reference_repairs/huntrix/best_gemma12_qat_submission.repaired.ipynb) — Bengali Hallucination Detection - Gemma 12B QAT GGUF Submission; 16459 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/archive/legacy_notebooks/best_gemma12_qat_submission.ipynb](../../02_Reference_Projects/IUTCSFESTDATATHON/archive/legacy_notebooks/best_gemma12_qat_submission.ipynb) — Bengali Hallucination Detection - Gemma 12B QAT GGUF Submission; 16476 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/archive/legacy_notebooks/starter-notebook-datathon.ipynb](../../02_Reference_Projects/IUTCSFESTDATATHON/archive/legacy_notebooks/starter-notebook-datathon.ipynb) — Bangla Hallucination Detection — Starter Notebook; 175072 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/kaggle_notebooks/phase2_v85_inference/phase2_v85_inference.ipynb](../../02_Reference_Projects/IUTCSFESTDATATHON/kaggle_notebooks/phase2_v85_inference/phase2_v85_inference.ipynb) — Huntrix — Bengali hallucination detection; 16071 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/kaggle_notebooks/phase2_v91_inference/phase2_v91_inference.ipynb](../../02_Reference_Projects/IUTCSFESTDATATHON/kaggle_notebooks/phase2_v91_inference/phase2_v91_inference.ipynb) — Huntrix — Bengali hallucination detection; 16615 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-public-submission/inference.ipynb](../../02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-public-submission/inference.ipynb) — Huntrix — Bengali hallucination detection; 16071 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/Huntrix_inference_notebook.ipynb](../../02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/Huntrix_inference_notebook.ipynb) — Huntrix — Bengali hallucination detection; 16615 bytes
+- [02_Reference_Projects/IUT_Datathon_Hallu/CUET_AL_Masaar_inference_notebook.ipynb](../../02_Reference_Projects/IUT_Datathon_Hallu/CUET_AL_Masaar_inference_notebook.ipynb) — CUET_AL_Masaar_inference_notebook.ipynb; 102806 bytes
+
+### paper
+
+- [02_Reference_Projects/IUTCSFESTDATATHON/docs/latex/Huntrix_Technical_Report.tex](../../02_Reference_Projects/IUTCSFESTDATATHON/docs/latex/Huntrix_Technical_Report.tex) — Huntrix_Technical_Report.tex; 22978 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/docs/latex/references.bib](../../02_Reference_Projects/IUTCSFESTDATATHON/docs/latex/references.bib) — references.bib; 8723 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/output/pdf/Huntrix_Technical_Report.pdf](../../02_Reference_Projects/IUTCSFESTDATATHON/output/pdf/Huntrix_Technical_Report.pdf) — Huntrix_Technical_Report.pdf; 74083 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/output/qna/Huntrix_Judges_QA_Preparation.pdf](../../02_Reference_Projects/IUTCSFESTDATATHON/output/qna/Huntrix_Judges_QA_Preparation.pdf) — Huntrix_Judges_QA_Preparation.pdf; 417947 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/Huntrix_report.pdf](../../02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/Huntrix_report.pdf) — Huntrix_report.pdf; 74083 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/report/Huntrix_Technical_Report.tex](../../02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/report/Huntrix_Technical_Report.tex) — Huntrix_Technical_Report.tex; 22978 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/report/references.bib](../../02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/report/references.bib) — references.bib; 8723 bytes
+- [02_Reference_Projects/IUT_Datathon_Hallu/CUET_AL_Masaar_report.pdf](../../02_Reference_Projects/IUT_Datathon_Hallu/CUET_AL_Masaar_report.pdf) — CUET_AL_Masaar_report.pdf; 131039 bytes
+
+### presentation
+
+- [02_Reference_Projects/IUTCSFESTDATATHON/docs/HUNTRIX_PRESENTATION_SCRIPT.md](../../02_Reference_Projects/IUTCSFESTDATATHON/docs/HUNTRIX_PRESENTATION_SCRIPT.md) — Team Huntrix Final Presentation Script; 12271 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/output/presentation/Huntrix_Final_Presentation.pdf](../../02_Reference_Projects/IUTCSFESTDATATHON/output/presentation/Huntrix_Final_Presentation.pdf) — Huntrix_Final_Presentation.pdf; 515508 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/output/presentation/Huntrix_Final_Presentation.pptx](../../02_Reference_Projects/IUTCSFESTDATATHON/output/presentation/Huntrix_Final_Presentation.pptx) — Huntrix_Final_Presentation.pptx; 86262 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/output/presentation/Huntrix_Final_Presentation_20_Slides.pdf](../../02_Reference_Projects/IUTCSFESTDATATHON/output/presentation/Huntrix_Final_Presentation_20_Slides.pdf) — Huntrix_Final_Presentation_20_Slides.pdf; 987598 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/output/presentation/Huntrix_Final_Presentation_20_Slides.pptx](../../02_Reference_Projects/IUTCSFESTDATATHON/output/presentation/Huntrix_Final_Presentation_20_Slides.pptx) — Huntrix_Final_Presentation_20_Slides.pptx; 560610 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/output/presentation/Huntrix_Presentation_Script.docx](../../02_Reference_Projects/IUTCSFESTDATATHON/output/presentation/Huntrix_Presentation_Script.docx) — Huntrix_Presentation_Script.docx; 47249 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/output/presentation/Huntrix_Presentation_Script.pdf](../../02_Reference_Projects/IUTCSFESTDATATHON/output/presentation/Huntrix_Presentation_Script.pdf) — Huntrix_Presentation_Script.pdf; 177478 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/output/presentation/assets/paper_figures/architecture.pdf](../../02_Reference_Projects/IUTCSFESTDATATHON/output/presentation/assets/paper_figures/architecture.pdf) — architecture.pdf; 11729 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/output/presentation/assets/paper_figures/architecture.png](../../02_Reference_Projects/IUTCSFESTDATATHON/output/presentation/assets/paper_figures/architecture.png) — architecture.png; 233410 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/output/presentation/assets/paper_figures/architecture.svg](../../02_Reference_Projects/IUTCSFESTDATATHON/output/presentation/assets/paper_figures/architecture.svg) — architecture.svg; 91195 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/output/presentation/assets/paper_figures/context_verification.pdf](../../02_Reference_Projects/IUTCSFESTDATATHON/output/presentation/assets/paper_figures/context_verification.pdf) — context_verification.pdf; 14855 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/output/presentation/assets/paper_figures/context_verification.png](../../02_Reference_Projects/IUTCSFESTDATATHON/output/presentation/assets/paper_figures/context_verification.png) — context_verification.png; 77413 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/output/presentation/assets/paper_figures/context_verification.svg](../../02_Reference_Projects/IUTCSFESTDATATHON/output/presentation/assets/paper_figures/context_verification.svg) — context_verification.svg; 74607 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/output/presentation/assets/paper_figures/progress.pdf](../../02_Reference_Projects/IUTCSFESTDATATHON/output/presentation/assets/paper_figures/progress.pdf) — progress.pdf; 11414 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/output/presentation/assets/paper_figures/progress.png](../../02_Reference_Projects/IUTCSFESTDATATHON/output/presentation/assets/paper_figures/progress.png) — progress.png; 84176 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/output/presentation/assets/paper_figures/progress.svg](../../02_Reference_Projects/IUTCSFESTDATATHON/output/presentation/assets/paper_figures/progress.svg) — progress.svg; 79494 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/output/presentation/assets/paper_figures/typed_evidence.pdf](../../02_Reference_Projects/IUTCSFESTDATATHON/output/presentation/assets/paper_figures/typed_evidence.pdf) — typed_evidence.pdf; 9710 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/output/presentation/assets/paper_figures/typed_evidence.png](../../02_Reference_Projects/IUTCSFESTDATATHON/output/presentation/assets/paper_figures/typed_evidence.png) — typed_evidence.png; 82653 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/output/presentation/assets/paper_figures/typed_evidence.svg](../../02_Reference_Projects/IUTCSFESTDATATHON/output/presentation/assets/paper_figures/typed_evidence.svg) — typed_evidence.svg; 59809 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/Huntrix_presentation.pdf](../../02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/Huntrix_presentation.pdf) — Huntrix_presentation.pdf; 987598 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/presentation/HUNTRIX_PRESENTATION_SCRIPT.md](../../02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/presentation/HUNTRIX_PRESENTATION_SCRIPT.md) — Team Huntrix Final Presentation Script; 12271 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/presentation/Huntrix_Final_Presentation_20_Slides.pptx](../../02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/presentation/Huntrix_Final_Presentation_20_Slides.pptx) — Huntrix_Final_Presentation_20_Slides.pptx; 560610 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/presentation/Huntrix_Presentation_Script.docx](../../02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/presentation/Huntrix_Presentation_Script.docx) — Huntrix_Presentation_Script.docx; 47249 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/presentation/Huntrix_Presentation_Script.pdf](../../02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/presentation/Huntrix_Presentation_Script.pdf) — Huntrix_Presentation_Script.pdf; 177478 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/presentation/figures/README.md](../../02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/presentation/figures/README.md) — Paper figures reused in the presentation; 1082 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/presentation/figures/architecture.pdf](../../02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/presentation/figures/architecture.pdf) — architecture.pdf; 11729 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/presentation/figures/architecture.png](../../02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/presentation/figures/architecture.png) — architecture.png; 233410 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/presentation/figures/architecture.svg](../../02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/presentation/figures/architecture.svg) — architecture.svg; 91195 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/presentation/figures/architecture_standalone.tex](../../02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/presentation/figures/architecture_standalone.tex) — architecture_standalone.tex; 2675 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/presentation/figures/context_verification.pdf](../../02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/presentation/figures/context_verification.pdf) — context_verification.pdf; 14855 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/presentation/figures/context_verification.png](../../02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/presentation/figures/context_verification.png) — context_verification.png; 77413 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/presentation/figures/context_verification.svg](../../02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/presentation/figures/context_verification.svg) — context_verification.svg; 74607 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/presentation/figures/context_verification_standalone.tex](../../02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/presentation/figures/context_verification_standalone.tex) — context_verification_standalone.tex; 1613 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/presentation/figures/progress.pdf](../../02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/presentation/figures/progress.pdf) — progress.pdf; 11414 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/presentation/figures/progress.png](../../02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/presentation/figures/progress.png) — progress.png; 84176 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/presentation/figures/progress.svg](../../02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/presentation/figures/progress.svg) — progress.svg; 79494 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/presentation/figures/progress_standalone.tex](../../02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/presentation/figures/progress_standalone.tex) — progress_standalone.tex; 1603 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/presentation/figures/typed_evidence.pdf](../../02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/presentation/figures/typed_evidence.pdf) — typed_evidence.pdf; 9710 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/presentation/figures/typed_evidence.png](../../02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/presentation/figures/typed_evidence.png) — typed_evidence.png; 82653 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/presentation/figures/typed_evidence.svg](../../02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/presentation/figures/typed_evidence.svg) — typed_evidence.svg; 59809 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/presentation/figures/typed_evidence_standalone.tex](../../02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/presentation/figures/typed_evidence_standalone.tex) — typed_evidence_standalone.tex; 1808 bytes
+- [02_Reference_Projects/IUT_Datathon_Hallu/CUET_AL_Masaar_presentation.pdf](../../02_Reference_Projects/IUT_Datathon_Hallu/CUET_AL_Masaar_presentation.pdf) — CUET_AL_Masaar_presentation.pdf; 653865 bytes
+
+### sourcecode
+
+- [01_Thesis/Code/Evaluation_Pipeline/eval.py](../../01_Thesis/Code/Evaluation_Pipeline/eval.py) — eval.py; 54002 bytes
+- [01_Thesis/Code/Evaluation_Pipeline/judge_parsing.py](../../01_Thesis/Code/Evaluation_Pipeline/judge_parsing.py) — judge_parsing.py; 10821 bytes
+- [01_Thesis/Code/Evaluation_Pipeline/judge_transport.py](../../01_Thesis/Code/Evaluation_Pipeline/judge_transport.py) — judge_transport.py; 13919 bytes
+- [01_Thesis/Code/Evaluation_Pipeline/make_splits.py](../../01_Thesis/Code/Evaluation_Pipeline/make_splits.py) — make_splits.py; 54629 bytes
+- [01_Thesis/Code/Evaluation_Pipeline/openrouter_config.py](../../01_Thesis/Code/Evaluation_Pipeline/openrouter_config.py) — openrouter_config.py; 5315 bytes
+- [01_Thesis/Code/Evaluation_Pipeline/run_openrouter.py](../../01_Thesis/Code/Evaluation_Pipeline/run_openrouter.py) — run_openrouter.py; 8114 bytes
+- [01_Thesis/Code/Evaluation_Pipeline/update_evaluation.py](../../01_Thesis/Code/Evaluation_Pipeline/update_evaluation.py) — update_evaluation.py; 79812 bytes
+- [01_Thesis/Experiments/pipeline_hardening/original_evaluation/eval.py](../../01_Thesis/Experiments/pipeline_hardening/original_evaluation/eval.py) — eval.py; 47301 bytes
+- [01_Thesis/Experiments/pipeline_hardening/original_evaluation/make_splits.py](../../01_Thesis/Experiments/pipeline_hardening/original_evaluation/make_splits.py) — make_splits.py; 46925 bytes
+- [01_Thesis/Experiments/reference_repairs/huntrix/datathon_utils.py](../../01_Thesis/Experiments/reference_repairs/huntrix/datathon_utils.py) — datathon_utils.py; 7693 bytes
+- [01_Thesis/Experiments/reference_repairs/huntrix/structured_overrides.py](../../01_Thesis/Experiments/reference_repairs/huntrix/structured_overrides.py) — structured_overrides.py; 34177 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/docs/scripts/build_project_docs.py](../../02_Reference_Projects/IUTCSFESTDATATHON/docs/scripts/build_project_docs.py) — build_project_docs.py; 27067 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/kaggle_notebooks/gemma_cross_family_audit/gemma_cross_family_audit.py](../../02_Reference_Projects/IUTCSFESTDATATHON/kaggle_notebooks/gemma_cross_family_audit/gemma_cross_family_audit.py) — gemma_cross_family_audit.py; 15209 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/kaggle_notebooks/llama_cpp_cuda_builder/llama_cpp_cuda_builder.py](../../02_Reference_Projects/IUTCSFESTDATATHON/kaggle_notebooks/llama_cpp_cuda_builder/llama_cpp_cuda_builder.py) — llama_cpp_cuda_builder.py; 3873 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/kaggle_notebooks/phase2_t4_smoke/phase2_t4_smoke.py](../../02_Reference_Projects/IUTCSFESTDATATHON/kaggle_notebooks/phase2_t4_smoke/phase2_t4_smoke.py) — phase2_t4_smoke.py; 3947 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/kaggle_notebooks/phase2_v85_inference/phase2_v85_inference.py](../../02_Reference_Projects/IUTCSFESTDATATHON/kaggle_notebooks/phase2_v85_inference/phase2_v85_inference.py) — phase2_v85_inference.py; 6692 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/kaggle_notebooks/phase2_v91_inference/phase2_v91_inference.py](../../02_Reference_Projects/IUTCSFESTDATATHON/kaggle_notebooks/phase2_v91_inference/phase2_v91_inference.py) — phase2_v91_inference.py; 6901 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/kaggle_notebooks/relation_swap_verifier_training/relation_swap_verifier_training.py](../../02_Reference_Projects/IUTCSFESTDATATHON/kaggle_notebooks/relation_swap_verifier_training/relation_swap_verifier_training.py) — relation_swap_verifier_training.py; 15261 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/kaggle_notebooks/source_recovery_audit/source_recovery_audit.py](../../02_Reference_Projects/IUTCSFESTDATATHON/kaggle_notebooks/source_recovery_audit/source_recovery_audit.py) — source_recovery_audit.py; 18519 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/analyze_gemma_cross_family_audit.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/analyze_gemma_cross_family_audit.py) — analyze_gemma_cross_family_audit.py; 8309 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/analyze_source_recovery_audit.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/analyze_source_recovery_audit.py) — analyze_source_recovery_audit.py; 8970 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/antonym_evidence_overrides.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/antonym_evidence_overrides.py) — antonym_evidence_overrides.py; 14862 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/apply_lexical_overrides.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/apply_lexical_overrides.py) — apply_lexical_overrides.py; 4684 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/apply_portable_verifier_blend.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/apply_portable_verifier_blend.py) — apply_portable_verifier_blend.py; 2221 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/audit_additional_qa_banks.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/audit_additional_qa_banks.py) — audit_additional_qa_banks.py; 6393 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/audit_azmine_bcs.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/audit_azmine_bcs.py) — audit_azmine_bcs.py; 6174 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/audit_benhallu_raw_lineage.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/audit_benhallu_raw_lineage.py) — audit_benhallu_raw_lineage.py; 6112 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/audit_benhallueval_fiveway.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/audit_benhallueval_fiveway.py) — audit_benhallueval_fiveway.py; 3712 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/audit_context_rule_safety.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/audit_context_rule_safety.py) — audit_context_rule_safety.py; 7243 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/audit_external_lineage.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/audit_external_lineage.py) — audit_external_lineage.py; 6539 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/audit_source_conflict_votes.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/audit_source_conflict_votes.py) — audit_source_conflict_votes.py; 5251 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/audit_source_origin_conflicts.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/audit_source_origin_conflicts.py) — audit_source_origin_conflicts.py; 6738 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/audit_test_derived_pseudolabels.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/audit_test_derived_pseudolabels.py) — audit_test_derived_pseudolabels.py; 3329 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/audit_transitive_answer_equivalence.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/audit_transitive_answer_equivalence.py) — audit_transitive_answer_equivalence.py; 12746 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/bcs_answer_bank.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/bcs_answer_bank.py) — bcs_answer_bank.py; 7949 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/benchmark_phase2_pipeline.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/benchmark_phase2_pipeline.py) — benchmark_phase2_pipeline.py; 3732 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/benhallueval_provenance.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/benhallueval_provenance.py) — benhallueval_provenance.py; 3536 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/birth_date_overrides.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/birth_date_overrides.py) — birth_date_overrides.py; 8856 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/bn_num2words.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/bn_num2words.py) — bn_num2words.py; 3511 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/build_fact_page_corpus.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/build_fact_page_corpus.py) — build_fact_page_corpus.py; 5394 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/build_fact_page_html_corpus.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/build_fact_page_html_corpus.py) — build_fact_page_html_corpus.py; 3875 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/build_judges_qna_docx.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/build_judges_qna_docx.py) — build_judges_qna_docx.py; 82075 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/build_phase1_audit_ledger.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/build_phase1_audit_ledger.py) — build_phase1_audit_ledger.py; 6669 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/build_phase2_training.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/build_phase2_training.py) — build_phase2_training.py; 4807 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/build_presentation_script_docx.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/build_presentation_script_docx.py) — build_presentation_script_docx.py; 16614 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/build_v91_compliance_notebook.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/build_v91_compliance_notebook.py) — build_v91_compliance_notebook.py; 4590 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/combine_evidence_predictions.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/combine_evidence_predictions.py) — combine_evidence_predictions.py; 3285 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/context_contrastive_pairs.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/context_contrastive_pairs.py) — context_contrastive_pairs.py; 6737 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/context_numeric_overrides.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/context_numeric_overrides.py) — context_numeric_overrides.py; 16312 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/context_span_overrides.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/context_span_overrides.py) — context_span_overrides.py; 3330 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/datathon_utils.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/datathon_utils.py) — datathon_utils.py; 7693 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/establishment_overrides.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/establishment_overrides.py) — establishment_overrides.py; 12937 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/evaluate_grouped_verifier.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/evaluate_grouped_verifier.py) — evaluate_grouped_verifier.py; 3178 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/evaluate_judge_consensus.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/evaluate_judge_consensus.py) — evaluate_judge_consensus.py; 2404 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/evaluate_selective_cascade.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/evaluate_selective_cascade.py) — evaluate_selective_cascade.py; 3808 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/evidence_controlled_pairs.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/evidence_controlled_pairs.py) — evidence_controlled_pairs.py; 4665 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/evidence_index.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/evidence_index.py) — evidence_index.py; 10572 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/external_data.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/external_data.py) — external_data.py; 10645 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/fact_page_consensus.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/fact_page_consensus.py) — fact_page_consensus.py; 3889 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/freeze_v91_release.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/freeze_v91_release.py) — freeze_v91_release.py; 8483 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/fuzzy_source_overrides.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/fuzzy_source_overrides.py) — fuzzy_source_overrides.py; 12155 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/gemma_ensemble.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/gemma_ensemble.py) — gemma_ensemble.py; 19309 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/generate_curated_synthetic.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/generate_curated_synthetic.py) — generate_curated_synthetic.py; 10243 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/gguf_selective_judge.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/gguf_selective_judge.py) — gguf_selective_judge.py; 8950 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/hf_phase2_data.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/hf_phase2_data.py) — hf_phase2_data.py; 14672 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/hybrid_evidence_index.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/hybrid_evidence_index.py) — hybrid_evidence_index.py; 14066 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/idiom_semantic_overrides.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/idiom_semantic_overrides.py) — idiom_semantic_overrides.py; 6280 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/law_evidence_overrides.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/law_evidence_overrides.py) — law_evidence_overrides.py; 14141 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/lexical_data.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/lexical_data.py) — lexical_data.py; 8083 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/lmstudio_hallucination_judge.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/lmstudio_hallucination_judge.py) — lmstudio_hallucination_judge.py; 5612 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/make_lexical_candidates.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/make_lexical_candidates.py) — make_lexical_candidates.py; 3976 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/make_teacher_pool.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/make_teacher_pool.py) — make_teacher_pool.py; 4589 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/mlx_context_verifier.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/mlx_context_verifier.py) — mlx_context_verifier.py; 9139 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/mlx_fact_page_judge.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/mlx_fact_page_judge.py) — mlx_fact_page_judge.py; 10582 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/mlx_idiom_evidence_judge.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/mlx_idiom_evidence_judge.py) — mlx_idiom_evidence_judge.py; 9185 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/mlx_qwen_judge.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/mlx_qwen_judge.py) — mlx_qwen_judge.py; 17038 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/mlx_source_bank_judge.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/mlx_source_bank_judge.py) — mlx_source_bank_judge.py; 8836 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/mlx_structured_judge.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/mlx_structured_judge.py) — mlx_structured_judge.py; 8261 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/mlx_teacher_label.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/mlx_teacher_label.py) — mlx_teacher_label.py; 6640 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/normalize_legal_acts.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/normalize_legal_acts.py) — normalize_legal_acts.py; 2013 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/normalize_phase2_raw.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/normalize_phase2_raw.py) — normalize_phase2_raw.py; 5824 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/package_offline_artifacts.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/package_offline_artifacts.py) — package_offline_artifacts.py; 15254 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/package_phase2_runtime.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/package_phase2_runtime.py) — package_phase2_runtime.py; 5383 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/phase1_provenance_report.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/phase1_provenance_report.py) — phase1_provenance_report.py; 10824 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/phase2_pipeline.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/phase2_pipeline.py) — phase2_pipeline.py; 18131 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/prepare_teacher_distill.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/prepare_teacher_distill.py) — prepare_teacher_distill.py; 2523 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/released_set_diagnostic.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/released_set_diagnostic.py) — released_set_diagnostic.py; 2557 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/retrieval_consensus_overrides.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/retrieval_consensus_overrides.py) — retrieval_consensus_overrides.py; 4620 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/run_phase2_cascade.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/run_phase2_cascade.py) — run_phase2_cascade.py; 4088 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/selective_consensus_gate.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/selective_consensus_gate.py) — selective_consensus_gate.py; 4044 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/selective_llm_judge.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/selective_llm_judge.py) — selective_llm_judge.py; 10674 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/source_answer_bank.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/source_answer_bank.py) — source_answer_bank.py; 23963 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/source_artifact_overrides.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/source_artifact_overrides.py) — source_artifact_overrides.py; 6138 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/structured_overrides.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/structured_overrides.py) — structured_overrides.py; 34011 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/synthetic_data.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/synthetic_data.py) — synthetic_data.py; 7204 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/topic_context_evidence.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/topic_context_evidence.py) — topic_context_evidence.py; 3967 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/train_nli_encoder.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/train_nli_encoder.py) — train_nli_encoder.py; 4725 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/train_portable_verifier.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/train_portable_verifier.py) — train_portable_verifier.py; 12934 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/train_verifier.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/train_verifier.py) — train_verifier.py; 11402 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/typed_evidence.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/typed_evidence.py) — typed_evidence.py; 5734 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/typed_idiom_matcher.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/typed_idiom_matcher.py) — typed_idiom_matcher.py; 5457 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/verified_fact_overrides.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/verified_fact_overrides.py) — verified_fact_overrides.py; 3340 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/weighted_source_overrides.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/weighted_source_overrides.py) — weighted_source_overrides.py; 5803 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/wiki_evidence.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/wiki_evidence.py) — wiki_evidence.py; 4901 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/scripts/wikidata_facts.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/wikidata_facts.py) — wikidata_facts.py; 14588 bytes
+- [tools/workspace.py](../../tools/workspace.py) — workspace.py; 18156 bytes
+
+### test
+
+- [01_Thesis/Code/Evaluation_Pipeline/test_pipeline.py](../../01_Thesis/Code/Evaluation_Pipeline/test_pipeline.py) — test_pipeline.py; 80103 bytes
+- [01_Thesis/Experiments/pipeline_hardening/original_evaluation/test_pipeline.py](../../01_Thesis/Experiments/pipeline_hardening/original_evaluation/test_pipeline.py) — test_pipeline.py; 62263 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/tests/test_analyze_gemma_cross_family_audit.py](../../02_Reference_Projects/IUTCSFESTDATATHON/tests/test_analyze_gemma_cross_family_audit.py) — test_analyze_gemma_cross_family_audit.py; 1795 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/tests/test_analyze_source_recovery_audit.py](../../02_Reference_Projects/IUTCSFESTDATATHON/tests/test_analyze_source_recovery_audit.py) — test_analyze_source_recovery_audit.py; 2057 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/tests/test_antonym_evidence_overrides.py](../../02_Reference_Projects/IUTCSFESTDATATHON/tests/test_antonym_evidence_overrides.py) — test_antonym_evidence_overrides.py; 3329 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/tests/test_audit_additional_qa_banks.py](../../02_Reference_Projects/IUTCSFESTDATATHON/tests/test_audit_additional_qa_banks.py) — test_audit_additional_qa_banks.py; 2204 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/tests/test_audit_azmine_bcs.py](../../02_Reference_Projects/IUTCSFESTDATATHON/tests/test_audit_azmine_bcs.py) — test_audit_azmine_bcs.py; 1954 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/tests/test_audit_benhallu_raw_lineage.py](../../02_Reference_Projects/IUTCSFESTDATATHON/tests/test_audit_benhallu_raw_lineage.py) — test_audit_benhallu_raw_lineage.py; 2308 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/tests/test_audit_benhallueval_fiveway.py](../../02_Reference_Projects/IUTCSFESTDATATHON/tests/test_audit_benhallueval_fiveway.py) — test_audit_benhallueval_fiveway.py; 1882 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/tests/test_audit_context_rule_safety.py](../../02_Reference_Projects/IUTCSFESTDATATHON/tests/test_audit_context_rule_safety.py) — test_audit_context_rule_safety.py; 1095 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/tests/test_audit_external_lineage.py](../../02_Reference_Projects/IUTCSFESTDATATHON/tests/test_audit_external_lineage.py) — test_audit_external_lineage.py; 1716 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/tests/test_audit_source_conflict_votes.py](../../02_Reference_Projects/IUTCSFESTDATATHON/tests/test_audit_source_conflict_votes.py) — test_audit_source_conflict_votes.py; 2365 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/tests/test_audit_source_origin_conflicts.py](../../02_Reference_Projects/IUTCSFESTDATATHON/tests/test_audit_source_origin_conflicts.py) — test_audit_source_origin_conflicts.py; 1929 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/tests/test_audit_test_derived_pseudolabels.py](../../02_Reference_Projects/IUTCSFESTDATATHON/tests/test_audit_test_derived_pseudolabels.py) — test_audit_test_derived_pseudolabels.py; 1200 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/tests/test_audit_transitive_answer_equivalence.py](../../02_Reference_Projects/IUTCSFESTDATATHON/tests/test_audit_transitive_answer_equivalence.py) — test_audit_transitive_answer_equivalence.py; 2153 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/tests/test_bcs_answer_bank.py](../../02_Reference_Projects/IUTCSFESTDATATHON/tests/test_bcs_answer_bank.py) — test_bcs_answer_bank.py; 736 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/tests/test_benhallueval_provenance.py](../../02_Reference_Projects/IUTCSFESTDATATHON/tests/test_benhallueval_provenance.py) — test_benhallueval_provenance.py; 947 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/tests/test_birth_date_overrides.py](../../02_Reference_Projects/IUTCSFESTDATATHON/tests/test_birth_date_overrides.py) — test_birth_date_overrides.py; 2991 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/tests/test_bn_num2words.py](../../02_Reference_Projects/IUTCSFESTDATATHON/tests/test_bn_num2words.py) — test_bn_num2words.py; 642 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/tests/test_build_fact_page_html_corpus.py](../../02_Reference_Projects/IUTCSFESTDATATHON/tests/test_build_fact_page_html_corpus.py) — test_build_fact_page_html_corpus.py; 531 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/tests/test_build_phase1_audit_ledger.py](../../02_Reference_Projects/IUTCSFESTDATATHON/tests/test_build_phase1_audit_ledger.py) — test_build_phase1_audit_ledger.py; 1266 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/tests/test_build_phase2_training.py](../../02_Reference_Projects/IUTCSFESTDATATHON/tests/test_build_phase2_training.py) — test_build_phase2_training.py; 419 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/tests/test_context_numeric_overrides.py](../../02_Reference_Projects/IUTCSFESTDATATHON/tests/test_context_numeric_overrides.py) — test_context_numeric_overrides.py; 8800 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/tests/test_context_span_overrides.py](../../02_Reference_Projects/IUTCSFESTDATATHON/tests/test_context_span_overrides.py) — test_context_span_overrides.py; 3296 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/tests/test_datathon_utils.py](../../02_Reference_Projects/IUTCSFESTDATATHON/tests/test_datathon_utils.py) — test_datathon_utils.py; 389 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/tests/test_establishment_overrides.py](../../02_Reference_Projects/IUTCSFESTDATATHON/tests/test_establishment_overrides.py) — test_establishment_overrides.py; 8151 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/tests/test_evaluate_judge_consensus.py](../../02_Reference_Projects/IUTCSFESTDATATHON/tests/test_evaluate_judge_consensus.py) — test_evaluate_judge_consensus.py; 487 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/tests/test_fact_page_consensus.py](../../02_Reference_Projects/IUTCSFESTDATATHON/tests/test_fact_page_consensus.py) — test_fact_page_consensus.py; 851 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/tests/test_fuzzy_source_overrides.py](../../02_Reference_Projects/IUTCSFESTDATATHON/tests/test_fuzzy_source_overrides.py) — test_fuzzy_source_overrides.py; 2519 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/tests/test_gguf_selective_judge.py](../../02_Reference_Projects/IUTCSFESTDATATHON/tests/test_gguf_selective_judge.py) — test_gguf_selective_judge.py; 2307 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/tests/test_hf_phase2_data.py](../../02_Reference_Projects/IUTCSFESTDATATHON/tests/test_hf_phase2_data.py) — test_hf_phase2_data.py; 1424 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/tests/test_hybrid_evidence_index.py](../../02_Reference_Projects/IUTCSFESTDATATHON/tests/test_hybrid_evidence_index.py) — test_hybrid_evidence_index.py; 3321 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/tests/test_idiom_semantic_overrides.py](../../02_Reference_Projects/IUTCSFESTDATATHON/tests/test_idiom_semantic_overrides.py) — test_idiom_semantic_overrides.py; 4560 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/tests/test_kaggle_gemma_cross_family_audit.py](../../02_Reference_Projects/IUTCSFESTDATATHON/tests/test_kaggle_gemma_cross_family_audit.py) — test_kaggle_gemma_cross_family_audit.py; 1485 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/tests/test_kaggle_relation_swap_training.py](../../02_Reference_Projects/IUTCSFESTDATATHON/tests/test_kaggle_relation_swap_training.py) — test_kaggle_relation_swap_training.py; 2292 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/tests/test_kaggle_source_recovery_audit.py](../../02_Reference_Projects/IUTCSFESTDATATHON/tests/test_kaggle_source_recovery_audit.py) — test_kaggle_source_recovery_audit.py; 1586 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/tests/test_law_evidence_overrides.py](../../02_Reference_Projects/IUTCSFESTDATATHON/tests/test_law_evidence_overrides.py) — test_law_evidence_overrides.py; 3063 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/tests/test_mlx_fact_page_judge.py](../../02_Reference_Projects/IUTCSFESTDATATHON/tests/test_mlx_fact_page_judge.py) — test_mlx_fact_page_judge.py; 2442 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/tests/test_mlx_qwen_judge.py](../../02_Reference_Projects/IUTCSFESTDATATHON/tests/test_mlx_qwen_judge.py) — test_mlx_qwen_judge.py; 1272 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/tests/test_normalize_legal_acts.py](../../02_Reference_Projects/IUTCSFESTDATATHON/tests/test_normalize_legal_acts.py) — test_normalize_legal_acts.py; 941 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/tests/test_normalize_phase2_raw.py](../../02_Reference_Projects/IUTCSFESTDATATHON/tests/test_normalize_phase2_raw.py) — test_normalize_phase2_raw.py; 650 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/tests/test_package_offline_artifacts.py](../../02_Reference_Projects/IUTCSFESTDATATHON/tests/test_package_offline_artifacts.py) — test_package_offline_artifacts.py; 1990 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/tests/test_package_phase2_runtime.py](../../02_Reference_Projects/IUTCSFESTDATATHON/tests/test_package_phase2_runtime.py) — test_package_phase2_runtime.py; 1404 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/tests/test_phase1_provenance_report.py](../../02_Reference_Projects/IUTCSFESTDATATHON/tests/test_phase1_provenance_report.py) — test_phase1_provenance_report.py; 3413 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/tests/test_phase2_kaggle_inference.py](../../02_Reference_Projects/IUTCSFESTDATATHON/tests/test_phase2_kaggle_inference.py) — test_phase2_kaggle_inference.py; 2670 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/tests/test_phase2_pipeline.py](../../02_Reference_Projects/IUTCSFESTDATATHON/tests/test_phase2_pipeline.py) — test_phase2_pipeline.py; 1834 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/tests/test_phase2_v91_kaggle_inference.py](../../02_Reference_Projects/IUTCSFESTDATATHON/tests/test_phase2_v91_kaggle_inference.py) — test_phase2_v91_kaggle_inference.py; 2546 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/tests/test_released_set_diagnostic.py](../../02_Reference_Projects/IUTCSFESTDATATHON/tests/test_released_set_diagnostic.py) — test_released_set_diagnostic.py; 858 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/tests/test_retrieval_consensus_overrides.py](../../02_Reference_Projects/IUTCSFESTDATATHON/tests/test_retrieval_consensus_overrides.py) — test_retrieval_consensus_overrides.py; 1398 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/tests/test_run_phase2_cascade.py](../../02_Reference_Projects/IUTCSFESTDATATHON/tests/test_run_phase2_cascade.py) — test_run_phase2_cascade.py; 1662 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/tests/test_selective_consensus_gate.py](../../02_Reference_Projects/IUTCSFESTDATATHON/tests/test_selective_consensus_gate.py) — test_selective_consensus_gate.py; 1297 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/tests/test_selective_llm_judge.py](../../02_Reference_Projects/IUTCSFESTDATATHON/tests/test_selective_llm_judge.py) — test_selective_llm_judge.py; 1668 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/tests/test_source_answer_bank.py](../../02_Reference_Projects/IUTCSFESTDATATHON/tests/test_source_answer_bank.py) — test_source_answer_bank.py; 5758 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/tests/test_source_artifact_overrides.py](../../02_Reference_Projects/IUTCSFESTDATATHON/tests/test_source_artifact_overrides.py) — test_source_artifact_overrides.py; 1461 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/tests/test_structured_overrides.py](../../02_Reference_Projects/IUTCSFESTDATATHON/tests/test_structured_overrides.py) — test_structured_overrides.py; 8644 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/tests/test_typed_evidence.py](../../02_Reference_Projects/IUTCSFESTDATATHON/tests/test_typed_evidence.py) — test_typed_evidence.py; 3442 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/tests/test_typed_idiom_matcher.py](../../02_Reference_Projects/IUTCSFESTDATATHON/tests/test_typed_idiom_matcher.py) — test_typed_idiom_matcher.py; 3279 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/tests/test_verified_fact_overrides.py](../../02_Reference_Projects/IUTCSFESTDATATHON/tests/test_verified_fact_overrides.py) — test_verified_fact_overrides.py; 13684 bytes
+- [tools/test_workspace.py](../../tools/test_workspace.py) — test_workspace.py; 17422 bytes
