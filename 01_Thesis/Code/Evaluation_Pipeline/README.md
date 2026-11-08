@@ -32,11 +32,13 @@ The mock command writes canonical CSVs to `Mock/mock_data/` and the primary spli
 
 ## Evaluator backends
 
-- `mock`: deterministic always-No baseline for primary evaluation and score-7 baseline for dialect evaluation.
-- `transformers`: loads each value passed to `--models` as a Hugging Face causal language model.
-- `ollama`: sends requests to a local Ollama endpoint; use `--ollama_endpoint` when the endpoint differs from the default.
+- `mock`: deterministic synthetic baselines (`mock`, `always_yes`, `always_no`, `mock_score`, `mock_collapse`).
+- `openrouter`: remote inference against OpenRouter (supports free models like `meta-llama/llama-3.3-70b-instruct:free`).
+- `openai`: remote inference against any OpenAI-compatible `/v1/chat/completions` endpoint.
+- `ollama`: sends requests to a local Ollama endpoint; use `--base_url` when the endpoint differs from the default `http://localhost:11434/api/generate`.
+- `transformers`: loads each value passed to `--model_name` or `--models` as a Hugging Face causal language model.
 
-The splitter and mock evaluator use `numpy`, `pandas`, and `scikit-learn`. Transformers inference also needs `torch` and `transformers`; `accelerate` is optional and enables automatic multi-device placement. Without it, the model is loaded onto one CUDA device when available, otherwise CPU. An Ollama run requires an available local model and a running Ollama server.
+The splitter and mock evaluator use `numpy`, `pandas`, and `scikit-learn`. Transformers inference also needs `torch` and `transformers`; `accelerate` is optional and enables automatic multi-device placement. Without it, the model is loaded onto one CUDA device when available, otherwise CPU. An Ollama run requires an available local model and a running Ollama server. Cloud evaluation via OpenRouter requires an `OPENROUTER_API_KEY`.
 
 Example using the mock backend:
 

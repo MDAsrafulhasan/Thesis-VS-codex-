@@ -1,0 +1,33 @@
+# Local Python environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Credentials and local-only configuration
+.env
+.env.*
+!.env.example
+
+# Generated evaluation data; raw originals are NOT excluded here
+/data/splits/**/*.csv
+/data/splits/**/manifest.json
+
+# Large/private inference payloads (review before intentionally sharing)
+/outputs/**/*.jsonl
+/outputs/**/*.lock
+/outputs/**/*.tmp
+
+# Temporary files and writing build products
+*.tmp
+*.aux
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+
+# Preserve catalogs, protocols, summaries, and all imported material.
+# Git ignore rules do not provide confidentiality or a backup.

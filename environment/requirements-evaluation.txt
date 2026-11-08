@@ -1,0 +1,7 @@
+# Direct dependencies of the active evaluation suite.
+# Observed passing environment: Windows, Python 3.13.9.
+# This pins direct packages, not every transitive dependency or GPU runtime.
+numpy==2.3.4
+pandas==2.3.3
+scikit-learn==1.7.2
+pytest==8.4.2

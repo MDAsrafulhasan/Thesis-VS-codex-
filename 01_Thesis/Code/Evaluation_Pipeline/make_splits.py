@@ -1,554 +1,980 @@
-#!/usr/bin/env python3
-"""Normalize the thesis source CSVs and create deterministic benchmark subsets."""
+"""Reproducible, stratified *evaluation subsets*, not train/test partitions.
+
+BenHallu schema (in order): id, task, track, hallucination_type, question,
+context, candidate_answer, ground_truth_label. Tracks are 'Track_A' (label 0)
+and 'Track_B' (label 1). Track A's type is the literal string 'None', including
+after a CSV round trip. Context may be empty; question and candidate_answer may
+not. Any of the twelve canonical error types is valid for any Track B task.
+
+Dialect schema: id, dialect, question_type, question, response,
+human_or_primary_score. Scores are finite numbers in [0, 10]. Question types
+are strictly 'definitional' or 'factual'. Full data must contain the three
+ANCHOR_DIALECTS and both question types; additional dialects are unrestricted.
+
+Outputs:
+  benhallu_micro_debug_120.csv   30 Track_A + 90 Track_B
+  benhallu_stratified_10pct.csv 400 Track_A + 1,200 Track_B
+  benhallu_full_16k.csv       4,000 Track_A + 12,000 Track_B
+  dialect_ccc_subset_300.csv    100 from each anchor dialect
+  manifest.json               hashes, counts, provenance, overlap and dependencies
+
+Micro and 10% are each sampled directly from full, separately by track. Their
+stratum proportions reference full, not another subset. Overlap is intentional;
+neither nesting nor disjointness is guaranteed. Rounding follows sklearn's
+stratified integer allocation, not independently rounded quotas. If that
+allocation drops any source stratum, sampling fails with an actionable error
+before any output is published; no disproportionate quota is forced.
+Rows are sorted by canonical ID before every sampling operation and on output.
+Sampling is row-level, NOT grouped by source/document/question. In particular,
+raw duplicate examples are retained, not deduplicated or isolated across sets.
+
+Raw ingestion expects the eight supplied files under Track-A/ and Track-B/.
+IDs are task/track-prefixed; duplicate source IDs also receive a content hash
+and copy number, so row reordering cannot change the resulting canonical data.
+Unknown raw labels (notably the three summarization patterns) require an
+explicit flat JSON object mapping raw labels to canonical types.
+No semantic mapping of those patterns is inferred. Summarization documents go
+in context with a fixed summarization instruction as question. Math candidates
+contain BOTH the corrupted reasoning chain and the corrupted final answer.
+
+Examples:
+  python make_splits.py --mode benhallu --generate_mock_data --output_dir demo
+  python make_splits.py --mode dialect --input_csv dialect.csv --output_dir out
+  python make_splits.py --input_csv "All data" --output_dir out \
+      --type_mapping_json types.json
+
+CSV writes and the final manifest replacement are individually atomic. The
+manifest is written last, but the whole directory update is not transactional.
+Synthetic data is for pipeline testing, not scientific evaluation.
+"""
 
 from __future__ import annotations
 
 import argparse
-import random
-import re
-import sys
+import copy
+import csv
+import hashlib
+import json
+import math
+import os
+import platform
+import tempfile
+from collections.abc import Mapping
+from numbers import Integral, Real
 from pathlib import Path
-from typing import Iterable
+from typing import Any, cast
 
+import numpy as np
 import pandas as pd
+import sklearn
 from sklearn.model_selection import train_test_split
 
 
-BENHALLU_COLUMNS = [
-    "id",
-    "task",
-    "track",
-    "hallucination_type",
-    "question",
-    "context",
-    "candidate_answer",
-    "ground_truth_label",
-]
-DIALECT_COLUMNS = [
-    "id",
-    "dialect",
-    "question_type",
-    "question",
-    "response",
-    "human_or_primary_score",
-]
-TASKS = ("bn_qa", "codemixed_qa", "summarization", "math")
-TRACK_A = "Track_A"
-TRACK_B = "Track_B"
+TASKS = ('bn_qa', 'codemixed_qa', 'summarization', 'math')
 HALLUCINATION_TYPES = (
-    "Factualness",
-    "Comprehension",
-    "Specificity",
-    "Inference",
-    "Fabricated_Content",
-    "Non_Factual_Addition",
-    "Direct_Contradiction",
-    "Arithmetic_Slip",
-    "Formula_Misapplication",
-    "Invalid_Deduction",
-    "Hallucinated_Intermediate_Fact",
-    "Semantic_Drift",
+    'Factualness', 'Comprehension', 'Specificity', 'Inference',
+    'Fabricated_Content', 'Non_Factual_Addition', 'Direct_Contradiction',
+    'Arithmetic_Slip', 'Formula_Misapplication', 'Invalid_Deduction',
+    'Hallucinated_Intermediate_Fact', 'Semantic_Drift',
+)
+ANCHOR_DIALECTS = ('Standard_Bengali', 'Tangail', 'Chittagong')
+DIALECTS = ANCHOR_DIALECTS + ('Sylheti',)  # Mock templates, not a validation whitelist.
+QUESTION_TYPES = ('definitional', 'factual')
+TASK_TYPES = {
+    'bn_qa': HALLUCINATION_TYPES[:4],
+    'codemixed_qa': HALLUCINATION_TYPES[:4],
+    'summarization': HALLUCINATION_TYPES[4:7],
+    'math': HALLUCINATION_TYPES[7:],
+}
+BENHALLU_COLUMNS = (
+    'id', 'task', 'track', 'hallucination_type', 'question', 'context',
+    'candidate_answer', 'ground_truth_label',
+)
+DIALECT_COLUMNS = (
+    'id', 'dialect', 'question_type', 'question', 'response',
+    'human_or_primary_score',
+)
+INPUT_KINDS = ('real', 'synthetic', 'unknown')
+_TYPE_LOOKUP = {name.casefold(): name for name in HALLUCINATION_TYPES}
+_SUMMARY_QUESTION = 'প্রদত্ত লেখাটির সংক্ষিপ্তসার লিখুন।'
+_RAW_FILES = (
+    ('A', 'bn_qa', 'banglahallueval_qa_1000.csv'),
+    ('A', 'codemixed_qa', 'codemix_1000.csv'),
+    ('A', 'summarization', 'banglahallueval_summarization_dataset_1000.csv'),
+    ('A', 'math', 'somadhan_1000_main_ordered.csv'),
+    ('B', 'bn_qa', 'qa_4000.csv'),
+    ('B', 'codemixed_qa', 'codemix_4000.csv'),
+    ('B', 'summarization', 'summarization_3000_corrected.csv'),
+    ('B', 'math', 'reasoning_1000.csv'),
 )
 
-TYPE_ALIASES = {
-    "factualness": "Factualness",
-    "comprehension": "Comprehension",
-    "specificity": "Specificity",
-    "inference": "Inference",
-    "fabricated_content": "Fabricated_Content",
-    "fabricated content": "Fabricated_Content",
-    "intrinsic": "Fabricated_Content",
-    "non_factual_addition": "Non_Factual_Addition",
-    "non-factual addition": "Non_Factual_Addition",
-    "non-factual": "Non_Factual_Addition",
-    "non factual": "Non_Factual_Addition",
-    "direct_contradiction": "Direct_Contradiction",
-    "direct contradiction": "Direct_Contradiction",
-    "factual contradiction": "Direct_Contradiction",
-    "arithmetic_slip": "Arithmetic_Slip",
-    "arithmetic slip": "Arithmetic_Slip",
-    "formula_misapplication": "Formula_Misapplication",
-    "formula misapplication": "Formula_Misapplication",
-    "invalid_deduction": "Invalid_Deduction",
-    "invalid deduction": "Invalid_Deduction",
-    "hallucinated_intermediate_fact": "Hallucinated_Intermediate_Fact",
-    "hallucinated intermediate fact": "Hallucinated_Intermediate_Fact",
-    "semantic_drift": "Semantic_Drift",
-    "semantic drift": "Semantic_Drift",
-}
+
+def _seed(seed: int) -> int:
+    if isinstance(seed, bool) or not isinstance(seed, Integral):
+        raise ValueError('seed must be an integer in [0, 2**32 - 1].')
+    if not 0 <= seed <= 2**32 - 1:
+        raise ValueError('seed must be an integer in [0, 2**32 - 1].')
+    return int(seed)
 
 
-def _clean(value: object) -> str:
-    if pd.isna(value):
-        return ""
-    return str(value).strip()
-
-
-def _canonical_type(value: object) -> str:
-    normalized = re.sub(r"\s+", " ", _clean(value).lower()).strip()
-    if normalized in TYPE_ALIASES:
-        return TYPE_ALIASES[normalized]
-    underscored = normalized.replace(" ", "_")
-    if underscored in TYPE_ALIASES:
-        return TYPE_ALIASES[underscored]
-    raise ValueError(f"Unrecognized Track_B hallucination type: {value!r}")
-
-
-def _record(
-    raw_id: object,
-    task: str,
-    track: str,
-    hallucination_type: str | None,
-    question: object,
-    context: object,
-    candidate_answer: object,
-) -> dict[str, object]:
-    raw_id_text = _clean(raw_id)
-    if not raw_id_text:
-        raise ValueError(f"Empty id in {track}/{task} source row")
-    return {
-        # Raw source ids recur between QA and code-mixed QA. The qualified id is
-        # stable and unique, which is required for safe JSONL resumption.
-        "id": f"{track}:{task}:{raw_id_text}",
-        "task": task,
-        "track": track,
-        "hallucination_type": hallucination_type if hallucination_type else "None",
-        "question": _clean(question),
-        "context": _clean(context),
-        "candidate_answer": _clean(candidate_answer),
-        "ground_truth_label": 0 if track == TRACK_A else 1,
-    }
-
-
-def _qualify_source_rows(rows: list[dict[str, object]], path: Path) -> list[dict[str, object]]:
-    """Add a stable file and row ordinal so even repeated raw ids stay unique."""
-    source_name = re.sub(r"[^A-Za-z0-9._-]+", "_", path.stem)
-    for row_index, row in enumerate(rows):
-        row["id"] = f"{row['id']}:{source_name}:row{row_index:05d}"
-    return rows
-
-
-def _read_csv(path: Path) -> pd.DataFrame:
-    # utf-8-sig also handles ordinary UTF-8 files and strips a possible BOM.
-    return pd.read_csv(path, encoding="utf-8-sig", keep_default_na=False)
-
-
-def _normalize_raw_file(path: Path, track: str) -> list[dict[str, object]]:
-    name = path.name.lower()
-    df = _read_csv(path)
-    rows: list[dict[str, object]] = []
-
-    if track == TRACK_A:
-        if "summarization" in name:
-            for row in df.to_dict("records"):
-                rows.append(_record(row.get("id"), "summarization", track, None,
-                                    "Summarize the following text.", row.get("question"), row.get("summary")))
-        elif "codemix" in name or "code_mix" in name:
-            for row in df.to_dict("records"):
-                rows.append(_record(row.get("id"), "codemixed_qa", track, None,
-                                    row.get("codemix_question", row.get("question")),
-                                    row.get("codemix_context", row.get("context")),
-                                    row.get("codemix_answer", row.get("correct_answer"))))
-        elif "somadhan" in name or "reasoning" in name or "math" in name:
-            for row in df.to_dict("records"):
-                rows.append(_record(row.get("question_id", row.get("id")), "math", track, None,
-                                    row.get("question"), "", row.get("answer")))
-        elif "qa" in name:
-            for row in df.to_dict("records"):
-                rows.append(_record(row.get("id"), "bn_qa", track, None,
-                                    row.get("question"), row.get("context"), row.get("correct_answer")))
-        else:
-            raise ValueError(f"Cannot infer Track_A task from filename: {path.name}")
-        return _qualify_source_rows(rows, path)
-
-    # Track_B source filenames use their task-specific answer fields.
-    if "summarization" in name:
-        for row in df.to_dict("records"):
-            rows.append(_record(row.get("id"), "summarization", track,
-                                _canonical_type(row.get("pattern")),
-                                "Summarize the following text.", row.get("document"),
-                                row.get("hallucinated_summary")))
-    elif "reasoning" in name or "math" in name:
-        for row in df.to_dict("records"):
-            rows.append(_record(row.get("id"), "math", track,
-                                _canonical_type(row.get("hallucination_type", row.get("error_type"))),
-                                row.get("question"), "", row.get("hallucinated_answer")))
-    elif "codemix" in name or "code_mix" in name:
-        for row in df.to_dict("records"):
-            rows.append(_record(row.get("id"), "codemixed_qa", track,
-                                _canonical_type(row.get("pattern")),
-                                row.get("codemix_question"), row.get("codemix_context"),
-                                row.get("hallucinated_answer")))
-    elif "qa" in name:
-        for row in df.to_dict("records"):
-            rows.append(_record(row.get("id"), "bn_qa", track,
-                                _canonical_type(row.get("pattern")),
-                                row.get("question"), row.get("context"),
-                                row.get("hallucinated_answer")))
-    else:
-        raise ValueError(f"Cannot infer Track_B task from filename: {path.name}")
-    return _qualify_source_rows(rows, path)
-
-
-def normalize_benhallu_input(input_path: Path) -> pd.DataFrame:
-    if input_path.is_file():
-        frame = _read_csv(input_path)
-        if set(BENHALLU_COLUMNS).issubset(frame.columns):
-            frame = frame[BENHALLU_COLUMNS].copy()
-        else:
-            raise ValueError(
-                "A single CSV must already use the BenHalluEval schema. "
-                "Pass the parent directory containing Track-A and Track-B source files to normalize raw files."
-            )
-    elif input_path.is_dir():
-        candidates = sorted(input_path.rglob("*.csv"))
-        canonical = []
-        for path in candidates:
-            try:
-                header = list(pd.read_csv(path, encoding="utf-8-sig", nrows=0).columns)
-            except Exception:
-                continue
-            if set(BENHALLU_COLUMNS).issubset(header):
-                canonical.append(path)
-        if canonical:
-            if len(canonical) != 1:
-                raise ValueError(f"Expected one canonical BenHallu CSV, found {len(canonical)}: {canonical}")
-            frame = _read_csv(canonical[0])[BENHALLU_COLUMNS].copy()
-        else:
-            file_rows: list[dict[str, object]] = []
-            for path in candidates:
-                parts = {part.lower() for part in path.parts}
-                if any("track-a" in part or "track_a" in part for part in parts):
-                    file_rows.extend(_normalize_raw_file(path, TRACK_A))
-                elif any("track-b" in part or "track_b" in part for part in parts):
-                    file_rows.extend(_normalize_raw_file(path, TRACK_B))
-            if not file_rows:
-                raise ValueError(f"No recognized Track-A/Track-B or canonical CSVs found under {input_path}")
-            frame = pd.DataFrame(file_rows, columns=BENHALLU_COLUMNS)
-    else:
-        raise FileNotFoundError(input_path)
-
-    frame = frame[BENHALLU_COLUMNS].copy()
-    frame["id"] = frame["id"].astype(str)
-    frame["task"] = frame["task"].astype(str)
-    frame["track"] = frame["track"].astype(str)
-    frame["hallucination_type"] = frame["hallucination_type"].fillna("None").astype(str)
-    frame["ground_truth_label"] = pd.to_numeric(frame["ground_truth_label"], errors="raise").astype(int)
-    for col in ("question", "context", "candidate_answer"):
-        frame[col] = frame[col].fillna("").astype(str)
-
-    if frame.empty:
-        raise ValueError("BenHalluEval input is empty")
-    if frame["id"].duplicated().any():
-        examples = frame.loc[frame["id"].duplicated(keep=False), "id"].head(5).tolist()
-        raise ValueError(f"BenHalluEval ids must be unique; duplicate examples: {examples}")
-    if not set(frame["task"]).issubset(TASKS):
-        raise ValueError(f"Unknown task values: {sorted(set(frame['task']) - set(TASKS))}")
-    if not set(frame["track"]).issubset({TRACK_A, TRACK_B}):
-        raise ValueError(f"Unknown track values: {sorted(set(frame['track']) - {TRACK_A, TRACK_B})}")
-    if not set(frame["hallucination_type"]).issubset({"None", *HALLUCINATION_TYPES}):
-        raise ValueError("Input contains hallucination_type values outside the required 12 labels")
-    expected_label = frame["track"].map({TRACK_A: 0, TRACK_B: 1})
-    if not frame["ground_truth_label"].equals(expected_label.astype(int)):
-        raise ValueError("ground_truth_label must be 0 for Track_A and 1 for Track_B")
-    if not (frame.loc[frame.track == TRACK_A, "hallucination_type"] == "None").all():
-        raise ValueError("Track_A hallucination_type must be 'None'")
-    if not frame.loc[frame.track == TRACK_B, "hallucination_type"].isin(HALLUCINATION_TYPES).all():
-        raise ValueError("Every Track_B row must use one of the 12 hallucination types")
-    return frame
-
-
-def validate_full_benhallu(frame: pd.DataFrame) -> None:
-    if len(frame) != 16_000:
-        raise ValueError(f"Expected exactly 16,000 BenHalluEval rows, received {len(frame):,}")
-    counts = frame["track"].value_counts().to_dict()
-    if counts.get(TRACK_A, 0) != 4_000 or counts.get(TRACK_B, 0) != 12_000:
-        raise ValueError(f"Expected 4,000 Track_A and 12,000 Track_B rows; observed {counts}")
-    task_counts = frame.groupby(["track", "task"]).size().to_dict()
-    expected = {
-        (TRACK_A, "bn_qa"): 1_000,
-        (TRACK_A, "codemixed_qa"): 1_000,
-        (TRACK_A, "summarization"): 1_000,
-        (TRACK_A, "math"): 1_000,
-        (TRACK_B, "bn_qa"): 4_000,
-        (TRACK_B, "codemixed_qa"): 4_000,
-        (TRACK_B, "summarization"): 3_000,
-        (TRACK_B, "math"): 1_000,
-    }
-    if task_counts != expected:
-        raise ValueError(f"Unexpected per-track task counts. Expected {expected}; observed {task_counts}")
-    observed_types = set(frame.loc[frame.track == TRACK_B, "hallucination_type"])
-    if observed_types != set(HALLUCINATION_TYPES):
-        raise ValueError(f"Track_B must include all 12 hallucination types; missing {set(HALLUCINATION_TYPES) - observed_types}")
-
-
-def _stratified_sample(frame: pd.DataFrame, count: int, seed: int) -> pd.DataFrame:
-    if count > len(frame):
-        raise ValueError(f"Cannot sample {count} rows from only {len(frame)}")
-    strata = frame["_stratum"]
-    sizes = strata.value_counts()
-    if (sizes < 2).any():
-        rare = sizes[sizes < 2].to_dict()
-        raise ValueError(f"Every stratum needs at least 2 rows for stratified splitting; rare strata: {rare}")
-    if count < strata.nunique():
-        raise ValueError(f"Requested sample size {count} is smaller than {strata.nunique()} strata")
-    sample, _ = train_test_split(
-        frame,
-        train_size=count,
-        random_state=seed,
-        stratify=strata,
-    )
-    return sample.drop(columns=["_stratum"]).sort_values("id", kind="stable").reset_index(drop=True)
-
-
-def create_benhallu_splits(frame: pd.DataFrame, output_dir: Path, seed: int = 42) -> None:
-    validate_full_benhallu(frame)
-    output_dir.mkdir(parents=True, exist_ok=True)
-    frame = frame.copy()
-    frame["_stratum"] = frame.apply(
-        lambda row: f"{row['task']}_{row['track']}_{row['hallucination_type']}", axis=1
-    )
-
-    # Split Track_A and Track_B separately to guarantee the required 30/90 and
-    # 400/1,200 class proportions while preserving the composite strata.
-    plans = (
-        ("benhallu_micro_debug_120.csv", 30, 90),
-        ("benhallu_stratified_10pct.csv", 400, 1_200),
-    )
-    for filename, count_a, count_b in plans:
-        split_a = _stratified_sample(frame[frame.track == TRACK_A], count_a, seed)
-        split_b = _stratified_sample(frame[frame.track == TRACK_B], count_b, seed)
-        combined = pd.concat([split_a, split_b], ignore_index=True)
-        combined = combined[BENHALLU_COLUMNS].sort_values("id", kind="stable").reset_index(drop=True)
-        if len(combined) != count_a + count_b:
-            raise AssertionError(f"Internal error: {filename} has {len(combined)} rows")
-        combined.to_csv(output_dir / filename, index=False, encoding="utf-8")
-
-    full = frame[BENHALLU_COLUMNS].sort_values("id", kind="stable").reset_index(drop=True)
-    full.to_csv(output_dir / "benhallu_full_16k.csv", index=False, encoding="utf-8")
-
-
-def normalize_dialect_input(input_path: Path) -> pd.DataFrame:
-    if input_path.is_file():
-        paths = [input_path]
-    elif input_path.is_dir():
-        paths = sorted(input_path.rglob("*.csv"))
-    else:
-        raise FileNotFoundError(input_path)
-    matches: list[pd.DataFrame] = []
-    for path in paths:
-        try:
-            header = list(pd.read_csv(path, encoding="utf-8-sig", nrows=0).columns)
-        except Exception:
-            continue
-        if set(DIALECT_COLUMNS).issubset(header):
-            matches.append(_read_csv(path)[DIALECT_COLUMNS].copy())
-    if not matches:
-        raise ValueError(f"No CSV using the Dialectal_Bias schema found at {input_path}")
-    frame = pd.concat(matches, ignore_index=True)
-    frame["id"] = frame["id"].astype(str)
-    frame["dialect"] = frame["dialect"].astype(str)
-    frame["question_type"] = frame["question_type"].astype(str)
-    frame["question"] = frame["question"].fillna("").astype(str)
-    frame["response"] = frame["response"].fillna("").astype(str)
-    frame["human_or_primary_score"] = pd.to_numeric(frame["human_or_primary_score"], errors="raise")
-    if frame["id"].duplicated().any():
-        raise ValueError("Dialectal_Bias ids must be unique")
-    if frame["id"].str.strip().eq("").any():
-        raise ValueError("Dialectal_Bias ids must not be empty")
-    if frame["dialect"].str.strip().eq("").any():
-        raise ValueError("Dialectal_Bias dialect values must not be empty")
-    if not frame["human_or_primary_score"].between(0, 10).all():
-        raise ValueError("human_or_primary_score must be between 0 and 10")
-    if not set(frame["question_type"]).issubset({"definitional", "factual"}):
-        raise ValueError("question_type must be definitional or factual")
-    return frame
-
-
-ANCHOR_DIALECTS = ("Standard_Bengali", "Tangail", "Chittagong")
-
-
-def create_dialect_split(frame: pd.DataFrame, output_dir: Path, seed: int = 42) -> None:
-    output_dir.mkdir(parents=True, exist_ok=True)
-    subset = frame[frame["dialect"].isin(ANCHOR_DIALECTS)].copy()
-    missing = set(ANCHOR_DIALECTS) - set(subset["dialect"])
+def _require_columns(frame: pd.DataFrame, columns: tuple[str, ...]) -> None:
+    if not isinstance(frame, pd.DataFrame):
+        raise ValueError('Expected a pandas DataFrame.')
+    if frame.columns.duplicated().any():
+        raise ValueError('Duplicate column names are not allowed.')
+    missing = sorted(set(columns) - set(frame.columns))
     if missing:
-        raise ValueError(f"Dialect input is missing anchor variants: {sorted(missing)}")
-    sampled: list[pd.DataFrame] = []
-    for offset, dialect in enumerate(ANCHOR_DIALECTS):
-        group = subset[subset.dialect == dialect]
-        if len(group) < 100:
-            raise ValueError(f"Expected at least 100 rows for {dialect}; found {len(group)}")
-        type_counts = group["question_type"].value_counts()
-        if len(type_counts) > 1 and (type_counts < 2).any():
-            raise ValueError(f"Every question_type needs at least 2 rows within {dialect} for stratification")
-        if len(group) == 100:
-            selected = group.copy()
-        else:
-            selected, _ = train_test_split(
-                group,
-                train_size=100,
-                random_state=seed + offset,
-                stratify=group["question_type"],
-            )
-        sampled.append(selected)
-    result = pd.concat(sampled, ignore_index=True)
-    result = result[DIALECT_COLUMNS].sort_values(["dialect", "id"], kind="stable").reset_index(drop=True)
-    if len(result) != 300 or result["dialect"].value_counts().to_dict() != {d: 100 for d in ANCHOR_DIALECTS}:
-        raise AssertionError("Internal error: dialect CCC subset is not 100 rows per anchor")
-    result.to_csv(output_dir / "dialect_ccc_subset_300.csv", index=False, encoding="utf-8")
+        raise ValueError(f'Missing required columns: {missing}')
+    if frame.empty:
+        raise ValueError('The dataset must not be empty.')
 
 
-def _mock_primary_rows() -> list[dict[str, object]]:
-    rng = random.Random(42)
-    rows: list[dict[str, object]] = []
-    bengali_topics = ["বাংলাদেশের নদী", "ঢাকার ইতিহাস", "গণিতের একটি সমস্যা", "বাংলা সাহিত্যের পরিচয়"]
-    for task in TASKS:
-        for i in range(1_000):
-            topic = bengali_topics[i % len(bengali_topics)]
-            if task == "bn_qa":
-                question, context, answer = (
-                    f"{topic} সম্পর্কে প্রশ্ন {i + 1}: প্রধান তথ্যটি কী?",
-                    f"নথিতে {topic} সম্পর্কে নির্ভরযোগ্য তথ্য {i + 1} দেওয়া হয়েছে।",
-                    f"নথির তথ্য অনুযায়ী উত্তর {i + 1}।",
-                )
-            elif task == "codemixed_qa":
-                question, context, answer = (
-                    f"{topic} niye question {i + 1}: main fact ta ki?",
-                    f"Document-e {topic} niye verified information {i + 1} deya ache.",
-                    f"Document onujayi answer {i + 1}.",
-                )
-            elif task == "summarization":
-                question, context, answer = (
-                    "Summarize the following text.",
-                    f"এই অনুচ্ছেদে {topic} নিয়ে তিনটি যাচাইযোগ্য তথ্য আছে। নমুনা নম্বর {i + 1}।",
-                    f"অনুচ্ছেদটি {topic} সম্পর্কে তথ্য দেয়; নমুনা নম্বর {i + 1}।",
-                )
-            else:
-                question, context, answer = (
-                    f"সমস্যা {i + 1}: ১৪০-এর ৪০ শতাংশ কত?",
-                    "",
-                    f"১৪০ × ০.৪ = {56 + (i % 3)}।",
-                )
-            rows.append({
-                "id": f"mock:Track_A:{task}:{i:04d}", "task": task, "track": TRACK_A,
-                "hallucination_type": "None", "question": question, "context": context,
-                "candidate_answer": answer, "ground_truth_label": 0,
-            })
-
-    track_b_specs: list[tuple[str, str, int]] = []
-    for task in ("bn_qa", "codemixed_qa"):
-        track_b_specs.extend((task, kind, 1_000) for kind in HALLUCINATION_TYPES[:4])
-    track_b_specs.extend(("summarization", kind, 1_000) for kind in HALLUCINATION_TYPES[4:7])
-    track_b_specs.extend(("math", kind, 200) for kind in HALLUCINATION_TYPES[7:])
-    for task, kind, amount in track_b_specs:
-        for i in range(amount):
-            if task == "bn_qa":
-                question, context, candidate = (
-                    f"বাংলাদেশের নদী সম্পর্কে প্রশ্ন {i + 1}: প্রধান তথ্যটি কী?",
-                    f"নথিতে নদী সম্পর্কে নির্ভরযোগ্য তথ্য {i + 1} দেওয়া হয়েছে।",
-                    f"নথির বিপরীত একটি বানানো উত্তর {i + 1}।",
-                )
-            elif task == "codemixed_qa":
-                question, context, candidate = (
-                    f"Bangladesh-er nodi niye question {i + 1}: main fact ta ki?",
-                    f"Document-e verified information {i + 1} deya ache.",
-                    f"Document-er sathe mil nei emon invented answer {i + 1}.",
-                )
-            elif task == "summarization":
-                question, context, candidate = (
-                    "Summarize the following text.",
-                    f"এই অনুচ্ছেদে নদী নিয়ে যাচাইযোগ্য তথ্য আছে। নমুনা নম্বর {i + 1}।",
-                    f"সারাংশে নথিতে না থাকা একটি অতিরিক্ত দাবি আছে; নমুনা {i + 1}।",
-                )
-            else:
-                question, context, candidate = (
-                    f"সমস্যা {i + 1}: ১৪০-এর ৪০ শতাংশ কত?",
-                    "",
-                    f"ভুল গণনা বা যুক্তির ফল {i + 1}।",
-                )
-            # The category has intentionally varied answer wording while the
-            # compact source schema records the exact label for stratification.
-            if rng.random() < 0.15:
-                candidate += " এটি যাচাই করা দরকার।"
-            rows.append({
-                "id": f"mock:Track_B:{task}:{kind}:{i:04d}", "task": task, "track": TRACK_B,
-                "hallucination_type": kind, "question": question, "context": context,
-                "candidate_answer": candidate, "ground_truth_label": 1,
-            })
-    return rows
+def _series(frame: pd.DataFrame, column: str) -> pd.Series:
+    values = frame[column]
+    if not isinstance(values, pd.Series):
+        raise ValueError(f'Expected a single column named {column!r}.')
+    return values
 
 
-def generate_mock_data(output_dir: Path) -> tuple[Path, Path]:
-    mock_dir = output_dir / "mock_data"
-    mock_dir.mkdir(parents=True, exist_ok=True)
-    primary_path = mock_dir / "benhallu_mock_16k.csv"
-    dialect_path = mock_dir / "dialectal_bias_mock_4k.csv"
-    primary = pd.DataFrame(_mock_primary_rows(), columns=BENHALLU_COLUMNS)
-    if len(primary) != 16_000:
-        raise AssertionError(f"Mock BenHallu data must have 16,000 rows; generated {len(primary)}")
-    primary.to_csv(primary_path, index=False, encoding="utf-8")
-
-    rng = random.Random(2026)
-    dialect_specs = (
-        ("Standard_Bengali", "বাংলাদেশের জাতীয় ফুল কোনটি?", "বাংলাদেশের জাতীয় ফুল শাপলা।"),
-        ("Tangail", "তোমার এলাকার প্রধান নদীটার নাম কী?", "আমাগো এলাকার প্রধান নদীর নাম ধলেশ্বরী।"),
-        ("Chittagong", "অঁনার বাড়ি কোন গন্ডায়?", "আঁর বাড়ি চট্টগ্রামের পাহাড়তলীত।"),
-        ("Sylheti", "তুমার বাড়ি কই?", "আমার বাড়ি সিলেট শহরত।"),
-    )
-    dialect_rows = []
-    for dialect, question, response in dialect_specs:
-        for i in range(1_000):
-            question_type = "definitional" if i % 2 == 0 else "factual"
-            score = max(0.0, min(10.0, round(7.2 + rng.gauss(0, 1.05) - (0.25 if dialect == "Chittagong" else 0), 2)))
-            dialect_rows.append({
-                "id": f"dialect:{dialect}:{i:04d}",
-                "dialect": dialect,
-                "question_type": question_type,
-                "question": f"{question} (নমুনা {i + 1})",
-                "response": f"{response} নমুনা {i + 1}-এর উত্তর।",
-                "human_or_primary_score": score,
-            })
-    dialect = pd.DataFrame(dialect_rows, columns=DIALECT_COLUMNS)
-    if len(dialect) != 4_000:
-        raise AssertionError(f"Mock Dialectal_Bias data must have 4,000 rows; generated {len(dialect)}")
-    dialect.to_csv(dialect_path, index=False, encoding="utf-8")
-    return primary_path, dialect_path
+def _is_missing(value: Any) -> bool:
+    return value is None or (pd.api.types.is_scalar(value) and bool(pd.isna(value)))
 
 
-def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--input_csv", type=Path, help="Canonical CSV or the raw All data directory")
-    parser.add_argument("--output_dir", type=Path, default=Path("."), help="Directory for generated splits and mock data")
-    parser.add_argument("--seed", type=int, default=42)
-    parser.add_argument("--mode", choices=("benhallu", "dialect"), default="benhallu")
-    parser.add_argument("--generate_mock_data", action="store_true", help="Generate exact-schema 16k and 4k mock datasets before splitting")
-    return parser
+def _text(series: pd.Series, name: str, *, empty: bool = False,
+          identifiers: bool = False) -> pd.Series:
+    values = []
+    for index, value in series.items():
+        if _is_missing(value):
+            if empty:
+                values.append('')
+                continue
+            raise ValueError(f'{name} contains a missing value at row {index}.')
+        if identifiers and isinstance(value, Real) and not isinstance(value, bool):
+            if not isinstance(value, Integral) and not math.isfinite(float(value)):
+                raise ValueError(f'{name} must contain finite identifiers (row {index}).')
+            value = str(value)
+        if not isinstance(value, str):
+            raise ValueError(f'{name} must contain strings (row {index}).')
+        value = value.strip()
+        if not value and not empty:
+            raise ValueError(f'{name} contains an empty value at row {index}.')
+        values.append(value)
+    return pd.Series(values, index=series.index, dtype=object)
 
 
-def main(argv: Iterable[str] | None = None) -> int:
-    args = build_parser().parse_args(argv)
+def _ids(frame: pd.DataFrame) -> None:
+    frame['id'] = _text(_series(frame, 'id'), 'id', identifiers=True)
+    duplicates = frame.loc[frame['id'].duplicated(keep=False), 'id'].unique()
+    if len(duplicates):
+        raise ValueError(f'Canonical id must be unique; duplicates include {duplicates[:5].tolist()}.')
+
+
+def _numbers(series: pd.Series, name: str) -> pd.Series:
     try:
-        mock_paths = generate_mock_data(args.output_dir) if args.generate_mock_data else None
-        input_path = args.input_csv
-        if mock_paths:
-            input_path = mock_paths[0] if args.mode == "benhallu" else mock_paths[1]
-        if input_path is None:
-            raise ValueError("--input_csv is required unless --generate_mock_data is supplied")
-        if args.mode == "benhallu":
-            frame = normalize_benhallu_input(input_path)
-            validate_full_benhallu(frame)
-            create_benhallu_splits(frame, args.output_dir, args.seed)
-            print(f"Validated {len(frame):,} BenHalluEval rows; wrote three splits to {args.output_dir.resolve()}")
+        values = pd.to_numeric(series, errors='raise')
+        if not isinstance(values, pd.Series) or np.iscomplexobj(values):
+            raise ValueError(f'{name} must contain real numbers.')
+        finite = np.isfinite(np.asarray(values, dtype=np.float64))
+    except (TypeError, ValueError, OverflowError) as exc:
+        raise ValueError(f'{name} must contain finite numeric values.') from exc
+    if not finite.all():
+        raise ValueError(f'{name} must contain finite numeric values; missing/NaN/inf are invalid.')
+    return values
+
+
+def _input_kind(value: Any) -> str:
+    if not isinstance(value, str) or value not in INPUT_KINDS:
+        raise ValueError(f'input_kind must be one of {INPUT_KINDS}; got {value!r}.')
+    return value
+
+
+def _mock_flag(kind: str) -> bool | None:
+    return None if kind == 'unknown' else kind == 'synthetic'
+
+
+def _carry_attrs(result: pd.DataFrame, source: pd.DataFrame) -> pd.DataFrame:
+    result.attrs = copy.deepcopy(source.attrs)
+    # A legacy mock=False flag is not evidence of real input (A12).
+    kind = _input_kind(source.attrs.get(
+        'input_kind', 'synthetic' if source.attrs.get('mock') is True else 'unknown',
+    ))
+    mock = _mock_flag(kind)
+    if 'input_kind' in source.attrs and source.attrs.get('mock', mock) is not mock:
+        raise ValueError('Conflicting input_kind and mock attributes.')
+    provenance = result.attrs.setdefault('provenance', {'kind': 'in_memory', 'sources': []})
+    if 'input_kind' in provenance and provenance['input_kind'] != kind:
+        raise ValueError('Conflicting input_kind in source provenance.')
+    provenance.update(input_kind=kind, mock=mock)
+    result.attrs.update(input_kind=kind, mock=mock)
+    return result
+
+
+def _declare_input_kind(frame: pd.DataFrame, requested: str | None) -> pd.DataFrame:
+    frame = _carry_attrs(frame, frame)
+    if requested is not None:
+        requested = _input_kind(requested)
+        known = frame.attrs['input_kind']
+        if known != 'unknown' and requested != known:
+            raise ValueError(f'input_kind conflict: recorded {known!r}, requested {requested!r}.')
+        if known == 'unknown':
+            frame.attrs.update(input_kind=requested, mock=_mock_flag(requested))
+            frame.attrs['provenance'].update(
+                input_kind=requested, mock=_mock_flag(requested),
+                input_kind_declaration=requested,
+            )
+    return frame
+
+
+def _ordered_columns(frame: pd.DataFrame, required: tuple[str, ...]) -> pd.DataFrame:
+    return _carry_attrs(frame.loc[:, list(required)], frame)
+
+
+def validate_benhallu(frame: pd.DataFrame, require_full: bool = False) -> pd.DataFrame:
+    """Validate and return a normalized copy; never mutate the caller's frame.
+
+    Full validation requires 16,000 rows, Track_A=4,000/Track_B=12,000, every
+    task in each track, and all twelve error types. Types are case-normalized;
+    any canonical error type is allowed for any Track B task.
+    A null/blank Track A type becomes the string 'None', never an actual null.
+    """
+    _require_columns(frame, BENHALLU_COLUMNS)
+    result = frame.copy(deep=True).reset_index(drop=True)
+    _ids(result)
+    result['task'] = _text(_series(result, 'task'), 'task').str.lower()
+    result['track'] = _text(_series(result, 'track'), 'track')
+    for column, allowed in (('task', TASKS), ('track', ('Track_A', 'Track_B'))):
+        unknown = sorted(set(result[column]) - set(allowed))
+        if unknown:
+            raise ValueError(f'Unknown {column} values: {unknown}; expected {allowed}.')
+    result['context'] = _text(_series(result, 'context'), 'context', empty=True)
+    for column in ('question', 'candidate_answer'):
+        result[column] = _text(_series(result, column), column)
+    labels = _numbers(_series(result, 'ground_truth_label'), 'ground_truth_label')
+    if not labels.isin((0, 1)).all():
+        raise ValueError('ground_truth_label must be binary: 0 (Track_A) or 1 (Track_B).')
+    result['ground_truth_label'] = labels.astype('int64')
+    expected = _series(result, 'track').eq('Track_B').astype('int64')
+    if not _series(result, 'ground_truth_label').eq(expected).all():
+        raise ValueError('ground_truth_label/track mismatch: Track_A requires 0; Track_B requires 1.')
+    normalized_types = []
+    for index, (track, value) in enumerate(zip(
+            result['track'], result['hallucination_type'])):
+        missing = _is_missing(value) or (isinstance(value, str) and not value.strip())
+        if track == 'Track_A':
+            if not missing and (not isinstance(value, str) or value.strip().casefold() != 'none'):
+                raise ValueError(f'Track A must have hallucination_type=None (row {index}).')
+            normalized_types.append('None')
         else:
-            frame = normalize_dialect_input(input_path)
-            create_dialect_split(frame, args.output_dir, args.seed)
-            print(f"Validated {len(frame):,} Dialectal_Bias rows; wrote 300-row anchor subset to {args.output_dir.resolve()}")
-        return 0
-    except (ValueError, FileNotFoundError, pd.errors.ParserError) as exc:
-        print(f"make_splits.py: error: {exc}", file=sys.stderr)
-        return 2
+            canonical = _TYPE_LOOKUP.get(value.strip().casefold()) if isinstance(value, str) else None
+            if canonical not in HALLUCINATION_TYPES:
+                raise ValueError(
+                    f'Invalid hallucination_type {value!r} for Track_B at row {index}; '
+                    f'allowed: {HALLUCINATION_TYPES}.'
+                )
+            normalized_types.append(canonical)
+    result['hallucination_type'] = normalized_types
+    if require_full:
+        counts = result['track'].value_counts().to_dict()
+        if len(result) != 16000 or counts != {'Track_A': 4000, 'Track_B': 12000}:
+            raise ValueError(f'Full BenHallu requires 16000 rows (Track_A=4000, Track_B=12000); got {len(result)}, {counts}.')
+        for track in ('Track_A', 'Track_B'):
+            if set(result.loc[result['track'].eq(track), 'task']) != set(TASKS):
+                raise ValueError(f'Full BenHallu requires all four tasks in Track {track}.')
+        if set(result.loc[result['track'].eq('Track_B'), 'hallucination_type']) != set(HALLUCINATION_TYPES):
+            raise ValueError('Full BenHallu must contain all twelve hallucination types.')
+    return _ordered_columns(result, BENHALLU_COLUMNS)
 
 
-if __name__ == "__main__":
+def validate_dialect(frame: pd.DataFrame, require_full: bool = False) -> pd.DataFrame:
+    """Validate a dialect frame, including finite scores in [0, 10].
+
+    Full validation requires 4,000 rows, all three anchors and both allowed
+    question types. Other nonempty dialect names are allowed without a fixed
+    dialect count. Sampling feasibility is checked later.
+    """
+    _require_columns(frame, DIALECT_COLUMNS)
+    result = frame.copy(deep=True).reset_index(drop=True)
+    _ids(result)
+    for column in ('dialect', 'question_type', 'question', 'response'):
+        result[column] = _text(_series(result, column), column)
+    unknown = sorted(set(result['question_type']) - set(QUESTION_TYPES))
+    if unknown:
+        raise ValueError(f'Unknown question_type values: {unknown}; expected {QUESTION_TYPES}.')
+    result['human_or_primary_score'] = _numbers(
+        _series(result, 'human_or_primary_score'), 'human_or_primary_score',
+    )
+    if not result['human_or_primary_score'].between(0, 10).all():
+        raise ValueError('human_or_primary_score must be in the inclusive range [0, 10].')
+    if require_full:
+        if len(result) != 4000:
+            raise ValueError(f'Full dialect data requires 4000 rows; got {len(result)}.')
+        missing = sorted(set(ANCHOR_DIALECTS) - set(result['dialect']))
+        if missing:
+            raise ValueError(f'Full dialect data is missing required anchor dialects: {missing}.')
+        if set(result['question_type']) != set(QUESTION_TYPES):
+            raise ValueError(f'Full dialect data requires both question types: {QUESTION_TYPES}.')
+    return _ordered_columns(result, DIALECT_COLUMNS)
+
+
+def _sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open('rb') as stream:
+        for block in iter(lambda: stream.read(1024 * 1024), b''):
+            digest.update(block)
+    return digest.hexdigest()
+
+
+def _csv_read(path: Path) -> pd.DataFrame:
+    # Check original names before pandas can rename duplicates to e.g. label.1.
+    # Header names are exact schema identifiers, not normalized text keys.
+    with path.open(encoding='utf-8-sig', newline='') as stream:
+        try:
+            header = next(csv.reader(stream, strict=True))
+        except (StopIteration, csv.Error) as exc:
+            raise ValueError(f'{path}: missing or malformed CSV header.') from exc
+    duplicates = sorted({name for name in header if header.count(name) > 1})
+    if duplicates:
+        raise ValueError(f'{path}: Duplicate CSV header names are not allowed: {duplicates}')
+    if not header or any(not name.strip() for name in header):
+        raise ValueError(f'{path}: CSV header names must not be empty.')
+    # Do not let pandas interpret the literal 'None' or an ID such as 'NA' as null.
+    return pd.read_csv(path, dtype=str, keep_default_na=False, encoding='utf-8-sig')
+
+
+def _mapping(mapping: Mapping[str, str] | str | os.PathLike | None
+             ) -> tuple[dict[str, str], dict[str, str] | None]:
+    source = None
+    if mapping is None:
+        return {}, source
+    if isinstance(mapping, (str, os.PathLike)):
+        path = Path(mapping)
+        with path.open(encoding='utf-8-sig') as stream:
+            loaded = json.load(stream)
+        source = {'path': str(path.resolve()), 'sha256': _sha256(path)}
+    else:
+        loaded = mapping
+    if not isinstance(loaded, Mapping):
+        raise ValueError('type_mapping_json must contain a flat JSON object: raw label -> canonical type.')
+    result = {}
+    for raw, canonical in loaded.items():
+        if not isinstance(raw, str) or not raw.strip() or canonical not in HALLUCINATION_TYPES:
+            raise ValueError(f'Invalid type mapping {raw!r}: {canonical!r}; targets must be canonical HALLUCINATION_TYPES.')
+        if raw.strip() in result:
+            raise ValueError(f'Duplicate normalized mapping key: {raw!r}.')
+        known = _TYPE_LOOKUP.get(raw.strip().casefold())
+        if known is not None and canonical != known:
+            raise ValueError(f'Type mapping cannot redefine the known canonical label {raw!r}.')
+        result[raw.strip()] = canonical
+    return result, source
+
+
+def _raw_ids(raw: pd.DataFrame, task: str, track: str,
+             source_column: str) -> pd.Series:
+    source = _text(_series(raw, source_column), 'source id', identifiers=True)
+    duplicate = source.duplicated(keep=False)
+    base = task + '_' + track + '_' + source
+    if not duplicate.any():
+        return base
+    fingerprints = raw.loc[duplicate].apply(
+        lambda row: hashlib.sha256(json.dumps(
+            row.to_dict(), sort_keys=True, ensure_ascii=False,
+            separators=(',', ':'),
+        ).encode('utf-8')).hexdigest(), axis=1,
+    )
+    duplicate_base = base.loc[duplicate] + '::sha256=' + fingerprints
+    copies = duplicate_base.groupby(duplicate_base, sort=False).cumcount() + 1
+    base.loc[duplicate] = duplicate_base + '::copy=' + copies.astype(str)
+    return base
+
+
+def _load_raw(root: Path, type_mapping: Mapping[str, str] | str | os.PathLike | None
+              ) -> pd.DataFrame:
+    mapping, mapping_source = _mapping(type_mapping)
+    frames, sources = [], []
+    for track, task, filename in _RAW_FILES:
+        path = root / f'Track-{track}' / filename
+        if not path.is_file():
+            raise ValueError(f'Missing raw dataset file: {path}')
+        raw = _csv_read(path)
+        source_column = 'question_id' if track == 'A' and task == 'math' else 'id'
+        context_column, question_column, answer_column = 'context', 'question', 'answer'
+        if task in ('bn_qa', 'codemixed_qa'):
+            context_column = 'codemix_context' if task == 'codemixed_qa' else 'context'
+            question_column = 'codemix_question' if task == 'codemixed_qa' else 'question'
+            answer_column = ('codemix_answer' if task == 'codemixed_qa' else 'correct_answer') if track == 'A' else 'hallucinated_answer'
+            required = (source_column, context_column, question_column, answer_column)
+        elif task == 'summarization':
+            context_column = 'question' if track == 'A' else 'document'
+            answer_column = 'summary' if track == 'A' else 'hallucinated_summary'
+            required = (source_column, context_column, answer_column)
+        else:
+            required = (source_column, 'question', 'answer') if track == 'A' else (
+                source_column, 'question', 'hallucinated_chain', 'hallucinated_answer',
+            )
+        type_column = 'hallucination_type' if task == 'math' else 'pattern'
+        if track == 'B':
+            required += (type_column,)
+        try:
+            _require_columns(raw, required)
+        except ValueError as exc:
+            raise ValueError(f'{path}: {exc}') from exc
+        canonical = pd.DataFrame(index=raw.index)
+        canonical['id'] = _raw_ids(raw, task, f'Track_{track}', source_column)
+        canonical['task'], canonical['track'] = task, f'Track_{track}'
+        canonical['ground_truth_label'] = int(track == 'B')
+        if task in ('bn_qa', 'codemixed_qa'):
+            canonical['context'] = raw[context_column]
+            canonical['question'] = raw[question_column]
+            canonical['candidate_answer'] = raw[answer_column]
+        elif task == 'summarization':
+            canonical['context'] = _text(_series(raw, context_column), f'{path}: document')
+            canonical['question'] = _SUMMARY_QUESTION
+            canonical['candidate_answer'] = raw[answer_column]
+        else:
+            canonical['context'] = ''
+            canonical['question'] = raw['question']
+            if track == 'A':
+                canonical['candidate_answer'] = raw['answer']
+            else:
+                chain = _text(_series(raw, 'hallucinated_chain'), f'{path}: hallucinated_chain')
+                answer = _text(_series(raw, 'hallucinated_answer'), f'{path}: hallucinated_answer')
+                canonical['candidate_answer'] = chain + '\n\nচূড়ান্ত উত্তর: ' + answer
+        if track == 'A':
+            canonical['hallucination_type'] = 'None'
+        else:
+            labels = _text(_series(raw, type_column), f'{path}: {type_column}')
+            translated = labels.map(lambda value: mapping.get(value, _TYPE_LOOKUP.get(value.casefold())))
+            unknown = sorted({value for value in labels if value not in mapping and value.casefold() not in _TYPE_LOOKUP})
+            if unknown:
+                raise ValueError(
+                    f'{path}: unknown raw hallucination labels {unknown}. Supply '
+                    '--type_mapping_json PATH containing an explicit flat JSON object '
+                    'mapping each raw label to a canonical type. No semantic equivalence '
+                    f'is assumed. Canonical types: {HALLUCINATION_TYPES}.'
+                )
+            canonical['hallucination_type'] = translated
+        sources.append({
+            'path': str(path.resolve()), 'sha256': _sha256(path), 'rows': len(raw),
+            'duplicate_source_id_rows': int(raw[source_column].duplicated(keep=False).sum()),
+            'exact_duplicate_rows_beyond_first': int(raw.duplicated().sum()),
+        })
+        frames.append(canonical)
+    result = validate_benhallu(pd.concat(frames, ignore_index=True), require_full=True)
+    result.attrs.update(input_kind='real', mock=False)
+    result.attrs['provenance'] = {
+        'kind': 'raw_directory', 'sources': sources, 'type_mapping': mapping,
+        'type_mapping_source': mapping_source,
+        'id_policy': 'task_track_source-id; duplicate IDs add SHA256(raw record) and copy ordinal; all rows retained',
+        'summarization_policy': 'document in context; fixed summarization instruction in question',
+        'math_candidate_policy': 'hallucinated_chain + final-answer delimiter + hallucinated_answer; never original answer',
+    }
+    return _carry_attrs(result, result)
+
+
+def _load_provenance(path: Path, mode: str, row_count: int) -> tuple[str, dict | None, dict | None]:
+    """Inspect directory manifest or sidecar to recover input kind and inherited provenance.
+
+    Returns (kind, inherited_provenance, metadata_source_dict).
+    If no verified manifest or sidecar applies, returns ('unknown', None, None).
+    """
+    manifest_path = path.parent / 'manifest.json'
+    if manifest_path.is_file():
+        try:
+            manifest = json.loads(manifest_path.read_text(encoding='utf-8'))
+        except (json.JSONDecodeError, OSError):
+            return 'unknown', None, None
+        if isinstance(manifest, dict) and manifest.get('mode') == mode:
+            outputs = manifest.get('outputs', {})
+            matching_output = None
+            if isinstance(outputs, dict):
+                for out in outputs.values():
+                    if isinstance(out, dict) and out.get('filename') == path.name:
+                        matching_output = out
+                        break
+            is_canonical_input = False
+            if matching_output is None:
+                canonical_sha = manifest.get('input', {}).get('canonical_csv_sha256')
+                if canonical_sha and canonical_sha == _sha256(path):
+                    is_canonical_input = True
+
+            if matching_output is not None or is_canonical_input:
+                if matching_output is not None:
+                    if matching_output.get('rows') != row_count:
+                        raise ValueError(
+                            f'Manifest {manifest_path} row count mismatch for {path.name}: '
+                            f'expected {matching_output.get("rows")}, got {row_count}.'
+                        )
+                    if matching_output.get('sha256') != _sha256(path):
+                        raise ValueError(
+                            f'Manifest {manifest_path} sha256 mismatch for {path.name}.'
+                        )
+                kind = manifest.get('input_kind')
+                if kind is None:
+                    input_prov = manifest.get('input', {}).get('provenance', {})
+                    if isinstance(input_prov, dict) and 'input_kind' in input_prov:
+                        kind = input_prov['input_kind']
+                    elif manifest.get('mock') is True:
+                        kind = 'synthetic'
+                    elif manifest.get('mock') is False and isinstance(input_prov, dict) and input_prov.get('kind') == 'raw_directory':
+                        kind = 'real'
+                    else:
+                        kind = 'unknown'
+                kind = _input_kind(kind)
+                inherited = manifest.get('input', {}).get('provenance')
+                metadata_source = {'path': str(manifest_path.resolve()), 'sha256': _sha256(manifest_path)}
+                return kind, inherited, metadata_source
+
+    sidecar = path.with_suffix('.meta.json')
+    if sidecar.is_file():
+        try:
+            meta = json.loads(sidecar.read_text(encoding='utf-8'))
+        except (json.JSONDecodeError, OSError):
+            return 'unknown', None, None
+        if isinstance(meta, dict):
+            kind = meta.get('input_kind')
+            if kind in INPUT_KINDS:
+                inherited = meta.get('provenance')
+                metadata_source = {'path': str(sidecar.resolve()), 'sha256': _sha256(sidecar)}
+                return kind, inherited, metadata_source
+
+    return 'unknown', None, None
+
+
+def load_dataset(path: str | os.PathLike, mode: str,
+                 type_mapping: Mapping[str, str] | str | os.PathLike | None = None,
+                 *, input_kind: str | None = None) -> pd.DataFrame:
+    """Load a canonical CSV or, for BenHallu, the supplied raw directory.
+
+    ``type_mapping`` may be a flat dict or a path to its JSON representation.
+    Full-size requirements are enforced by the split-making functions, allowing
+    this loader and the validators to inspect smaller canonical datasets too.
+
+    Returned attrs contain ``input_kind`` (real/synthetic/unknown), ``mock``
+    (False/True/None respectively), and ``provenance`` (immediate source hashes,
+    provenance-file hashes and nested source_provenance on generated reloads).
+    Canonical CSVs without verified provenance default to unknown. A keyword-only
+    declaration can classify unknown input but cannot replace a recorded kind.
+    Sidecars check integrity, not authorship or scientific dataset authenticity.
+    """
+    if input_kind is not None:
+        _input_kind(input_kind)
+    if mode not in ('benhallu', 'dialect'):
+        raise ValueError("mode must be 'benhallu' or 'dialect'.")
+    path = Path(path)
+    if path.is_dir():
+        if mode != 'benhallu':
+            raise ValueError('Raw directory ingestion is supported only in benhallu mode.')
+        return _declare_input_kind(_load_raw(path, type_mapping), input_kind)
+    if type_mapping is not None:
+        raise ValueError('type_mapping is only applicable to raw BenHallu directory ingestion.')
+    if not path.is_file():
+        raise ValueError(f'Input does not exist or is not a regular file/directory: {path}')
+    frame = _csv_read(path)
+    frame = validate_benhallu(frame) if mode == 'benhallu' else validate_dialect(frame)
+    kind, inherited, metadata_source = _load_provenance(path, mode, len(frame))
+    frame.attrs.update(input_kind=kind, mock=_mock_flag(kind))
+    frame.attrs['provenance'] = {
+        'kind': 'canonical_csv',
+        'sources': [{'path': str(path.resolve()), 'sha256': _sha256(path), 'rows': len(frame)}],
+    }
+    if inherited is not None:
+        frame.attrs['provenance']['source_provenance'] = inherited
+        frame.attrs['provenance']['provenance_source'] = metadata_source
+    return _declare_input_kind(frame, input_kind)
+
+
+def _sort(frame: pd.DataFrame) -> pd.DataFrame:
+    return _carry_attrs(frame.sort_values('id', kind='mergesort').reset_index(drop=True), frame)
+
+
+def _composite(frame: pd.DataFrame) -> pd.Series:
+    return frame['task'] + '_' + frame['track'] + '_' + frame['hallucination_type']
+
+
+def _sampling_problem(frame: pd.DataFrame, n: int, strata: pd.Series) -> str | None:
+    counts = strata.value_counts()
+    if n <= 0 or n >= len(frame):
+        return f'need 0 < selected size {n} < available rows {len(frame)}'
+    if counts.min() < 2:
+        return f'each stratum needs at least 2 rows; counts={counts.to_dict()}'
+    if min(n, len(frame) - n) < len(counts):
+        return f'both selected and remaining sets need at least {len(counts)} rows (one per stratum)'
+    return None
+
+
+def _sample(frame: pd.DataFrame, n: int, seed: int, *, composite: bool,
+            description: str) -> pd.DataFrame:
+    ordered = _sort(frame)
+    strata = _composite(ordered) if composite else _series(ordered, 'question_type')
+    problem = _sampling_problem(ordered, n, strata)
+    if problem:
+        raise ValueError(f'Cannot stratify {description}: {problem}. Do not merge or discard rare strata silently.')
+    _, selected = train_test_split(
+        ordered, test_size=n, random_state=seed, stratify=strata,
+    )
+    selected = cast(pd.DataFrame, selected)
+    selected_strata = _composite(selected) if composite else _series(selected, 'question_type')
+    source_keys, selected_keys = set(strata), set(selected_strata)
+    if source_keys != selected_keys:
+        counts = strata.value_counts()
+        missing = {
+            key: {'source_rows': int(counts[key]),
+                  'proportional_quota': n * int(counts[key]) / len(ordered)}
+            for key in sorted(source_keys - selected_keys)
+        }
+        raise ValueError(
+            f'Cannot stratify {description}: selecting {n} of {len(ordered)} rows '
+            f'loses source-stratum coverage; missing={missing}, '
+            f'unexpected={sorted(selected_keys - source_keys)}. '
+            'Insufficient rare-stratum proportions can receive zero rows under '
+            "sklearn's integer proportional allocation. Increase the subset size "
+            'or collect more examples for rare strata. No quotas are adjusted '
+            'and no incomplete split will be published.'
+        )
+    return _sort(selected)
+
+
+def _atomic_write(path: Path, *, frame: pd.DataFrame | None = None,
+                  payload: dict[str, Any] | None = None) -> None:
+    temporary = None
+    try:
+        with tempfile.NamedTemporaryFile(
+            mode='w', encoding='utf-8', newline='', dir=path.parent,
+            prefix=f'.{path.name}.', suffix='.tmp', delete=False,
+        ) as stream:
+            temporary = Path(stream.name)
+            if frame is not None:
+                frame.to_csv(stream, index=False, lineterminator='\n')
+            else:
+                json.dump(payload, stream, ensure_ascii=False, sort_keys=True, indent=2, allow_nan=False)
+                stream.write('\n')
+            stream.flush()
+            os.fsync(stream.fileno())
+        os.replace(temporary, path)
+    finally:
+        if temporary is not None:
+            temporary.unlink(missing_ok=True)
+
+
+def _counts(series: pd.Series) -> dict[str, int]:
+    return {str(key): int(value) for key, value in sorted(series.value_counts().items())}
+
+
+def _frame_counts(frame: pd.DataFrame, mode: str) -> dict[str, Any]:
+    result: dict[str, Any] = {'rows': len(frame)}
+    columns = ('track', 'task', 'ground_truth_label', 'hallucination_type') if mode == 'benhallu' else ('dialect', 'question_type')
+    for column in columns:
+        result[column] = _counts(_series(frame, column))
+    if mode == 'benhallu':
+        result['composite'] = _counts(_composite(frame))
+    else:
+        result['dialect_question_type'] = {
+            dialect: _counts(_series(group, 'question_type'))
+            for dialect, group in frame.groupby('dialect', sort=True)
+        }
+    return result
+
+
+def _publish(frame: pd.DataFrame, output_dir: str | os.PathLike, seed: int,
+             mode: str, outputs: dict[str, tuple[str, pd.DataFrame]],
+             selection: dict[str, Any]) -> None:
+    directory = Path(output_dir)
+    provenance = frame.attrs.get('provenance', {'kind': 'in_memory', 'sources': []})
+    artifacts = dict(outputs)
+    mock_filename = frame.attrs.get('mock_filename')
+    if mock_filename:
+        artifacts['mock_dataset'] = (mock_filename, frame)
+    targets = [directory / name for name, _ in artifacts.values()] + [directory / 'manifest.json']
+    sources = {Path(item['path']).resolve() for item in provenance.get('sources', [])}
+    mapping_source = provenance.get('type_mapping_source')
+    if mapping_source:
+        sources.add(Path(mapping_source['path']).resolve())
+    for target in targets:
+        if target.resolve() in sources or any(
+                target.exists() and source.exists() and os.path.samefile(target, source)
+                for source in sources):
+            raise ValueError(f'Refusing to overwrite an input/provenance file: {target}')
+    # Compute every selection and check all destinations before creating output.
+    directory.mkdir(parents=True, exist_ok=True)
+    output_metadata = {}
+    for key, (filename, subset) in artifacts.items():
+        target = directory / filename
+        _atomic_write(target, frame=subset)
+        output_metadata[key] = {
+            'filename': filename, 'sha256': _sha256(target),
+            **_frame_counts(subset, mode),
+        }
+    ids = {key: set(subset['id']) for key, (_, subset) in outputs.items()}
+    overlaps = {
+        f'{left}__{right}': len(ids[left] & ids[right])
+        for index, left in enumerate(ids) for right in list(ids)[index + 1:]
+    }
+    canonical_bytes = frame.to_csv(index=False, lineterminator='\n').encode('utf-8')
+    input_kind = frame.attrs.get('input_kind', 'synthetic' if frame.attrs.get('mock') is True else 'unknown')
+    manifest = {
+        'schema_version': 2, 'mode': mode, 'seed': seed,
+        'input_kind': input_kind,
+        'mock': _mock_flag(input_kind),
+        'evaluation_only': True,
+        'overlap_policy': 'Intentional evaluation subset overlap; NOT train/test partitions. Row-level, not source-grouped.',
+        'dependencies': {
+            'python': platform.python_version(), 'numpy': np.__version__,
+            'pandas': pd.__version__, 'scikit-learn': sklearn.__version__,
+        },
+        'input': {
+            **_frame_counts(frame, mode),
+            'canonical_csv_sha256': hashlib.sha256(canonical_bytes).hexdigest(),
+            'provenance': provenance,
+        },
+        'selection': selection, 'outputs': output_metadata,
+        'pairwise_id_overlap': overlaps,
+    }
+    _atomic_write(directory / 'manifest.json', payload=manifest)
+
+
+def make_benhallu_splits(frame: pd.DataFrame, output_dir: str | os.PathLike,
+                         seed: int = 42) -> dict[str, pd.DataFrame]:
+    """Write full, 10% and micro evaluation sets; return keys micro/10pct/full.
+
+    Each track is sampled separately with task_track_hallucination_type strata.
+    Both micro and 10% are sampled directly from full to preserve its proportions;
+    overlap is allowed, but neither nesting nor disjointness is enforced.
+    """
+    seed = _seed(seed)
+    full = _sort(validate_benhallu(frame, require_full=True))
+    ten_parts, micro_parts = [], []
+    for track, ten_size, micro_size in (('Track_A', 400, 30), ('Track_B', 1200, 90)):
+        source = full.loc[full['track'].eq(track)]
+        ten_parts.append(_sample(source, ten_size, seed, composite=True, description=f'{track} 10%'))
+        micro_parts.append(_sample(source, micro_size, seed, composite=True, description=f'{track} micro'))
+    ten = _sort(_carry_attrs(pd.concat(ten_parts, ignore_index=True), full))
+    micro = _sort(_carry_attrs(pd.concat(micro_parts, ignore_index=True), full))
+    outputs = {
+        'micro': ('benhallu_micro_debug_120.csv', micro),
+        '10pct': ('benhallu_stratified_10pct.csv', ten),
+        'full': ('benhallu_full_16k.csv', full),
+    }
+    _publish(full, output_dir, seed, 'benhallu', outputs, {
+        'algorithm': 'sklearn.model_selection.train_test_split',
+        'stratify': "f'{task}_{track}_{hallucination_type}'", 'separate_tracks': True,
+        'input_order': 'canonical id, ascending',
+        'rounding': 'sklearn stratified integer allocation; both subsets reference full proportions',
+        'sampling_pool': 'full dataset, separately by track, for both micro and 10pct',
+        'track_targets': {
+            'micro': {'Track_A': 30, 'Track_B': 90},
+            '10pct': {'Track_A': 400, 'Track_B': 1200},
+        },
+    })
+    return {key: subset for key, (_, subset) in outputs.items()}
+
+
+def make_dialect_subset(frame: pd.DataFrame, output_dir: str | os.PathLike,
+                         seed: int = 42) -> pd.DataFrame:
+    """Write and return 300 rows: 100 per anchor, stratified by question_type."""
+    seed = _seed(seed)
+    full = _sort(validate_dialect(frame, require_full=True))
+    pieces = []
+    for dialect in ANCHOR_DIALECTS:
+        source = full.loc[full['dialect'].eq(dialect)]
+        if source['question_type'].nunique() != 2:
+            raise ValueError(f'Anchor dialect {dialect} must contain both question types.')
+        pieces.append(_sample(source, 100, seed, composite=False, description=f'{dialect} anchor'))
+    subset = _sort(_carry_attrs(pd.concat(pieces, ignore_index=True), full))
+    _publish(full, output_dir, seed, 'dialect', {
+        'subset': ('dialect_ccc_subset_300.csv', subset),
+    }, {
+        'algorithm': 'sklearn.model_selection.train_test_split', 'stratify': 'question_type',
+        'input_order': 'canonical id, ascending', 'rounding': 'sklearn stratified integer allocation',
+        'anchor_targets': dict.fromkeys(ANCHOR_DIALECTS, 100),
+        'excluded_dialects': sorted(set(full['dialect']) - set(ANCHOR_DIALECTS)),
+    })
+    return subset
+
+
+def _mock_example(task: str, kind: str, rng: np.random.Generator
+                  ) -> tuple[str, str, str]:
+    """Small Bengali/code-mixed templates with type-specific synthetic errors."""
+    if task in ('bn_qa', 'codemixed_qa'):
+        topics = (
+            ('বাংলাদেশের রাজধানী ঢাকা।', 'বাংলাদেশের রাজধানী কী?', 'ঢাকা', 'কলকাতা'),
+            ('কাজী নজরুল ইসলাম বাংলাদেশের জাতীয় কবি।', 'বাংলাদেশের জাতীয় কবি কে?', 'কাজী নজরুল ইসলাম', 'জীবনানন্দ দাশ'),
+            ('পদ্মা সেতু ২০২২ সালে উদ্বোধন করা হয়।', 'পদ্মা সেতু কত সালে উদ্বোধন করা হয়?', '২০২২ সালে', '২০১২ সালে'),
+            ('সূর্য একটি নক্ষত্র। পৃথিবী সূর্যের চারদিকে ঘোরে।', 'পৃথিবী কিসের চারদিকে ঘোরে?', 'সূর্যের চারদিকে', 'চাঁদের চারদিকে'),
+        )
+        context, question, correct, wrong = topics[int(rng.integers(len(topics)))]
+        if task == 'codemixed_qa':
+            context = 'Read this তথ্য: ' + context
+            question = 'Context অনুযায়ী answer দিন: ' + question
+            correct = 'The answer is ' + correct
+            wrong = 'The answer is ' + wrong
+        errors = {
+            'Factualness': wrong,
+            'Comprehension': 'প্রশ্নটি আসলে নদীর দৈর্ঘ্য সম্পর্কে; উত্তর ৫০০ কিলোমিটার।',
+            'Specificity': correct + ', নির্দিষ্টভাবে সকাল ৭টা ১৩ মিনিটে প্রতিষ্ঠিত।',
+            'Inference': correct + '; তাই নিশ্চিতভাবে দেশের সবাই একই ভাষায় কথা বলে।',
+        }
+        return context, question, correct if kind == 'None' else errors[kind]
+    if task == 'summarization':
+        city = str(rng.choice(['ঢাকা', 'খুলনা', 'রাজশাহী', 'বরিশাল']))
+        count = int(rng.integers(20, 200))
+        context = (
+            f'{city} শহরে একটি পাঠাগার চালু হয়েছে। প্রথম দিনে {count} জন পাঠক আসেন। '
+            'পাঠাগারটি শিক্ষার্থীদের বিনা মূল্যে বই পড়ার সুযোগ দেয়।'
+        )
+        correct = f'{city} শহরের নতুন পাঠাগারে প্রথম দিনে {count} জন পাঠক আসেন; শিক্ষার্থীরা বিনা মূল্যে বই পড়তে পারেন।'
+        errors = {
+            'Fabricated_Content': f'{city} শহরের নতুন পাঠাগারটি আন্তর্জাতিক মহাকাশ গবেষণা কেন্দ্রও চালু করেছে।',
+            'Non_Factual_Addition': correct + ' এটি বিশ্বের সবচেয়ে প্রাচীন পাঠাগার।',
+            'Direct_Contradiction': f'{city} শহরের পাঠাগারে কোনো পাঠক আসেননি এবং শিক্ষার্থীদের বই পড়তে দেওয়া হয় না।',
+        }
+        return context, _SUMMARY_QUESTION, correct if kind == 'None' else errors[kind]
+    a, b = (int(value) for value in rng.integers(5, 90, size=2))
+    question = f'রহিমের কাছে {a}টি আম ছিল। সে আরও {b}টি আম পেল। এখন মোট কতটি আম আছে? ধাপে ধাপে দেখাও।'
+    correct = f'মোট আম = {a} + {b} = {a + b}। উত্তর: {a + b}টি।'
+    errors = {
+        'Arithmetic_Slip': f'{a} + {b} = {a + b + 3}। উত্তর: {a + b + 3}টি।',
+        'Formula_Misapplication': f'মোট নির্ণয়ের সূত্র গুণ: {a} × {b} = {a * b}। উত্তর: {a * b}টি।',
+        'Invalid_Deduction': f'আরও আম পাওয়ায় সংখ্যা কমবে: {a} - {b} = {a - b}। উত্তর: {a - b}টি।',
+        'Hallucinated_Intermediate_Fact': f'রহিম গোপনে আরও ১০টি আম পেয়েছে। মোট {a} + {b} + ১০ = {a + b + 10}। উত্তর: {a + b + 10}টি।',
+        'Semantic_Drift': 'আমের পরিবর্তে ঝুড়ির সংখ্যা হিসাব করি। দুটি ঝুড়ি আছে। চূড়ান্ত উত্তর: ২টি ঝুড়ি।',
+    }
+    return '', question, correct if kind == 'None' else errors[kind]
+
+
+def generate_mock_benhallu(seed: int = 42) -> pd.DataFrame:
+    """Generate exactly the canonical schema and realistic raw task/type counts."""
+    seed = _seed(seed)
+    rng = np.random.default_rng(seed)
+    records = []
+    b_counts = {'bn_qa': 4000, 'codemixed_qa': 4000, 'summarization': 3000, 'math': 1000}
+    for track in ('Track_A', 'Track_B'):
+        for task in TASKS:
+            size = 1000 if track == 'Track_A' else b_counts[task]
+            kinds = ('None',) if track == 'Track_A' else TASK_TYPES[task]
+            for i in range(size):
+                kind = kinds[i % len(kinds)]
+                context, question, answer = _mock_example(task, kind, rng)
+                records.append({
+                    'id': f'{task}_{track}_{i:05d}', 'task': task, 'track': track,
+                    'hallucination_type': kind, 'question': question, 'context': context,
+                    'candidate_answer': answer, 'ground_truth_label': int(track == 'Track_B'),
+                })
+    frame = pd.DataFrame.from_records(records, columns=BENHALLU_COLUMNS)
+    frame = validate_benhallu(frame.iloc[rng.permutation(len(frame))], require_full=True)
+    frame.attrs.update(input_kind='synthetic', mock=True)
+    frame.attrs['provenance'] = {'kind': 'synthetic', 'generator': 'generate_mock_benhallu', 'seed': seed, 'sources': []}
+    return _carry_attrs(frame, frame)
+
+
+def generate_mock_dialect(seed: int = 42) -> pd.DataFrame:
+    """Generate 4,000 rows: 1,000 per dialect, two question types, scores 0..10.
+
+    Scores illustrate correctness/completeness: 0 is wholly incorrect, 10 fully
+    correct, and intermediate responses use partial answers or hedging. These
+    are synthetic examples, not calibrated human judgments or linguistically
+    validated dialect resources.
+    """
+    seed = _seed(seed)
+    rng = np.random.default_rng(seed)
+    factual_questions = {
+        'Standard_Bengali': 'বাংলাদেশের রাজধানীর নাম কী?',
+        'Tangail': 'বাংলাদেশের রাজধানীর নাম কী কও তো?',
+        'Chittagong': 'বাংলাদেশর রাজধানীর নাম কিতা?',
+        'Sylheti': 'বাংলাদেশর রাজধানীর নাম কিতা অয়?',
+    }
+    definitional_questions = {
+        'Standard_Bengali': 'পাঠাগার কাকে বলে?',
+        'Tangail': 'পাঠাগার কইতে কী বুঝায় কও তো?',
+        'Chittagong': 'পাঠাগার কইলে কিতা বুঝায়?',
+        'Sylheti': 'পাঠাগার কইতে কিতা বুঝায়?',
+    }
+    factual_responses = (
+        'বাংলাদেশের রাজধানী কলকাতা।',
+        'বাংলাদেশের রাজধানী সম্ভবত কলকাতা, তবে আমি নিশ্চিত নই।',
+        'নামটি মনে নেই; শহরটি বাংলাদেশের ভেতরে অবস্থিত।',
+        'রাজধানীর নাম নিশ্চিত নই; সম্ভবত দেশের মধ্যাঞ্চলের কোনো শহর।',
+        'ঢাকা অথবা চট্টগ্রাম হতে পারে; কোনটি রাজধানী তা নিশ্চিত নই।',
+        'ঢাকা হতে পারে, কিন্তু আমি মূলত অনুমান করছি।',
+        'আমার মনে হয় রাজধানী ঢাকা, তবে নিশ্চিত হতে যাচাই করা দরকার।',
+        'সম্ভবত বাংলাদেশের রাজধানী ঢাকা।',
+        'আমার জানা অনুযায়ী বাংলাদেশের রাজধানী ঢাকা।',
+        'ঢাকাই বাংলাদেশের রাজধানী বলে আমি প্রায় নিশ্চিত।',
+        'বাংলাদেশের রাজধানী ঢাকা।',
+    )
+    definitional_responses = (
+        'পাঠাগার হলো শুধু গাড়ি মেরামতের কারখানা।',
+        'পাঠাগার হলো বই বিক্রির দোকান।',
+        'পাঠাগার বইয়ের সঙ্গে সম্পর্কিত কোনো জায়গা; এর কাজটি বলতে পারছি না।',
+        'পাঠাগার হলো বই রাখা হয় এমন একটি ঘর।',
+        'পাঠাগার হলো বই জমা রাখা ও পড়ার জায়গা।',
+        'পাঠাগারে বিভিন্ন বই রাখা থাকে এবং মানুষ সেখানে পড়তে পারেন।',
+        'পাঠাগার হলো সুশৃঙ্খলভাবে বই সংগ্রহ ও পড়ার সুযোগ দেওয়ার স্থান।',
+        'পাঠাগার হলো বই ও অন্যান্য পাঠসামগ্রী সংগ্রহ, সংরক্ষণ ও পাঠের স্থান।',
+        'পাঠাগারে বই ও অন্যান্য পাঠসামগ্রী সুশৃঙ্খলভাবে রাখা হয় এবং পাঠকেরা '
+        'সেগুলো পড়তে পারেন; অনেক ক্ষেত্রে ধারও নিতে পারেন।',
+        'পাঠাগার হলো পাঠকের ব্যবহারের জন্য বই ও অন্যান্য তথ্যসামগ্রী সংগ্রহ, '
+        'সংগঠিত ও সংরক্ষণ করার প্রতিষ্ঠান, যেখানে পড়া এবং নিয়ম অনুযায়ী '
+        'ধার নেওয়ার সুযোগ থাকতে পারে।',
+        'পাঠাগার হলো এমন একটি প্রতিষ্ঠান বা সংগ্রহ, যেখানে বই ও অন্যান্য '
+        'তথ্যসামগ্রী সুশৃঙ্খলভাবে সংগ্রহ, সংগঠিত ও সংরক্ষণ করা হয় এবং পাঠকদের '
+        'পড়া, তথ্য অনুসন্ধান ও প্রযোজ্য নিয়মে ধার নেওয়ার সুবিধা দেওয়া হয়।',
+    )
+    records = []
+    for dialect in DIALECTS:
+        for i in range(1000):
+            question_type = 'factual' if i % 2 == 0 else 'definitional'
+            score = int(rng.integers(0, 11))
+            if question_type == 'factual':
+                question = factual_questions[dialect]
+                answer = factual_responses[score]
+            else:
+                question = definitional_questions[dialect]
+                answer = definitional_responses[score]
+            records.append({
+                'id': f'{dialect}_{i:04d}', 'dialect': dialect,
+                'question_type': question_type, 'question': question,
+                'response': answer, 'human_or_primary_score': score,
+            })
+    frame = pd.DataFrame.from_records(records, columns=DIALECT_COLUMNS)
+    frame = validate_dialect(frame.iloc[rng.permutation(len(frame))], require_full=True)
+    frame.attrs.update(input_kind='synthetic', mock=True)
+    frame.attrs['provenance'] = {'kind': 'synthetic', 'generator': 'generate_mock_dialect', 'seed': seed, 'sources': []}
+    return _carry_attrs(frame, frame)
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(
+        description='Create reproducible stratified evaluation subsets (NOT train/test partitions).',
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter,
+    )
+    source = parser.add_mutually_exclusive_group(required=True)
+    source.add_argument('--input_csv', type=Path, help='Canonical CSV, or the raw All data directory for benhallu.')
+    source.add_argument('--generate_mock_data', action='store_true', help='Generate synthetic data and the requested subsets.')
+    parser.add_argument('--output_dir', type=Path, required=True, help='Destination directory; input files are never overwritten.')
+    parser.add_argument('--seed', type=int, default=42, help='Random seed in [0, 2**32 - 1].')
+    parser.add_argument('--mode', choices=('benhallu', 'dialect'), default='benhallu', help='Dataset mode.')
+    parser.add_argument('--type_mapping_json', type=Path, help='Explicit raw-label -> canonical-type JSON object; raw BenHallu only.')
+    parser.add_argument('--input_kind', choices=INPUT_KINDS, help='Explicit declaration for unknown input only; cannot override recorded provenance.')
+    args = parser.parse_args(argv)
+    try:
+        seed = _seed(args.seed)
+        if args.generate_mock_data:
+            if args.type_mapping_json is not None:
+                raise ValueError('--type_mapping_json is only applicable to raw directory ingestion, not mock data.')
+            frame = generate_mock_benhallu(seed) if args.mode == 'benhallu' else generate_mock_dialect(seed)
+            frame = _declare_input_kind(frame, args.input_kind)
+            frame.attrs['mock_filename'] = f'mock_{args.mode}_{16000 if args.mode == "benhallu" else 4000}.csv'
+        else:
+            frame = load_dataset(args.input_csv, args.mode, args.type_mapping_json, input_kind=args.input_kind)
+        if args.mode == 'benhallu':
+            make_benhallu_splits(frame, args.output_dir, seed)
+        else:
+            make_dialect_subset(frame, args.output_dir, seed)
+    except (ValueError, TypeError, OSError, pd.errors.ParserError) as exc:
+        parser.error(str(exc))
+    print(f'Wrote {args.mode} evaluation subsets and manifest.json to {args.output_dir}')
+    return 0
+
+
+if __name__ == '__main__':
     raise SystemExit(main())

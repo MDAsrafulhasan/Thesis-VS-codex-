@@ -1,0 +1,4642 @@
+{
+  "generated_utc": "2026-11-06T20:56:56.163453+00:00",
+  "notes": [
+    "Metadata only: no code execution, notebook outputs, or data row values.",
+    "Titles use filenames or the first Markdown heading, not README claims; slide counts, versions, and other README drift are not inferred.",
+    "All copies are retained, including outputs, releases, archives, and split data.",
+    "docs/catalog, symlinks/junctions, and standard VCS/environment/cache directories are excluded. No model-size or output-directory exclusions are applied.",
+    "find scans live paths and hashes; matching cached metadata may be reused. Run catalog after changes to refresh the published indexes."
+  ],
+  "files": [
+    {
+      "path": ".gitignore",
+      "group": "Workspace",
+      "kind": "config",
+      "title": ".gitignore",
+      "bytes": 680,
+      "sha256": "5c88dcee3af2c36d36788d5f9072b9cd5ffe08327090444b38e436dd6bce5f05",
+      "symbols": []
+    },
+    {
+      "path": "AGENTS.md",
+      "group": "Workspace",
+      "kind": "documentation",
+      "title": "Thesis workspace instructions",
+      "bytes": 4299,
+      "sha256": "990f3611b64e49bb475a6e746787103d27654d13e646c55bfa204e64c127cae4",
+      "symbols": []
+    },
+    {
+      "path": "README.md",
+      "group": "Workspace",
+      "kind": "documentation",
+      "title": "Bengali LLM Hallucination Detection & Dialectal Robustness",
+      "bytes": 7065,
+      "sha256": "3025385c34d857024167cedef6904e023c3e5af17ae8f8c8eda76458064efd54",
+      "symbols": []
+    },
+    {
+      "path": "data/README.md",
+      "group": "Workspace",
+      "kind": "documentation",
+      "title": "Data lifecycle",
+      "bytes": 771,
+      "sha256": "a5c42188ea2fc63cf191751d29207898b07ac2cff80d4fdd7cc3c58d49e97ee5",
+      "symbols": []
+    },
+    {
+      "path": "data/raw/benhallu/Track-A/banglahallueval_qa_1000.csv",
+      "group": "BenHallu_raw",
+      "kind": "data",
+      "title": "banglahallueval_qa_1000.csv",
+      "bytes": 1870840,
+      "sha256": "9a73c1b475226afdbe98391ee14f70b8a85dccdd205370a8745754e5baa8cde3",
+      "symbols": [],
+      "csv_headers": [
+        "id",
+        "context",
+        "question",
+        "correct_answer"
+      ],
+      "csv_row_count": 1000
+    },
+    {
+      "path": "data/raw/benhallu/Track-A/banglahallueval_summarization_dataset_1000.csv",
+      "group": "BenHallu_raw",
+      "kind": "data",
+      "title": "banglahallueval_summarization_dataset_1000.csv",
+      "bytes": 1202619,
+      "sha256": "c27367e4cdfaaf3310885cedd6845bb4ad540fbb46045c1eed753a72f1c6422b",
+      "symbols": [],
+      "csv_headers": [
+        "id",
+        "question",
+        "summary"
+      ],
+      "csv_row_count": 1000
+    },
+    {
+      "path": "data/raw/benhallu/Track-A/codemix_1000.csv",
+      "group": "BenHallu_raw",
+      "kind": "data",
+      "title": "codemix_1000.csv",
+      "bytes": 2427965,
+      "sha256": "1703645428a036c7978147674f0c6d4de20f00c90b6de5777201301d2f54aa00",
+      "symbols": [],
+      "csv_headers": [
+        "id",
+        "context",
+        "question",
+        "correct_answer",
+        "codemix_context",
+        "codemix_question",
+        "codemix_answer"
+      ],
+      "csv_row_count": 1000
+    },
+    {
+      "path": "data/raw/benhallu/Track-A/somadhan_1000_main_ordered.csv",
+      "group": "BenHallu_raw",
+      "kind": "data",
+      "title": "somadhan_1000_main_ordered.csv",
+      "bytes": 1955100,
+      "sha256": "6340e0eafd5b70e9321a4451f6f915186b326977987289f9c879457179a8a702",
+      "symbols": [],
+      "csv_headers": [
+        "question_id",
+        "question",
+        "answer",
+        "hallucinated_len"
+      ],
+      "csv_row_count": 1000
+    },
+    {
+      "path": "data/raw/benhallu/Track-B/codemix_4000.csv",
+      "group": "BenHallu_raw",
+      "kind": "data",
+      "title": "codemix_4000.csv",
+      "bytes": 2820414,
+      "sha256": "4742e8fecbe8c5960fd4d0e5ed444fc7396dd4046dadef3398843115b07139a7",
+      "symbols": [],
+      "csv_headers": [
+        "id",
+        "source_id",
+        "pattern",
+        "codemix_context",
+        "codemix_question",
+        "codemix_answer",
+        "hallucinated_answer"
+      ],
+      "csv_row_count": 4000
+    },
+    {
+      "path": "data/raw/benhallu/Track-B/qa_4000.csv",
+      "group": "BenHallu_raw",
+      "kind": "data",
+      "title": "qa_4000.csv",
+      "bytes": 8197222,
+      "sha256": "fba5c27869540c7d79cd559fe96a0fcd226af704165c6e381df9deb20fe672f3",
+      "symbols": [],
+      "csv_headers": [
+        "id",
+        "source_id",
+        "pattern",
+        "context",
+        "question",
+        "right_answer",
+        "hallucinated_answer"
+      ],
+      "csv_row_count": 4000
+    },
+    {
+      "path": "data/raw/benhallu/Track-B/reasoning_1000.csv",
+      "group": "BenHallu_raw",
+      "kind": "data",
+      "title": "reasoning_1000.csv",
+      "bytes": 4618143,
+      "sha256": "7284ecf9d439119db4b0e657aa30453657e87fe689e535a1f3d086e876e47089",
+      "symbols": [],
+      "csv_headers": [
+        "id",
+        "source_id",
+        "question_id",
+        "hallucination_type",
+        "question",
+        "answer",
+        "reasoning_len",
+        "hallucinated_chain",
+        "error_step",
+        "error_type",
+        "hallucinated_answer",
+        "raw_response",
+        "parse_error"
+      ],
+      "csv_row_count": 1000
+    },
+    {
+      "path": "data/raw/benhallu/Track-B/summarization_3000_corrected.csv",
+      "group": "BenHallu_raw",
+      "kind": "data",
+      "title": "summarization_3000_corrected.csv",
+      "bytes": 4976877,
+      "sha256": "af7a5ef3e4ff0d9166a8a551a17323b2a4771e2f08283dd0995fd6a16f492bcb",
+      "symbols": [],
+      "csv_headers": [
+        "id",
+        "source_id",
+        "pattern",
+        "document",
+        "right_summary",
+        "hallucinated_summary"
+      ],
+      "csv_row_count": 3000
+    },
+    {
+      "path": "data/raw/dialect/README.md",
+      "group": "Workspace",
+      "kind": "documentation",
+      "title": "Real dialect benchmark not yet supplied",
+      "bytes": 826,
+      "sha256": "017850a61c4f4c38b89ce703c5fe3c2683d51cb9fada70db4e87b4a5446ce441",
+      "symbols": []
+    },
+    {
+      "path": "data/splits/README.md",
+      "group": "Workspace",
+      "kind": "documentation",
+      "title": "Generated evaluation subsets",
+      "bytes": 799,
+      "sha256": "eb479874e3d0e64b27d58afa89bba4d39a177a40757499f4e7464f1e4ec08061",
+      "symbols": []
+    },
+    {
+      "path": "docs/AUDIT_REPORT.md",
+      "group": "Workspace",
+      "kind": "documentation",
+      "title": "Evaluation Pipeline and Optimization Audit Report",
+      "bytes": 17117,
+      "sha256": "a7664804a824428a0c0e410f894d2c1e94724eec3a1c2228c91cfe25eeeada24",
+      "symbols": []
+    },
+    {
+      "path": "docs/CODE_REVIEW.md",
+      "group": "Workspace",
+      "kind": "documentation",
+      "title": "Code review: evaluation, workspace tools, and preserved research",
+      "bytes": 18396,
+      "sha256": "ceec41f9601e0600e616a81f74651bcfe9f0365169ae41a8d4cae4e39ab501b6",
+      "symbols": []
+    },
+    {
+      "path": "docs/DATA_GUIDE.md",
+      "group": "Workspace",
+      "kind": "documentation",
+      "title": "Data guide and integration boundaries",
+      "bytes": 7893,
+      "sha256": "00366e7be40ec67fbc732af2232e788c838b811fdff5fcaf8f24d4df1d4133de",
+      "symbols": []
+    },
+    {
+      "path": "docs/ORGANIZATION.md",
+      "group": "Workspace",
+      "kind": "documentation",
+      "title": "Workspace organization record",
+      "bytes": 3593,
+      "sha256": "9aac78cf1e22d47f61bd7fe79270895ebbd1637b67972adf89859de80aa4305b",
+      "symbols": []
+    },
+    {
+      "path": "docs/RESEARCH_REUSE.md",
+      "group": "Workspace",
+      "kind": "documentation",
+      "title": "Research reuse map: Huntrix and CUET_AL_Masaar",
+      "bytes": 19050,
+      "sha256": "de1b1a612a3a9f3504b2a41855604f753768e930923c63d6016653d5c624c42a",
+      "symbols": []
+    },
+    {
+      "path": "docs/WORKFLOW.md",
+      "group": "Workspace",
+      "kind": "documentation",
+      "title": "Reproducible thesis workflow",
+      "bytes": 8748,
+      "sha256": "8658f659d74e1544dadef7c4ef1df4453e559ab87d5616a97520501fd3367f4f",
+      "symbols": []
+    },
+    {
+      "path": "environment/README.md",
+      "group": "Workspace",
+      "kind": "documentation",
+      "title": "Evaluation environment",
+      "bytes": 1983,
+      "sha256": "d39609a870d42b30ba9c4945da73cd8620ea8b2c3bb5cc98ea0a80bba883022c",
+      "symbols": []
+    },
+    {
+      "path": "environment/requirements-evaluation.txt",
+      "group": "Workspace",
+      "kind": "config",
+      "title": "requirements-evaluation.txt",
+      "bytes": 248,
+      "sha256": "9c493df13d54bd39086ff6e72e37156a0e392c66b5d60a774dd619069407b744",
+      "symbols": []
+    },
+    {
+      "path": "evaluation/README.md",
+      "group": "Thesis_evaluation",
+      "kind": "documentation",
+      "title": "Active thesis evaluation suite",
+      "bytes": 4964,
+      "sha256": "1c70f4820faa7bb4bff2d6eac790cbdf3ac4c77771f9285a28efdffa187c94f1",
+      "symbols": []
+    },
+    {
+      "path": "evaluation/eval.py",
+      "group": "Thesis_evaluation",
+      "kind": "sourcecode",
+      "title": "eval.py",
+      "bytes": 47426,
+      "sha256": "1f7373b06f32de25bd18dd0cabae374140f4ab2e671d67cd0b8e1d0679f9a0b2",
+      "symbols": [
+        "_array",
+        "_weights",
+        "compute_benhallu_score",
+        "compute_weight_sensitivity",
+        "compute_lins_ccc",
+        "compute_critical_bias_sensitivity",
+        "_normalize",
+        "_repetition_collapse",
+        "select_sample",
+        "build_prompt",
+        "MockJudge",
+        "_json",
+        "_digest",
+        "_slug",
+        "_checkpoint_lock",
+        "_atomic_text",
+        "_read_checkpoint",
+        "_record_source",
+        "_validate_record",
+        "run_evaluation",
+        "_rate",
+        "_group_bhs",
+        "_markdown",
+        "generate_reports",
+        "main"
+      ]
+    },
+    {
+      "path": "evaluation/judge_parsing.py",
+      "group": "Thesis_evaluation",
+      "kind": "sourcecode",
+      "title": "judge_parsing.py",
+      "bytes": 10821,
+      "sha256": "1cf4f750961d6e61e52d7e7fce45d328359780e62b8741de91e9d3e3a7ef7f57",
+      "symbols": [
+        "_binary",
+        "_score",
+        "_words",
+        "_has_repetition",
+        "_unique_object",
+        "_invalid_constant",
+        "_json_value",
+        "_explicit_value",
+        "_extract",
+        "_parse",
+        "parse_judge_output",
+        "parse_score_output"
+      ]
+    },
+    {
+      "path": "evaluation/judge_transport.py",
+      "group": "Thesis_evaluation",
+      "kind": "sourcecode",
+      "title": "judge_transport.py",
+      "bytes": 13919,
+      "sha256": "d2ada5904f001c9c7ab9de9c7227b761c8537d5b66dec94bc0b084755b40d817",
+      "symbols": [
+        "InferenceResponse",
+        "_origin",
+        "_SafeRedirectHandler",
+        "_raw_body",
+        "_read_body",
+        "_body_failure",
+        "_valid_string",
+        "_valid_count",
+        "_reject_json_constant",
+        "_parse_response",
+        "_retry_delay",
+        "OpenAICompatibleJudge"
+      ]
+    },
+    {
+      "path": "evaluation/make_splits.py",
+      "group": "Thesis_evaluation",
+      "kind": "sourcecode",
+      "title": "make_splits.py",
+      "bytes": 54629,
+      "sha256": "9892c5ff812a01e1353cd6fe4237309c0b8f1cf98b87eafd30fc3e3459e75df8",
+      "symbols": [
+        "_seed",
+        "_require_columns",
+        "_series",
+        "_is_missing",
+        "_text",
+        "_ids",
+        "_numbers",
+        "_input_kind",
+        "_mock_flag",
+        "_carry_attrs",
+        "_declare_input_kind",
+        "_ordered_columns",
+        "validate_benhallu",
+        "validate_dialect",
+        "_sha256",
+        "_csv_read",
+        "_mapping",
+        "_raw_ids",
+        "_load_raw",
+        "_load_provenance",
+        "load_dataset",
+        "_sort",
+        "_composite",
+        "_sampling_problem",
+        "_sample",
+        "_atomic_write",
+        "_counts",
+        "_frame_counts",
+        "_publish",
+        "make_benhallu_splits",
+        "make_dialect_subset",
+        "_mock_example",
+        "generate_mock_benhallu",
+        "generate_mock_dialect",
+        "main"
+      ]
+    },
+    {
+      "path": "evaluation/openrouter_config.py",
+      "group": "Thesis_evaluation",
+      "kind": "sourcecode",
+      "title": "openrouter_config.py",
+      "bytes": 5315,
+      "sha256": "73a398d93190951875f703defd65b1578d09878dd976d727060b42a7a0c2d7ef",
+      "symbols": [
+        "get_openrouter_judge",
+        "sample_dataset"
+      ]
+    },
+    {
+      "path": "evaluation/run_openrouter.py",
+      "group": "Thesis_evaluation",
+      "kind": "sourcecode",
+      "title": "run_openrouter.py",
+      "bytes": 7711,
+      "sha256": "c51b359228506f5d583fffcba22cb45dbd3eff6b584a0ef9e700ddbae661f348",
+      "symbols": [
+        "main"
+      ]
+    },
+    {
+      "path": "evaluation/test_pipeline.py",
+      "group": "Thesis_evaluation",
+      "kind": "test",
+      "title": "test_pipeline.py",
+      "bytes": 79608,
+      "sha256": "af93e549016852b5fd573bdb7e4eb9da088fd0f9cb106e06bcdb816222b0dc5c",
+      "symbols": [
+        "benhallu_full",
+        "dialect_full",
+        "benhallu_small",
+        "dialect_small",
+        "report_benhallu",
+        "evaluation",
+        "offline_chat_transport",
+        "_transport_http_error",
+        "_read_jsonl",
+        "_write_jsonl",
+        "_prediction_judge",
+        "_checkpoint",
+        "_run_cli",
+        "RecordingJudge",
+        "_evaluate",
+        "test_splits_mock_benhallu_schema_counts_and_determinism",
+        "test_splits_mock_dialect_schema_counts_and_determinism",
+        "test_splits_benhallu_artifacts_strata_and_round_trip",
+        "test_splits_benhallu_reproducible_under_row_reordering",
+        "test_splits_dialect_anchor_and_question_type_stratification",
+        "test_splits_benhallu_rejects_invalid_values",
+        "test_splits_dialect_rejects_invalid_values",
+        "test_splits_rejects_missing_columns_duplicate_ids_and_incomplete_full",
+        "test_splits_benhallu_rejects_track_label_and_type_mismatch",
+        "test_splits_validation_normalizes_without_mutating",
+        "test_splits_mock_cli_subprocess",
+        "test_benhallu_score_exact_rates",
+        "test_benhallu_score_custom_weights",
+        "test_benhallu_degenerate_judge_is_50_percent_for_each_task",
+        "test_benhallu_score_rejects_invalid_predictions",
+        "test_benhallu_score_rejects_bad_weights",
+        "test_weight_sensitivity_has_nine_exact_weight_pairs",
+        "test_lins_ccc_exact_population_formula",
+        "test_lins_ccc_plus_two_offset_penalizes_perfectly_correlated_vectors",
+        "test_lins_ccc_zero_denominator_is_undefined",
+        "test_lins_ccc_rejects_invalid_inputs",
+        "test_critical_bias_sensitivity_is_anchor_minus_chittagong_in_ccc_units",
+        "test_parse_judge_accepts_supported_unambiguous_formats",
+        "test_parse_judge_bengali_unicode_normalization",
+        "test_parse_judge_rejects_prose_and_conflicts",
+        "test_parse_judge_detects_four_consecutive_long_ngrams",
+        "test_parse_judge_does_not_overflag_short_repetition",
+        "test_parse_judge_token_budget_and_closing_tag",
+        "test_parse_score_supported_formats_and_bengali_digits",
+        "test_parse_score_rejects_invalid_prose_and_conflicts",
+        "test_parse_score_collapse_metadata",
+        "test_parse_score_detects_bengali_repetition",
+        "test_parse_unfinished_revision_invalidates_earlier_closed_tag",
+        "test_parse_rejects_conflicting_duplicate_json_keys",
+        "test_build_prompt_contains_inputs_but_not_evaluation_metadata",
+        "test_run_evaluation_checkpoint_resume_and_record_metadata",
+        "test_run_evaluation_fsyncs_before_requesting_next_prediction",
+        "test_run_evaluation_parse_failures_and_collapses_are_saved_and_resumed",
+        "test_run_evaluation_interrupted_run_resumes_only_remaining_ids",
+        "test_run_evaluation_repairs_torn_trailing_json_without_repeating_ids",
+        "test_run_evaluation_keeps_valid_final_json_without_newline",
+        "test_run_evaluation_rejects_internal_corruption_and_duplicate_existing_ids",
+        "test_run_evaluation_rejects_config_and_dataset_mismatch",
+        "test_run_evaluation_unsafe_model_names_are_safe_and_collision_resistant",
+        "test_run_evaluation_lock_prevents_concurrent_checkpoint_writers",
+        "test_run_evaluation_dialect_saves_scores_and_ground_truth",
+        "test_generate_reports_exports_required_tables_and_type_coverage",
+        "test_generate_reports_rejects_tampered_track_truth_metadata",
+        "test_run_evaluation_rejects_openai_judge_seed_mismatch_before_call",
+        "test_generate_reports_penalizes_failed_parses_without_dropping_coverage",
+        "test_generate_reports_cot_delta_sign_is_change_in_error_not_accuracy",
+        "test_generate_reports_pairs_shared_ids_with_unequal_incomplete_coverage",
+        "test_generate_reports_all_nine_sweep_weights_measure_rank_stability",
+        "test_cli_offline_mock_evaluation_both_reports_only_and_dialect",
+        "test_openai_transport_locked_payload_and_response_metadata",
+        "test_openai_transport_nonretryable_4xx_fails_without_retry",
+        "test_openai_transport_transient_http_retry_recovers_with_bounded_delay",
+        "test_openai_transport_transient_retry_exhaustion_is_bounded",
+        "test_generate_reports_different_seeds_withhold_rank_and_stability",
+        "test_splits_rare_stratum_omission_is_actionable_error",
+        "test_a1_safe_redirect_handler_blocks_cross_origin_and_downgrade",
+        "test_a2_quoted_examples_and_nested_json_rejected",
+        "test_a3_opaque_custom_judge_requires_explicit_identity",
+        "test_a4_malformed_response_metadata_and_encoding",
+        "test_a5_truncated_revision_flagged_as_collapse_and_failure",
+        "test_a6_danda_separated_bengali_repetition",
+        "test_a7_repetition_collapse_fast_quadratic_scaling",
+        "test_a8_response_body_read_incomplete_error",
+        "test_a9_exact_rational_ranking_ties",
+        "test_a10_cot_comparison_rejects_model_revision_drift",
+        "test_a11_ranking_stability_undefined_on_missing_tasks",
+        "test_a12_load_dataset_provenance_preservation",
+        "test_a13_duplicate_headers_rejected_before_mangling",
+        "test_r2_structured_overrides_signed_and_indivisible_fractions",
+        "test_select_sample_stratified_proportions",
+        "test_select_sample_head_and_random",
+        "test_openrouter_judge_transport_headers_and_params",
+        "test_openrouter_cli_sampling_and_defaults"
+      ]
+    },
+    {
+      "path": "experiments/README.md",
+      "group": "Workspace",
+      "kind": "documentation",
+      "title": "Experiment records",
+      "bytes": 1028,
+      "sha256": "1c0e1f099f22d3880639ff15c4ddd68bdd6358405702f664a6004c66d9162cf6",
+      "symbols": []
+    },
+    {
+      "path": "experiments/TEMPLATE.md",
+      "group": "Workspace",
+      "kind": "documentation",
+      "title": "Experiment record",
+      "bytes": 3250,
+      "sha256": "34d0873c35f0f9c44444f80affe37b6135a854ce992170abf58ffec5dd3965ae",
+      "symbols": []
+    },
+    {
+      "path": "experiments/pipeline_hardening/original_evaluation/eval.py",
+      "group": "Workspace",
+      "kind": "sourcecode",
+      "title": "eval.py",
+      "bytes": 47301,
+      "sha256": "85e1e8a35a2ffb8b508082811f41fe3378d9fb4da73eb01cdbbbd248099390e9",
+      "symbols": [
+        "_array",
+        "_weights",
+        "compute_benhallu_score",
+        "compute_weight_sensitivity",
+        "compute_lins_ccc",
+        "compute_critical_bias_sensitivity",
+        "_normalize",
+        "_repetition_collapse",
+        "_tag_status",
+        "_collapse",
+        "_binary",
+        "_score",
+        "_extract",
+        "parse_judge_output",
+        "parse_score_output",
+        "build_prompt",
+        "InferenceResponse",
+        "MockJudge",
+        "OpenAICompatibleJudge",
+        "_json",
+        "_digest",
+        "_slug",
+        "_checkpoint_lock",
+        "_atomic_text",
+        "_read_checkpoint",
+        "_record_source",
+        "_validate_record",
+        "run_evaluation",
+        "_rate",
+        "_group_bhs",
+        "_markdown",
+        "generate_reports",
+        "main"
+      ]
+    },
+    {
+      "path": "experiments/pipeline_hardening/original_evaluation/make_splits.py",
+      "group": "Workspace",
+      "kind": "sourcecode",
+      "title": "make_splits.py",
+      "bytes": 46925,
+      "sha256": "0c66c3745ff10cca9b5f589aa2afda5f1951fd6cae1598ce065833d692d30da4",
+      "symbols": [
+        "_seed",
+        "_require_columns",
+        "_series",
+        "_is_missing",
+        "_text",
+        "_ids",
+        "_numbers",
+        "_ordered_columns",
+        "validate_benhallu",
+        "validate_dialect",
+        "_sha256",
+        "_csv_read",
+        "_mapping",
+        "_raw_ids",
+        "_load_raw",
+        "load_dataset",
+        "_sort",
+        "_composite",
+        "_sampling_problem",
+        "_sample",
+        "_atomic_write",
+        "_counts",
+        "_frame_counts",
+        "_publish",
+        "make_benhallu_splits",
+        "make_dialect_subset",
+        "_mock_example",
+        "generate_mock_benhallu",
+        "generate_mock_dialect",
+        "main"
+      ]
+    },
+    {
+      "path": "experiments/pipeline_hardening/original_evaluation/test_pipeline.py",
+      "group": "Workspace",
+      "kind": "test",
+      "title": "test_pipeline.py",
+      "bytes": 62263,
+      "sha256": "9bd9fba63ca299b863994318a5a27e98e8cc958536c4e125da339eaf4c68a490",
+      "symbols": [
+        "benhallu_full",
+        "dialect_full",
+        "benhallu_small",
+        "dialect_small",
+        "report_benhallu",
+        "evaluation",
+        "offline_chat_transport",
+        "_transport_http_error",
+        "_read_jsonl",
+        "_write_jsonl",
+        "_prediction_judge",
+        "_checkpoint",
+        "_run_cli",
+        "RecordingJudge",
+        "_evaluate",
+        "test_splits_mock_benhallu_schema_counts_and_determinism",
+        "test_splits_mock_dialect_schema_counts_and_determinism",
+        "test_splits_benhallu_artifacts_strata_and_round_trip",
+        "test_splits_benhallu_reproducible_under_row_reordering",
+        "test_splits_dialect_anchor_and_question_type_stratification",
+        "test_splits_benhallu_rejects_invalid_values",
+        "test_splits_dialect_rejects_invalid_values",
+        "test_splits_rejects_missing_columns_duplicate_ids_and_incomplete_full",
+        "test_splits_benhallu_rejects_track_label_and_type_mismatch",
+        "test_splits_validation_normalizes_without_mutating",
+        "test_splits_mock_cli_subprocess",
+        "test_benhallu_score_exact_rates",
+        "test_benhallu_score_custom_weights",
+        "test_benhallu_degenerate_judge_is_50_percent_for_each_task",
+        "test_benhallu_score_rejects_invalid_predictions",
+        "test_benhallu_score_rejects_bad_weights",
+        "test_weight_sensitivity_has_nine_exact_weight_pairs",
+        "test_lins_ccc_exact_population_formula",
+        "test_lins_ccc_plus_two_offset_penalizes_perfectly_correlated_vectors",
+        "test_lins_ccc_zero_denominator_is_undefined",
+        "test_lins_ccc_rejects_invalid_inputs",
+        "test_critical_bias_sensitivity_is_anchor_minus_chittagong_in_ccc_units",
+        "test_parse_judge_accepts_supported_unambiguous_formats",
+        "test_parse_judge_bengali_unicode_normalization",
+        "test_parse_judge_rejects_prose_and_conflicts",
+        "test_parse_judge_detects_four_consecutive_long_ngrams",
+        "test_parse_judge_does_not_overflag_short_repetition",
+        "test_parse_judge_token_budget_and_closing_tag",
+        "test_parse_score_supported_formats_and_bengali_digits",
+        "test_parse_score_rejects_invalid_prose_and_conflicts",
+        "test_parse_score_collapse_metadata",
+        "test_parse_score_detects_bengali_repetition",
+        "test_parse_unfinished_revision_invalidates_earlier_closed_tag",
+        "test_parse_rejects_conflicting_duplicate_json_keys",
+        "test_build_prompt_contains_inputs_but_not_evaluation_metadata",
+        "test_run_evaluation_checkpoint_resume_and_record_metadata",
+        "test_run_evaluation_fsyncs_before_requesting_next_prediction",
+        "test_run_evaluation_parse_failures_and_collapses_are_saved_and_resumed",
+        "test_run_evaluation_interrupted_run_resumes_only_remaining_ids",
+        "test_run_evaluation_repairs_torn_trailing_json_without_repeating_ids",
+        "test_run_evaluation_keeps_valid_final_json_without_newline",
+        "test_run_evaluation_rejects_internal_corruption_and_duplicate_existing_ids",
+        "test_run_evaluation_rejects_config_and_dataset_mismatch",
+        "test_run_evaluation_unsafe_model_names_are_safe_and_collision_resistant",
+        "test_run_evaluation_lock_prevents_concurrent_checkpoint_writers",
+        "test_run_evaluation_dialect_saves_scores_and_ground_truth",
+        "test_generate_reports_exports_required_tables_and_type_coverage",
+        "test_generate_reports_rejects_tampered_track_truth_metadata",
+        "test_run_evaluation_rejects_openai_judge_seed_mismatch_before_call",
+        "test_generate_reports_penalizes_failed_parses_without_dropping_coverage",
+        "test_generate_reports_cot_delta_sign_is_change_in_error_not_accuracy",
+        "test_generate_reports_pairs_shared_ids_with_unequal_incomplete_coverage",
+        "test_generate_reports_all_nine_sweep_weights_measure_rank_stability",
+        "test_cli_offline_mock_evaluation_both_reports_only_and_dialect",
+        "test_openai_transport_locked_payload_and_response_metadata",
+        "test_openai_transport_nonretryable_4xx_fails_without_retry",
+        "test_openai_transport_transient_http_retry_recovers_with_bounded_delay",
+        "test_openai_transport_transient_retry_exhaustion_is_bounded",
+        "test_generate_reports_different_seeds_withhold_rank_and_stability",
+        "test_splits_rare_stratum_omission_is_actionable_error"
+      ]
+    },
+    {
+      "path": "experiments/reference_repairs/README.md",
+      "group": "Workspace",
+      "kind": "documentation",
+      "title": "Reference Repairs and Adaptations",
+      "bytes": 1786,
+      "sha256": "fd753a4c8a57a6aa5fa66d6ee7744918ea364781394f24e4b2dac739040ce2d0",
+      "symbols": []
+    },
+    {
+      "path": "experiments/reference_repairs/cuet/CUET_AL_Masaar_inference_notebook.repaired.ipynb",
+      "group": "Workspace",
+      "kind": "notebook",
+      "title": "CUET_AL_Masaar_inference_notebook.repaired.ipynb",
+      "bytes": 102806,
+      "sha256": "94edeeab4f35118ee2539384c2c0a2a333d80ea6ea95591f4b5c83c66ec1cb64",
+      "symbols": [
+        "find",
+        "norm_df",
+        "bn_norm",
+        "keyify2",
+        "nfc",
+        "squash",
+        "wtoks",
+        "toks",
+        "sub_ok",
+        "span_in",
+        "tokf1",
+        "_clean",
+        "_tokval",
+        "_chunk",
+        "numvals",
+        "deep_norm",
+        "sub_ok2",
+        "_mg",
+        "quoted_hw",
+        "extract_birth",
+        "is_when_birth",
+        "subject_in_ctx",
+        "_idiom_pred",
+        "label_row3",
+        "qn2",
+        "goldkey",
+        "clean_meanings",
+        "idiom_key",
+        "ptype",
+        "idiom_fig",
+        "samas_type",
+        "same_samas",
+        "grammar",
+        "stack3",
+        "make_map",
+        "judge_margin",
+        "run_margins",
+        "_nf",
+        "mnums",
+        "_close",
+        "_lcm",
+        "_solve1",
+        "solve_math",
+        "_fr",
+        "_ok",
+        "_quad",
+        "T_quad_ineq",
+        "T_equal_roots",
+        "T_perfect_sq_p",
+        "T_root_k",
+        "T_sym_sum",
+        "T_log",
+        "T_bracket",
+        "T_sqrt_eval",
+        "T_frac_of",
+        "T_fib",
+        "T_geo_series",
+        "T_binary_add",
+        "T_hex_bin",
+        "T_clock_until",
+        "T_chimes",
+        "T_quad_angles",
+        "T_compound",
+        "T_equilateral",
+        "T_sq_area",
+        "T_wood",
+        "solve_math2",
+        "T_weekday",
+        "_rn",
+        "_isint",
+        "_trunc_ok",
+        "repair_general",
+        "nfc72",
+        "has_ctx72",
+        "month_of",
+        "extract_dmy",
+        "is_date_q",
+        "is_birth_q",
+        "is_death_q",
+        "birth_slot",
+        "death_slot",
+        "cmp_date",
+        "layer1",
+        "is_prime",
+        "layer2",
+        "_tset",
+        "tset_stem",
+        "bio_years",
+        "subject_tokens",
+        "retrieve_entity_bio",
+        "layer3",
+        "solve",
+        "cnorm",
+        "cn",
+        "ckey",
+        "faith_only",
+        "build"
+      ]
+    },
+    {
+      "path": "experiments/reference_repairs/cuet/LICENSE",
+      "group": "Workspace",
+      "kind": "license",
+      "title": "LICENSE",
+      "bytes": 1070,
+      "sha256": "aaeb1233c843e1140dd2abb00e2c7e7b9c6182643daf3189c015711032267ca2",
+      "symbols": []
+    },
+    {
+      "path": "experiments/reference_repairs/cuet/README.md",
+      "group": "Workspace",
+      "kind": "documentation",
+      "title": "CUET_AL_Masaar Reference Adaptation",
+      "bytes": 962,
+      "sha256": "96f525ddbf7474a5c4ef7832b8a759173a9d7ad4bcd0e97bc66353305caf3bfe",
+      "symbols": []
+    },
+    {
+      "path": "experiments/reference_repairs/huntrix/LICENSE",
+      "group": "Workspace",
+      "kind": "license",
+      "title": "LICENSE",
+      "bytes": 1069,
+      "sha256": "349b8b7ec9bfcf0a8134ef6f245c23f828be8bafa951061586df8553198e9cef",
+      "symbols": []
+    },
+    {
+      "path": "experiments/reference_repairs/huntrix/README.md",
+      "group": "Workspace",
+      "kind": "documentation",
+      "title": "Huntrix Reference Adaptation & Repairs",
+      "bytes": 1218,
+      "sha256": "2fc767fe71b9c13632d8873c3d328bcd9e7f5587a384feab6c4925f945f89d17",
+      "symbols": []
+    },
+    {
+      "path": "experiments/reference_repairs/huntrix/best_gemma12_qat_submission.repaired.ipynb",
+      "group": "Workspace",
+      "kind": "notebook",
+      "title": "Bengali Hallucination Detection - Gemma 12B QAT GGUF Submission",
+      "bytes": 16459,
+      "sha256": "1bb9796168abb86eae617eb071dc5cb527292009abdc8266ffaf32ab218ababe",
+      "symbols": [
+        "clean_context",
+        "clean_text",
+        "normalize_bn",
+        "response_in_context",
+        "parse_label",
+        "prepare_frame",
+        "make_prompt",
+        "wait_for_server",
+        "start_llama_server",
+        "call_gemma",
+        "run_gemma",
+        "apply_context_rule"
+      ]
+    },
+    {
+      "path": "experiments/reference_repairs/huntrix/datathon_utils.py",
+      "group": "Workspace",
+      "kind": "sourcecode",
+      "title": "datathon_utils.py",
+      "bytes": 7693,
+      "sha256": "50a41a3bbb3fc63bbab2926e0085bc6d0b935455be696a1d91a90ebf2a851bed",
+      "symbols": [
+        "clean_context",
+        "clean_text",
+        "normalize_bn",
+        "bn_tokens",
+        "response_in_context",
+        "parse_label",
+        "prepare_frame",
+        "load_sample",
+        "load_test",
+        "prompt_category",
+        "apply_context_rule",
+        "metric_row",
+        "print_metrics",
+        "evaluate_by_slice",
+        "load_trace_predictions",
+        "build_context_retriever",
+        "retrieve_contexts"
+      ]
+    },
+    {
+      "path": "experiments/reference_repairs/huntrix/structured_overrides.py",
+      "group": "Workspace",
+      "kind": "sourcecode",
+      "title": "structured_overrides.py",
+      "bytes": 34177,
+      "sha256": "20d7306cd09fdb4dc8eacf119652cfdde2519ff2a6e5943ebea26e06fde73df4",
+      "symbols": [
+        "Solved",
+        "ascii_text",
+        "numbers",
+        "_match",
+        "_coefficient",
+        "_bounded_quadratic_interval",
+        "_parse_fraction_token",
+        "_response_interval",
+        "solve_math",
+        "solve_samas",
+        "solve_sandhi",
+        "solve_prefix",
+        "answer_matches",
+        "apply_structured_overrides",
+        "_token_set",
+        "apply_sample_transfer",
+        "_external_answers",
+        "apply_external_gold",
+        "main"
+      ]
+    },
+    {
+      "path": "outputs/README.md",
+      "group": "Workspace",
+      "kind": "documentation",
+      "title": "Raw inference outputs",
+      "bytes": 948,
+      "sha256": "f71723615f1b85a51a1de41f3ba28736ea84e65630911686a991d8853549729e",
+      "symbols": []
+    },
+    {
+      "path": "pytest.ini",
+      "group": "Workspace",
+      "kind": "config",
+      "title": "pytest.ini",
+      "bytes": 136,
+      "sha256": "c1a6726deb4449edc1c36ed0621ebab98e1cf2350fbea19209647fdf82fc0295",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/.gitignore",
+      "group": "Huntrix",
+      "kind": "config",
+      "title": ".gitignore",
+      "bytes": 127,
+      "sha256": "33ffe059e9a6da1986053263d49746ae493410c3b6b11635a1232f302c979084",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/AGENTS.md",
+      "group": "Huntrix",
+      "kind": "documentation",
+      "title": "Agent Workflow",
+      "bytes": 1525,
+      "sha256": "d229f71bd1d821af2aa7d70b1a04327f27c236f250e7abbbef0da740da455927",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/DECISION.log",
+      "group": "Huntrix",
+      "kind": "documentation",
+      "title": "DECISION.log",
+      "bytes": 63991,
+      "sha256": "5f391565e05f6348770f863c0f4eab61ae2b1a9fdb107ab066f0be56a43c302a",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/EXPERIMENT.log",
+      "group": "Huntrix",
+      "kind": "documentation",
+      "title": "EXPERIMENT.log",
+      "bytes": 207283,
+      "sha256": "076c05f55fb520fd5f6b01d9c1792eea6c6f2f31724ae26ece85ea81e6112207",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/LICENSE",
+      "group": "Huntrix",
+      "kind": "license",
+      "title": "LICENSE",
+      "bytes": 1069,
+      "sha256": "349b8b7ec9bfcf0a8134ef6f245c23f828be8bafa951061586df8553198e9cef",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/Problem.md",
+      "group": "Huntrix",
+      "kind": "documentation",
+      "title": "Problem.md",
+      "bytes": 22002,
+      "sha256": "345fffa5b523a48eb21f7de97c5d56f4464d8367437800c2f51e41a48a2a1cfd",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/README.md",
+      "group": "Huntrix",
+      "kind": "documentation",
+      "title": "Huntrix · Bengali LLM Hallucination Detection",
+      "bytes": 12511,
+      "sha256": "cf81a8663659dd5ab822843183cf5217eb19f3e0b3140db9a1a420ae261f08cb",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/THIRD_PARTY_NOTICES.md",
+      "group": "Huntrix",
+      "kind": "documentation",
+      "title": "Third-party notices",
+      "bytes": 3567,
+      "sha256": "af9c10b259135f22ecf7e4fdc3e6cbb0dc4620f8fe42bd00f580d06c5786044d",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/archive/README.md",
+      "group": "Huntrix",
+      "kind": "documentation",
+      "title": "Legacy archive",
+      "bytes": 649,
+      "sha256": "9354265f3eb623e941f980fdba0e1bc33cbac516595a610e8316bb6d93352d90",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/archive/legacy_docs/submission_v23.md",
+      "group": "Huntrix",
+      "kind": "documentation",
+      "title": "Huntrix — Bengali Hallucination Detection Submission",
+      "bytes": 11839,
+      "sha256": "c5707f131a48616eee29979ed3606bc6b43136fc84559da38810e72f2f364dc4",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/archive/legacy_notebooks/best_gemma12_qat_submission.ipynb",
+      "group": "Huntrix",
+      "kind": "notebook",
+      "title": "Bengali Hallucination Detection - Gemma 12B QAT GGUF Submission",
+      "bytes": 16476,
+      "sha256": "3ce2d564b3a44f68ad5dc71b09e08a61c70e1a701d86891437eaefedfe4af510",
+      "symbols": [
+        "wait_for_server",
+        "start_llama_server",
+        "apply_context_rule"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/archive/legacy_notebooks/starter-notebook-datathon.ipynb",
+      "group": "Huntrix",
+      "kind": "notebook",
+      "title": "Bangla Hallucination Detection — Starter Notebook",
+      "bytes": 175072,
+      "sha256": "35f3a4d83f777984e128a074df5f0b9f6e38e145c0934942f9972c583ad64dad",
+      "symbols": [
+        "clean_context",
+        "select_column",
+        "tfidf_branch",
+        "report",
+        "nli_entailment_score"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/bengali-hallucination/dataset samples.json",
+      "group": "Huntrix",
+      "kind": "config",
+      "title": "dataset samples.json",
+      "bytes": 289118,
+      "sha256": "f1540e702761aa451245abb6b5dcc3934f8f3d16c5baa8851b41dbc66da24b28",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/bengali-hallucination/sample submission.csv",
+      "group": "Huntrix",
+      "kind": "data",
+      "title": "sample submission.csv",
+      "bytes": 16513,
+      "sha256": "403004668695341380478e426b5c9b0b3db2890994457e053bc86ffd9923e14a",
+      "symbols": [],
+      "csv_headers": [
+        "id",
+        "label"
+      ],
+      "csv_row_count": 2516
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/bengali-hallucination/test set.csv",
+      "group": "Huntrix",
+      "kind": "data",
+      "title": "test set.csv",
+      "bytes": 2327431,
+      "sha256": "df0ad03d557ca0c9a9c642f92bf413e086916cb96d6495e44564ad21dabcb555",
+      "symbols": [],
+      "csv_headers": [
+        "id",
+        "context",
+        "prompt_bn",
+        "response_bn"
+      ],
+      "csv_row_count": 2516
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/docs/BOTTLENECK.md",
+      "group": "Huntrix",
+      "kind": "documentation",
+      "title": "Why the System Plateaus Near 0.967",
+      "bytes": 8910,
+      "sha256": "cc853d80da2f9a0a913e8a1ab29b6bab20e4ffa60cac5441cc5a4004aa9fe819",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/docs/COMMIT_HISTORY.md",
+      "group": "Huntrix",
+      "kind": "documentation",
+      "title": "Complete Git chronology",
+      "bytes": 8740,
+      "sha256": "3488371d13cf8b85b7e7d1719a766f097fb326afd352ae04cede37de8cbc7ed0",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/docs/COMPLIANCE_REVIEW.md",
+      "group": "Huntrix",
+      "kind": "documentation",
+      "title": "Phase 2 compliance review",
+      "bytes": 3477,
+      "sha256": "80714e83765430dba27e40921dcb3745f278c3e1bb71b93e041338c9f902d4cf",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/docs/DATA_SOURCES.md",
+      "group": "Huntrix",
+      "kind": "documentation",
+      "title": "External data and evidence sources",
+      "bytes": 6944,
+      "sha256": "2f7ad13b902858d57df66d72ed8b73cc2674b08057a47095cb5939ef05553113",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/docs/FINAL_SUBMISSION_FREEZE.md",
+      "group": "Huntrix",
+      "kind": "documentation",
+      "title": "Final submission freeze",
+      "bytes": 3761,
+      "sha256": "f9f89ead27da85b9b5ec74b2296c3b8b518edc8c85134b1785c3394310e0435c",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/docs/HUNTRIX_PRESENTATION_SCRIPT.md",
+      "group": "Huntrix",
+      "kind": "presentation",
+      "title": "Team Huntrix Final Presentation Script",
+      "bytes": 12271,
+      "sha256": "de02cdbda822f74422cb987ae038300283a17e8772a98bcdf197101ebb7182d5",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/docs/JOURNEY.md",
+      "group": "Huntrix",
+      "kind": "documentation",
+      "title": "From 0.657 to private 0.982: the Huntrix experiment journey",
+      "bytes": 11483,
+      "sha256": "376cc336d0def4e8543ada368e73d1cc43130bba44fb42a79dfeca85ab68d4a3",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/docs/PHASE2_RUNTIME_EVIDENCE.md",
+      "group": "Huntrix",
+      "kind": "documentation",
+      "title": "Phase 2 organizer-run runtime evidence",
+      "bytes": 2477,
+      "sha256": "a47c652841ce9e8de8ff45aa8d1dc4b0a1b36f2068a0e9573e1c6d93ba76fbaa",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/docs/TECHNICAL_PAPER.md",
+      "group": "Huntrix",
+      "kind": "documentation",
+      "title": "Evidence-First Bengali Hallucination Detection",
+      "bytes": 2029,
+      "sha256": "0c1f222ba6fa3a384ebb3cfb030c98a526dc6fd5b50d934ccf52aa57b2363639",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/docs/assets/leaderboard_progression.png",
+      "group": "Huntrix",
+      "kind": "figure",
+      "title": "leaderboard_progression.png",
+      "bytes": 58333,
+      "sha256": "8bb8d83aa543335ac55cfea9edbe7ddbd5b91e5e67fdac26d5de76d9cd8d19ea",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/docs/assets/pipeline_architecture.png",
+      "group": "Huntrix",
+      "kind": "figure",
+      "title": "pipeline_architecture.png",
+      "bytes": 68003,
+      "sha256": "485763a6b3e71d1161fd251eeec146125325720cc180f6c09e2456254e581c82",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/docs/assets/uncertainty_reduction.png",
+      "group": "Huntrix",
+      "kind": "figure",
+      "title": "uncertainty_reduction.png",
+      "bytes": 43835,
+      "sha256": "0f7ce7d7d39771b9dc57dcdd291927f1733d94126b29e2a99d82bf0c550c2b70",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/docs/latex/ACL_STYLE_SOURCE.md",
+      "group": "Huntrix",
+      "kind": "documentation",
+      "title": "ACL style source",
+      "bytes": 595,
+      "sha256": "e1dccf97917d601282b0aea29fa05a38cb00b5a180ccda7c6371f26f27d5ad57",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/docs/latex/HUMANIZER_AUDIT.md",
+      "group": "Huntrix",
+      "kind": "documentation",
+      "title": "Humanizer audit: technical report",
+      "bytes": 1400,
+      "sha256": "e6db9c9ebb4a84cb65e117a410bee9546aa119d947f65b058f6143a314fbf442",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/docs/latex/Huntrix_Technical_Report.tex",
+      "group": "Huntrix",
+      "kind": "paper",
+      "title": "Huntrix_Technical_Report.tex",
+      "bytes": 22978,
+      "sha256": "d42aa367d14a07ce30e9fd91b072c3c59598e314eb01284a48c5a7a591513b38",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/docs/latex/acl.sty",
+      "group": "Huntrix",
+      "kind": "documentation",
+      "title": "acl.sty",
+      "bytes": 11615,
+      "sha256": "19dfeddc2c0e448f3926a0bef048a9db3f3611b46265b760caabd7ada4f361de",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/docs/latex/acl_natbib.bst",
+      "group": "Huntrix",
+      "kind": "documentation",
+      "title": "acl_natbib.bst",
+      "bytes": 45442,
+      "sha256": "6fbb306202290f4b68e74ac1460a8b27398500cb6dfeb4492e74c457eae7cd1e",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/docs/latex/figures/README.md",
+      "group": "Huntrix",
+      "kind": "figure",
+      "title": "Paper figures reused in the presentation",
+      "bytes": 1082,
+      "sha256": "dce9a991f286ec75eff6da613a439e1986c6a121db72c89268eee06e069d5454",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/docs/latex/figures/architecture_standalone.tex",
+      "group": "Huntrix",
+      "kind": "figure",
+      "title": "architecture_standalone.tex",
+      "bytes": 2675,
+      "sha256": "d5acb45ec214274b5fb5662081d8555a64f0e5c60529c6b689b30012d453f480",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/docs/latex/figures/context_verification_standalone.tex",
+      "group": "Huntrix",
+      "kind": "figure",
+      "title": "context_verification_standalone.tex",
+      "bytes": 1613,
+      "sha256": "c63b75bc6f7527b98d02117e18265f0a04ff5793a180e2eecc143d87bd7c2a5d",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/docs/latex/figures/progress_standalone.tex",
+      "group": "Huntrix",
+      "kind": "figure",
+      "title": "progress_standalone.tex",
+      "bytes": 1603,
+      "sha256": "b1da910f21a16fd2189011d77358b1b47e535bfecc8d412e6ea4ff08a29b89e1",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/docs/latex/figures/typed_evidence_standalone.tex",
+      "group": "Huntrix",
+      "kind": "figure",
+      "title": "typed_evidence_standalone.tex",
+      "bytes": 1808,
+      "sha256": "26a12b46f369df67446c976abdb923caadba584c3991916ea27a5297e339c367",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/docs/latex/references.bib",
+      "group": "Huntrix",
+      "kind": "paper",
+      "title": "references.bib",
+      "bytes": 8723,
+      "sha256": "207cef2519118a1a8d45e8366f9422e83f477ce43bc4965732ca4ffddead622f",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/docs/paper/Huntrix_Technical_Report.docx",
+      "group": "Huntrix",
+      "kind": "documentation",
+      "title": "Huntrix_Technical_Report.docx",
+      "bytes": 192448,
+      "sha256": "1bfa771f2ef6f2024929b40642f96814a67e13a0326abd9d9fe85547850ff994",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/docs/scripts/build_project_docs.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "build_project_docs.py",
+      "bytes": 27067,
+      "sha256": "7563c1fcb321d2ba49e4159f626ccb777116e8ce62a9a69dec7d7561cabf78b5",
+      "symbols": [
+        "font",
+        "arrow",
+        "save_score_chart",
+        "save_router_chart",
+        "save_architecture_chart",
+        "write_commit_appendix",
+        "set_cell_shading",
+        "add_page_number",
+        "add_text",
+        "add_bullets",
+        "set_table_geometry",
+        "add_table",
+        "add_figure",
+        "configure_document",
+        "page_break",
+        "build_paper"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/kaggle_datasets/llama_cpp_cuda_b9637/dataset-metadata.json",
+      "group": "Huntrix",
+      "kind": "config",
+      "title": "dataset-metadata.json",
+      "bytes": 490,
+      "sha256": "869c52314388ffbcd09158bec417c910eacea6967804b7367b1f156f4c09d93d",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/kaggle_datasets/llama_cpp_cuda_b9637_public/LICENSE.llama.cpp.txt",
+      "group": "Huntrix",
+      "kind": "license",
+      "title": "LICENSE.llama.cpp.txt",
+      "bytes": 1078,
+      "sha256": "94f29bbed6a22c35b992c5c6ebf0e7c92f13b836b90f36f461c9cf2f0f1d010d",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/kaggle_datasets/llama_cpp_cuda_b9637_public/dataset-metadata.json",
+      "group": "Huntrix",
+      "kind": "config",
+      "title": "dataset-metadata.json",
+      "bytes": 529,
+      "sha256": "08239c547ef2352faed3b3a32281ef031c8021eab2517262f33f49bfb5b0768b",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/kaggle_notebooks/gemma_cross_family_audit/gemma_cross_family_audit.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "gemma_cross_family_audit.py",
+      "bytes": 15209,
+      "sha256": "653cf204107ebb9a3adcbd9a0df02c8f18262e7d31e3a0d524c6175e38cfca72",
+      "symbols": [
+        "canonical",
+        "clean_context",
+        "prompt",
+        "stable_seed",
+        "parse_label",
+        "token_confidence",
+        "call_model",
+        "wait_for_server",
+        "model_path",
+        "start_server",
+        "load_rows",
+        "audit",
+        "metrics",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/kaggle_notebooks/gemma_cross_family_audit/kernel-metadata.json",
+      "group": "Huntrix",
+      "kind": "config",
+      "title": "kernel-metadata.json",
+      "bytes": 661,
+      "sha256": "f8bff1b0b9ff35b5055450484b76f0a9a85cfb06e585a3937478289214bc0961",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/kaggle_notebooks/llama_cpp_cuda_builder/kernel-metadata.json",
+      "group": "Huntrix",
+      "kind": "config",
+      "title": "kernel-metadata.json",
+      "bytes": 404,
+      "sha256": "e6c8bac0124ea6acd8ae0a9239d89e47ba615017b5ba81dd9cb1decc7b489b3b",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/kaggle_notebooks/llama_cpp_cuda_builder/llama_cpp_cuda_builder.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "llama_cpp_cuda_builder.py",
+      "bytes": 3873,
+      "sha256": "ab3037fe331127021ce283599d62a5dafb2e77fc2ad90ae84cf6281cb78f2e6a",
+      "symbols": [
+        "run"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/kaggle_notebooks/phase2_t4_smoke/kernel-metadata.json",
+      "group": "Huntrix",
+      "kind": "config",
+      "title": "kernel-metadata.json",
+      "bytes": 537,
+      "sha256": "0e8e0ab794c37ce8ae412a999fe660f5c150b1d5b12a80f89c60934ef04f78ef",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/kaggle_notebooks/phase2_t4_smoke/phase2_t4_smoke.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "phase2_t4_smoke.py",
+      "bytes": 3947,
+      "sha256": "5993dcbdda3d40492da97fbba3de0bcbf8a59431fa1bc86b0ff8cf922ebc3d1a",
+      "symbols": [
+        "command_output"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/kaggle_notebooks/phase2_v85_inference/FREEZE_MANIFEST.json",
+      "group": "Huntrix",
+      "kind": "config",
+      "title": "FREEZE_MANIFEST.json",
+      "bytes": 1704,
+      "sha256": "61b6f0e9536c8bc0c078c1bf80b9a521effc60d6b52bbc8b45ecfb4031d123cd",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/kaggle_notebooks/phase2_v85_inference/kernel-metadata.json",
+      "group": "Huntrix",
+      "kind": "config",
+      "title": "kernel-metadata.json",
+      "bytes": 661,
+      "sha256": "89502312fa7ffe225ab9062fc96d384db75476fbddd9cb7af8ad7c1a964c8e4b",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/kaggle_notebooks/phase2_v85_inference/phase2_v85_inference.ipynb",
+      "group": "Huntrix",
+      "kind": "notebook",
+      "title": "Huntrix — Bengali hallucination detection",
+      "bytes": 16071,
+      "sha256": "52fd4dcdcd53539847a06df207a065d64f379f0fd7491b06f480a0c43431c9a2",
+      "symbols": [
+        "run",
+        "wait_for_server"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/kaggle_notebooks/phase2_v85_inference/phase2_v85_inference.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "phase2_v85_inference.py",
+      "bytes": 6692,
+      "sha256": "17579c9ac16009c8eee4dfb081540398e6ef3ff7f31c835cd36435cb581e7294",
+      "symbols": [
+        "run",
+        "wait_for_server"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/kaggle_notebooks/phase2_v91_inference/FREEZE_MANIFEST.json",
+      "group": "Huntrix",
+      "kind": "config",
+      "title": "FREEZE_MANIFEST.json",
+      "bytes": 3165,
+      "sha256": "0d6fe073c64803bfb957821597524430089d792d0d75731423c29bcd0e07bab8",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/kaggle_notebooks/phase2_v91_inference/kernel-metadata.json",
+      "group": "Huntrix",
+      "kind": "config",
+      "title": "kernel-metadata.json",
+      "bytes": 740,
+      "sha256": "4ae87555fe2aeb9f3252fea1984970c14f3b56ccbac1c5eae83d87e3a4fd19b5",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/kaggle_notebooks/phase2_v91_inference/phase2_v91_inference.ipynb",
+      "group": "Huntrix",
+      "kind": "notebook",
+      "title": "Huntrix — Bengali hallucination detection",
+      "bytes": 16615,
+      "sha256": "feb92671d131e27585d71eaca3f6f6c1d2fe0204e87167d59210a2a97a365bf1",
+      "symbols": [
+        "run",
+        "wait_for_server"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/kaggle_notebooks/phase2_v91_inference/phase2_v91_inference.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "phase2_v91_inference.py",
+      "bytes": 6901,
+      "sha256": "01b65580485d6a3333723adeb8015c9e9290bfb5599eea59655d55acec6d728a",
+      "symbols": [
+        "run",
+        "wait_for_server"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/kaggle_notebooks/relation_swap_verifier_training/kernel-metadata.json",
+      "group": "Huntrix",
+      "kind": "config",
+      "title": "kernel-metadata.json",
+      "bytes": 506,
+      "sha256": "259fc17c277b9c0a5b9006327790d212bb8120f2b27fabab68bf9dbb9324cf8a",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/kaggle_notebooks/relation_swap_verifier_training/relation_swap_verifier_training.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "relation_swap_verifier_training.py",
+      "bytes": 15261,
+      "sha256": "d27ae80dd844a9d0e74255899dd071bb91a03f3f7487a427c087b5c60fd83366",
+      "symbols": [
+        "canonical",
+        "clean_context",
+        "group_key",
+        "first_answer",
+        "corrupt_number",
+        "load_source_rows",
+        "split_groups",
+        "make_pairs",
+        "balanced_cap",
+        "PairDataset",
+        "classification_metrics",
+        "probabilities",
+        "choose_threshold",
+        "competition_rows",
+        "prediction_frame",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/kaggle_notebooks/source_recovery_audit/kernel-metadata.json",
+      "group": "Huntrix",
+      "kind": "config",
+      "title": "kernel-metadata.json",
+      "bytes": 653,
+      "sha256": "4fa7003e90586ab770f6ad0b69a0ec005bbbb75b214a646319a5377191366494",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/kaggle_notebooks/source_recovery_audit/source_recovery_audit.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "source_recovery_audit.py",
+      "bytes": 18519,
+      "sha256": "fd798a026ac3dfac145ce49c4acfbbdea06e79d6aa7f4aca407d00f82f7b9f80",
+      "symbols": [
+        "canonical",
+        "is_null_context",
+        "query_fragment",
+        "request_text",
+        "clean_html",
+        "grep_app_search",
+        "duckduckgo_search",
+        "domain",
+        "retrieve",
+        "stable_seed",
+        "make_prompt",
+        "post_json",
+        "parse_judgment",
+        "judge",
+        "wait_for_server",
+        "start_server",
+        "load_rows",
+        "audit_split",
+        "summarize",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/licenses/Apache-2.0.txt",
+      "group": "Huntrix",
+      "kind": "documentation",
+      "title": "Apache-2.0.txt",
+      "bytes": 10273,
+      "sha256": "73ba74dfaa520b49a401b5d21459a8523a146f3b7518a833eea5efa85130bf68",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/licenses/GPL-3.0.txt",
+      "group": "Huntrix",
+      "kind": "documentation",
+      "title": "GPL-3.0.txt",
+      "bytes": 35141,
+      "sha256": "589ed823e9a84c56feb95ac58e7cf384626b9cbf4fda2a907bc36e103de1bad2",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/output/pdf/Huntrix_Technical_Report.pdf",
+      "group": "Huntrix",
+      "kind": "paper",
+      "title": "Huntrix_Technical_Report.pdf",
+      "bytes": 74083,
+      "sha256": "a63ab2550ccda7e9b8c19e60822ca2ab7399901bdaf1d9546c10c07d47a6fe2c",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/output/presentation/Huntrix_Final_Presentation.pdf",
+      "group": "Huntrix",
+      "kind": "presentation",
+      "title": "Huntrix_Final_Presentation.pdf",
+      "bytes": 515508,
+      "sha256": "4eca2350ae92becdbbae186d4eaa8162afdb0909e8aacb658fcacc535422ca53",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/output/presentation/Huntrix_Final_Presentation.pptx",
+      "group": "Huntrix",
+      "kind": "presentation",
+      "title": "Huntrix_Final_Presentation.pptx",
+      "bytes": 86262,
+      "sha256": "c4a5a45e1a7ceb137af96e3428bde26c7375551371cf885f6e2b1a20102cd385",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/output/presentation/Huntrix_Final_Presentation_20_Slides.pdf",
+      "group": "Huntrix",
+      "kind": "presentation",
+      "title": "Huntrix_Final_Presentation_20_Slides.pdf",
+      "bytes": 987598,
+      "sha256": "dfbf9d1ba29ee694e15f4a0d4ffcd577d6f96d86d93ea6222aab062292c45715",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/output/presentation/Huntrix_Final_Presentation_20_Slides.pptx",
+      "group": "Huntrix",
+      "kind": "presentation",
+      "title": "Huntrix_Final_Presentation_20_Slides.pptx",
+      "bytes": 560610,
+      "sha256": "704b8b448ce7016883618d36dc0983f6ee569b53dcb991edce09e1fe282095c7",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/output/presentation/Huntrix_Presentation_Script.docx",
+      "group": "Huntrix",
+      "kind": "presentation",
+      "title": "Huntrix_Presentation_Script.docx",
+      "bytes": 47249,
+      "sha256": "7ddfd60c7c70940971a107ec13c2fa8654af997e7705987548d1a7c6339db2c6",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/output/presentation/Huntrix_Presentation_Script.pdf",
+      "group": "Huntrix",
+      "kind": "presentation",
+      "title": "Huntrix_Presentation_Script.pdf",
+      "bytes": 177478,
+      "sha256": "c49925d0435e3269e41aeb76a6642571d65465de1cf1baeb43b79523f06c30f4",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/output/presentation/assets/paper_figures/architecture.pdf",
+      "group": "Huntrix",
+      "kind": "presentation",
+      "title": "architecture.pdf",
+      "bytes": 11729,
+      "sha256": "488cde302fdc9cea43fc5650dd99406eae2b5d3748b3f57687c1f4c489c368e8",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/output/presentation/assets/paper_figures/architecture.png",
+      "group": "Huntrix",
+      "kind": "presentation",
+      "title": "architecture.png",
+      "bytes": 233410,
+      "sha256": "2de812a0527e09f1bb2dc30161bed214953dd4505cb4af8cf53a960b55a348a0",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/output/presentation/assets/paper_figures/architecture.svg",
+      "group": "Huntrix",
+      "kind": "presentation",
+      "title": "architecture.svg",
+      "bytes": 91195,
+      "sha256": "9cfa1c01b9248a60acac01d93637461fbbf171d58f3ef25e851c4f979de2bbc5",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/output/presentation/assets/paper_figures/context_verification.pdf",
+      "group": "Huntrix",
+      "kind": "presentation",
+      "title": "context_verification.pdf",
+      "bytes": 14855,
+      "sha256": "66c22075da1894bf4411ba72a41de2bedaf4746ea295e245b3ac089a723d103e",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/output/presentation/assets/paper_figures/context_verification.png",
+      "group": "Huntrix",
+      "kind": "presentation",
+      "title": "context_verification.png",
+      "bytes": 77413,
+      "sha256": "91c0291bf994d63745788098f80aeb3f7c789bbd1cd3879f232041378521068b",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/output/presentation/assets/paper_figures/context_verification.svg",
+      "group": "Huntrix",
+      "kind": "presentation",
+      "title": "context_verification.svg",
+      "bytes": 74607,
+      "sha256": "46c8ad350a582f305202859a373f6572a157072b6098f230871ca1af22df8afb",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/output/presentation/assets/paper_figures/progress.pdf",
+      "group": "Huntrix",
+      "kind": "presentation",
+      "title": "progress.pdf",
+      "bytes": 11414,
+      "sha256": "10768d54500c620a1a22fef77b6d944501392fcc2db7a0541ee349e3328808a1",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/output/presentation/assets/paper_figures/progress.png",
+      "group": "Huntrix",
+      "kind": "presentation",
+      "title": "progress.png",
+      "bytes": 84176,
+      "sha256": "1656fb60003430b6847ebeda6ede64811686a228806a9f724cfaf58be0f0a1bb",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/output/presentation/assets/paper_figures/progress.svg",
+      "group": "Huntrix",
+      "kind": "presentation",
+      "title": "progress.svg",
+      "bytes": 79494,
+      "sha256": "6c7704173477bb4fbd375853682a31696a021e4ad5205753e771e25a9e88f4dc",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/output/presentation/assets/paper_figures/typed_evidence.pdf",
+      "group": "Huntrix",
+      "kind": "presentation",
+      "title": "typed_evidence.pdf",
+      "bytes": 9710,
+      "sha256": "b6882febbcb3b522ab522b48d3ee9732b9e8a463519ae2309b8e0da2f3f23165",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/output/presentation/assets/paper_figures/typed_evidence.png",
+      "group": "Huntrix",
+      "kind": "presentation",
+      "title": "typed_evidence.png",
+      "bytes": 82653,
+      "sha256": "c4a4f88ff60f133f0330356cddf66e3f6ff16d0d5bd55731182fd4bcdf32f2aa",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/output/presentation/assets/paper_figures/typed_evidence.svg",
+      "group": "Huntrix",
+      "kind": "presentation",
+      "title": "typed_evidence.svg",
+      "bytes": 59809,
+      "sha256": "580bb24c7f358827a5729300a77f05c131425268e8b46176dda49933584d6aa1",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/output/qna/Huntrix_Judges_QA_Preparation.docx",
+      "group": "Huntrix",
+      "kind": "documentation",
+      "title": "Huntrix_Judges_QA_Preparation.docx",
+      "bytes": 66338,
+      "sha256": "1e8ee6fb3eb7b1ca6eb3aaf2d4bd64dde05b576fe2a892affbbdbac386478e9c",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/output/qna/Huntrix_Judges_QA_Preparation.pdf",
+      "group": "Huntrix",
+      "kind": "paper",
+      "title": "Huntrix_Judges_QA_Preparation.pdf",
+      "bytes": 417947,
+      "sha256": "faaa93a0af0bbb25360ca00a41c84f8ddf041c56373614935c7fa03122bd1e3b",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-public-submission/CITATIONS.md",
+      "group": "Huntrix",
+      "kind": "documentation",
+      "title": "Citations and licenses",
+      "bytes": 2476,
+      "sha256": "504efdad3eda907bed85b4dbaf3bd967ee6b6b9f63c0471cb37eca4c684040ab",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-public-submission/FREEZE_MANIFEST.json",
+      "group": "Huntrix",
+      "kind": "config",
+      "title": "FREEZE_MANIFEST.json",
+      "bytes": 3885,
+      "sha256": "e05435ddf776803023af5610d854a78b2db7024894d991b8524ffb140f3e1a5b",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-public-submission/README.md",
+      "group": "Huntrix",
+      "kind": "documentation",
+      "title": "Huntrix · Frozen Phase 2 inference",
+      "bytes": 2539,
+      "sha256": "12954ace114e4ec86674cb5020d5fd648c6136579f7bd6b3fcfbd049067a2cae",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-public-submission/inference.ipynb",
+      "group": "Huntrix",
+      "kind": "notebook",
+      "title": "Huntrix — Bengali hallucination detection",
+      "bytes": 16071,
+      "sha256": "52fd4dcdcd53539847a06df207a065d64f379f0fd7491b06f480a0c43431c9a2",
+      "symbols": [
+        "run",
+        "wait_for_server"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/CITATIONS.md",
+      "group": "Huntrix",
+      "kind": "documentation",
+      "title": "Citations and licenses",
+      "bytes": 2298,
+      "sha256": "d9b560134fa0bbf57cd1fc080451f7f95c7cee7600f549e459899ee7cb056a33",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/DATA_SOURCES.md",
+      "group": "Huntrix",
+      "kind": "documentation",
+      "title": "External data and evidence sources",
+      "bytes": 6944,
+      "sha256": "2f7ad13b902858d57df66d72ed8b73cc2674b08057a47095cb5939ef05553113",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/FORM_VALUES.md",
+      "group": "Huntrix",
+      "kind": "documentation",
+      "title": "Organizer Google Form values",
+      "bytes": 2493,
+      "sha256": "a650881147252c623b7a45e0f63fa1aa92895aec1124d44770b5349f5bf0d8a7",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/FREEZE_MANIFEST.json",
+      "group": "Huntrix",
+      "kind": "config",
+      "title": "FREEZE_MANIFEST.json",
+      "bytes": 3165,
+      "sha256": "4083bb875d8aaf73ac0df9710c46a3be5e7ba9a9fd5669ed593f15b82f1c0525",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/Huntrix_inference_notebook.ipynb",
+      "group": "Huntrix",
+      "kind": "notebook",
+      "title": "Huntrix — Bengali hallucination detection",
+      "bytes": 16615,
+      "sha256": "feb92671d131e27585d71eaca3f6f6c1d2fe0204e87167d59210a2a97a365bf1",
+      "symbols": [
+        "run",
+        "wait_for_server"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/Huntrix_presentation.pdf",
+      "group": "Huntrix",
+      "kind": "presentation",
+      "title": "Huntrix_presentation.pdf",
+      "bytes": 987598,
+      "sha256": "dfbf9d1ba29ee694e15f4a0d4ffcd577d6f96d86d93ea6222aab062292c45715",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/Huntrix_report.pdf",
+      "group": "Huntrix",
+      "kind": "paper",
+      "title": "Huntrix_report.pdf",
+      "bytes": 74083,
+      "sha256": "a63ab2550ccda7e9b8c19e60822ca2ab7399901bdaf1d9546c10c07d47a6fe2c",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/LICENSE",
+      "group": "Huntrix",
+      "kind": "license",
+      "title": "LICENSE",
+      "bytes": 1069,
+      "sha256": "349b8b7ec9bfcf0a8134ef6f245c23f828be8bafa951061586df8553198e9cef",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/METHODOLOGY_DISCLOSURE.md",
+      "group": "Huntrix",
+      "kind": "documentation",
+      "title": "Phase 2 compliance review",
+      "bytes": 3531,
+      "sha256": "e3a3b67d001b537b0f93fc91e05d07c22a056e8123d2913f41a501b92cf6e48f",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/PHASE2_RUNTIME_EVIDENCE.md",
+      "group": "Huntrix",
+      "kind": "documentation",
+      "title": "Phase 2 organizer-run runtime evidence",
+      "bytes": 2477,
+      "sha256": "a47c652841ce9e8de8ff45aa8d1dc4b0a1b36f2068a0e9573e1c6d93ba76fbaa",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/README.md",
+      "group": "Huntrix",
+      "kind": "documentation",
+      "title": "Huntrix — Olikbochon Onsite Submission",
+      "bytes": 5951,
+      "sha256": "a5883042c7718592c452e751d3e72819c73fb854d895bcc429890a99ef018cf8",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/RUNBOOK.md",
+      "group": "Huntrix",
+      "kind": "documentation",
+      "title": "Run the frozen notebook on Kaggle",
+      "bytes": 2251,
+      "sha256": "99018536468d50960cd6a9a0174ce33b62488ab7dd5ca7fec04ff11e341426c2",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/SUBMISSION_LINKS.md",
+      "group": "Huntrix",
+      "kind": "documentation",
+      "title": "Submission links",
+      "bytes": 3101,
+      "sha256": "594ed14d7bcc31d864f4b773dcb724a1813e345150c706999b9942e279d9e381",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/THIRD_PARTY_NOTICES.md",
+      "group": "Huntrix",
+      "kind": "documentation",
+      "title": "Third-party notices",
+      "bytes": 3606,
+      "sha256": "5a51d3f7880484fa9ab3d9c1e3579a5e78566cf7f1fb192569b897fcb73d6125",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/form.md",
+      "group": "Huntrix",
+      "kind": "documentation",
+      "title": "Huntrix Onsite Submission Form Values",
+      "bytes": 1214,
+      "sha256": "97345df696d39753c04ef592edb6e15b74196e5de14754f270378fb8e463a327",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/presentation/HUNTRIX_PRESENTATION_SCRIPT.md",
+      "group": "Huntrix",
+      "kind": "presentation",
+      "title": "Team Huntrix Final Presentation Script",
+      "bytes": 12271,
+      "sha256": "de02cdbda822f74422cb987ae038300283a17e8772a98bcdf197101ebb7182d5",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/presentation/Huntrix_Final_Presentation_20_Slides.pptx",
+      "group": "Huntrix",
+      "kind": "presentation",
+      "title": "Huntrix_Final_Presentation_20_Slides.pptx",
+      "bytes": 560610,
+      "sha256": "704b8b448ce7016883618d36dc0983f6ee569b53dcb991edce09e1fe282095c7",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/presentation/Huntrix_Presentation_Script.docx",
+      "group": "Huntrix",
+      "kind": "presentation",
+      "title": "Huntrix_Presentation_Script.docx",
+      "bytes": 47249,
+      "sha256": "7ddfd60c7c70940971a107ec13c2fa8654af997e7705987548d1a7c6339db2c6",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/presentation/Huntrix_Presentation_Script.pdf",
+      "group": "Huntrix",
+      "kind": "presentation",
+      "title": "Huntrix_Presentation_Script.pdf",
+      "bytes": 177478,
+      "sha256": "c49925d0435e3269e41aeb76a6642571d65465de1cf1baeb43b79523f06c30f4",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/presentation/figures/README.md",
+      "group": "Huntrix",
+      "kind": "presentation",
+      "title": "Paper figures reused in the presentation",
+      "bytes": 1082,
+      "sha256": "dce9a991f286ec75eff6da613a439e1986c6a121db72c89268eee06e069d5454",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/presentation/figures/architecture.pdf",
+      "group": "Huntrix",
+      "kind": "presentation",
+      "title": "architecture.pdf",
+      "bytes": 11729,
+      "sha256": "488cde302fdc9cea43fc5650dd99406eae2b5d3748b3f57687c1f4c489c368e8",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/presentation/figures/architecture.png",
+      "group": "Huntrix",
+      "kind": "presentation",
+      "title": "architecture.png",
+      "bytes": 233410,
+      "sha256": "2de812a0527e09f1bb2dc30161bed214953dd4505cb4af8cf53a960b55a348a0",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/presentation/figures/architecture.svg",
+      "group": "Huntrix",
+      "kind": "presentation",
+      "title": "architecture.svg",
+      "bytes": 91195,
+      "sha256": "9cfa1c01b9248a60acac01d93637461fbbf171d58f3ef25e851c4f979de2bbc5",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/presentation/figures/architecture_standalone.tex",
+      "group": "Huntrix",
+      "kind": "presentation",
+      "title": "architecture_standalone.tex",
+      "bytes": 2675,
+      "sha256": "d5acb45ec214274b5fb5662081d8555a64f0e5c60529c6b689b30012d453f480",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/presentation/figures/context_verification.pdf",
+      "group": "Huntrix",
+      "kind": "presentation",
+      "title": "context_verification.pdf",
+      "bytes": 14855,
+      "sha256": "66c22075da1894bf4411ba72a41de2bedaf4746ea295e245b3ac089a723d103e",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/presentation/figures/context_verification.png",
+      "group": "Huntrix",
+      "kind": "presentation",
+      "title": "context_verification.png",
+      "bytes": 77413,
+      "sha256": "91c0291bf994d63745788098f80aeb3f7c789bbd1cd3879f232041378521068b",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/presentation/figures/context_verification.svg",
+      "group": "Huntrix",
+      "kind": "presentation",
+      "title": "context_verification.svg",
+      "bytes": 74607,
+      "sha256": "46c8ad350a582f305202859a373f6572a157072b6098f230871ca1af22df8afb",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/presentation/figures/context_verification_standalone.tex",
+      "group": "Huntrix",
+      "kind": "presentation",
+      "title": "context_verification_standalone.tex",
+      "bytes": 1613,
+      "sha256": "c63b75bc6f7527b98d02117e18265f0a04ff5793a180e2eecc143d87bd7c2a5d",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/presentation/figures/progress.pdf",
+      "group": "Huntrix",
+      "kind": "presentation",
+      "title": "progress.pdf",
+      "bytes": 11414,
+      "sha256": "10768d54500c620a1a22fef77b6d944501392fcc2db7a0541ee349e3328808a1",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/presentation/figures/progress.png",
+      "group": "Huntrix",
+      "kind": "presentation",
+      "title": "progress.png",
+      "bytes": 84176,
+      "sha256": "1656fb60003430b6847ebeda6ede64811686a228806a9f724cfaf58be0f0a1bb",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/presentation/figures/progress.svg",
+      "group": "Huntrix",
+      "kind": "presentation",
+      "title": "progress.svg",
+      "bytes": 79494,
+      "sha256": "6c7704173477bb4fbd375853682a31696a021e4ad5205753e771e25a9e88f4dc",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/presentation/figures/progress_standalone.tex",
+      "group": "Huntrix",
+      "kind": "presentation",
+      "title": "progress_standalone.tex",
+      "bytes": 1603,
+      "sha256": "b1da910f21a16fd2189011d77358b1b47e535bfecc8d412e6ea4ff08a29b89e1",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/presentation/figures/typed_evidence.pdf",
+      "group": "Huntrix",
+      "kind": "presentation",
+      "title": "typed_evidence.pdf",
+      "bytes": 9710,
+      "sha256": "b6882febbcb3b522ab522b48d3ee9732b9e8a463519ae2309b8e0da2f3f23165",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/presentation/figures/typed_evidence.png",
+      "group": "Huntrix",
+      "kind": "presentation",
+      "title": "typed_evidence.png",
+      "bytes": 82653,
+      "sha256": "c4a4f88ff60f133f0330356cddf66e3f6ff16d0d5bd55731182fd4bcdf32f2aa",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/presentation/figures/typed_evidence.svg",
+      "group": "Huntrix",
+      "kind": "presentation",
+      "title": "typed_evidence.svg",
+      "bytes": 59809,
+      "sha256": "580bb24c7f358827a5729300a77f05c131425268e8b46176dda49933584d6aa1",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/presentation/figures/typed_evidence_standalone.tex",
+      "group": "Huntrix",
+      "kind": "presentation",
+      "title": "typed_evidence_standalone.tex",
+      "bytes": 1808,
+      "sha256": "26a12b46f369df67446c976abdb923caadba584c3991916ea27a5297e339c367",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/report/ACL_STYLE_SOURCE.md",
+      "group": "Huntrix",
+      "kind": "documentation",
+      "title": "ACL style source",
+      "bytes": 595,
+      "sha256": "e1dccf97917d601282b0aea29fa05a38cb00b5a180ccda7c6371f26f27d5ad57",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/report/Huntrix_Technical_Report.tex",
+      "group": "Huntrix",
+      "kind": "paper",
+      "title": "Huntrix_Technical_Report.tex",
+      "bytes": 22978,
+      "sha256": "d42aa367d14a07ce30e9fd91b072c3c59598e314eb01284a48c5a7a591513b38",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/report/README.md",
+      "group": "Huntrix",
+      "kind": "documentation",
+      "title": "Build the technical report",
+      "bytes": 773,
+      "sha256": "784496041c1457abafb12455610772a36fd36c2a7e23e365ad2bf24466b6bfa7",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/report/acl.sty",
+      "group": "Huntrix",
+      "kind": "documentation",
+      "title": "acl.sty",
+      "bytes": 11615,
+      "sha256": "19dfeddc2c0e448f3926a0bef048a9db3f3611b46265b760caabd7ada4f361de",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/report/acl_natbib.bst",
+      "group": "Huntrix",
+      "kind": "documentation",
+      "title": "acl_natbib.bst",
+      "bytes": 45442,
+      "sha256": "6fbb306202290f4b68e74ac1460a8b27398500cb6dfeb4492e74c457eae7cd1e",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/release/phase2-v91-public-submission/report/references.bib",
+      "group": "Huntrix",
+      "kind": "paper",
+      "title": "references.bib",
+      "bytes": 8723,
+      "sha256": "207cef2519118a1a8d45e8366f9422e83f477ce43bc4965732ca4ffddead622f",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/requirements.txt",
+      "group": "Huntrix",
+      "kind": "config",
+      "title": "requirements.txt",
+      "bytes": 203,
+      "sha256": "9853d3d4d9cb515c9b85c61c4d2e01c5e338cf13cfd5823baa7cac9c14a6bb29",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/resources/idiom_semantic_corrections.json",
+      "group": "Huntrix",
+      "kind": "config",
+      "title": "idiom_semantic_corrections.json",
+      "bytes": 754,
+      "sha256": "d0c7496dc339d099ee583b5a1b1a34fe5f229bbdfa4eab945db825f3075efd19",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/resources/legacy_law_acts.json",
+      "group": "Huntrix",
+      "kind": "config",
+      "title": "legacy_law_acts.json",
+      "bytes": 816,
+      "sha256": "b98ab4802e3572c643bd5a7cadfd89d5bd207a4ff2fdc34eb72ead8dabac40aa",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/resources/typed_evidence_v1.json",
+      "group": "Huntrix",
+      "kind": "config",
+      "title": "typed_evidence_v1.json",
+      "bytes": 1541,
+      "sha256": "6d72bf7556dc26703abe54defef9cccae1e2d7267b2bc3d411f3a8ec9c8380f3",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/resources/verified_fact_answers.json",
+      "group": "Huntrix",
+      "kind": "config",
+      "title": "verified_fact_answers.json",
+      "bytes": 42416,
+      "sha256": "6f928543d3faf48e4de7111049d7840f70a163d9af3b14aa0869c349cdfdf3b7",
+      "symbols": []
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/analyze_gemma_cross_family_audit.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "analyze_gemma_cross_family_audit.py",
+      "bytes": 8309,
+      "sha256": "53e3f57ce8443b5e4a78cf149b7017b0e7551d4e404460c740936c43b13f3733",
+      "symbols": [
+        "read_json",
+        "read_jsonl",
+        "read_labels",
+        "reconstruct_sample_cascade",
+        "direction",
+        "analyze",
+        "write_csv",
+        "parse_args",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/analyze_source_recovery_audit.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "analyze_source_recovery_audit.py",
+      "bytes": 8970,
+      "sha256": "f64835dfc565490ce3805fd8eea5e4709928c2ead38e2e408250969a0d43bf21",
+      "symbols": [
+        "read_jsonl",
+        "read_submission",
+        "binary_f1",
+        "metrics",
+        "cohort_key",
+        "sample_calibration",
+        "metric_at",
+        "analyze",
+        "write_csv",
+        "parse_args",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/antonym_evidence_overrides.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "antonym_evidence_overrides.py",
+      "bytes": 14862,
+      "sha256": "fc3110352b0247792dc7ab98cffe247492ebf38276bb75b05e8324cd510163fe",
+      "symbols": [
+        "TableParser",
+        "fetch",
+        "fetch_json",
+        "canonical",
+        "split_answers",
+        "parse_list_source",
+        "parse_wiktionary_antonyms",
+        "wiktionary_records",
+        "build_artifact",
+        "headword_from_prompt",
+        "source_consensus",
+        "apply_artifact",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/apply_lexical_overrides.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "apply_lexical_overrides.py",
+      "bytes": 4684,
+      "sha256": "9545d27cb50bfa9155441c18f36d9612f9f19912a0b46bb2bc2f69625d8ce396",
+      "symbols": [
+        "token_set",
+        "overlap_score",
+        "load_evidence",
+        "load_trace",
+        "lexical_prediction",
+        "command_apply",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/apply_portable_verifier_blend.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "apply_portable_verifier_blend.py",
+      "bytes": 2221,
+      "sha256": "d16c055cc7917a30b7a39909a3fadbc198f6ac52c861474c6ba34ef7d80eef56",
+      "symbols": [
+        "register_joblib_functions",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/audit_additional_qa_banks.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "audit_additional_qa_banks.py",
+      "bytes": 6393,
+      "sha256": "60bc4914651ad1fabefd5fdf89acd02014b83aa9a1af4c05683566bbd25be298",
+      "symbols": [
+        "add",
+        "read_squad_object",
+        "load_json_squad",
+        "load_squad_archive",
+        "load_pair_json",
+        "audit",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/audit_azmine_bcs.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "audit_azmine_bcs.py",
+      "bytes": 6174,
+      "sha256": "d2b4545f580c407b54dcedc7cbf84da145c5863fac1ae547219cd9d3d76d2e93",
+      "symbols": [
+        "load_azmine_file",
+        "exact_records",
+        "audit",
+        "load_frame",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/audit_benhallu_raw_lineage.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "audit_benhallu_raw_lineage.py",
+      "bytes": 6112,
+      "sha256": "395d7283d0578a26d666a5774ab4611ec22dc15b8f5eda591d7a4c5c67bb7430",
+      "symbols": [
+        "load_lineage_records",
+        "normalized_key",
+        "raw_key",
+        "audit_raw_lineage",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/audit_benhallueval_fiveway.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "audit_benhallueval_fiveway.py",
+      "bytes": 3712,
+      "sha256": "a61db33fe60d417470495cb889c2d6c77bb2db3c22ed2136509994e1ae2b14ae",
+      "symbols": [
+        "audit",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/audit_context_rule_safety.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "audit_context_rule_safety.py",
+      "bytes": 7243,
+      "sha256": "fdb5a97000f0f7e2ec05f04e7bbf9945ffd94f5389e8449082b8e53707f68c07",
+      "symbols": [
+        "preserve_normalize",
+        "strict_parse_date",
+        "compare_strict_date",
+        "audit_context_trace",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/audit_external_lineage.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "audit_external_lineage.py",
+      "bytes": 6539,
+      "sha256": "896059c17cc4a0a3c8a085cd8c2cab28da428caaaafd432f44fc6823e1f9012f",
+      "symbols": [
+        "response_matches",
+        "aya_matches",
+        "buffet_matches",
+        "tydiqa_matches",
+        "summarize",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/audit_source_conflict_votes.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "audit_source_conflict_votes.py",
+      "bytes": 5251,
+      "sha256": "6258750d35571576face2c07501e516c40d2a074e53bed738227d6c910423403",
+      "symbols": [
+        "repository_votes",
+        "strict_majority",
+        "audit_conflict_votes",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/audit_source_origin_conflicts.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "audit_source_origin_conflicts.py",
+      "bytes": 6738,
+      "sha256": "50034f987695af4f9aabc770e4616977d2a7c3b1cf2eea01a3dc2f4d4a16e4d8",
+      "symbols": [
+        "raw_signature",
+        "group_entries",
+        "has_answer_conflict",
+        "exact_origin_entries",
+        "origin_decision",
+        "audit_frame",
+        "load_frame",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/audit_test_derived_pseudolabels.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "audit_test_derived_pseudolabels.py",
+      "bytes": 3329,
+      "sha256": "40f313a6790e3ab9df24f1cc539e2e117dda9c3fd63cb49b325d629237158f71",
+      "symbols": [
+        "recover_seed_labels",
+        "load_uncertain_ids",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/audit_transitive_answer_equivalence.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "audit_transitive_answer_equivalence.py",
+      "bytes": 12746,
+      "sha256": "fc4ecfdd829954e02754355c483a54d2e6471addb515971bb2865671b731614d",
+      "symbols": [
+        "Calibration",
+        "answer_bank_abstentions",
+        "no_conflict_abstentions",
+        "mean_pool",
+        "load_encoder",
+        "embed_texts",
+        "add_similarity_scores",
+        "calibrate_threshold",
+        "summarize_records",
+        "load_judge_trace",
+        "summarize_judge",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/bcs_answer_bank.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "bcs_answer_bank.py",
+      "bytes": 7949,
+      "sha256": "969ed80e71ab1d9ce443b943bc2513fd7a27ed7a395dd0ea3747d275f06a2a81",
+      "symbols": [
+        "clean_question",
+        "clean_option",
+        "iter_json",
+        "walk_question_dicts",
+        "load_8020",
+        "load_farhan",
+        "load_job_mcq",
+        "load_qdoc",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/benchmark_phase2_pipeline.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "benchmark_phase2_pipeline.py",
+      "bytes": 3732,
+      "sha256": "cf013da1e2fd4b83f5ec6ae4e2c5d89f0d5e027cfefe5dd8e571721066a5014b",
+      "symbols": [
+        "total_bytes",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/benhallueval_provenance.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "benhallueval_provenance.py",
+      "bytes": 3536,
+      "sha256": "9b5e8318edc662091e99577d4a72e44dd5816e010c10b1c2347ee5776bf51f2a",
+      "symbols": [
+        "load_provenance",
+        "decide",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/birth_date_overrides.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "birth_date_overrides.py",
+      "bytes": 8856,
+      "sha256": "b5e7fa133d544789ae8211ad13526544a7cbd78e4850c90a0d324ecfa760c4de",
+      "symbols": [
+        "DateValue",
+        "BirthEvidence",
+        "is_birth_date_question",
+        "preserve_normalize",
+        "find_dates",
+        "parse_date",
+        "date_text_pattern",
+        "extract_birth_date",
+        "compare_date",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/bn_num2words.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "bn_num2words.py",
+      "bytes": 3511,
+      "sha256": "a82b3661bd56ed80a4480599a5d089dd5fb17f7bb55f9ab2cefd4f387bd59824",
+      "symbols": [
+        "_cardinal",
+        "num2words"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/build_fact_page_corpus.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "build_fact_page_corpus.py",
+      "bytes": 5394,
+      "sha256": "b81d1d487bf427e99e3926c1f37dc0c1320e7bfa8cf0f26b2c7811dca0d0f74f",
+      "symbols": [
+        "existing_queries",
+        "fetch_exact_title",
+        "title_score",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/build_fact_page_html_corpus.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "build_fact_page_html_corpus.py",
+      "bytes": 3875,
+      "sha256": "5cb7b154fffdc7643522d5e191f9274a02afaf57f6c496531aef046643b5c582",
+      "symbols": [
+        "ParagraphParser",
+        "fetch_page",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/build_judges_qna_docx.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "build_judges_qna_docx.py",
+      "bytes": 82075,
+      "sha256": "b262aec6cda963c2e3a2709644b5c99261d514ff7fea1620c54d4cef56d6ff0c",
+      "symbols": [
+        "set_run_font",
+        "set_cell_shading",
+        "set_cell_margins",
+        "set_cell_width",
+        "set_table_geometry",
+        "set_repeat_table_header",
+        "prevent_row_split",
+        "set_paragraph_border",
+        "add_page_number",
+        "configure_styles",
+        "add_header_footer",
+        "add_callout",
+        "add_bullets",
+        "add_numbered",
+        "add_labelled_paragraph",
+        "add_question",
+        "add_quick_facts",
+        "build_document"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/build_phase1_audit_ledger.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "build_phase1_audit_ledger.py",
+      "bytes": 6669,
+      "sha256": "e78420f12eb18535af60d63c87bd4b30b1065803f7b87ecd6b2b130ca54853d9",
+      "symbols": [
+        "classify_route",
+        "likely_error_family",
+        "evidence_requirement",
+        "build_ledger",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/build_phase2_training.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "build_phase2_training.py",
+      "bytes": 4807,
+      "sha256": "50a1d57e4291f10247aad66f1b796394080bdfc408d3d9eb5b29a2bcf71ad3db",
+      "symbols": [
+        "read_jsonl",
+        "write",
+        "corrupt_number",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/build_presentation_script_docx.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "build_presentation_script_docx.py",
+      "bytes": 16614,
+      "sha256": "4430ce96fe80488f67edf93fe25768ed0b2691d31c3d2a77216c587c8b246149",
+      "symbols": [
+        "set_run_font",
+        "set_cell_shading",
+        "set_cell_margins",
+        "set_cell_width",
+        "set_table_geometry",
+        "set_repeat_header",
+        "prevent_row_split",
+        "set_paragraph_border",
+        "add_page_number",
+        "configure_styles",
+        "add_header_footer",
+        "configure_page",
+        "add_callout",
+        "parse_source",
+        "add_script_paragraph",
+        "build"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/build_v91_compliance_notebook.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "build_v91_compliance_notebook.py",
+      "bytes": 4590,
+      "sha256": "8d32a41a613ed81fff4a7803bcab0a282c4533d7a3ccb7976d305871123cd092",
+      "symbols": [
+        "transform",
+        "sha256",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/combine_evidence_predictions.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "combine_evidence_predictions.py",
+      "bytes": 3285,
+      "sha256": "f071d99e64303bd85d275c379ad58c73b673969bf08195fe3ceff408e544e352",
+      "symbols": [
+        "load_trace",
+        "load_top_scores",
+        "combine",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/context_contrastive_pairs.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "context_contrastive_pairs.py",
+      "bytes": 6737,
+      "sha256": "3588b6ac4798c9f0726df10c7c4e24a82b9872abc081545a6a093fdb91846980",
+      "symbols": [
+        "compact",
+        "corrupt_number",
+        "context_span",
+        "load_corpus",
+        "build_answer_pools",
+        "wrong_answer",
+        "make_pairs",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/context_numeric_overrides.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "context_numeric_overrides.py",
+      "bytes": 16312,
+      "sha256": "0affa91183069ecab7983945108745df000be542606ac810dc433ef0f9460e93",
+      "symbols": [
+        "answer_canonical",
+        "numeric_components",
+        "number_word_variants",
+        "number_word_index",
+        "word_numeric_components",
+        "multiset_subset",
+        "numeric_equivalent",
+        "cross_format_only",
+        "relation_aligned",
+        "split_sentences",
+        "overlap_score",
+        "shared_compound_topic",
+        "decide",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/context_span_overrides.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "context_span_overrides.py",
+      "bytes": 3330,
+      "sha256": "96151026890874d30bd17297ec3e7dbbcbb2993b669fb8506ca1461b3bf4e2ca",
+      "symbols": [
+        "content_tokens",
+        "context_span_decision"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/datathon_utils.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "datathon_utils.py",
+      "bytes": 7693,
+      "sha256": "50a41a3bbb3fc63bbab2926e0085bc6d0b935455be696a1d91a90ebf2a851bed",
+      "symbols": [
+        "clean_context",
+        "clean_text",
+        "normalize_bn",
+        "bn_tokens",
+        "response_in_context",
+        "parse_label",
+        "prepare_frame",
+        "load_sample",
+        "load_test",
+        "prompt_category",
+        "apply_context_rule",
+        "metric_row",
+        "print_metrics",
+        "evaluate_by_slice",
+        "load_trace_predictions",
+        "build_context_retriever",
+        "retrieve_contexts"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/establishment_overrides.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "establishment_overrides.py",
+      "bytes": 12937,
+      "sha256": "90d590f1e1e759df2da8cf607709acd84e405000914d2c5595bd7ab24eeddb35",
+      "symbols": [
+        "split_sentences",
+        "subject_from_prompt",
+        "subject_overlap",
+        "years_with_positions",
+        "remove_parenthetical_dates",
+        "nearest_relation_year",
+        "extract_establishment_year",
+        "extract_construction_start_year",
+        "extract_status_year",
+        "negative_establishment_evidence",
+        "decide",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/evaluate_grouped_verifier.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "evaluate_grouped_verifier.py",
+      "bytes": 3178,
+      "sha256": "97890eaf06ef663c4cce40a33661da2a1537cda9fe70c7fd09edac31a2eb085f",
+      "symbols": [
+        "metrics",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/evaluate_judge_consensus.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "evaluate_judge_consensus.py",
+      "bytes": 2404,
+      "sha256": "22a50c99fbeb9cf28fe3f5bcace763d8283b53a80f181956dbf73c13a94ec2cf",
+      "symbols": [
+        "load_index_votes",
+        "agreement_report",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/evaluate_selective_cascade.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "evaluate_selective_cascade.py",
+      "bytes": 3808,
+      "sha256": "0a698d8aaf417b3d11ac2402a7f935372e21ea2f31319698bdebc7dbfbd3004a",
+      "symbols": [
+        "read_predictions",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/evidence_controlled_pairs.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "evidence_controlled_pairs.py",
+      "bytes": 4665,
+      "sha256": "95cddde58d749f39d6a606b888df2335d299dad4ee4a7ce50964779e874fc2f3",
+      "symbols": [
+        "extract_term",
+        "lexical_task",
+        "compact",
+        "add_row",
+        "build_lexical_pairs",
+        "sample_balanced",
+        "write_jsonl",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/evidence_index.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "evidence_index.py",
+      "bytes": 10572,
+      "sha256": "46b957f97801eed3640a54abefc8a0f58a08b4f99ee3bd44bc84092e946fd84b",
+      "symbols": [
+        "evidence_doc",
+        "query_text",
+        "load_corpus",
+        "write_jsonl_gz",
+        "read_jsonl_gz",
+        "build_index",
+        "load_index",
+        "topk_indices",
+        "retrieve",
+        "summarize_records",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/external_data.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "external_data.py",
+      "bytes": 10645,
+      "sha256": "5d41abd6eaf2e7f427b01960e1692220254344c3b0cf7cc0d62627fec015f4ef",
+      "symbols": [
+        "flatten_records",
+        "first_value",
+        "answer_to_text",
+        "options_to_context",
+        "normalize_row",
+        "read_file",
+        "download_and_convert",
+        "make_hallucination_pairs",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/fact_page_consensus.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "fact_page_consensus.py",
+      "bytes": 3889,
+      "sha256": "c0a4447a8f851bf61bd143adb8af7f9c6328c2aee9fb4a1e636da57702ffd51c",
+      "symbols": [
+        "load_trace",
+        "consensus_prediction",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/freeze_v91_release.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "freeze_v91_release.py",
+      "bytes": 8483,
+      "sha256": "904ba63ff1a610627803a14e0e2703cfa5a585dba1560f1df1d243647eb527b4",
+      "symbols": [
+        "sha256_file",
+        "executable_cells_sha256",
+        "validate_run",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/fuzzy_source_overrides.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "fuzzy_source_overrides.py",
+      "bytes": 12155,
+      "sha256": "822558d665bcb10046581a506beb2b92cd20f685c0511bdbdbd39adfac76d3ea",
+      "symbols": [
+        "MatchFeatures",
+        "relation_signature",
+        "relation_compatible",
+        "token_set",
+        "match_features",
+        "eligible",
+        "FuzzyMcqMatcher",
+        "apply_records",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/gemma_ensemble.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "gemma_ensemble.py",
+      "bytes": 19309,
+      "sha256": "358fb0680d627ca4ddad6e09d5ba746200177bfdce20aa859f2fe212cbd6c16f",
+      "symbols": [
+        "make_prompt",
+        "wait_for_server",
+        "start_server",
+        "call_gemma",
+        "row_indices",
+        "run_variant",
+        "build_evidence",
+        "evaluate_trace_set",
+        "load_partial_trace",
+        "vote_predictions",
+        "command_eval",
+        "command_predict",
+        "command_ensemble",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/generate_curated_synthetic.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "generate_curated_synthetic.py",
+      "bytes": 10243,
+      "sha256": "e9bae6a86aa74029525b99d7aaaeac5ec341d058d8de37443ecbd2da3c57f9a0",
+      "symbols": [
+        "add_fact_rows",
+        "add_idiom_rows",
+        "add_math_rows",
+        "add_context_rows",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/gguf_selective_judge.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "gguf_selective_judge.py",
+      "bytes": 8950,
+      "sha256": "87eadf7238ff8e3bf1daeb6b55f595ba61dba1bf8fdc6e395eb99cf9b4bda982",
+      "symbols": [
+        "make_prompt",
+        "parse_binary",
+        "stable_seed",
+        "call_server",
+        "judge_row",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/hf_phase2_data.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "hf_phase2_data.py",
+      "bytes": 14672,
+      "sha256": "4c1062f3f65f6316b2f6ecf2177b1ea505ca602bf41a49b008438cac202982c8",
+      "symbols": [
+        "first",
+        "flatten_text",
+        "nli_record",
+        "evidence_record",
+        "iter_json",
+        "iter_jsonl",
+        "iter_table",
+        "iter_xnli_tar",
+        "iter_legal_acts",
+        "reservoir",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/hybrid_evidence_index.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "hybrid_evidence_index.py",
+      "bytes": 14066,
+      "sha256": "01123d581147f14999c73009e8d61e09eac519f532ceba120df72447a58b8ab0",
+      "symbols": [
+        "relation_types",
+        "relation_type",
+        "source_relation",
+        "source_relations",
+        "read_corpus",
+        "save_corpus",
+        "load_corpus",
+        "retrieval_queries",
+        "build",
+        "retrieve",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/idiom_semantic_overrides.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "idiom_semantic_overrides.py",
+      "bytes": 6280,
+      "sha256": "e5506cae537ae6c245781e3876f2413af6de0f6ca969dc0657f657a76e6f87a6",
+      "symbols": [
+        "extract_idiom",
+        "load_idiom_dataset",
+        "load_corrections",
+        "correction_for",
+        "apply_corrections",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/law_evidence_overrides.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "law_evidence_overrides.py",
+      "bytes": 14141,
+      "sha256": "1e3adff5696497a97d0da9113efd520e8b414aee1551c52ba61ceb30ab66f97b",
+      "symbols": [
+        "Expected",
+        "read_law",
+        "load_law_corpus",
+        "read_act",
+        "first_value",
+        "amount_scale",
+        "section_text",
+        "extract_maximum",
+        "_expected",
+        "dna_expected",
+        "child_marriage_expected",
+        "rti_expected",
+        "trademark_expected",
+        "expected_for_prompt",
+        "compare_expected",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/lexical_data.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "lexical_data.py",
+      "bytes": 8083,
+      "sha256": "8e22d6dba55e4a49856cbec670e4cfa2348116ccbc60344c5c35a2ef2db3effa",
+      "symbols": [
+        "ensure_bagdhara",
+        "ensure_git_repo",
+        "list_text",
+        "bagdhara_context",
+        "add_bagdhara_rows",
+        "load_bagdhara",
+        "load_bengali_dictionary",
+        "write_corpus",
+        "merge_corpora",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/lmstudio_hallucination_judge.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "lmstudio_hallucination_judge.py",
+      "bytes": 5612,
+      "sha256": "d8ee87443173b2340b609713c1941e56664870b70ef76e0d5199398bd0fa7381",
+      "symbols": [
+        "prompt",
+        "parse",
+        "request_one",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/make_lexical_candidates.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "make_lexical_candidates.py",
+      "bytes": 3976,
+      "sha256": "4cb25d1fb690afeb525c6df67ddb781fb56a9d42eb19880455e1c7167cf91f08",
+      "symbols": [
+        "run",
+        "validate_submission",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/make_teacher_pool.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "make_teacher_pool.py",
+      "bytes": 4589,
+      "sha256": "64054c1645e2be99cdd4111f3e6f63bea1a13b0bf10c2cec7beed8032f579829",
+      "symbols": [
+        "source_name",
+        "normalize_row",
+        "reservoir_add",
+        "sample_file",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/mlx_context_verifier.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "mlx_context_verifier.py",
+      "bytes": 9139,
+      "sha256": "55bafd2f0c4a6031be3bf3342dba2cb19950d7eae2348caf7dc1ad138b597de0",
+      "symbols": [
+        "make_prompt",
+        "parse_output",
+        "load_trace",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/mlx_fact_page_judge.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "mlx_fact_page_judge.py",
+      "bytes": 10582,
+      "sha256": "7642786e245cb7fab000276c9e5cdd34d6612421495d1121b9074f4c39ee0c92",
+      "symbols": [
+        "split_chunks",
+        "build_retriever",
+        "build_page_retriever",
+        "retrieve",
+        "make_prompt",
+        "parse_output",
+        "load_trace",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/mlx_idiom_evidence_judge.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "mlx_idiom_evidence_judge.py",
+      "bytes": 9185,
+      "sha256": "0b065c56f8df823c0e9d58268f1de4a26fee48a2dfef0ea16c5cbd90caeb60c7",
+      "symbols": [
+        "idiom_from_prompt",
+        "compact_evidence",
+        "build_evidence_index",
+        "find_exact_entry",
+        "make_prompt",
+        "parse_output",
+        "load_trace",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/mlx_qwen_judge.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "mlx_qwen_judge.py",
+      "bytes": 17038,
+      "sha256": "d194c9cbed1881ade9c991a67e5c360445d9acc46308b37d855da0c0cd1a87ab",
+      "symbols": [
+        "format_external_evidence",
+        "make_prompt",
+        "apply_chat",
+        "load_partial_trace",
+        "row_indices",
+        "load_external_evidence",
+        "attach_external_evidence",
+        "run_variant",
+        "command_eval",
+        "command_predict",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/mlx_source_bank_judge.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "mlx_source_bank_judge.py",
+      "bytes": 8836,
+      "sha256": "bfd83bc4d70d5641214e29b5ed257817d3efd4e39202bccebee75868afe8706d",
+      "symbols": [
+        "evidence_text",
+        "make_prompt",
+        "parse_output",
+        "load_trace",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/mlx_structured_judge.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "mlx_structured_judge.py",
+      "bytes": 8261,
+      "sha256": "fb2b802f6fce561baf98f22bc54d9879f0ca0ac49ed6c3574f697126e849512e",
+      "symbols": [
+        "is_structured_prompt",
+        "make_prompt",
+        "parse_output",
+        "load_trace",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/mlx_teacher_label.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "mlx_teacher_label.py",
+      "bytes": 6640,
+      "sha256": "b593bd7d8469f02d5c5e7597440acc331ee4cb8c66cf1f1f23aad8e174aa37d9",
+      "symbols": [
+        "make_teacher_prompt",
+        "parse_teacher_output",
+        "load_done",
+        "read_rows",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/normalize_legal_acts.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "normalize_legal_acts.py",
+      "bytes": 2013,
+      "sha256": "a00e3a8c0bb716d57029eaa868c0753c6c80057ab71a7980cef92e63bd9e3a17",
+      "symbols": [
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/normalize_phase2_raw.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "normalize_phase2_raw.py",
+      "bytes": 5824,
+      "sha256": "224fa5560ba8c2fecb97d5b6f3edf137f0292346aaf99e3cefc52a1a70e17108",
+      "symbols": [
+        "chunks",
+        "inferred_title",
+        "write_record",
+        "normalize_text_file",
+        "normalize_news",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/package_offline_artifacts.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "package_offline_artifacts.py",
+      "bytes": 15254,
+      "sha256": "52c34c6b8f8034a7735cbfc5d0f71b4ba2bb3f26b0f1d6621ca7e5772e42da7f",
+      "symbols": [
+        "sha256_file",
+        "file_record",
+        "collect",
+        "write_archive",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/package_phase2_runtime.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "package_phase2_runtime.py",
+      "bytes": 5383,
+      "sha256": "12e1fdab3cc69ad3ab95b973a8e90663295ef13d364a8234aa2070b84380d5fc",
+      "symbols": [
+        "sha256_file",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/phase1_provenance_report.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "phase1_provenance_report.py",
+      "bytes": 10824,
+      "sha256": "b8e8b8c48f01de70b188c2c1302c724552474ce10f7aa8ea677054f4d122c381",
+      "symbols": [
+        "load_bagdhara",
+        "lexical_decision",
+        "load_router",
+        "load_evidence_trace",
+        "choose_tier",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/phase2_pipeline.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "phase2_pipeline.py",
+      "bytes": 18131,
+      "sha256": "03e9ac182f20d61d2b9d47d19e2090f8d7237150e57a3d50ccc40848cf5c46a5",
+      "symbols": [
+        "register_joblib_functions",
+        "load_verified",
+        "load_lexical_bank",
+        "load_benhallu_lineage",
+        "benhallu_decision",
+        "lexical_decision",
+        "verified_decision",
+        "historical_alias_decision",
+        "context_decision",
+        "load_input",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/prepare_teacher_distill.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "prepare_teacher_distill.py",
+      "bytes": 2523,
+      "sha256": "d1b3a7987c465888f8e683712c72d293e5d2d12e3b26655a90a531980ced4c74",
+      "symbols": [
+        "keep_row",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/released_set_diagnostic.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "released_set_diagnostic.py",
+      "bytes": 2557,
+      "sha256": "0365ebae105feb1d95b496a2229b0059357e144e32db9702e1cf11057d1c1943",
+      "symbols": [
+        "row_key",
+        "build_released_lookup",
+        "diagnostic_predictions",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/retrieval_consensus_overrides.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "retrieval_consensus_overrides.py",
+      "bytes": 4620,
+      "sha256": "f42c1aa6b341631a05624e2e39631e6f2ef950d287aeaddd4c526e56b5fc0de0",
+      "symbols": [
+        "cluster_votes",
+        "decide",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/run_phase2_cascade.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "run_phase2_cascade.py",
+      "bytes": 4088,
+      "sha256": "9cc38d0eced3c28b626668afc1f7ec83f8a0884983cdf8bd5bce202c78179ba3",
+      "symbols": [
+        "router_command",
+        "judge_command",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/selective_consensus_gate.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "selective_consensus_gate.py",
+      "bytes": 4044,
+      "sha256": "322c9bf92eb31dc8ce228bca5157b9cb66125d481a4df35f357fad579df0b3bd",
+      "symbols": [
+        "extract_records",
+        "record_label",
+        "load_votes",
+        "consensus_decisions",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/selective_llm_judge.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "selective_llm_judge.py",
+      "bytes": 10674,
+      "sha256": "5967df2c4ac260c97153d08273d1736807efc830605924914181adaed2e1e14d",
+      "symbols": [
+        "make_prompt",
+        "apply_chat",
+        "consensus_label",
+        "read_evidence",
+        "binary_token_ids",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/source_answer_bank.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "source_answer_bank.py",
+      "bytes": 23963,
+      "sha256": "41155082d9838da809192fb7307832bd3d3300b4037c9aee6735572e2094927f",
+      "symbols": [
+        "BankEntry",
+        "Decision",
+        "canonical_answer",
+        "strip_inline_choices",
+        "structural_answer",
+        "number_signature",
+        "_as_answers",
+        "_answer_index",
+        "load_suman",
+        "load_hishab",
+        "ensure_bluck",
+        "load_bluck",
+        "load_somaj",
+        "deduplicate",
+        "write_bank",
+        "read_bank",
+        "compare_mcq",
+        "compare_open_qa",
+        "compare_response",
+        "index_bank",
+        "_answers_compatible",
+        "source_answers_conflict",
+        "decide_row",
+        "audit",
+        "apply_bank",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/source_artifact_overrides.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "source_artifact_overrides.py",
+      "bytes": 6138,
+      "sha256": "4d136da4ab6b4fa456f3165aab1926b3652292783c49eefefb553a3ce043fc94",
+      "symbols": [
+        "dedupe_prefix",
+        "orthographic_key",
+        "compatible",
+        "load_bank",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/structured_overrides.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "structured_overrides.py",
+      "bytes": 34011,
+      "sha256": "bb630f4f8920835d7c812fc698598f7a9d2c811f2763d4a393dec345229099f0",
+      "symbols": [
+        "Solved",
+        "ascii_text",
+        "numbers",
+        "_match",
+        "_coefficient",
+        "_bounded_quadratic_interval",
+        "_parse_fraction_token",
+        "_response_interval",
+        "solve_math",
+        "solve_samas",
+        "solve_sandhi",
+        "solve_prefix",
+        "answer_matches",
+        "apply_structured_overrides",
+        "_token_set",
+        "apply_sample_transfer",
+        "_external_answers",
+        "apply_external_gold",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/synthetic_data.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "synthetic_data.py",
+      "bytes": 7204,
+      "sha256": "bf4b7a5e599a455ac408001381b5efe42c1cbccb0c07cfd0f3499a1983265c37",
+      "symbols": [
+        "compact",
+        "extract_numbers",
+        "corrupt_number_text",
+        "sample_context_span",
+        "make_context_synthetic",
+        "make_no_context_synthetic",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/topic_context_evidence.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "topic_context_evidence.py",
+      "bytes": 3967,
+      "sha256": "b458953040330bab8c25144ff60af7cc0da014837a02300395f4a639fc872708",
+      "symbols": [
+        "load_contexts",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/train_nli_encoder.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "train_nli_encoder.py",
+      "bytes": 4725,
+      "sha256": "725f76b1a2f047f28285d71b6443e94c9780e05e00d613b8ff33dbf1cce2a5ae",
+      "symbols": [
+        "PairDataset",
+        "load_pairs",
+        "metrics",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/train_portable_verifier.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "train_portable_verifier.py",
+      "bytes": 12934,
+      "sha256": "4378c130c00a283d68b483028c4c5ef4d57f7caad3b299dd88aa74ec526d9ee8",
+      "symbols": [
+        "prepare_frame",
+        "load_jsonl",
+        "balanced_sample",
+        "load_external_training",
+        "text_all",
+        "text_prompt_response",
+        "containment",
+        "jaccard",
+        "numeric_features",
+        "make_pipeline",
+        "tune_threshold",
+        "cross_validate",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/train_verifier.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "train_verifier.py",
+      "bytes": 11402,
+      "sha256": "9186fbc3487c28e78eb4e633295719414754dbb177b8fc765b96b645ef4296f8",
+      "symbols": [
+        "text_all",
+        "text_pr",
+        "extract_numbers",
+        "containment",
+        "jaccard",
+        "numeric_features",
+        "make_pipeline",
+        "load_synthetic",
+        "add_teacher_columns",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/typed_evidence.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "typed_evidence.py",
+      "bytes": 5734,
+      "sha256": "898da31cc2f2d95410e7839e5661232b1378872dd95972ee6b8d1a2a64ea94b9",
+      "symbols": [
+        "infer_intent",
+        "_canonical_values",
+        "load_typed_evidence",
+        "_context_matches",
+        "typed_evidence_decision"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/typed_idiom_matcher.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "typed_idiom_matcher.py",
+      "bytes": 5457,
+      "sha256": "8c865c2c6f6f0f47d54644f901fe46dc08f2bb5e3f4f2d3ba20b85c1f1d9e5dd",
+      "symbols": [
+        "extract_typed_idiom",
+        "load_idioms",
+        "TypedIdiomMatcher"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/verified_fact_overrides.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "verified_fact_overrides.py",
+      "bytes": 3340,
+      "sha256": "17cb6834c55cb0c0f71a20fb2201cfd3c157b146bb546dcb9792e5606297b607",
+      "symbols": [
+        "load_verified_entries",
+        "predict_verified",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/weighted_source_overrides.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "weighted_source_overrides.py",
+      "bytes": 5803,
+      "sha256": "ac926b583749fd5f1cd4053964989d515512afeb301d6707b04ebc7b9bef2e40",
+      "symbols": [
+        "weighted_decision",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/wiki_evidence.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "wiki_evidence.py",
+      "bytes": 4901,
+      "sha256": "61f62f8a840d6b6b09228b6a0aa828f5abe356d90c5a27a9f4dae2d3f1e46e8f",
+      "symbols": [
+        "clean_query",
+        "get_json",
+        "search_pages",
+        "fetch_extracts",
+        "load_existing",
+        "build_evidence",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/scripts/wikidata_facts.py",
+      "group": "Huntrix",
+      "kind": "sourcecode",
+      "title": "wikidata_facts.py",
+      "bytes": 14588,
+      "sha256": "3a448ecfb3a88df1e8d75cf5b26625ce76474f2b2fd4dc5cd6b8e5e0b03d80b3",
+      "symbols": [
+        "sparql",
+        "value",
+        "date_text",
+        "fact_value",
+        "add_row",
+        "convert_bangladesh_properties",
+        "convert_places",
+        "property_question",
+        "convert_place_properties",
+        "convert_people",
+        "query_to_rows",
+        "write_corpus",
+        "make_pairs",
+        "merge_corpora",
+        "main"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_analyze_gemma_cross_family_audit.py",
+      "group": "Huntrix",
+      "kind": "test",
+      "title": "test_analyze_gemma_cross_family_audit.py",
+      "bytes": 1795,
+      "sha256": "3e362e066a166d9dc5b8d29d03b5488593dc4167d5e02e0f02afb559f685a153",
+      "symbols": [
+        "record",
+        "AnalyzeGemmaCrossFamilyAuditTests"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_analyze_source_recovery_audit.py",
+      "group": "Huntrix",
+      "kind": "test",
+      "title": "test_analyze_source_recovery_audit.py",
+      "bytes": 2057,
+      "sha256": "02ba5b304871b2a5dbbef463f11d33af9d8798fca637b6251fe60905adf9a711",
+      "symbols": [
+        "row",
+        "AnalyzeSourceRecoveryAuditTests"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_antonym_evidence_overrides.py",
+      "group": "Huntrix",
+      "kind": "test",
+      "title": "test_antonym_evidence_overrides.py",
+      "bytes": 3329,
+      "sha256": "04e7fd6681eb1a3c8d883cd99b50877256482c301913fa39aab909e7417a8665",
+      "symbols": [
+        "AntonymEvidenceTests"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_audit_additional_qa_banks.py",
+      "group": "Huntrix",
+      "kind": "test",
+      "title": "test_audit_additional_qa_banks.py",
+      "bytes": 2204,
+      "sha256": "28ab3eaf3cdfff3c63f152515834ae3d64a37f3f95b0938ffeacdbe8d2db44af",
+      "symbols": [
+        "AdditionalQaBankAuditTests"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_audit_azmine_bcs.py",
+      "group": "Huntrix",
+      "kind": "test",
+      "title": "test_audit_azmine_bcs.py",
+      "bytes": 1954,
+      "sha256": "a7d904e51d36124ca3e8b5efa8e2f4159b77add254aa247c00baf6881fd41bac",
+      "symbols": [
+        "AzmineBcsAuditTests"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_audit_benhallu_raw_lineage.py",
+      "group": "Huntrix",
+      "kind": "test",
+      "title": "test_audit_benhallu_raw_lineage.py",
+      "bytes": 2308,
+      "sha256": "b259732de16644223c6cf88e05e20ce5c9cd982101f8c7ec059c8a8a581a72ea",
+      "symbols": [
+        "BenHalluRawLineageAuditTests"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_audit_benhallueval_fiveway.py",
+      "group": "Huntrix",
+      "kind": "test",
+      "title": "test_audit_benhallueval_fiveway.py",
+      "bytes": 1882,
+      "sha256": "0bf6d20ca23a7963deeeec4916fb32e078f47107f368b824f005a0cbff3d961e",
+      "symbols": [
+        "BenHalluEvalFiveWayAuditTests"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_audit_context_rule_safety.py",
+      "group": "Huntrix",
+      "kind": "test",
+      "title": "test_audit_context_rule_safety.py",
+      "bytes": 1095,
+      "sha256": "731f456adb9d726c3190462ad8f3b25a35d900ce4507335517762c5db1dcc552",
+      "symbols": [
+        "ContextRuleSafetyAuditTests"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_audit_external_lineage.py",
+      "group": "Huntrix",
+      "kind": "test",
+      "title": "test_audit_external_lineage.py",
+      "bytes": 1716,
+      "sha256": "f53c289490735f05c1d663ba566daf86787c8b06c452ecf0f66d092c8317a78c",
+      "symbols": [
+        "ExternalLineageAuditTests"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_audit_source_conflict_votes.py",
+      "group": "Huntrix",
+      "kind": "test",
+      "title": "test_audit_source_conflict_votes.py",
+      "bytes": 2365,
+      "sha256": "884a564fe09c0afe0d3539e309319ea44a1b816bc3bda6379d493211f3bcf534",
+      "symbols": [
+        "entry",
+        "SourceConflictVoteAuditTests"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_audit_source_origin_conflicts.py",
+      "group": "Huntrix",
+      "kind": "test",
+      "title": "test_audit_source_origin_conflicts.py",
+      "bytes": 1929,
+      "sha256": "1880306fb54f495214efba318cfd41d29e7c4937d853c0e2af05a784ed99f16c",
+      "symbols": [
+        "entry",
+        "SourceOriginConflictAuditTests"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_audit_test_derived_pseudolabels.py",
+      "group": "Huntrix",
+      "kind": "test",
+      "title": "test_audit_test_derived_pseudolabels.py",
+      "bytes": 1200,
+      "sha256": "74701484362c4c79780689a16c68e40709b26a6c4c5ba2ea62aaa9aa48bb2afe",
+      "symbols": [
+        "TestDerivedPseudolabelAuditTests"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_audit_transitive_answer_equivalence.py",
+      "group": "Huntrix",
+      "kind": "test",
+      "title": "test_audit_transitive_answer_equivalence.py",
+      "bytes": 2153,
+      "sha256": "cdcb8c301a320882fa21c103afcdd523553330e93bb482c5aee6e47b796d50f8",
+      "symbols": [
+        "CalibrationTests"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_bcs_answer_bank.py",
+      "group": "Huntrix",
+      "kind": "test",
+      "title": "test_bcs_answer_bank.py",
+      "bytes": 736,
+      "sha256": "2a31bb81e855201d9916b312a8bf4f4e39bad2fabf5d87fea8bb98fece96523b",
+      "symbols": [
+        "BcsCleaningTest"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_benhallueval_provenance.py",
+      "group": "Huntrix",
+      "kind": "test",
+      "title": "test_benhallueval_provenance.py",
+      "bytes": 947,
+      "sha256": "fdea65ac508ea2e05b3094fd97f61527236bcae90059923c5edd70d170cec6da",
+      "symbols": [
+        "BenHalluEvalProvenanceTests"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_birth_date_overrides.py",
+      "group": "Huntrix",
+      "kind": "test",
+      "title": "test_birth_date_overrides.py",
+      "bytes": 2991,
+      "sha256": "c41b946db6d87574a8b6e5f18c674847051e97f230f6a67cc314b35a1135897b",
+      "symbols": [
+        "BirthDateTests"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_bn_num2words.py",
+      "group": "Huntrix",
+      "kind": "test",
+      "title": "test_bn_num2words.py",
+      "bytes": 642,
+      "sha256": "f812c21340893f5ed23dadd72efee5b48cf3a95b550ad8bfe0e0d8ff0707a58b",
+      "symbols": [
+        "BengaliNum2WordsTest"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_build_fact_page_html_corpus.py",
+      "group": "Huntrix",
+      "kind": "test",
+      "title": "test_build_fact_page_html_corpus.py",
+      "bytes": 531,
+      "sha256": "c949f4141eace391bb65e136ac0156165416acdd682144a7c389b136474f2b6d",
+      "symbols": [
+        "ParagraphParserTests"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_build_phase1_audit_ledger.py",
+      "group": "Huntrix",
+      "kind": "test",
+      "title": "test_build_phase1_audit_ledger.py",
+      "bytes": 1266,
+      "sha256": "f23884114687434949e03cf031dde81d706f0fd9d344cb346da280953ad639ab",
+      "symbols": [
+        "Phase1AuditLedgerTests"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_build_phase2_training.py",
+      "group": "Huntrix",
+      "kind": "test",
+      "title": "test_build_phase2_training.py",
+      "bytes": 419,
+      "sha256": "ea559506118a047f8b2f2297bdd3b3a30570c7420517cb2f012c42ba0ece8e05",
+      "symbols": [
+        "Phase2TrainingTests"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_context_numeric_overrides.py",
+      "group": "Huntrix",
+      "kind": "test",
+      "title": "test_context_numeric_overrides.py",
+      "bytes": 8800,
+      "sha256": "98681eea45889887433294967f4159068ddad71b58defcf52b02c7958113e1b7",
+      "symbols": [
+        "ContextNumericTests"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_context_span_overrides.py",
+      "group": "Huntrix",
+      "kind": "test",
+      "title": "test_context_span_overrides.py",
+      "bytes": 3296,
+      "sha256": "4d24d3b16777d60094e5601460966c060bd79e5726bb0bc18562403041762500",
+      "symbols": [
+        "ContextSpanOverrideTests"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_datathon_utils.py",
+      "group": "Huntrix",
+      "kind": "test",
+      "title": "test_datathon_utils.py",
+      "bytes": 389,
+      "sha256": "e3f40d4c62c6441f6f5a2df52fb0d635bdd5bb23544b3b6ba2d212c3c7f52530",
+      "symbols": [
+        "DatathonUtilsTests"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_establishment_overrides.py",
+      "group": "Huntrix",
+      "kind": "test",
+      "title": "test_establishment_overrides.py",
+      "bytes": 8151,
+      "sha256": "86b06062f1100d2e00c540e619aa812281a61708e55c88fd52d6b6c42a136164",
+      "symbols": [
+        "EstablishmentTests"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_evaluate_judge_consensus.py",
+      "group": "Huntrix",
+      "kind": "test",
+      "title": "test_evaluate_judge_consensus.py",
+      "bytes": 487,
+      "sha256": "13c84171af3011aa8be1ee51f4dccb92801f3070743c3b3e51455861b42d42ac",
+      "symbols": [
+        "JudgeConsensusEvaluationTests"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_fact_page_consensus.py",
+      "group": "Huntrix",
+      "kind": "test",
+      "title": "test_fact_page_consensus.py",
+      "bytes": 851,
+      "sha256": "e760876ba787ef80c274b489d62ae45e7bb54244904f370759be3b40b87b8cca",
+      "symbols": [
+        "FactPageConsensusTests"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_fuzzy_source_overrides.py",
+      "group": "Huntrix",
+      "kind": "test",
+      "title": "test_fuzzy_source_overrides.py",
+      "bytes": 2519,
+      "sha256": "b7c5ebce0fb6686c493bd12a08c1f9b3da60413afa7e677e9a93c52258851623",
+      "symbols": [
+        "FuzzySourceGateTest"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_gguf_selective_judge.py",
+      "group": "Huntrix",
+      "kind": "test",
+      "title": "test_gguf_selective_judge.py",
+      "bytes": 2307,
+      "sha256": "510772b4b7eb3038c8165f309f731cac96554d8b618794c0fa5ec692e1132952",
+      "symbols": [
+        "GgufSelectiveJudgeTest"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_hf_phase2_data.py",
+      "group": "Huntrix",
+      "kind": "test",
+      "title": "test_hf_phase2_data.py",
+      "bytes": 1424,
+      "sha256": "ffbb48c2b81f3c281fa8204de9bc2e391a0a98c6c153b35ca627d471f5dfdae2",
+      "symbols": [
+        "HfPhase2DataTests"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_hybrid_evidence_index.py",
+      "group": "Huntrix",
+      "kind": "test",
+      "title": "test_hybrid_evidence_index.py",
+      "bytes": 3321,
+      "sha256": "8291f19d86afa618442e9a53d42282741d75b7b3b4ae625f3fb5f4d012229f3f",
+      "symbols": [
+        "HybridEvidenceTests"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_idiom_semantic_overrides.py",
+      "group": "Huntrix",
+      "kind": "test",
+      "title": "test_idiom_semantic_overrides.py",
+      "bytes": 4560,
+      "sha256": "7dfa04a68c58b9e4902687111247b48325e15d565cb45105c1d55a8c20477457",
+      "symbols": [
+        "IdiomSemanticOverrideTests"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_kaggle_gemma_cross_family_audit.py",
+      "group": "Huntrix",
+      "kind": "test",
+      "title": "test_kaggle_gemma_cross_family_audit.py",
+      "bytes": 1485,
+      "sha256": "85538976e9bacdec2ad2b424747bb15cfe36b4fa09615e7ed33c2c39860b3da5",
+      "symbols": [
+        "KaggleGemmaCrossFamilyAuditTests"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_kaggle_relation_swap_training.py",
+      "group": "Huntrix",
+      "kind": "test",
+      "title": "test_kaggle_relation_swap_training.py",
+      "bytes": 2292,
+      "sha256": "05b90a5334420365bc6331059f73fd4661e661db7df5da46862373ebb08cb744",
+      "symbols": [
+        "KaggleRelationSwapTrainingTests"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_kaggle_source_recovery_audit.py",
+      "group": "Huntrix",
+      "kind": "test",
+      "title": "test_kaggle_source_recovery_audit.py",
+      "bytes": 1586,
+      "sha256": "ec940bb3b74540b2ff6228fabd5e85984bdc14b116a75ae5cebdf50e50db60e9",
+      "symbols": [
+        "KaggleSourceRecoveryAuditTests"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_law_evidence_overrides.py",
+      "group": "Huntrix",
+      "kind": "test",
+      "title": "test_law_evidence_overrides.py",
+      "bytes": 3063,
+      "sha256": "0eddd4183f6732ae8def16569f9f33f6fec4f40b4c15376065361865d4dbfd1a",
+      "symbols": [
+        "LawParserTest"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_mlx_fact_page_judge.py",
+      "group": "Huntrix",
+      "kind": "test",
+      "title": "test_mlx_fact_page_judge.py",
+      "bytes": 2442,
+      "sha256": "349e39ec41b6bfdbe0e5d45053967d987c64504a90c49f35f37139b43b1c6188",
+      "symbols": [
+        "FactPageJudgeTests"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_mlx_qwen_judge.py",
+      "group": "Huntrix",
+      "kind": "test",
+      "title": "test_mlx_qwen_judge.py",
+      "bytes": 1272,
+      "sha256": "629f83870c8cc48cfb60d09c688f035166789c6b35e9ffe819febb72d67c37e6",
+      "symbols": [
+        "RowSelectionTests"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_normalize_legal_acts.py",
+      "group": "Huntrix",
+      "kind": "test",
+      "title": "test_normalize_legal_acts.py",
+      "bytes": 941,
+      "sha256": "9125ece0ba7af4e92b0597c2d3542ba69cc72becea615f0f7f76c2e542f3f151",
+      "symbols": [
+        "NormalizeLegalActsTests"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_normalize_phase2_raw.py",
+      "group": "Huntrix",
+      "kind": "test",
+      "title": "test_normalize_phase2_raw.py",
+      "bytes": 650,
+      "sha256": "c501d69e96ef3910c2abc44d59c7aa9112d2346875be9354d0c5c1a345703f2f",
+      "symbols": [
+        "NormalizeRawTests"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_package_offline_artifacts.py",
+      "group": "Huntrix",
+      "kind": "test",
+      "title": "test_package_offline_artifacts.py",
+      "bytes": 1990,
+      "sha256": "874edc703c5c0719625d970e759e49aa12897407b3dffb0540d40cff1ed53a46",
+      "symbols": [
+        "OfflinePackageClosureTests"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_package_phase2_runtime.py",
+      "group": "Huntrix",
+      "kind": "test",
+      "title": "test_package_phase2_runtime.py",
+      "bytes": 1404,
+      "sha256": "c0c629a6c3d25f2eec03a8045c36117e576d9cf87c3c49e8ed117643750bdde2",
+      "symbols": [
+        "Phase2RuntimePackageTests"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_phase1_provenance_report.py",
+      "group": "Huntrix",
+      "kind": "test",
+      "title": "test_phase1_provenance_report.py",
+      "bytes": 3413,
+      "sha256": "9666f2cf2224214cd60b6cd419b8b9349ed07186ee7b39a63b30a43535003cf9",
+      "symbols": [
+        "Phase1ProvenanceReportTests"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_phase2_kaggle_inference.py",
+      "group": "Huntrix",
+      "kind": "test",
+      "title": "test_phase2_kaggle_inference.py",
+      "bytes": 2670,
+      "sha256": "999e2f72b9ab7e01d60da1bcc37b4a9592de54e38aa42c09e8971e113d1520e4",
+      "symbols": [
+        "Phase2KaggleInferenceTest"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_phase2_pipeline.py",
+      "group": "Huntrix",
+      "kind": "test",
+      "title": "test_phase2_pipeline.py",
+      "bytes": 1834,
+      "sha256": "97fca459320675049a8dc85db9a0d2330e54e7b97ddf1fa79abcdadf192ddf31",
+      "symbols": [
+        "Phase2PipelineTests"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_phase2_v91_kaggle_inference.py",
+      "group": "Huntrix",
+      "kind": "test",
+      "title": "test_phase2_v91_kaggle_inference.py",
+      "bytes": 2546,
+      "sha256": "d6fd30389b04e51991f98218f12c975dfcf5a7dbd2e61b2443e8aff54f37dec6",
+      "symbols": [
+        "Phase2V91KaggleInferenceTest"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_released_set_diagnostic.py",
+      "group": "Huntrix",
+      "kind": "test",
+      "title": "test_released_set_diagnostic.py",
+      "bytes": 858,
+      "sha256": "a934e16e27aa182077a1763ec1dd559c7fb644bf0d51fa24ef45715e4eed519b",
+      "symbols": [
+        "ReleasedSetDiagnosticTests"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_retrieval_consensus_overrides.py",
+      "group": "Huntrix",
+      "kind": "test",
+      "title": "test_retrieval_consensus_overrides.py",
+      "bytes": 1398,
+      "sha256": "83e93b5baa58112095b9bce5de8928fc7b422f1625e5f91dbe24cc154bea9d6b",
+      "symbols": [
+        "RetrievalConsensusTests"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_run_phase2_cascade.py",
+      "group": "Huntrix",
+      "kind": "test",
+      "title": "test_run_phase2_cascade.py",
+      "bytes": 1662,
+      "sha256": "4167297c2527e09a527faa31efda1748dacf2c011f0cd660122d1904a2c08156",
+      "symbols": [
+        "Phase2CascadeCommandTests"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_selective_consensus_gate.py",
+      "group": "Huntrix",
+      "kind": "test",
+      "title": "test_selective_consensus_gate.py",
+      "bytes": 1297,
+      "sha256": "888ac380b330bf91452a5731febb1a25338d6907e49147759556892c4ab4fa10",
+      "symbols": [
+        "vote",
+        "SelectiveConsensusGateTests"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_selective_llm_judge.py",
+      "group": "Huntrix",
+      "kind": "test",
+      "title": "test_selective_llm_judge.py",
+      "bytes": 1668,
+      "sha256": "21a631fa2d7c419dfe947000cb59ed206b63772297f8e6a178001616d5f0afa8",
+      "symbols": [
+        "SelectiveJudgeTests"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_source_answer_bank.py",
+      "group": "Huntrix",
+      "kind": "test",
+      "title": "test_source_answer_bank.py",
+      "bytes": 5758,
+      "sha256": "de5b6c88ce34f51547f29abfbc6d9000a43348315dfbb27bb37d0828a6c7fe25",
+      "symbols": [
+        "mcq",
+        "open_qa",
+        "CanonicalAnswerTest",
+        "ComparatorTest"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_source_artifact_overrides.py",
+      "group": "Huntrix",
+      "kind": "test",
+      "title": "test_source_artifact_overrides.py",
+      "bytes": 1461,
+      "sha256": "302ba072a1f191681710d38850d805c8159486a553cf441ae8ad18d59c877f2d",
+      "symbols": [
+        "SourceArtifactTests"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_structured_overrides.py",
+      "group": "Huntrix",
+      "kind": "test",
+      "title": "test_structured_overrides.py",
+      "bytes": 8644,
+      "sha256": "6e251356284b95a4a2e651a012fa866deafdc406077bb24528cff20a018b1537",
+      "symbols": [
+        "MathSolverTest",
+        "SandhiSolverTest"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_typed_evidence.py",
+      "group": "Huntrix",
+      "kind": "test",
+      "title": "test_typed_evidence.py",
+      "bytes": 3442,
+      "sha256": "0a737963a6f6698502a97312430f01da2e879462f7cfc3f267dcd6b9636fddd3",
+      "symbols": [
+        "TypedEvidenceTests"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_typed_idiom_matcher.py",
+      "group": "Huntrix",
+      "kind": "test",
+      "title": "test_typed_idiom_matcher.py",
+      "bytes": 3279,
+      "sha256": "f3a1c5b0d96f8b71c51619969a7d150320b29c60df80afad35771fff643e5df5",
+      "symbols": [
+        "TypedIdiomMatcherTests"
+      ]
+    },
+    {
+      "path": "references/IUTCSFESTDATATHON-main/tests/test_verified_fact_overrides.py",
+      "group": "Huntrix",
+      "kind": "test",
+      "title": "test_verified_fact_overrides.py",
+      "bytes": 13684,
+      "sha256": "e53a0a7b47613d0f9e565cfccff0149b4a217526019d167d0028b13d03bb120b",
+      "symbols": [
+        "VerifiedFactOverrideTests"
+      ]
+    },
+    {
+      "path": "references/IUT_DATATHON_HALLU-main/.gitignore",
+      "group": "CUET_AL_Masaar",
+      "kind": "config",
+      "title": ".gitignore",
+      "bytes": 4628,
+      "sha256": "fe07aeae2cfd1ff2ce4c0c5911dfbb550a3f1065e213175039abadfc3a5a15bb",
+      "symbols": []
+    },
+    {
+      "path": "references/IUT_DATATHON_HALLU-main/CUET_AL_Masaar_inference_notebook.ipynb",
+      "group": "CUET_AL_Masaar",
+      "kind": "notebook",
+      "title": "CUET_AL_Masaar_inference_notebook.ipynb",
+      "bytes": 102806,
+      "sha256": "94edeeab4f35118ee2539384c2c0a2a333d80ea6ea95591f4b5c83c66ec1cb64",
+      "symbols": [
+        "find",
+        "norm_df",
+        "bn_norm",
+        "keyify2",
+        "nfc",
+        "squash",
+        "wtoks",
+        "toks",
+        "sub_ok",
+        "span_in",
+        "tokf1",
+        "_clean",
+        "_tokval",
+        "_chunk",
+        "numvals",
+        "deep_norm",
+        "sub_ok2",
+        "_mg",
+        "quoted_hw",
+        "extract_birth",
+        "is_when_birth",
+        "subject_in_ctx",
+        "_idiom_pred",
+        "label_row3",
+        "qn2",
+        "goldkey",
+        "clean_meanings",
+        "idiom_key",
+        "ptype",
+        "idiom_fig",
+        "samas_type",
+        "same_samas",
+        "grammar",
+        "stack3",
+        "make_map",
+        "judge_margin",
+        "run_margins",
+        "_nf",
+        "mnums",
+        "_close",
+        "_lcm",
+        "_solve1",
+        "solve_math",
+        "_fr",
+        "_ok",
+        "_quad",
+        "T_quad_ineq",
+        "T_equal_roots",
+        "T_perfect_sq_p",
+        "T_root_k",
+        "T_sym_sum",
+        "T_log",
+        "T_bracket",
+        "T_sqrt_eval",
+        "T_frac_of",
+        "T_fib",
+        "T_geo_series",
+        "T_binary_add",
+        "T_hex_bin",
+        "T_clock_until",
+        "T_chimes",
+        "T_quad_angles",
+        "T_compound",
+        "T_equilateral",
+        "T_sq_area",
+        "T_wood",
+        "solve_math2",
+        "T_weekday",
+        "_rn",
+        "_isint",
+        "_trunc_ok",
+        "repair_general",
+        "nfc72",
+        "has_ctx72",
+        "month_of",
+        "extract_dmy",
+        "is_date_q",
+        "is_birth_q",
+        "is_death_q",
+        "birth_slot",
+        "death_slot",
+        "cmp_date",
+        "layer1",
+        "is_prime",
+        "layer2",
+        "_tset",
+        "tset_stem",
+        "bio_years",
+        "subject_tokens",
+        "retrieve_entity_bio",
+        "layer3",
+        "solve",
+        "cnorm",
+        "cn",
+        "ckey",
+        "faith_only",
+        "build"
+      ]
+    },
+    {
+      "path": "references/IUT_DATATHON_HALLU-main/CUET_AL_Masaar_presentation.pdf",
+      "group": "CUET_AL_Masaar",
+      "kind": "presentation",
+      "title": "CUET_AL_Masaar_presentation.pdf",
+      "bytes": 653865,
+      "sha256": "f3cb5d7ee46cc459934e5766b5ae7cc1fb48e76c137319813442c7cc5c6bb512",
+      "symbols": []
+    },
+    {
+      "path": "references/IUT_DATATHON_HALLU-main/CUET_AL_Masaar_report.pdf",
+      "group": "CUET_AL_Masaar",
+      "kind": "paper",
+      "title": "CUET_AL_Masaar_report.pdf",
+      "bytes": 131039,
+      "sha256": "07d49a94f2a5af73a9d6483182914093ed220c353582aa2076b8c83aa065364e",
+      "symbols": []
+    },
+    {
+      "path": "references/IUT_DATATHON_HALLU-main/LICENSE",
+      "group": "CUET_AL_Masaar",
+      "kind": "license",
+      "title": "LICENSE",
+      "bytes": 1070,
+      "sha256": "aaeb1233c843e1140dd2abb00e2c7e7b9c6182643daf3189c015711032267ca2",
+      "symbols": []
+    },
+    {
+      "path": "references/IUT_DATATHON_HALLU-main/README.md",
+      "group": "CUET_AL_Masaar",
+      "kind": "documentation",
+      "title": "অলীকবচন — Bengali LLM Hallucination Detection (IUT 12th ICT Fest Datathon 2026)",
+      "bytes": 7538,
+      "sha256": "f96a1a06158cbacd8421ec09a445c897c99bfb3f63f33a43435a8ddeaabf3e68",
+      "symbols": []
+    },
+    {
+      "path": "references/README.md",
+      "group": "Workspace",
+      "kind": "documentation",
+      "title": "Preserved research references",
+      "bytes": 2050,
+      "sha256": "49cb0842a16bbc21a607b372e9503927123be497be895eb8f4033b559edfed46",
+      "symbols": []
+    },
+    {
+      "path": "results/README.md",
+      "group": "Workspace",
+      "kind": "documentation",
+      "title": "Derived evaluation reports",
+      "bytes": 727,
+      "sha256": "8065df8077268ac338654786ad913714b00656502c417bff57c94d22fc051f98",
+      "symbols": []
+    },
+    {
+      "path": "tools/README.md",
+      "group": "Workspace",
+      "kind": "documentation",
+      "title": "Workspace navigation and integrity tools",
+      "bytes": 2202,
+      "sha256": "70142cff1fd156e35664715750b8516cf6da728401a4d43056d1aea1307f5a87",
+      "symbols": []
+    },
+    {
+      "path": "tools/test_workspace.py",
+      "group": "Workspace",
+      "kind": "test",
+      "title": "test_workspace.py",
+      "bytes": 17422,
+      "sha256": "5d120e13c7dc3536239c1965b526d6f2fbac737dc1aa25efaea9ce5c97e38878",
+      "symbols": [
+        "WorkspaceTests"
+      ]
+    },
+    {
+      "path": "tools/workspace.py",
+      "group": "Workspace",
+      "kind": "sourcecode",
+      "title": "workspace.py",
+      "bytes": 18156,
+      "sha256": "2fb471d5dea761983de7412d25b7a677bb7b413d2669fba1e9c1e1f633c21f26",
+      "symbols": [
+        "is_link",
+        "safe_path",
+        "digest",
+        "kind_of",
+        "heading",
+        "symbols",
+        "metadata",
+        "inventory",
+        "csv_text",
+        "atomic_write",
+        "catalog",
+        "find",
+        "preservation_migrations",
+        "verify",
+        "positive",
+        "main"
+      ]
+    },
+    {
+      "path": "writing/README.md",
+      "group": "Workspace",
+      "kind": "documentation",
+      "title": "Thesis writing and publication assets",
+      "bytes": 1137,
+      "sha256": "a6bf453979c822801ceb6f19af4b1f95b19cfec5baed1339d6fb35f041351827",
+      "symbols": []
+    },
+    {
+      "path": "writing/chapters/README.md",
+      "group": "Workspace",
+      "kind": "documentation",
+      "title": "Original thesis chapters",
+      "bytes": 1025,
+      "sha256": "cfde10620b543aa3364267e878e988b4dca795f2c33be658d241052b93d8829c",
+      "symbols": []
+    },
+    {
+      "path": "writing/figures/README.md",
+      "group": "Workspace",
+      "kind": "figure",
+      "title": "Reviewed thesis figures",
+      "bytes": 500,
+      "sha256": "71114083c437825448b98c5daad2cbc0b87e9492f1d7866140b29ae2ab87ce92",
+      "symbols": []
+    },
+    {
+      "path": "writing/tables/README.md",
+      "group": "Workspace",
+      "kind": "documentation",
+      "title": "Reviewed thesis tables",
+      "bytes": 475,
+      "sha256": "104b50cc99cd0979d8d590f7647a790d54821a7912096b60adb4c15586bc2fa3",
+      "symbols": []
+    }
+  ]
+}

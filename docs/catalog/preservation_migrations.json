@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "migrations": [
+    {
+      "baseline_path": "evaluation/eval.py",
+      "preserved_path": "experiments/pipeline_hardening/original_evaluation/eval.py",
+      "reason": "User-authorized hardening after code review; original bytes retained"
+    },
+    {
+      "baseline_path": "evaluation/make_splits.py",
+      "preserved_path": "experiments/pipeline_hardening/original_evaluation/make_splits.py",
+      "reason": "User-authorized hardening after code review; original bytes retained"
+    },
+    {
+      "baseline_path": "evaluation/test_pipeline.py",
+      "preserved_path": "experiments/pipeline_hardening/original_evaluation/test_pipeline.py",
+      "reason": "User-authorized hardening after code review; original bytes retained"
+    }
+  ]
+}
