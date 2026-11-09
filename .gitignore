@@ -21,6 +21,8 @@ __pycache__/
 /outputs/**/*.jsonl
 /outputs/**/*.lock
 /outputs/**/*.tmp
+# New corrected-v2 journals contain raw benchmark text; keep local by default.
+/01_Thesis/Results/BenHalluEval/corrected_v2_*/outputs/
 
 # Temporary files and writing build products
 *.tmp
@@ -28,6 +30,9 @@ __pycache__/
 *.fdb_latexmk
 *.fls
 *.synctex.gz
+
+# Local knowledge graph and source-linked navigation artifacts
+/graphify-out/
 
 # Preserve catalogs, protocols, summaries, and all imported material.
 # Git ignore rules do not provide confidentiality or a backup.

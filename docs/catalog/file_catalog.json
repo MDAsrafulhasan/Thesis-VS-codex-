@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-11-07T19:48:55.403930+00:00",
+  "generated_utc": "2026-11-08T16:43:28.978417+00:00",
   "notes": [
     "Metadata only: no code execution, notebook outputs, or data row values.",
     "Titles use filenames or the first Markdown heading, not README claims; slide counts, versions, and other README drift are not inferred.",
@@ -9,12 +9,21 @@
   ],
   "files": [
     {
+      "path": ".github/skills/graphify/SKILL.md",
+      "group": "Workspace",
+      "kind": "documentation",
+      "title": "Graphify",
+      "bytes": 3170,
+      "sha256": "2ced382d7918f26d1966402d674eaa1940b5d1c5f4deafa96d440800c1b4779c",
+      "symbols": []
+    },
+    {
       "path": ".gitignore",
       "group": "Workspace",
       "kind": "config",
       "title": ".gitignore",
-      "bytes": 680,
-      "sha256": "5c88dcee3af2c36d36788d5f9072b9cd5ffe08327090444b38e436dd6bce5f05",
+      "bytes": 932,
+      "sha256": "69b85b606bbac7d7ea6ddee2c560e8e8ab0edb12b4099c603f09ea4cb569b83b",
       "symbols": []
     },
     {
@@ -22,8 +31,8 @@
       "group": "Workspace",
       "kind": "documentation",
       "title": "Evaluation pipeline guide",
-      "bytes": 5738,
-      "sha256": "5d597cfc9249de135d934e8465098d101e94218b21e0121be113f82a6e957d15",
+      "bytes": 10834,
+      "sha256": "96aa3025db621c022b30dddcaf1fddbda5cdc41826e47ba1523b7484f7819876",
       "symbols": []
     },
     {
@@ -31,8 +40,8 @@
       "group": "Workspace",
       "kind": "sourcecode",
       "title": "eval.py",
-      "bytes": 54002,
-      "sha256": "ddebec24f2396855283fd430a0a606643aa0d5c836bf8cdc23e49cfeadf1b2f5",
+      "bytes": 54958,
+      "sha256": "ba2bdcc07315f2baa46c5e38a43ece41216735db662b19e726033200d4df0991",
       "symbols": [
         "_array",
         "_weights",
@@ -68,8 +77,8 @@
       "group": "Workspace",
       "kind": "sourcecode",
       "title": "judge_parsing.py",
-      "bytes": 10821,
-      "sha256": "1cf4f750961d6e61e52d7e7fce45d328359780e62b8741de91e9d3e3a7ef7f57",
+      "bytes": 11070,
+      "sha256": "f86547e56224d99264511d0752f8a3c3d84b9be622d4d207c8224ce78a097435",
       "symbols": [
         "_binary",
         "_score",
@@ -90,8 +99,8 @@
       "group": "Workspace",
       "kind": "sourcecode",
       "title": "judge_transport.py",
-      "bytes": 13919,
-      "sha256": "d2ada5904f001c9c7ab9de9c7227b761c8537d5b66dec94bc0b084755b40d817",
+      "bytes": 14212,
+      "sha256": "017a57531ad158b18b851c2c6c0d5c207c86aef94ce1951cabff162817b45dc2",
       "symbols": [
         "InferenceResponse",
         "_origin",
@@ -112,8 +121,8 @@
       "group": "Workspace",
       "kind": "sourcecode",
       "title": "make_splits.py",
-      "bytes": 54629,
-      "sha256": "9892c5ff812a01e1353cd6fe4237309c0b8f1cf98b87eafd30fc3e3459e75df8",
+      "bytes": 55609,
+      "sha256": "bd00fb55d5eff668d3785f5e91e8d7662f53ef3e66d4471fbc7fea95b19127e0",
       "symbols": [
         "_seed",
         "_require_columns",
@@ -157,11 +166,60 @@
       "group": "Workspace",
       "kind": "sourcecode",
       "title": "openrouter_config.py",
-      "bytes": 5315,
-      "sha256": "73a398d93190951875f703defd65b1578d09878dd976d727060b42a7a0c2d7ef",
+      "bytes": 5435,
+      "sha256": "1d285eaf4b91625fcdf79d6242cdb18511ac5c33cb45466357c433c16c30bf61",
       "symbols": [
         "get_openrouter_judge",
         "sample_dataset"
+      ]
+    },
+    {
+      "path": "01_Thesis/Code/Evaluation_Pipeline/pipeline_v2_features.py",
+      "group": "Workspace",
+      "kind": "sourcecode",
+      "title": "pipeline_v2_features.py",
+      "bytes": 35022,
+      "sha256": "7427fb7974d0432284deae15da10b10af3ca6388c81cbc69759fa8b99fa12a7b",
+      "symbols": [
+        "_number",
+        "_mean",
+        "_digest",
+        "_math_module",
+        "_reject_leakage",
+        "_balanced",
+        "_passages",
+        "_selected",
+        "feature_vector",
+        "NeuralStages"
+      ]
+    },
+    {
+      "path": "01_Thesis/Code/Evaluation_Pipeline/pipeline_v2_math.py",
+      "group": "Workspace",
+      "kind": "sourcecode",
+      "title": "pipeline_v2_math.py",
+      "bytes": 37088,
+      "sha256": "567ab540f1d41fd6092c6cb218736e11bf432e574d241bffb2e32cc202a0f3a7",
+      "symbols": [
+        "_finite_scalar",
+        "_probability",
+        "_vector",
+        "canonicalize",
+        "dual_views",
+        "hash13",
+        "sigmoid_score",
+        "js_divergence",
+        "smooth_extrema",
+        "route",
+        "polarity_rrf",
+        "_labels",
+        "operational_bhs",
+        "conformal_quantile",
+        "prediction_set",
+        "cad_logits",
+        "_LexicalModel",
+        "_MetaFold",
+        "GroupedMetaModel"
       ]
     },
     {
@@ -169,8 +227,8 @@
       "group": "Workspace",
       "kind": "sourcecode",
       "title": "run_openrouter.py",
-      "bytes": 8114,
-      "sha256": "7f20a65f19186fb90d2a79b5ed4f52cf112c7bc9e137b12e95eedee2a1d5ebd4",
+      "bytes": 8313,
+      "sha256": "8662a49d8ec259434c3163f5bf923e3c5c8b44968ce1d578d86dfef05922785c",
       "symbols": [
         "main"
       ]
@@ -180,8 +238,8 @@
       "group": "Workspace",
       "kind": "test",
       "title": "test_pipeline.py",
-      "bytes": 80103,
-      "sha256": "738c04f351b7ecd7a75db174d9276fc2d311a035c68763e29bfb4b2b59222da4",
+      "bytes": 81951,
+      "sha256": "c2d81860cc68e955afa0dd08fc9930903bcca57076a241769bbc48fbeadf186b",
       "symbols": [
         "benhallu_full",
         "dialect_full",
@@ -279,6 +337,58 @@
       ]
     },
     {
+      "path": "01_Thesis/Code/Evaluation_Pipeline/test_pipeline_v2.py",
+      "group": "Workspace",
+      "kind": "test",
+      "title": "test_pipeline_v2.py",
+      "bytes": 28032,
+      "sha256": "39358e5d2a2fc0a8b3dafc4222a22592bc906f00b5d11fcc4a051af35c787a31",
+      "symbols": [
+        "v2_math",
+        "test_math_contract_exports",
+        "test_canonicalize_preserves_signs_and_collapses_whitespace",
+        "test_dual_views_identity_protection_and_whole_token_mapping",
+        "test_hash13_protocol_boundaries_and_whitespace",
+        "test_sigmoid_score_stable_hallucination_orientation",
+        "test_js_divergence_bounds_symmetry_and_formula",
+        "test_smooth_extrema_matches_weighted_formula_and_hard_guards",
+        "test_smooth_extrema_empty_tiny_temperature_and_zero_weight_guards",
+        "test_route_context_math_conflict_and_threshold_guards",
+        "test_polarity_rrf_never_turns_counterevidence_into_support",
+        "test_operational_bhs_is_error_percentage",
+        "test_operational_bhs_failures_both_tracks_and_valid_only",
+        "test_operational_bhs_absent_track_undefined",
+        "test_conformal_quantile_finite_sample_order_without_interpolation",
+        "test_prediction_set_hallucinated_probability_and_inclusive_boundary",
+        "test_cad_logits_uses_aligned_logits_then_normalizes",
+        "test_math_rejects_invalid_inputs",
+        "no_network",
+        "runner",
+        "canonical_row",
+        "_token_response",
+        "test_judge_prompt_allowlists_only_scientific_input",
+        "test_parse_token_score_exact_labels_and_orientation",
+        "test_parse_token_score_missing_censored_or_nonfinite_is_not_probability",
+        "test_evaluate_judge_injected_generate_two_label_success",
+        "test_evaluate_judge_decoded_fallback_without_fabricated_probability",
+        "test_evaluate_judge_malformed_response_remains_failed",
+        "test_evaluate_judge_transport_error_is_recorded_not_faithful",
+        "test_read_journal_repairs_only_torn_tail",
+        "test_read_journal_missing_and_complete_unterminated_line",
+        "test_read_journal_rejects_interior_or_terminated_corruption",
+        "_write_rows_csv",
+        "test_load_rows_validates_thesis_binary_track_semantics",
+        "test_load_rows_rejects_nonbinary_or_inconsistent_metadata",
+        "test_load_rows_rejects_duplicate_ids",
+        "test_summary_complete_counts_failures_and_partial_withholds_final_bhs",
+        "v2_features",
+        "test_feature_vector_synthetic_order_and_missing_indicators",
+        "test_no_context_enrichment_never_loads_neural_models",
+        "test_synthetic_feature_aggregation_retains_incomplete_claim_guard",
+        "test_grouped_meta_nested_missing_feature_fit_and_conformal_quantile"
+      ]
+    },
+    {
       "path": "01_Thesis/Code/Evaluation_Pipeline/update_evaluation.py",
       "group": "Workspace",
       "kind": "sourcecode",
@@ -338,12 +448,41 @@
       ]
     },
     {
+      "path": "01_Thesis/Code/Evaluation_Pipeline/update_pipeline_evaluation.py",
+      "group": "Workspace",
+      "kind": "sourcecode",
+      "title": "update_pipeline_evaluation.py",
+      "bytes": 36579,
+      "sha256": "7537e7051ee93fc5282aa146464729346234260ea3902df792c6aded09ff463d",
+      "symbols": [
+        "sha",
+        "fingerprint",
+        "slug",
+        "write_json",
+        "append_json",
+        "read_journal",
+        "load_rows",
+        "model_input",
+        "judge_prompt",
+        "source_keys",
+        "LocalOllama",
+        "parse_token_score",
+        "extract_claims",
+        "evaluate_judge",
+        "summary",
+        "write_reports",
+        "fit_artifact",
+        "run",
+        "main"
+      ]
+    },
+    {
       "path": "01_Thesis/Data/BenHalluEval/Processed/Splits/benhallu_full_16k.csv",
       "group": "Workspace",
       "kind": "data",
       "title": "benhallu_full_16k.csv",
-      "bytes": 22134186,
-      "sha256": "1efee6d256fcb566a3304f2930f69d08071514b5cceaef5d22c76bbe948654fb",
+      "bytes": 22150187,
+      "sha256": "76ab42e38e7c3f6bbd33afdfbec72881b070efb462ef61f4c874e77de57d621b",
       "symbols": [],
       "csv_headers": [
         "id",
@@ -362,8 +501,8 @@
       "group": "Workspace",
       "kind": "data",
       "title": "benhallu_micro_debug_120.csv",
-      "bytes": 162349,
-      "sha256": "4b3c91e4e2b7ec2e3f2df683a01c4d2b956024a267651a76f96f5cab740b38a6",
+      "bytes": 162470,
+      "sha256": "76fc9646be24fa8663840add69052a32f29e223eaa034fc2fe7c7a52ce5d7feb",
       "symbols": [],
       "csv_headers": [
         "id",
@@ -382,8 +521,8 @@
       "group": "Workspace",
       "kind": "data",
       "title": "benhallu_stratified_10pct.csv",
-      "bytes": 2196128,
-      "sha256": "80a9ad9ef8926771ad5232126cac65f5b6687bdb1079558ad95803beba75ab22",
+      "bytes": 2197729,
+      "sha256": "df8521d3acdb709d62dee9efec150ef2363efb6dc57009d0e227d7fe6205e92e",
       "symbols": [],
       "csv_headers": [
         "id",
@@ -402,8 +541,8 @@
       "group": "Workspace",
       "kind": "data",
       "title": "track_a_b_first10_each.csv",
-      "bytes": 34573,
-      "sha256": "2caf8a9d045b2b13765bff3d4612fb6f23089cf9089b0a91a346151c9525e5e3",
+      "bytes": 34594,
+      "sha256": "3e335d3c30f80004fe02db111e623c281b953b22a875ad01da061098ee7497d4",
       "symbols": [],
       "csv_headers": [
         "id",
@@ -422,8 +561,8 @@
       "group": "Workspace",
       "kind": "data",
       "title": "track_a_first10_full.csv",
-      "bytes": 18441,
-      "sha256": "f4417cdd1e5db2796722a3f95d14b908a78886ff501a7ffbec3c7ab0e777174b",
+      "bytes": 18452,
+      "sha256": "48d8bbc9b88e3c1d5c09ca21b03b4a34b1bd6b81c95c02ee4600156d8a128da6",
       "symbols": [],
       "csv_headers": [
         "id",
@@ -598,8 +737,8 @@
       "group": "Workspace",
       "kind": "data",
       "title": "SHA256_MANIFEST.csv",
-      "bytes": 1350,
-      "sha256": "a230293abaa8de0973c76f7e3f87c7183ba41633b4c013bf4449d6d4c60ece63",
+      "bytes": 1362,
+      "sha256": "dc4eb853703d18718c2483bbaad46ee723e2de77fcf2ee29f682ef15cb998e70",
       "symbols": [],
       "csv_headers": [
         "Area",
@@ -614,8 +753,8 @@
       "group": "Workspace",
       "kind": "documentation",
       "title": "Real dialect benchmark not yet supplied",
-      "bytes": 826,
-      "sha256": "017850a61c4f4c38b89ce703c5fe3c2683d51cb9fada70db4e87b4a5446ce441",
+      "bytes": 835,
+      "sha256": "23020705e774bff753bf7b36f27a4fe1c836f64f9b8617a675075d45aa65a407",
       "symbols": []
     },
     {
@@ -623,8 +762,8 @@
       "group": "Workspace",
       "kind": "documentation",
       "title": "Evaluation Pipeline and Optimization Audit Report",
-      "bytes": 17117,
-      "sha256": "a7664804a824428a0c0e410f894d2c1e94724eec3a1c2228c91cfe25eeeada24",
+      "bytes": 17348,
+      "sha256": "988e676045c88bb089e2bc5a0633bb61a208fd60045cee9ff901be2cfb24abfb",
       "symbols": []
     },
     {
@@ -632,8 +771,8 @@
       "group": "Workspace",
       "kind": "documentation",
       "title": "Code review: evaluation, workspace tools, and preserved research",
-      "bytes": 18396,
-      "sha256": "ceec41f9601e0600e616a81f74651bcfe9f0365169ae41a8d4cae4e39ab501b6",
+      "bytes": 18641,
+      "sha256": "927100b69b8785fffefd0f76569bf16d6ce319ee92522922b697ae5edf67368a",
       "symbols": []
     },
     {
@@ -641,8 +780,17 @@
       "group": "Workspace",
       "kind": "documentation",
       "title": "Data guide and integration boundaries",
-      "bytes": 7893,
-      "sha256": "00366e7be40ec67fbc732af2232e788c838b811fdff5fcaf8f24d4df1d4133de",
+      "bytes": 7994,
+      "sha256": "c849d1d1166cf28255ebf4be467c33d483f404cb08a7f9521dba27de642c1b55",
+      "symbols": []
+    },
+    {
+      "path": "01_Thesis/Docs/MASTER_ARCHITECTURE.md",
+      "group": "Workspace",
+      "kind": "documentation",
+      "title": "BenHalluEval: Standalone Top 1% Master Architecture for Bengali LLM Hallucination Detection",
+      "bytes": 23036,
+      "sha256": "371675e57c848b42675b89ba84333b20f2949996742736abbf287adeda3ac11a",
       "symbols": []
     },
     {
@@ -650,8 +798,8 @@
       "group": "Workspace",
       "kind": "documentation",
       "title": "Workspace organization record",
-      "bytes": 3593,
-      "sha256": "9aac78cf1e22d47f61bd7fe79270895ebbd1637b67972adf89859de80aa4305b",
+      "bytes": 3646,
+      "sha256": "7604ab25e4bf8561119d9afbdd78e8efe79313ed2992b19fd346e0c7b29137c8",
       "symbols": []
     },
     {
@@ -659,8 +807,8 @@
       "group": "Workspace",
       "kind": "documentation",
       "title": "Research reuse map: Huntrix and CUET_AL_Masaar",
-      "bytes": 19050,
-      "sha256": "de1b1a612a3a9f3504b2a41855604f753768e930923c63d6016653d5c624c42a",
+      "bytes": 19233,
+      "sha256": "4ca7dd41b2276cc8898a7d90aeab287c22325230f64957206beb0698a795fd3e",
       "symbols": []
     },
     {
@@ -668,8 +816,8 @@
       "group": "Workspace",
       "kind": "documentation",
       "title": "Reproducible thesis workflow",
-      "bytes": 8748,
-      "sha256": "8658f659d74e1544dadef7c4ef1df4453e559ab87d5616a97520501fd3367f4f",
+      "bytes": 8865,
+      "sha256": "1e6826c63338dc703216d66331abb24104b7830b1f9d42a94c9780f3b586312a",
       "symbols": []
     },
     {
@@ -677,8 +825,8 @@
       "group": "Workspace",
       "kind": "documentation",
       "title": "Workspace file index",
-      "bytes": 66835,
-      "sha256": "e6e70938a945e255cf2ce4f826474377bfce01c7a01a451815c06b9cf231c8cc",
+      "bytes": 67275,
+      "sha256": "806a4a200cca2edd6d535daecfab4a1b7b1d0770b85291fac5e98b81173522ef",
       "symbols": []
     },
     {
@@ -724,8 +872,8 @@
       "group": "Workspace",
       "kind": "config",
       "title": "file_catalog.json",
-      "bytes": 151007,
-      "sha256": "9421bf5ffcbc595769f9caa76ed572b57015eebdddb22af6fa0dc1367ad382ac",
+      "bytes": 155649,
+      "sha256": "a907b9f0c90712d56163e3ad743feedff49cc7d74bb83b712de80659a562184e",
       "symbols": []
     },
     {
@@ -733,8 +881,8 @@
       "group": "Workspace",
       "kind": "config",
       "title": "original_files.json",
-      "bytes": 89039,
-      "sha256": "f594662850a5482370569a79803d8b2436efb6daedb8875b98c1335bde0f9289",
+      "bytes": 90820,
+      "sha256": "399e0cd967e35746305ae1e22fa84c0ee51369d52e2bac378d3a246b6ec02dcc",
       "symbols": []
     },
     {
@@ -742,17 +890,194 @@
       "group": "Workspace",
       "kind": "config",
       "title": "preservation_migrations.json",
-      "bytes": 773,
-      "sha256": "b8112c6e4fa0361d75a5f4eb1e7d7de8f940c14c2e32ffe5838f5c9663ff3f5b",
+      "bytes": 793,
+      "sha256": "1408f7d0083e2456436c596512eb4f96185815ef38000a524d7288ba69285298",
       "symbols": []
+    },
+    {
+      "path": "01_Thesis/Experiments/2026-11-08_corrected_v2_20row/PROTOCOL.md",
+      "group": "Workspace",
+      "kind": "documentation",
+      "title": "Corrected-v2 local 20-row detection pilot",
+      "bytes": 6184,
+      "sha256": "bca551876313b9bffe5817d241aca76b02c04ccc32c65e4d7d3f348f3f81c825",
+      "symbols": []
+    },
+    {
+      "path": "01_Thesis/Experiments/2026-11-08_corrected_v2_20row/RESULTS.md",
+      "group": "Workspace",
+      "kind": "documentation",
+      "title": "Corrected-v2 evaluation: completed 20-row results",
+      "bytes": 12822,
+      "sha256": "a4c2fdfe06fa2fe0805b96611ea65ebc6dc2bfad0963dae000b8d685717e04ab",
+      "symbols": []
+    },
+    {
+      "path": "01_Thesis/Experiments/2026-11-08_corrected_v2_20row/executed_source/judge_parsing.py",
+      "group": "Workspace",
+      "kind": "sourcecode",
+      "title": "judge_parsing.py",
+      "bytes": 11070,
+      "sha256": "f86547e56224d99264511d0752f8a3c3d84b9be622d4d207c8224ce78a097435",
+      "symbols": [
+        "_binary",
+        "_score",
+        "_words",
+        "_has_repetition",
+        "_unique_object",
+        "_invalid_constant",
+        "_json_value",
+        "_explicit_value",
+        "_extract",
+        "_parse",
+        "parse_judge_output",
+        "parse_score_output"
+      ]
+    },
+    {
+      "path": "01_Thesis/Experiments/2026-11-08_corrected_v2_20row/executed_source/pipeline_v2_features.py",
+      "group": "Workspace",
+      "kind": "sourcecode",
+      "title": "pipeline_v2_features.py",
+      "bytes": 34829,
+      "sha256": "3e095adc4dc74f40595bdf374717ee65dd0754b41e61f85661cb45832fedd3e5",
+      "symbols": [
+        "_number",
+        "_mean",
+        "_digest",
+        "_math_module",
+        "_reject_leakage",
+        "_balanced",
+        "_passages",
+        "_selected",
+        "feature_vector",
+        "NeuralStages"
+      ]
+    },
+    {
+      "path": "01_Thesis/Experiments/2026-11-08_corrected_v2_20row/executed_source/pipeline_v2_math.py",
+      "group": "Workspace",
+      "kind": "sourcecode",
+      "title": "pipeline_v2_math.py",
+      "bytes": 37023,
+      "sha256": "c8f361ab4c24f5d0d8240aa08d2b384f4f84cd34ca05e5ce82bc082403528d82",
+      "symbols": [
+        "_finite_scalar",
+        "_probability",
+        "_vector",
+        "canonicalize",
+        "dual_views",
+        "hash13",
+        "sigmoid_score",
+        "js_divergence",
+        "smooth_extrema",
+        "route",
+        "polarity_rrf",
+        "_labels",
+        "operational_bhs",
+        "conformal_quantile",
+        "prediction_set",
+        "cad_logits",
+        "_LexicalModel",
+        "_MetaFold",
+        "GroupedMetaModel"
+      ]
+    },
+    {
+      "path": "01_Thesis/Experiments/2026-11-08_corrected_v2_20row/executed_source/update_evaluation.py",
+      "group": "Workspace",
+      "kind": "sourcecode",
+      "title": "update_evaluation.py",
+      "bytes": 79812,
+      "sha256": "ec2a6efbdfd3b8756789782dc189f3c02409f545d78a5d03a788f32781bae390",
+      "symbols": [
+        "sha256_text",
+        "canonicalize",
+        "word_tokens",
+        "split_sentences",
+        "fallback_claims",
+        "safe_parse_json",
+        "OllamaClient",
+        "is_repetition_collapse",
+        "parse_claims_response",
+        "qg_prompt",
+        "logit_prompt",
+        "first_token_probabilities",
+        "file_sha256",
+        "resolve_hf_revision",
+        "read_primary",
+        "load_banglish_map",
+        "prepare_data",
+        "row_fingerprint",
+        "load_cache",
+        "append_cache",
+        "sentence_docs",
+        "tokenize_for_bm25",
+        "BM25Index",
+        "batched",
+        "build_evidence_corpus",
+        "build_queries",
+        "stage1_qg_and_logits",
+        "stage2_retrieve",
+        "_token_fertility",
+        "stage3_qa",
+        "nli_label_indices",
+        "stage3_nli",
+        "stage3_xlmr_recall",
+        "safe_mean",
+        "extract_nli_features",
+        "lexical_features",
+        "full_feature_row",
+        "optimize_regime_thresholds",
+        "bhs_for_predictions",
+        "fit_meta_ensemble",
+        "exact_memory_key",
+        "baseline_records",
+        "paired_comparison",
+        "append_manifest",
+        "markdown_table",
+        "write_pipeline_report",
+        "build_parser",
+        "_run",
+        "main"
+      ]
+    },
+    {
+      "path": "01_Thesis/Experiments/2026-11-08_corrected_v2_20row/executed_source/update_pipeline_evaluation.py",
+      "group": "Workspace",
+      "kind": "sourcecode",
+      "title": "update_pipeline_evaluation.py",
+      "bytes": 35554,
+      "sha256": "826dac621d23549f37dab9101a87e12807c39c6b682663eee724bd3a72a57dac",
+      "symbols": [
+        "sha",
+        "fingerprint",
+        "slug",
+        "write_json",
+        "append_json",
+        "read_journal",
+        "load_rows",
+        "model_input",
+        "judge_prompt",
+        "source_keys",
+        "LocalOllama",
+        "parse_token_score",
+        "extract_claims",
+        "evaluate_judge",
+        "summary",
+        "write_reports",
+        "fit_artifact",
+        "run",
+        "main"
+      ]
     },
     {
       "path": "01_Thesis/Experiments/README.md",
       "group": "Workspace",
       "kind": "documentation",
       "title": "Experiment records",
-      "bytes": 1028,
-      "sha256": "1c0e1f099f22d3880639ff15c4ddd68bdd6358405702f664a6004c66d9162cf6",
+      "bytes": 1041,
+      "sha256": "b283483480cecf4c3a83374c77e999d384a31e8d9224198f985ec9627233d907",
       "symbols": []
     },
     {
@@ -760,8 +1085,8 @@
       "group": "Workspace",
       "kind": "documentation",
       "title": "Experiment record",
-      "bytes": 3250,
-      "sha256": "34d0873c35f0f9c44444f80affe37b6135a854ce992170abf58ffec5dd3965ae",
+      "bytes": 3317,
+      "sha256": "26d859695274b7e5ea2035dc19e53ed77c123b6d98950630166db22980680d53",
       "symbols": []
     },
     {
@@ -769,8 +1094,8 @@
       "group": "Workspace",
       "kind": "sourcecode",
       "title": "eval.py",
-      "bytes": 47301,
-      "sha256": "85e1e8a35a2ffb8b508082811f41fe3378d9fb4da73eb01cdbbbd248099390e9",
+      "bytes": 48129,
+      "sha256": "4dccdd8dc51b0656914af7e8262df43a788b0f08ffea7d3452d310eeb11e3684",
       "symbols": [
         "_array",
         "_weights",
@@ -812,8 +1137,8 @@
       "group": "Workspace",
       "kind": "sourcecode",
       "title": "make_splits.py",
-      "bytes": 46925,
-      "sha256": "0c66c3745ff10cca9b5f589aa2afda5f1951fd6cae1598ce065833d692d30da4",
+      "bytes": 47760,
+      "sha256": "d1d63a4896eb5c892daf493046dc43459d1cd4cf872fbaa4428c6d8e21325f13",
       "symbols": [
         "_seed",
         "_require_columns",
@@ -852,8 +1177,8 @@
       "group": "Workspace",
       "kind": "test",
       "title": "test_pipeline.py",
-      "bytes": 62263,
-      "sha256": "9bd9fba63ca299b863994318a5a27e98e8cc958536c4e125da339eaf4c68a490",
+      "bytes": 63701,
+      "sha256": "02ce3acd4a619ed4e61aab458ebb8ede44831e6d641859d4ee1116a63d733b47",
       "symbols": [
         "benhallu_full",
         "dialect_full",
@@ -937,8 +1262,8 @@
       "group": "Workspace",
       "kind": "documentation",
       "title": "Reference Repairs and Adaptations",
-      "bytes": 1786,
-      "sha256": "fd753a4c8a57a6aa5fa66d6ee7744918ea364781394f24e4b2dac739040ce2d0",
+      "bytes": 1810,
+      "sha256": "0003775a67a4165462f2c043b38c469c6f9e794fff2b798e65144025a22e9cd8",
       "symbols": []
     },
     {
@@ -946,8 +1271,8 @@
       "group": "Workspace",
       "kind": "notebook",
       "title": "CUET_AL_Masaar_inference_notebook.repaired.ipynb",
-      "bytes": 102806,
-      "sha256": "94edeeab4f35118ee2539384c2c0a2a333d80ea6ea95591f4b5c83c66ec1cb64",
+      "bytes": 104949,
+      "sha256": "20f90a6f5f8d604b76107cf54ad198e57e98b4964e321712f317c1160801318a",
       "symbols": [
         "find",
         "norm_df",
@@ -1053,8 +1378,8 @@
       "group": "Workspace",
       "kind": "license",
       "title": "LICENSE",
-      "bytes": 1070,
-      "sha256": "aaeb1233c843e1140dd2abb00e2c7e7b9c6182643daf3189c015711032267ca2",
+      "bytes": 1091,
+      "sha256": "116e9b25b6076e2cd1f3e7a720d69e5d548a61025d708cf0af41df28f815b105",
       "symbols": []
     },
     {
@@ -1062,8 +1387,8 @@
       "group": "Workspace",
       "kind": "documentation",
       "title": "CUET_AL_Masaar Reference Adaptation",
-      "bytes": 962,
-      "sha256": "96f525ddbf7474a5c4ef7832b8a759173a9d7ad4bcd0e97bc66353305caf3bfe",
+      "bytes": 977,
+      "sha256": "681eb8300196ebcb8c0eb27afab7df930a458d979d90f294fbfc149990010e1a",
       "symbols": []
     },
     {
@@ -1071,8 +1396,8 @@
       "group": "Workspace",
       "kind": "license",
       "title": "LICENSE",
-      "bytes": 1069,
-      "sha256": "349b8b7ec9bfcf0a8134ef6f245c23f828be8bafa951061586df8553198e9cef",
+      "bytes": 1090,
+      "sha256": "61da3e70aa5140ce20b001aa3f63287bcff7fdd2c6287d504bfc90403f2cfbb4",
       "symbols": []
     },
     {
@@ -1080,8 +1405,8 @@
       "group": "Workspace",
       "kind": "documentation",
       "title": "Huntrix Reference Adaptation & Repairs",
-      "bytes": 1218,
-      "sha256": "2fc767fe71b9c13632d8873c3d328bcd9e7f5587a384feab6c4925f945f89d17",
+      "bytes": 1235,
+      "sha256": "a18d9fd089f0f218fe6f64bf5b87f67b6308174b5029129389b78b5c6bc557c6",
       "symbols": []
     },
     {
@@ -1089,8 +1414,8 @@
       "group": "Workspace",
       "kind": "notebook",
       "title": "Bengali Hallucination Detection - Gemma 12B QAT GGUF Submission",
-      "bytes": 16459,
-      "sha256": "1bb9796168abb86eae617eb071dc5cb527292009abdc8266ffaf32ab218ababe",
+      "bytes": 16855,
+      "sha256": "1413dda11495216ae56da59828dcb64e77e266001e610e4c51003b81f120b46e",
       "symbols": [
         "clean_context",
         "clean_text",
@@ -1111,8 +1436,8 @@
       "group": "Workspace",
       "kind": "sourcecode",
       "title": "datathon_utils.py",
-      "bytes": 7693,
-      "sha256": "50a41a3bbb3fc63bbab2926e0085bc6d0b935455be696a1d91a90ebf2a851bed",
+      "bytes": 7903,
+      "sha256": "f787a26574a51877598c065a383a01901312e258ee3fa9ef7adfa3e452644872",
       "symbols": [
         "clean_context",
         "clean_text",
@@ -1138,8 +1463,8 @@
       "group": "Workspace",
       "kind": "sourcecode",
       "title": "structured_overrides.py",
-      "bytes": 34177,
-      "sha256": "20d7306cd09fdb4dc8eacf119652cfdde2519ff2a6e5943ebea26e06fde73df4",
+      "bytes": 34938,
+      "sha256": "b71cf6c92bed83e9df46e5aba9d82b183dea9c02a1ab05db881c7aaebf839e1c",
       "symbols": [
         "Solved",
         "ascii_text",
@@ -1172,6 +1497,403 @@
       "symbols": []
     },
     {
+      "path": "01_Thesis/Results/BenHalluEval/corrected_v2_20row_cascade_exploratory/outputs/predictions.jsonl",
+      "group": "Workspace",
+      "kind": "data",
+      "title": "predictions.jsonl",
+      "bytes": 386686,
+      "sha256": "5a8127bdf61aec6a5c20a06d3b41189fecdd9abd9277f38f8323fb34fef56dc7",
+      "symbols": []
+    },
+    {
+      "path": "01_Thesis/Results/BenHalluEval/corrected_v2_20row_cascade_exploratory/outputs/shared_features.jsonl",
+      "group": "Workspace",
+      "kind": "data",
+      "title": "shared_features.jsonl",
+      "bytes": 5654564,
+      "sha256": "c66071a4e55a23c48b60e1dc2744b2649391af938165a64ba72c60675bc3fe8b",
+      "symbols": []
+    },
+    {
+      "path": "01_Thesis/Results/BenHalluEval/corrected_v2_20row_cascade_exploratory/results/REPORT.md",
+      "group": "Workspace",
+      "kind": "documentation",
+      "title": "Corrected v2: local 20-row pilot",
+      "bytes": 2714,
+      "sha256": "5396dbc65333871b5309af78c7abcb800c49adb5f2ce7a7de31f9d95f245bef9",
+      "symbols": []
+    },
+    {
+      "path": "01_Thesis/Results/BenHalluEval/corrected_v2_20row_cascade_exploratory/results/overall_bhs.csv",
+      "group": "Workspace",
+      "kind": "data",
+      "title": "overall_bhs.csv",
+      "bytes": 741,
+      "sha256": "d7e07d44774a3cd7ec19bf683b4a8c2b4de2e873cdbca075fe271e4d4379fe8d",
+      "symbols": [],
+      "csv_headers": [
+        "n_a",
+        "n_b",
+        "wrong_a",
+        "wrong_b",
+        "valid_a",
+        "valid_b",
+        "n_valid",
+        "wrong_valid_a",
+        "wrong_valid_b",
+        "failures_a",
+        "failures_b",
+        "coverage",
+        "fpr",
+        "fnr",
+        "valid_fpr",
+        "valid_fnr",
+        "BHS",
+        "op",
+        "valid_only",
+        "w_a",
+        "w_b",
+        "model",
+        "expected",
+        "attempted",
+        "complete",
+        "two_label_scores",
+        "decoded_fallbacks",
+        "fast_path",
+        "latency_seconds"
+      ],
+      "csv_row_count": 4
+    },
+    {
+      "path": "01_Thesis/Results/BenHalluEval/corrected_v2_20row_cascade_exploratory/results/overall_bhs.json",
+      "group": "Workspace",
+      "kind": "config",
+      "title": "overall_bhs.json",
+      "bytes": 2599,
+      "sha256": "098e030f050485a8e4a6302e60087a8e5b36b2fe20ad51aee643d181c2ec497d",
+      "symbols": []
+    },
+    {
+      "path": "01_Thesis/Results/BenHalluEval/corrected_v2_20row_cascade_exploratory/results/per_row.csv",
+      "group": "Workspace",
+      "kind": "data",
+      "title": "per_row.csv",
+      "bytes": 13997,
+      "sha256": "3638edbd7b9d237b34d0d7d86b5093c7ebb3ed86391385ef50526d0cac905d7b",
+      "symbols": [],
+      "csv_headers": [
+        "model",
+        "id",
+        "task",
+        "track",
+        "hallucination_type",
+        "ground_truth_label",
+        "prediction",
+        "correct",
+        "p_hall",
+        "decision_source",
+        "failure",
+        "score_error",
+        "latency_seconds"
+      ],
+      "csv_row_count": 80
+    },
+    {
+      "path": "01_Thesis/Results/BenHalluEval/corrected_v2_20row_cascade_exploratory/results/task_type_breakdown.json",
+      "group": "Workspace",
+      "kind": "config",
+      "title": "task_type_breakdown.json",
+      "bytes": 14263,
+      "sha256": "bdc161edc16c286dec024af41ad9e3105fcabd505509bab0251d06bf4d97b391",
+      "symbols": []
+    },
+    {
+      "path": "01_Thesis/Results/BenHalluEval/corrected_v2_20row_cascade_exploratory/results/weight_sensitivity.json",
+      "group": "Workspace",
+      "kind": "config",
+      "title": "weight_sensitivity.json",
+      "bytes": 19533,
+      "sha256": "ad5d45c6af5692b682faa82cd53ef7b75740f5b78f779c3e5925454f2d058110",
+      "symbols": []
+    },
+    {
+      "path": "01_Thesis/Results/BenHalluEval/corrected_v2_20row_cascade_exploratory/run_manifest.json",
+      "group": "Workspace",
+      "kind": "config",
+      "title": "run_manifest.json",
+      "bytes": 9059,
+      "sha256": "aebee42638be9b5b57dcdf43fa923be9337fee1a6668222bedb6fa65cf33a314",
+      "symbols": []
+    },
+    {
+      "path": "01_Thesis/Results/BenHalluEval/corrected_v2_20row_judge_only/STATUS.md",
+      "group": "Workspace",
+      "kind": "documentation",
+      "title": "Interrupted, superseded attempt — not final thesis results",
+      "bytes": 849,
+      "sha256": "c81611e8bd239971c31881723e94e6ae280f4e99906752da2a8b44802446a9af",
+      "symbols": []
+    },
+    {
+      "path": "01_Thesis/Results/BenHalluEval/corrected_v2_20row_judge_only/outputs/predictions.jsonl",
+      "group": "Workspace",
+      "kind": "data",
+      "title": "predictions.jsonl",
+      "bytes": 313878,
+      "sha256": "0a2673d41cf2220f3ad606b51ae438a022dfb23b3347e010fd30a1554b5aaf2b",
+      "symbols": []
+    },
+    {
+      "path": "01_Thesis/Results/BenHalluEval/corrected_v2_20row_judge_only/results/REPORT.md",
+      "group": "Workspace",
+      "kind": "documentation",
+      "title": "Corrected v2: local 20-row pilot",
+      "bytes": 2589,
+      "sha256": "41d210e0ee3eb532e34a4ac23ae8cf17a3dcfcb148cd438fcb16949a3cd2a626",
+      "symbols": []
+    },
+    {
+      "path": "01_Thesis/Results/BenHalluEval/corrected_v2_20row_judge_only/results/overall_bhs.csv",
+      "group": "Workspace",
+      "kind": "data",
+      "title": "overall_bhs.csv",
+      "bytes": 529,
+      "sha256": "2ab135c0ed24ca583d0091442642435b3da1f61563ce330127d9df01bcb2fd6f",
+      "symbols": [],
+      "csv_headers": [
+        "n_a",
+        "n_b",
+        "wrong_a",
+        "wrong_b",
+        "valid_a",
+        "valid_b",
+        "n_valid",
+        "wrong_valid_a",
+        "wrong_valid_b",
+        "failures_a",
+        "failures_b",
+        "coverage",
+        "fpr",
+        "fnr",
+        "valid_fpr",
+        "valid_fnr",
+        "BHS",
+        "op",
+        "valid_only",
+        "w_a",
+        "w_b",
+        "model",
+        "expected",
+        "attempted",
+        "complete",
+        "two_label_scores",
+        "decoded_fallbacks",
+        "fast_path",
+        "latency_seconds",
+        "partial_recorded_rows_BHS"
+      ],
+      "csv_row_count": 2
+    },
+    {
+      "path": "01_Thesis/Results/BenHalluEval/corrected_v2_20row_judge_only/results/overall_bhs.json",
+      "group": "Workspace",
+      "kind": "config",
+      "title": "overall_bhs.json",
+      "bytes": 1343,
+      "sha256": "a40f7e71d87410e5be84e139a2a39529c127779b927caeb7a775d6fb0bcc30a5",
+      "symbols": []
+    },
+    {
+      "path": "01_Thesis/Results/BenHalluEval/corrected_v2_20row_judge_only/results/overall_bhs.json.tmp",
+      "group": "Workspace",
+      "kind": "documentation",
+      "title": "overall_bhs.json.tmp",
+      "bytes": 1343,
+      "sha256": "6378095286d7ffc7fd7e6d9ecac3009808834c57a2df7707a56b065ba8c2a997",
+      "symbols": []
+    },
+    {
+      "path": "01_Thesis/Results/BenHalluEval/corrected_v2_20row_judge_only/results/per_row.csv",
+      "group": "Workspace",
+      "kind": "data",
+      "title": "per_row.csv",
+      "bytes": 6427,
+      "sha256": "a1e53cc5b74de30b5c08a6f41e66df663d1a5e78e11932013338e022c0673da8",
+      "symbols": [],
+      "csv_headers": [
+        "model",
+        "id",
+        "task",
+        "track",
+        "hallucination_type",
+        "ground_truth_label",
+        "prediction",
+        "correct",
+        "p_hall",
+        "decision_source",
+        "failure",
+        "score_error",
+        "latency_seconds"
+      ],
+      "csv_row_count": 31
+    },
+    {
+      "path": "01_Thesis/Results/BenHalluEval/corrected_v2_20row_judge_only/results/task_type_breakdown.json",
+      "group": "Workspace",
+      "kind": "config",
+      "title": "task_type_breakdown.json",
+      "bytes": 14871,
+      "sha256": "138e61a73653fbee33ea8a3103715984e1777bd585d70059aca281b8ea431af3",
+      "symbols": []
+    },
+    {
+      "path": "01_Thesis/Results/BenHalluEval/corrected_v2_20row_judge_only/results/weight_sensitivity.json",
+      "group": "Workspace",
+      "kind": "config",
+      "title": "weight_sensitivity.json",
+      "bytes": 20340,
+      "sha256": "f0255ad5a3d9692a2383fb4a1c98a260cfa9744e2be47395afd035f9e4a74867",
+      "symbols": []
+    },
+    {
+      "path": "01_Thesis/Results/BenHalluEval/corrected_v2_20row_judge_only/run_manifest.json",
+      "group": "Workspace",
+      "kind": "config",
+      "title": "run_manifest.json",
+      "bytes": 7259,
+      "sha256": "4643f13d73d72ba7a1b57ebca9eaf864ef4a7dec4a190a6d12ab7f5b290d8a2c",
+      "symbols": []
+    },
+    {
+      "path": "01_Thesis/Results/BenHalluEval/corrected_v2_20row_neural_untrained/outputs/predictions.jsonl",
+      "group": "Workspace",
+      "kind": "data",
+      "title": "predictions.jsonl",
+      "bytes": 829058,
+      "sha256": "51596cf8ca1824fe934f0ba02a09512509eaed5457b802c01897b6e8ad661574",
+      "symbols": []
+    },
+    {
+      "path": "01_Thesis/Results/BenHalluEval/corrected_v2_20row_neural_untrained/outputs/shared_features.jsonl",
+      "group": "Workspace",
+      "kind": "data",
+      "title": "shared_features.jsonl",
+      "bytes": 5654564,
+      "sha256": "c66071a4e55a23c48b60e1dc2744b2649391af938165a64ba72c60675bc3fe8b",
+      "symbols": []
+    },
+    {
+      "path": "01_Thesis/Results/BenHalluEval/corrected_v2_20row_neural_untrained/results/REPORT.md",
+      "group": "Workspace",
+      "kind": "documentation",
+      "title": "Corrected v2: local 20-row pilot",
+      "bytes": 2718,
+      "sha256": "8537f9a52098c03670f3ba47c93f3f0cc485ac8d5dfa0c64189590d05f20c71d",
+      "symbols": []
+    },
+    {
+      "path": "01_Thesis/Results/BenHalluEval/corrected_v2_20row_neural_untrained/results/overall_bhs.csv",
+      "group": "Workspace",
+      "kind": "data",
+      "title": "overall_bhs.csv",
+      "bytes": 740,
+      "sha256": "c13d5d330a92697527975a636efba834fb140f7d7812641663028e3c263bf874",
+      "symbols": [],
+      "csv_headers": [
+        "n_a",
+        "n_b",
+        "wrong_a",
+        "wrong_b",
+        "valid_a",
+        "valid_b",
+        "n_valid",
+        "wrong_valid_a",
+        "wrong_valid_b",
+        "failures_a",
+        "failures_b",
+        "coverage",
+        "fpr",
+        "fnr",
+        "valid_fpr",
+        "valid_fnr",
+        "BHS",
+        "op",
+        "valid_only",
+        "w_a",
+        "w_b",
+        "model",
+        "expected",
+        "attempted",
+        "complete",
+        "two_label_scores",
+        "decoded_fallbacks",
+        "fast_path",
+        "latency_seconds"
+      ],
+      "csv_row_count": 4
+    },
+    {
+      "path": "01_Thesis/Results/BenHalluEval/corrected_v2_20row_neural_untrained/results/overall_bhs.json",
+      "group": "Workspace",
+      "kind": "config",
+      "title": "overall_bhs.json",
+      "bytes": 2598,
+      "sha256": "37a5a9021d7ea9ea3ce1de34facfadae8c5dfeac7a384d02af4808fc6149ed11",
+      "symbols": []
+    },
+    {
+      "path": "01_Thesis/Results/BenHalluEval/corrected_v2_20row_neural_untrained/results/per_row.csv",
+      "group": "Workspace",
+      "kind": "data",
+      "title": "per_row.csv",
+      "bytes": 15920,
+      "sha256": "57aa4b771d2bda579d5c9a54cf8675d09876763661e28f1dd6176cf8e6f2c49f",
+      "symbols": [],
+      "csv_headers": [
+        "model",
+        "id",
+        "task",
+        "track",
+        "hallucination_type",
+        "ground_truth_label",
+        "prediction",
+        "correct",
+        "p_hall",
+        "decision_source",
+        "failure",
+        "score_error",
+        "latency_seconds"
+      ],
+      "csv_row_count": 80
+    },
+    {
+      "path": "01_Thesis/Results/BenHalluEval/corrected_v2_20row_neural_untrained/results/task_type_breakdown.json",
+      "group": "Workspace",
+      "kind": "config",
+      "title": "task_type_breakdown.json",
+      "bytes": 14267,
+      "sha256": "7c887194280952883ffbd5e00109923233c3759c61a08a1b290386b228b739c5",
+      "symbols": []
+    },
+    {
+      "path": "01_Thesis/Results/BenHalluEval/corrected_v2_20row_neural_untrained/results/weight_sensitivity.json",
+      "group": "Workspace",
+      "kind": "config",
+      "title": "weight_sensitivity.json",
+      "bytes": 19308,
+      "sha256": "7c1594488f9edbc4ec20c642d80821e71e7f7f24299c77efddc291edbbe5630b",
+      "symbols": []
+    },
+    {
+      "path": "01_Thesis/Results/BenHalluEval/corrected_v2_20row_neural_untrained/run_manifest.json",
+      "group": "Workspace",
+      "kind": "config",
+      "title": "run_manifest.json",
+      "bytes": 9613,
+      "sha256": "7bde73161e702492f2329bad2d60849b4d752d5eea8eb021cd1fc9a023469097",
+      "symbols": []
+    },
+    {
       "path": "01_Thesis/Results/BenHalluEval/smoke/outputs/mock-baseline_cot_benhallu_micro_debug_120.jsonl",
       "group": "Workspace",
       "kind": "data",
@@ -1194,8 +1916,8 @@
       "group": "Workspace",
       "kind": "data",
       "title": "table1_overall_and_per_task_bhs.csv",
-      "bytes": 948,
-      "sha256": "6d1ac831754f502a09155a1876a240978a8a53f69d189d0dc53eae017fb18ebb",
+      "bytes": 959,
+      "sha256": "c46102004988cb28abb9c9db08b2456592caf2961771079793b5f37b60db0b56",
       "symbols": [],
       "csv_headers": [
         "Model",
@@ -1217,8 +1939,8 @@
       "group": "Workspace",
       "kind": "documentation",
       "title": "table1_overall_and_per_task_bhs.md",
-      "bytes": 1293,
-      "sha256": "4d820b36af921a4849f8035dd96c0e3547c63c09d58e5d43821dedec4de0cd04",
+      "bytes": 1305,
+      "sha256": "6f188bfc686760b4af9b3b1f0745214fa6ac6938694b22dceef8a0912aeb17d9",
       "symbols": []
     },
     {
@@ -1226,8 +1948,8 @@
       "group": "Workspace",
       "kind": "data",
       "title": "table2_granular_hallucination_types.csv",
-      "bytes": 1486,
-      "sha256": "073d9908f4d41442d9891c5421c8386601b8031644c02584213aae2e2feb819a",
+      "bytes": 1511,
+      "sha256": "99cad465d36d6a8b74fb116753a7d062aa41a5d5ed865e5d99b44d52f5afe2a1",
       "symbols": [],
       "csv_headers": [
         "Model",
@@ -1246,8 +1968,8 @@
       "group": "Workspace",
       "kind": "documentation",
       "title": "table2_granular_hallucination_types.md",
-      "bytes": 2202,
-      "sha256": "6a5c296fae82e1251939698790de2caffa7456b1e87ecd984efca02187755924",
+      "bytes": 2228,
+      "sha256": "2319c88d5c2e1f87ebc58bb9750c522f96190729dc29a4bcacd5dd53b9ec347e",
       "symbols": []
     },
     {
@@ -1255,8 +1977,8 @@
       "group": "Workspace",
       "kind": "data",
       "title": "table3_cot_delta_ablation.csv",
-      "bytes": 200,
-      "sha256": "a424790a1e00039666d4b21ad180682f3491858e6f92663ab076c231ffdd081b",
+      "bytes": 205,
+      "sha256": "138f336d58ae04719355f6166a429126e6f8b577677e658a8e6243421fa9ea75",
       "symbols": [],
       "csv_headers": [
         "Model",
@@ -1272,8 +1994,8 @@
       "group": "Workspace",
       "kind": "documentation",
       "title": "table3_cot_delta_ablation.md",
-      "bytes": 328,
-      "sha256": "ddfcdcb0374a4adccfe0d6092b8fbc5e5b4a2fddbcd9cff23e0acadf3772f48e",
+      "bytes": 334,
+      "sha256": "12fa1aec3650935d6c9f2b8268e89b232bb0677ca9ebf21d580397c265ff2ee6",
       "symbols": []
     },
     {
@@ -1281,8 +2003,8 @@
       "group": "Workspace",
       "kind": "data",
       "title": "table4_weight_sensitivity.csv",
-      "bytes": 1273,
-      "sha256": "54e01245997d882bf47fc4ff95d7d7267a388b2d47d0ca2838d7686a35be53a1",
+      "bytes": 1292,
+      "sha256": "211722f0c9c7489835707de1b0b10baf7428a4770d52aa9e92defedac46671e9",
       "symbols": [],
       "csv_headers": [
         "Model",
@@ -1303,8 +2025,8 @@
       "group": "Workspace",
       "kind": "documentation",
       "title": "table4_weight_sensitivity.md",
-      "bytes": 2007,
-      "sha256": "59abc8cc658b134cdbf8bed97d513980a80b191a3fec513a1e74d4a93292ff87",
+      "bytes": 2027,
+      "sha256": "7b2ae294b7074a2f37d896027cbf4ba364d6a928a1ce23a0422f9e1b3900f7aa",
       "symbols": []
     },
     {
@@ -1312,8 +2034,8 @@
       "group": "Workspace",
       "kind": "documentation",
       "title": "BenHalluScore baseline: 10 rows per track",
-      "bytes": 2562,
-      "sha256": "7c81530dcf189de50f162348902ab9917ec1252e26d7c0728d2b5eac58d39f59",
+      "bytes": 2563,
+      "sha256": "5b211a7d601f0e006cf3d1da27ed2b5f0bddbe832004338029dcbdff30a1c4b0",
       "symbols": []
     },
     {
@@ -1357,8 +2079,8 @@
       "group": "Workspace",
       "kind": "data",
       "title": "benhalluscore_20row_summary.csv",
-      "bytes": 534,
-      "sha256": "43ca0fb021156861b17259d276c96300448f7a6c422b2133b5b1cd9bf1f01f26",
+      "bytes": 539,
+      "sha256": "84a3ef1f7d0d4d07a456e9d8bcf200f475bd2439d211efa090572833f55d2e99",
       "symbols": [],
       "csv_headers": [
         "Model",
@@ -1383,8 +2105,8 @@
       "group": "Workspace",
       "kind": "data",
       "title": "table1_overall_and_per_task_bhs.csv",
-      "bytes": 1353,
-      "sha256": "5a36b699226005ff4f5c0b15d2de2a1e136ee6da89cf699af044fa695bd64805",
+      "bytes": 1374,
+      "sha256": "a03b9e633b9f1815d2af2cd390734034170e1a2ed5533a9b34ace73be7747f96",
       "symbols": [],
       "csv_headers": [
         "Model",
@@ -1406,8 +2128,8 @@
       "group": "Workspace",
       "kind": "documentation",
       "title": "table1_overall_and_per_task_bhs.md",
-      "bytes": 2069,
-      "sha256": "864f2cf30f90322c5b3e335aa3b88b8c8440ae6f0fa748d18ad2aa42f4533b76",
+      "bytes": 2091,
+      "sha256": "7d2cc22a5f412579974f8e2496b19eb8ac5d5e5c8c5eceeac59b74265928838e",
       "symbols": []
     },
     {
@@ -1415,8 +2137,8 @@
       "group": "Workspace",
       "kind": "data",
       "title": "table2_granular_hallucination_types.csv",
-      "bytes": 2655,
-      "sha256": "c5b7fc80777f5156ab2af640f134dbc3c04df8525c10795ab585c8dd726f33c8",
+      "bytes": 2704,
+      "sha256": "a5495141ceedc7cf1b907b5abece1b2709f777de14db42ae30b726ccfc073b8a",
       "symbols": [],
       "csv_headers": [
         "Model",
@@ -1435,8 +2157,8 @@
       "group": "Workspace",
       "kind": "documentation",
       "title": "table2_granular_hallucination_types.md",
-      "bytes": 3832,
-      "sha256": "45bc56d00f63238ab3e0343b0a0e9597bf78b4d23e80adfc2f4acb817538f355",
+      "bytes": 3882,
+      "sha256": "6293a22e3de5fd9ba0cae4d956d99c5bd085366e5188a0984dd2904b1d81f477",
       "symbols": []
     },
     {
@@ -1444,8 +2166,8 @@
       "group": "Workspace",
       "kind": "data",
       "title": "table3_cot_delta_ablation.csv",
-      "bytes": 50,
-      "sha256": "41c08c843cc9dcda00eccb552416001e65056f9195522aec7b38cf64df407420",
+      "bytes": 51,
+      "sha256": "586c529d7a445a22e64df1d360bb6ce2a532998829d49dc45eca7a91873f8451",
       "symbols": [],
       "csv_headers": [
         "Model",
@@ -1461,8 +2183,8 @@
       "group": "Workspace",
       "kind": "documentation",
       "title": "table3_cot_delta_ablation.md",
-      "bytes": 94,
-      "sha256": "f099651af37fd9c6bbfa7708f9fa2b09723d7ae5920bbc9de8351d497f87606f",
+      "bytes": 96,
+      "sha256": "1534266bf24c4dfbc063b998876da55c784264b4544a2e08eb24eca033fc6f79",
       "symbols": []
     },
     {
@@ -1470,8 +2192,8 @@
       "group": "Workspace",
       "kind": "data",
       "title": "table4_weight_sensitivity.csv",
-      "bytes": 2698,
-      "sha256": "8102ba39f812a76eb3fe9e4c22a3ff2ebc2c3c64f8e4aafc9c841c2a379794cb",
+      "bytes": 2735,
+      "sha256": "40ff4cc137eaba84b1f7c5a38d279c362988d0f17a322a7ff2ade4cb1da9c4e6",
       "symbols": [],
       "csv_headers": [
         "Model",
@@ -1492,8 +2214,8 @@
       "group": "Workspace",
       "kind": "documentation",
       "title": "table4_weight_sensitivity.md",
-      "bytes": 3915,
-      "sha256": "3acae43440c42487ca7b5a8461b0cc931014139f57be09b752266c3b678a196d",
+      "bytes": 3953,
+      "sha256": "7ac0509ec76d4bcc880d8cd393bb1bfcd53eb9e5162abc321dc6bf4b0a36282d",
       "symbols": []
     },
     {
@@ -1501,8 +2223,8 @@
       "group": "Workspace",
       "kind": "documentation",
       "title": "Run manifest: BenHalluScore, 10 rows per track",
-      "bytes": 1801,
-      "sha256": "1179f984976dddc5b081d6a86940a1d8a69e9a6efb1625e6bae8686022a2e9f7",
+      "bytes": 1802,
+      "sha256": "c86e55d11c1dc48bb80c21dfac78d37c8b50da022b082f618576521ff836c204",
       "symbols": []
     },
     {
@@ -1573,8 +2295,8 @@
       "group": "Workspace",
       "kind": "data",
       "title": "table1_overall_and_per_task_bhs.csv",
-      "bytes": 1233,
-      "sha256": "f2a8d29f9c07672f1991220bf89177a34d6e1c9a1821b02dbe388b6bb7e89e3c",
+      "bytes": 1254,
+      "sha256": "17486d90bf42155fbaf97d61b2c23715d3da8e8815fa66e22873ff8ab05520b5",
       "symbols": [],
       "csv_headers": [
         "Model",
@@ -1596,8 +2318,8 @@
       "group": "Workspace",
       "kind": "documentation",
       "title": "table1_overall_and_per_task_bhs.md",
-      "bytes": 1985,
-      "sha256": "48b1d6b29b42c0623ff4c1b1ce6e8eb91f626e44bd9a3b7ce681d7072ec02b2a",
+      "bytes": 2007,
+      "sha256": "a1491677450fda430268f0d7b175ff5ef275d27535a6f6b8339077407cfe5e7e",
       "symbols": []
     },
     {
@@ -1605,8 +2327,8 @@
       "group": "Workspace",
       "kind": "data",
       "title": "table2_granular_hallucination_types.csv",
-      "bytes": 2398,
-      "sha256": "3acf6be6ac7f5716e3f88553cfc84be82f49b49d35b58a6871f40d30dcc22bab",
+      "bytes": 2447,
+      "sha256": "e56ff29edf823dfe1cb4caece52e6643e0c02bcd50966c66fe755ec956a3fd3f",
       "symbols": [],
       "csv_headers": [
         "Model",
@@ -1625,8 +2347,8 @@
       "group": "Workspace",
       "kind": "documentation",
       "title": "table2_granular_hallucination_types.md",
-      "bytes": 3618,
-      "sha256": "1bb58ee5d6ff66e7df9222da0fc70052f06117350b4772c5e1e1448d9f7193b7",
+      "bytes": 3668,
+      "sha256": "01efa8e8ab9c2d96288912ea5a34a62d90d3e387d9271918dd399f8eccedefa2",
       "symbols": []
     },
     {
@@ -1634,8 +2356,8 @@
       "group": "Workspace",
       "kind": "data",
       "title": "table3_cot_delta_ablation.csv",
-      "bytes": 50,
-      "sha256": "41c08c843cc9dcda00eccb552416001e65056f9195522aec7b38cf64df407420",
+      "bytes": 51,
+      "sha256": "586c529d7a445a22e64df1d360bb6ce2a532998829d49dc45eca7a91873f8451",
       "symbols": [],
       "csv_headers": [
         "Model",
@@ -1651,8 +2373,8 @@
       "group": "Workspace",
       "kind": "documentation",
       "title": "table3_cot_delta_ablation.md",
-      "bytes": 94,
-      "sha256": "f099651af37fd9c6bbfa7708f9fa2b09723d7ae5920bbc9de8351d497f87606f",
+      "bytes": 96,
+      "sha256": "1534266bf24c4dfbc063b998876da55c784264b4544a2e08eb24eca033fc6f79",
       "symbols": []
     },
     {
@@ -1660,8 +2382,8 @@
       "group": "Workspace",
       "kind": "data",
       "title": "table4_weight_sensitivity.csv",
-      "bytes": 1,
-      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 2,
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6",
       "symbols": [],
       "csv_headers": [],
       "csv_row_count": 0
@@ -1671,8 +2393,8 @@
       "group": "Workspace",
       "kind": "documentation",
       "title": "table4_weight_sensitivity.md",
-      "bytes": 10,
-      "sha256": "5a0889fbe55745a590bebefaa5c1e563c8ddeb2be52329146cb5dc93dbd53672",
+      "bytes": 12,
+      "sha256": "9b14e2d00f068d25ee5cd47dba5a7a9a384fb43f22173ba763d03b20e8b8e049",
       "symbols": []
     },
     {
@@ -1680,8 +2402,8 @@
       "group": "Workspace",
       "kind": "documentation",
       "title": "Run manifest: Track-A first-10 baseline",
-      "bytes": 1633,
-      "sha256": "0e33a734435ca9aa5ea74952d9959dc252c99779c4b5912b4c43d07e03dff812",
+      "bytes": 1634,
+      "sha256": "2c221c59bf8677dac4d046e5afe5a64c26c116a0ccbe3101d64c911461ae6290",
       "symbols": []
     },
     {
@@ -1689,8 +2411,8 @@
       "group": "Workspace",
       "kind": "documentation",
       "title": "Track-A first-10 baseline report",
-      "bytes": 2081,
-      "sha256": "045762240f204da67a9af255807ebf7dd7195fb2103f71b2dfc523da737834f3",
+      "bytes": 2082,
+      "sha256": "6210ba59ca821d7bf77a8e4dd0744b3071bc3b606f8361ac3da673a91d9f1b72",
       "symbols": []
     },
     {
@@ -1707,8 +2429,8 @@
       "group": "Workspace",
       "kind": "data",
       "title": "features_29_dense.csv",
-      "bytes": 24165,
-      "sha256": "76a12ea6b04e34ee59f5430a596e2eec2cf2a5b99abd72014647f9d6efc5f60c",
+      "bytes": 24206,
+      "sha256": "22866a5a0aa965afd2c41e49997ec22c2aae4db43b5d522158ccea20fd3b4622",
       "symbols": [],
       "csv_headers": [
         "id",
@@ -1762,8 +2484,8 @@
       "group": "Workspace",
       "kind": "config",
       "title": "meta_model_metadata.json",
-      "bytes": 670,
-      "sha256": "5481a856bcdfc9376bb8572d05a3079a1b1803f12490fd58b376b65400d1eab3",
+      "bytes": 704,
+      "sha256": "9fdd8bc0bf20365f236834ba04be4e8da0c593c41ef20826e4a4fd80f8b74e3e",
       "symbols": []
     },
     {
@@ -1771,8 +2493,8 @@
       "group": "Workspace",
       "kind": "data",
       "title": "meta_predictions.csv",
-      "bytes": 2839,
-      "sha256": "0a776f082340432bf5b1e4de2fafec6f0ddd7b78263dd15022e76abe634d115c",
+      "bytes": 2860,
+      "sha256": "b7dfc1b85e5d0a4361b5ed694119ee814382a29f7cea950cbde1c65c3708e529",
       "symbols": [],
       "csv_headers": [
         "id",
@@ -1790,8 +2512,8 @@
       "group": "Workspace",
       "kind": "data",
       "title": "pre_post_matched_comparison.csv",
-      "bytes": 592,
-      "sha256": "a3171d720ba8753300e5fdb200cea6e2d20a1e5f0d3278c4804be51ba54cf02c",
+      "bytes": 597,
+      "sha256": "3fb89724a9be6759340ececcc81f04d511922bdb21b06b67059a305ce4825e08",
       "symbols": [],
       "csv_headers": [
         "Baseline_Model",
@@ -1813,8 +2535,8 @@
       "group": "Workspace",
       "kind": "config",
       "title": "run_manifest.json",
-      "bytes": 4741,
-      "sha256": "cf934f4707b37383267612b86e5243ac73ee49baab304ed52f4e7aa94ac1dc39",
+      "bytes": 4887,
+      "sha256": "33c7bec2160600f63617f1f23fe9880b0b68dbbb2a0c9b4585d3938c5fa0be21",
       "symbols": []
     },
     {
@@ -1822,8 +2544,8 @@
       "group": "Workspace",
       "kind": "config",
       "title": "stage_failure_audit.json",
-      "bytes": 602,
-      "sha256": "97bcc14d5b2de9bcea8867bc961c0b1973a154122320c7aa0ed539536446be40",
+      "bytes": 634,
+      "sha256": "bfd092fda449c98573925bd087f5f87a755208fe6194895d8ba30f9392961dc5",
       "symbols": []
     },
     {
@@ -1831,8 +2553,8 @@
       "group": "Workspace",
       "kind": "data",
       "title": "update_pipeline_bhs.csv",
-      "bytes": 337,
-      "sha256": "d046ebeefed2de756669c60f22bce7bd4e08f40bb37f72ec63ed5cc17ec2e8ab",
+      "bytes": 339,
+      "sha256": "1fb25380c2fcbca85c7e190df4cbe79770e278a87c5e0ad4a299429ecfe4cbe9",
       "symbols": [],
       "csv_headers": [
         "System",
@@ -1859,8 +2581,8 @@
       "group": "Workspace",
       "kind": "data",
       "title": "update_pipeline_bhs_fractional.csv",
-      "bytes": 96,
-      "sha256": "08e9fea13e349ce9a5093b6b287b96bd35e40e9c7c9e14b3546adb2f747f0e12",
+      "bytes": 98,
+      "sha256": "1265da5e7168cee75c9b9daf94ebbc12eb8fa741e2d7567298e9ea25bbda88a0",
       "symbols": [],
       "csv_headers": [
         "System",
@@ -1877,8 +2599,8 @@
       "group": "Workspace",
       "kind": "documentation",
       "title": "Updated BenHalluEval detector: 20-row Track-A/Track-B run",
-      "bytes": 6258,
-      "sha256": "3900c1fb5fa70e2de566dde78a4fbde0f4f0bf7224361a2ca9b0e53805eb6701",
+      "bytes": 6309,
+      "sha256": "e1453b2474b3139584f080049a8e99985eb7866ba27376f445e6def4d0e6d0e7",
       "symbols": []
     },
     {
@@ -1886,8 +2608,17 @@
       "group": "Workspace",
       "kind": "documentation",
       "title": "Thesis writing and publication assets",
-      "bytes": 1137,
-      "sha256": "a6bf453979c822801ceb6f19af4b1f95b19cfec5baed1339d6fb35f041351827",
+      "bytes": 1150,
+      "sha256": "ca623ade2d4b5550956d9912515c98634f3607c019f9486a29da1939fe68dcd4",
+      "symbols": []
+    },
+    {
+      "path": "01_Thesis/Writing/chapters/04_methodology_master_architecture.md",
+      "group": "Workspace",
+      "kind": "documentation",
+      "title": "Chapter 4: Methodology — Standalone Master Architecture for Bengali LLM Hallucination Detection",
+      "bytes": 3458,
+      "sha256": "ec8aafe97cfb50b6e585ebcefe7c50814b845ec3746be6ca45e26c89578ad90d",
       "symbols": []
     },
     {
@@ -1895,8 +2626,8 @@
       "group": "Workspace",
       "kind": "documentation",
       "title": "Original thesis chapters",
-      "bytes": 1025,
-      "sha256": "cfde10620b543aa3364267e878e988b4dca795f2c33be658d241052b93d8829c",
+      "bytes": 1038,
+      "sha256": "cf8a32234dd729bc030b5e184c78bee2399faba9d40e9f3b7b7984f4c91dd4d0",
       "symbols": []
     },
     {
@@ -1904,8 +2635,8 @@
       "group": "Workspace",
       "kind": "figure",
       "title": "Reviewed thesis figures",
-      "bytes": 500,
-      "sha256": "71114083c437825448b98c5daad2cbc0b87e9492f1d7866140b29ae2ab87ce92",
+      "bytes": 505,
+      "sha256": "ad2e8f31416f7a88c650d3f5d77ae92947b4c27bf3eae6f6279a95931d3da6ca",
       "symbols": []
     },
     {
@@ -1913,8 +2644,8 @@
       "group": "Workspace",
       "kind": "documentation",
       "title": "Reviewed thesis tables",
-      "bytes": 475,
-      "sha256": "104b50cc99cd0979d8d590f7647a790d54821a7912096b60adb4c15586bc2fa3",
+      "bytes": 480,
+      "sha256": "34e28e06634a132c31a0b546925ffb14d713400f37d3757b332deb829957e761",
       "symbols": []
     },
     {
@@ -2049,8 +2780,8 @@
       "group": "Workspace",
       "kind": "data",
       "title": "sample submission.csv",
-      "bytes": 16513,
-      "sha256": "403004668695341380478e426b5c9b0b3db2890994457e053bc86ffd9923e14a",
+      "bytes": 19029,
+      "sha256": "c02eaf0f12504c79cc2c8874cd012f4829bc1d2e00eea1ed0d50be1867541e55",
       "symbols": [],
       "csv_headers": [
         "id",
@@ -2063,8 +2794,8 @@
       "group": "Workspace",
       "kind": "data",
       "title": "test set.csv",
-      "bytes": 2327431,
-      "sha256": "df0ad03d557ca0c9a9c642f92bf413e086916cb96d6495e44564ad21dabcb555",
+      "bytes": 2329947,
+      "sha256": "db75049956c6fa00e4d9c476716ee34bc4cc17a737f52ada06d2c0f80d567b81",
       "symbols": [],
       "csv_headers": [
         "id",
@@ -5495,8 +6226,8 @@
       "group": "Workspace",
       "kind": "data",
       "title": "REFERENCE_FILE_MANIFEST.csv",
-      "bytes": 42252,
-      "sha256": "40f02f75aca96c0070dddcec69e912ce324ccec6a8660b60511a007f6c277979",
+      "bytes": 42536,
+      "sha256": "41f9cefe5757fb751dbda6e875fdadc0047f7b9f2c80a8004bcc707f67c81cf3",
       "symbols": [],
       "csv_headers": [
         "Project",
@@ -5511,8 +6242,8 @@
       "group": "Workspace",
       "kind": "documentation",
       "title": "Thesis workspace instructions",
-      "bytes": 4299,
-      "sha256": "990f3611b64e49bb475a6e746787103d27654d13e646c55bfa204e64c127cae4",
+      "bytes": 4335,
+      "sha256": "02a7b1f5f8fd7b0b340ad5664a10a9afc2c17b090b7463a95edd2d16fc7af3cb",
       "symbols": []
     },
     {
@@ -5525,12 +6256,39 @@
       "symbols": []
     },
     {
+      "path": "Update_formulation.md",
+      "group": "Workspace",
+      "kind": "documentation",
+      "title": "BenHalluEval v2.0: Corrected Mathematical Formulation",
+      "bytes": 29309,
+      "sha256": "956af32162c32c633981425f7dab433d31a3000047e67d18d599d57ed1382d74",
+      "symbols": []
+    },
+    {
+      "path": "analyze.md",
+      "group": "Workspace",
+      "kind": "documentation",
+      "title": "Project Analysis: Bengali LLM Hallucination Thesis",
+      "bytes": 13459,
+      "sha256": "4b9a6521fba7fe5f666f219e447509cd8591f45e52ee7b1281192f68e04380bc",
+      "symbols": []
+    },
+    {
+      "path": "benhallueval_v2_master_architecture.pdf",
+      "group": "Workspace",
+      "kind": "paper",
+      "title": "benhallueval_v2_master_architecture.pdf",
+      "bytes": 287172,
+      "sha256": "1950e5e392ca70cc4845a6b04a98f81bceb9e2440fdc4a9b7457d95457a1de42",
+      "symbols": []
+    },
+    {
       "path": "docs/AUDIT_REPORT.md",
       "group": "Workspace",
       "kind": "documentation",
       "title": "Evaluation Pipeline and Optimization Audit Report",
-      "bytes": 17117,
-      "sha256": "a7664804a824428a0c0e410f894d2c1e94724eec3a1c2228c91cfe25eeeada24",
+      "bytes": 17348,
+      "sha256": "988e676045c88bb089e2bc5a0633bb61a208fd60045cee9ff901be2cfb24abfb",
       "symbols": []
     },
     {
@@ -5538,8 +6296,8 @@
       "group": "Workspace",
       "kind": "documentation",
       "title": "Code review: evaluation, workspace tools, and preserved research",
-      "bytes": 18396,
-      "sha256": "ceec41f9601e0600e616a81f74651bcfe9f0365169ae41a8d4cae4e39ab501b6",
+      "bytes": 18641,
+      "sha256": "927100b69b8785fffefd0f76569bf16d6ce319ee92522922b697ae5edf67368a",
       "symbols": []
     },
     {
@@ -5547,8 +6305,8 @@
       "group": "Workspace",
       "kind": "documentation",
       "title": "Data guide and integration boundaries",
-      "bytes": 7893,
-      "sha256": "00366e7be40ec67fbc732af2232e788c838b811fdff5fcaf8f24d4df1d4133de",
+      "bytes": 7994,
+      "sha256": "c849d1d1166cf28255ebf4be467c33d483f404cb08a7f9521dba27de642c1b55",
       "symbols": []
     },
     {
@@ -5556,8 +6314,8 @@
       "group": "Workspace",
       "kind": "documentation",
       "title": "Workspace organization record",
-      "bytes": 3593,
-      "sha256": "9aac78cf1e22d47f61bd7fe79270895ebbd1637b67972adf89859de80aa4305b",
+      "bytes": 3646,
+      "sha256": "7604ab25e4bf8561119d9afbdd78e8efe79313ed2992b19fd346e0c7b29137c8",
       "symbols": []
     },
     {
@@ -5565,8 +6323,8 @@
       "group": "Workspace",
       "kind": "documentation",
       "title": "Research reuse map: Huntrix and CUET_AL_Masaar",
-      "bytes": 19050,
-      "sha256": "de1b1a612a3a9f3504b2a41855604f753768e930923c63d6016653d5c624c42a",
+      "bytes": 19233,
+      "sha256": "4ca7dd41b2276cc8898a7d90aeab287c22325230f64957206beb0698a795fd3e",
       "symbols": []
     },
     {
@@ -5574,8 +6332,8 @@
       "group": "Workspace",
       "kind": "documentation",
       "title": "Reproducible thesis workflow",
-      "bytes": 8748,
-      "sha256": "8658f659d74e1544dadef7c4ef1df4453e559ab87d5616a97520501fd3367f4f",
+      "bytes": 8865,
+      "sha256": "1e6826c63338dc703216d66331abb24104b7830b1f9d42a94c9780f3b586312a",
       "symbols": []
     },
     {
@@ -5583,8 +6341,8 @@
       "group": "Workspace",
       "kind": "documentation",
       "title": "Evaluation environment",
-      "bytes": 1983,
-      "sha256": "d39609a870d42b30ba9c4945da73cd8620ea8b2c3bb5cc98ea0a80bba883022c",
+      "bytes": 2015,
+      "sha256": "7f7e6a9574a3011d6652b6f79d29061aaef9c0a253a1a2dfa6f73a3207dd4a4d",
       "symbols": []
     },
     {
@@ -5592,17 +6350,107 @@
       "group": "Workspace",
       "kind": "config",
       "title": "requirements-evaluation.txt",
-      "bytes": 248,
-      "sha256": "9c493df13d54bd39086ff6e72e37156a0e392c66b5d60a774dd619069407b744",
+      "bytes": 255,
+      "sha256": "00e1e672efa1fe9866668fc9092d4cd159e43f6432db1326e24260d25ad614c5",
       "symbols": []
+    },
+    {
+      "path": "graphify-out/GRAPH_REPORT.md",
+      "group": "Workspace",
+      "kind": "documentation",
+      "title": "Source-linked analysis of analyze.md",
+      "bytes": 12752,
+      "sha256": "06a23c3d266cd78e24ebfed12e7fa9f6eee7d8c1af71a0bca96d9286c72d67f2",
+      "symbols": []
+    },
+    {
+      "path": "graphify-out/NODE_INDEX.md",
+      "group": "Workspace",
+      "kind": "documentation",
+      "title": "Compact node lookup",
+      "bytes": 3331,
+      "sha256": "4071151d58176e06c597aa7202c3a51eb64bddf045ff2726cd2425dd149626e4",
+      "symbols": []
+    },
+    {
+      "path": "graphify-out/build_analysis.py",
+      "group": "Workspace",
+      "kind": "sourcecode",
+      "title": "build_analysis.py",
+      "bytes": 29050,
+      "sha256": "0a5b1afd36719ea73f95c549e0b39b8db901c8d36eba34b42fa74bc63133d4a9",
+      "symbols": [
+        "digest",
+        "sections",
+        "build",
+        "load_checked",
+        "get",
+        "check"
+      ]
+    },
+    {
+      "path": "graphify-out/cache/last_query_stamp",
+      "group": "Workspace",
+      "kind": "documentation",
+      "title": "last_query_stamp",
+      "bytes": 18,
+      "sha256": "48f26a4c94f80781cad12c73c83b9df8eb56463657294e98f54ff4a9d09b9bf8",
+      "symbols": []
+    },
+    {
+      "path": "graphify-out/extraction.json",
+      "group": "Workspace",
+      "kind": "config",
+      "title": "extraction.json",
+      "bytes": 78698,
+      "sha256": "e872fcf1e0a74616bf663e0b00c07f6213bf2e5ad4d1ef037297871fe5b2dc3e",
+      "symbols": []
+    },
+    {
+      "path": "graphify-out/graph.html",
+      "group": "Workspace",
+      "kind": "documentation",
+      "title": "graph.html",
+      "bytes": 61578,
+      "sha256": "5952e9775ff90171889a7e586aeeae4fba41cba84d3b94bde1d5c950662572cc",
+      "symbols": []
+    },
+    {
+      "path": "graphify-out/graph.json",
+      "group": "Workspace",
+      "kind": "config",
+      "title": "graph.json",
+      "bytes": 70912,
+      "sha256": "33873a4af8133c6c320d2430a9fe5cf8aa5fc9a576752b7f06133a0390078e61",
+      "symbols": []
+    },
+    {
+      "path": "graphify-out/source_manifest.json",
+      "group": "Workspace",
+      "kind": "config",
+      "title": "source_manifest.json",
+      "bytes": 3726,
+      "sha256": "1ae02f21ce9e8bd225848fe7dc6428d4ad7768290e053563c3b2eb9bfa93a8f6",
+      "symbols": []
+    },
+    {
+      "path": "graphify-out/test_analysis.py",
+      "group": "Workspace",
+      "kind": "test",
+      "title": "test_analysis.py",
+      "bytes": 3882,
+      "sha256": "fff56e9320baccb7cc9721630bf992ca6c4f807518154d994d64ac114b7d2bea",
+      "symbols": [
+        "RetrievalTests"
+      ]
     },
     {
       "path": "pytest.ini",
       "group": "Workspace",
       "kind": "config",
       "title": "pytest.ini",
-      "bytes": 136,
-      "sha256": "c1a6726deb4449edc1c36ed0621ebab98e1cf2350fbea19209647fdf82fc0295",
+      "bytes": 140,
+      "sha256": "dcad16517009aec8f53b1ac121766acffc744397312357679b45d6a3887a9b24",
       "symbols": []
     },
     {
@@ -5610,8 +6458,8 @@
       "group": "Workspace",
       "kind": "documentation",
       "title": "Workspace navigation and integrity tools",
-      "bytes": 2202,
-      "sha256": "70142cff1fd156e35664715750b8516cf6da728401a4d43056d1aea1307f5a87",
+      "bytes": 2227,
+      "sha256": "8b5cf4fe50496f318e76b0f20fc8bed798a342d22486eab65b12449f58ea11d4",
       "symbols": []
     },
     {
@@ -5619,8 +6467,8 @@
       "group": "Workspace",
       "kind": "test",
       "title": "test_workspace.py",
-      "bytes": 17422,
-      "sha256": "5d120e13c7dc3536239c1965b526d6f2fbac737dc1aa25efaea9ce5c97e38878",
+      "bytes": 17762,
+      "sha256": "588784361388c43366fefb33bb98ade11bbc1e6faa5749d001d94ed4fa6ee855",
       "symbols": [
         "WorkspaceTests"
       ]
@@ -5630,8 +6478,8 @@
       "group": "Workspace",
       "kind": "sourcecode",
       "title": "workspace.py",
-      "bytes": 18156,
-      "sha256": "2fb471d5dea761983de7412d25b7a677bb7b413d2669fba1e9c1e1f633c21f26",
+      "bytes": 18540,
+      "sha256": "20776b08c27e87b4a808525d1a5d250c5a6e8d9887a9ff8e29bf950ad77affd4",
       "symbols": [
         "is_link",
         "safe_path",
@@ -5650,6 +6498,15 @@
         "positive",
         "main"
       ]
+    },
+    {
+      "path": "updated_benhallueval_v2_master_architecture.pdf",
+      "group": "Workspace",
+      "kind": "paper",
+      "title": "updated_benhallueval_v2_master_architecture.pdf",
+      "bytes": 205070,
+      "sha256": "280ac8dcf2aca9ced391b8493e5db07b6f04c64c5077516bbd7f38a915755056",
+      "symbols": []
     }
   ]
 }

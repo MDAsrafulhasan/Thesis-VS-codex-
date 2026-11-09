@@ -1,0 +1,5 @@
+n_a,n_b,wrong_a,wrong_b,valid_a,valid_b,n_valid,wrong_valid_a,wrong_valid_b,failures_a,failures_b,coverage,fpr,fnr,valid_fpr,valid_fnr,BHS,op,valid_only,w_a,w_b,model,expected,attempted,complete,two_label_scores,decoded_fallbacks,fast_path,latency_seconds
+10,10,10,0,10,10,20,10,0,0,0,1.0,1.0,0.0,1.0,0.0,50.0,50.0,50.0,0.5,0.5,bangla-ai-1.7b-q4,20,20,True,0,20,0,70.79973169999539
+10,10,6,0,10,10,20,6,0,0,0,1.0,0.6,0.0,0.6,0.0,30.0,30.0,30.0,0.5,0.5,gemma3:1b,20,20,True,20,0,0,52.017143600000054
+10,10,2,6,10,10,20,2,6,0,0,1.0,0.2,0.6,0.2,0.6,40.0,40.0,40.0,0.5,0.5,qwen2.5:1.5b,20,20,True,20,0,0,65.01520609999716
+10,10,2,6,10,10,20,2,6,0,0,1.0,0.2,0.6,0.2,0.6,40.0,40.0,40.0,0.5,0.5,qwen3:1.7b,20,20,True,20,0,0,76.26282029999857

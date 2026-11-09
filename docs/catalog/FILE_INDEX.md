@@ -1,8 +1,8 @@
 # Workspace file index
 
-Generated UTC: 2026-11-07T19:48:55.403930+00:00
+Generated UTC: 2026-11-08T16:43:28.978417+00:00
 
-Files: 409; bytes: 77516138.
+Files: 464; bytes: 91771460.
 
 - Metadata only: no code execution, notebook outputs, or data row values.
 - Titles use filenames or the first Markdown heading, not README claims; slide counts, versions, and other README drift are not inferred.
@@ -14,13 +14,25 @@ Files: 409; bytes: 77516138.
 
 ### config
 
-- [.gitignore](../../.gitignore) — .gitignore; 680 bytes
-- [01_Thesis/Docs/catalog/file_catalog.json](../../01_Thesis/Docs/catalog/file_catalog.json) — file_catalog.json; 151007 bytes
-- [01_Thesis/Docs/catalog/original_files.json](../../01_Thesis/Docs/catalog/original_files.json) — original_files.json; 89039 bytes
-- [01_Thesis/Docs/catalog/preservation_migrations.json](../../01_Thesis/Docs/catalog/preservation_migrations.json) — preservation_migrations.json; 773 bytes
-- [01_Thesis/Results/BenHalluEval/update_pipeline_20row_pilot/meta_model_metadata.json](../../01_Thesis/Results/BenHalluEval/update_pipeline_20row_pilot/meta_model_metadata.json) — meta_model_metadata.json; 670 bytes
-- [01_Thesis/Results/BenHalluEval/update_pipeline_20row_pilot/run_manifest.json](../../01_Thesis/Results/BenHalluEval/update_pipeline_20row_pilot/run_manifest.json) — run_manifest.json; 4741 bytes
-- [01_Thesis/Results/BenHalluEval/update_pipeline_20row_pilot/stage_failure_audit.json](../../01_Thesis/Results/BenHalluEval/update_pipeline_20row_pilot/stage_failure_audit.json) — stage_failure_audit.json; 602 bytes
+- [.gitignore](../../.gitignore) — .gitignore; 932 bytes
+- [01_Thesis/Docs/catalog/file_catalog.json](../../01_Thesis/Docs/catalog/file_catalog.json) — file_catalog.json; 155649 bytes
+- [01_Thesis/Docs/catalog/original_files.json](../../01_Thesis/Docs/catalog/original_files.json) — original_files.json; 90820 bytes
+- [01_Thesis/Docs/catalog/preservation_migrations.json](../../01_Thesis/Docs/catalog/preservation_migrations.json) — preservation_migrations.json; 793 bytes
+- [01_Thesis/Results/BenHalluEval/corrected_v2_20row_cascade_exploratory/results/overall_bhs.json](../../01_Thesis/Results/BenHalluEval/corrected_v2_20row_cascade_exploratory/results/overall_bhs.json) — overall_bhs.json; 2599 bytes
+- [01_Thesis/Results/BenHalluEval/corrected_v2_20row_cascade_exploratory/results/task_type_breakdown.json](../../01_Thesis/Results/BenHalluEval/corrected_v2_20row_cascade_exploratory/results/task_type_breakdown.json) — task_type_breakdown.json; 14263 bytes
+- [01_Thesis/Results/BenHalluEval/corrected_v2_20row_cascade_exploratory/results/weight_sensitivity.json](../../01_Thesis/Results/BenHalluEval/corrected_v2_20row_cascade_exploratory/results/weight_sensitivity.json) — weight_sensitivity.json; 19533 bytes
+- [01_Thesis/Results/BenHalluEval/corrected_v2_20row_cascade_exploratory/run_manifest.json](../../01_Thesis/Results/BenHalluEval/corrected_v2_20row_cascade_exploratory/run_manifest.json) — run_manifest.json; 9059 bytes
+- [01_Thesis/Results/BenHalluEval/corrected_v2_20row_judge_only/results/overall_bhs.json](../../01_Thesis/Results/BenHalluEval/corrected_v2_20row_judge_only/results/overall_bhs.json) — overall_bhs.json; 1343 bytes
+- [01_Thesis/Results/BenHalluEval/corrected_v2_20row_judge_only/results/task_type_breakdown.json](../../01_Thesis/Results/BenHalluEval/corrected_v2_20row_judge_only/results/task_type_breakdown.json) — task_type_breakdown.json; 14871 bytes
+- [01_Thesis/Results/BenHalluEval/corrected_v2_20row_judge_only/results/weight_sensitivity.json](../../01_Thesis/Results/BenHalluEval/corrected_v2_20row_judge_only/results/weight_sensitivity.json) — weight_sensitivity.json; 20340 bytes
+- [01_Thesis/Results/BenHalluEval/corrected_v2_20row_judge_only/run_manifest.json](../../01_Thesis/Results/BenHalluEval/corrected_v2_20row_judge_only/run_manifest.json) — run_manifest.json; 7259 bytes
+- [01_Thesis/Results/BenHalluEval/corrected_v2_20row_neural_untrained/results/overall_bhs.json](../../01_Thesis/Results/BenHalluEval/corrected_v2_20row_neural_untrained/results/overall_bhs.json) — overall_bhs.json; 2598 bytes
+- [01_Thesis/Results/BenHalluEval/corrected_v2_20row_neural_untrained/results/task_type_breakdown.json](../../01_Thesis/Results/BenHalluEval/corrected_v2_20row_neural_untrained/results/task_type_breakdown.json) — task_type_breakdown.json; 14267 bytes
+- [01_Thesis/Results/BenHalluEval/corrected_v2_20row_neural_untrained/results/weight_sensitivity.json](../../01_Thesis/Results/BenHalluEval/corrected_v2_20row_neural_untrained/results/weight_sensitivity.json) — weight_sensitivity.json; 19308 bytes
+- [01_Thesis/Results/BenHalluEval/corrected_v2_20row_neural_untrained/run_manifest.json](../../01_Thesis/Results/BenHalluEval/corrected_v2_20row_neural_untrained/run_manifest.json) — run_manifest.json; 9613 bytes
+- [01_Thesis/Results/BenHalluEval/update_pipeline_20row_pilot/meta_model_metadata.json](../../01_Thesis/Results/BenHalluEval/update_pipeline_20row_pilot/meta_model_metadata.json) — meta_model_metadata.json; 704 bytes
+- [01_Thesis/Results/BenHalluEval/update_pipeline_20row_pilot/run_manifest.json](../../01_Thesis/Results/BenHalluEval/update_pipeline_20row_pilot/run_manifest.json) — run_manifest.json; 4887 bytes
+- [01_Thesis/Results/BenHalluEval/update_pipeline_20row_pilot/stage_failure_audit.json](../../01_Thesis/Results/BenHalluEval/update_pipeline_20row_pilot/stage_failure_audit.json) — stage_failure_audit.json; 634 bytes
 - [02_Reference_Projects/IUTCSFESTDATATHON/.gitignore](../../02_Reference_Projects/IUTCSFESTDATATHON/.gitignore) — .gitignore; 127 bytes
 - [02_Reference_Projects/IUTCSFESTDATATHON/bengali-hallucination/dataset samples.json](../../02_Reference_Projects/IUTCSFESTDATATHON/bengali-hallucination/dataset%20samples.json) — dataset samples.json; 289118 bytes
 - [02_Reference_Projects/IUTCSFESTDATATHON/kaggle_datasets/llama_cpp_cuda_b9637/dataset-metadata.json](../../02_Reference_Projects/IUTCSFESTDATATHON/kaggle_datasets/llama_cpp_cuda_b9637/dataset-metadata.json) — dataset-metadata.json; 490 bytes
@@ -42,16 +54,19 @@ Files: 409; bytes: 77516138.
 - [02_Reference_Projects/IUTCSFESTDATATHON/resources/typed_evidence_v1.json](../../02_Reference_Projects/IUTCSFESTDATATHON/resources/typed_evidence_v1.json) — typed_evidence_v1.json; 1541 bytes
 - [02_Reference_Projects/IUTCSFESTDATATHON/resources/verified_fact_answers.json](../../02_Reference_Projects/IUTCSFESTDATATHON/resources/verified_fact_answers.json) — verified_fact_answers.json; 42416 bytes
 - [02_Reference_Projects/IUT_Datathon_Hallu/.gitignore](../../02_Reference_Projects/IUT_Datathon_Hallu/.gitignore) — .gitignore; 4628 bytes
-- [environment/requirements-evaluation.txt](../../environment/requirements-evaluation.txt) — requirements-evaluation.txt; 248 bytes
-- [pytest.ini](../../pytest.ini) — pytest.ini; 136 bytes
+- [environment/requirements-evaluation.txt](../../environment/requirements-evaluation.txt) — requirements-evaluation.txt; 255 bytes
+- [graphify-out/extraction.json](../../graphify-out/extraction.json) — extraction.json; 78698 bytes
+- [graphify-out/graph.json](../../graphify-out/graph.json) — graph.json; 70912 bytes
+- [graphify-out/source_manifest.json](../../graphify-out/source_manifest.json) — source_manifest.json; 3726 bytes
+- [pytest.ini](../../pytest.ini) — pytest.ini; 140 bytes
 
 ### data
 
-- [01_Thesis/Data/BenHalluEval/Processed/Splits/benhallu_full_16k.csv](../../01_Thesis/Data/BenHalluEval/Processed/Splits/benhallu_full_16k.csv) — benhallu_full_16k.csv; 22134186 bytes
-- [01_Thesis/Data/BenHalluEval/Processed/Splits/benhallu_micro_debug_120.csv](../../01_Thesis/Data/BenHalluEval/Processed/Splits/benhallu_micro_debug_120.csv) — benhallu_micro_debug_120.csv; 162349 bytes
-- [01_Thesis/Data/BenHalluEval/Processed/Splits/benhallu_stratified_10pct.csv](../../01_Thesis/Data/BenHalluEval/Processed/Splits/benhallu_stratified_10pct.csv) — benhallu_stratified_10pct.csv; 2196128 bytes
-- [01_Thesis/Data/BenHalluEval/Processed/Splits/track_a_b_first10_each.csv](../../01_Thesis/Data/BenHalluEval/Processed/Splits/track_a_b_first10_each.csv) — track_a_b_first10_each.csv; 34573 bytes
-- [01_Thesis/Data/BenHalluEval/Processed/Splits/track_a_first10_full.csv](../../01_Thesis/Data/BenHalluEval/Processed/Splits/track_a_first10_full.csv) — track_a_first10_full.csv; 18441 bytes
+- [01_Thesis/Data/BenHalluEval/Processed/Splits/benhallu_full_16k.csv](../../01_Thesis/Data/BenHalluEval/Processed/Splits/benhallu_full_16k.csv) — benhallu_full_16k.csv; 22150187 bytes
+- [01_Thesis/Data/BenHalluEval/Processed/Splits/benhallu_micro_debug_120.csv](../../01_Thesis/Data/BenHalluEval/Processed/Splits/benhallu_micro_debug_120.csv) — benhallu_micro_debug_120.csv; 162470 bytes
+- [01_Thesis/Data/BenHalluEval/Processed/Splits/benhallu_stratified_10pct.csv](../../01_Thesis/Data/BenHalluEval/Processed/Splits/benhallu_stratified_10pct.csv) — benhallu_stratified_10pct.csv; 2197729 bytes
+- [01_Thesis/Data/BenHalluEval/Processed/Splits/track_a_b_first10_each.csv](../../01_Thesis/Data/BenHalluEval/Processed/Splits/track_a_b_first10_each.csv) — track_a_b_first10_each.csv; 34594 bytes
+- [01_Thesis/Data/BenHalluEval/Processed/Splits/track_a_first10_full.csv](../../01_Thesis/Data/BenHalluEval/Processed/Splits/track_a_first10_full.csv) — track_a_first10_full.csv; 18452 bytes
 - [01_Thesis/Data/BenHalluEval/Raw/Track-A/banglahallueval_qa_1000.csv](../../01_Thesis/Data/BenHalluEval/Raw/Track-A/banglahallueval_qa_1000.csv) — banglahallueval_qa_1000.csv; 1870840 bytes
 - [01_Thesis/Data/BenHalluEval/Raw/Track-A/banglahallueval_summarization_dataset_1000.csv](../../01_Thesis/Data/BenHalluEval/Raw/Track-A/banglahallueval_summarization_dataset_1000.csv) — banglahallueval_summarization_dataset_1000.csv; 1202619 bytes
 - [01_Thesis/Data/BenHalluEval/Raw/Track-A/codemix_1000.csv](../../01_Thesis/Data/BenHalluEval/Raw/Track-A/codemix_1000.csv) — codemix_1000.csv; 2427965 bytes
@@ -60,24 +75,35 @@ Files: 409; bytes: 77516138.
 - [01_Thesis/Data/BenHalluEval/Raw/Track-B/qa_4000.csv](../../01_Thesis/Data/BenHalluEval/Raw/Track-B/qa_4000.csv) — qa_4000.csv; 8197222 bytes
 - [01_Thesis/Data/BenHalluEval/Raw/Track-B/reasoning_1000.csv](../../01_Thesis/Data/BenHalluEval/Raw/Track-B/reasoning_1000.csv) — reasoning_1000.csv; 4618143 bytes
 - [01_Thesis/Data/BenHalluEval/Raw/Track-B/summarization_3000_corrected.csv](../../01_Thesis/Data/BenHalluEval/Raw/Track-B/summarization_3000_corrected.csv) — summarization_3000_corrected.csv; 4976877 bytes
-- [01_Thesis/Data/BenHalluEval/SHA256_MANIFEST.csv](../../01_Thesis/Data/BenHalluEval/SHA256_MANIFEST.csv) — SHA256_MANIFEST.csv; 1350 bytes
+- [01_Thesis/Data/BenHalluEval/SHA256_MANIFEST.csv](../../01_Thesis/Data/BenHalluEval/SHA256_MANIFEST.csv) — SHA256_MANIFEST.csv; 1362 bytes
 - [01_Thesis/Docs/catalog/duplicate_files.csv](../../01_Thesis/Docs/catalog/duplicate_files.csv) — duplicate_files.csv; 12473 bytes
 - [01_Thesis/Docs/catalog/file_catalog.csv](../../01_Thesis/Docs/catalog/file_catalog.csv) — file_catalog.csv; 96226 bytes
+- [01_Thesis/Results/BenHalluEval/corrected_v2_20row_cascade_exploratory/outputs/predictions.jsonl](../../01_Thesis/Results/BenHalluEval/corrected_v2_20row_cascade_exploratory/outputs/predictions.jsonl) — predictions.jsonl; 386686 bytes
+- [01_Thesis/Results/BenHalluEval/corrected_v2_20row_cascade_exploratory/outputs/shared_features.jsonl](../../01_Thesis/Results/BenHalluEval/corrected_v2_20row_cascade_exploratory/outputs/shared_features.jsonl) — shared_features.jsonl; 5654564 bytes
+- [01_Thesis/Results/BenHalluEval/corrected_v2_20row_cascade_exploratory/results/overall_bhs.csv](../../01_Thesis/Results/BenHalluEval/corrected_v2_20row_cascade_exploratory/results/overall_bhs.csv) — overall_bhs.csv; 741 bytes
+- [01_Thesis/Results/BenHalluEval/corrected_v2_20row_cascade_exploratory/results/per_row.csv](../../01_Thesis/Results/BenHalluEval/corrected_v2_20row_cascade_exploratory/results/per_row.csv) — per_row.csv; 13997 bytes
+- [01_Thesis/Results/BenHalluEval/corrected_v2_20row_judge_only/outputs/predictions.jsonl](../../01_Thesis/Results/BenHalluEval/corrected_v2_20row_judge_only/outputs/predictions.jsonl) — predictions.jsonl; 313878 bytes
+- [01_Thesis/Results/BenHalluEval/corrected_v2_20row_judge_only/results/overall_bhs.csv](../../01_Thesis/Results/BenHalluEval/corrected_v2_20row_judge_only/results/overall_bhs.csv) — overall_bhs.csv; 529 bytes
+- [01_Thesis/Results/BenHalluEval/corrected_v2_20row_judge_only/results/per_row.csv](../../01_Thesis/Results/BenHalluEval/corrected_v2_20row_judge_only/results/per_row.csv) — per_row.csv; 6427 bytes
+- [01_Thesis/Results/BenHalluEval/corrected_v2_20row_neural_untrained/outputs/predictions.jsonl](../../01_Thesis/Results/BenHalluEval/corrected_v2_20row_neural_untrained/outputs/predictions.jsonl) — predictions.jsonl; 829058 bytes
+- [01_Thesis/Results/BenHalluEval/corrected_v2_20row_neural_untrained/outputs/shared_features.jsonl](../../01_Thesis/Results/BenHalluEval/corrected_v2_20row_neural_untrained/outputs/shared_features.jsonl) — shared_features.jsonl; 5654564 bytes
+- [01_Thesis/Results/BenHalluEval/corrected_v2_20row_neural_untrained/results/overall_bhs.csv](../../01_Thesis/Results/BenHalluEval/corrected_v2_20row_neural_untrained/results/overall_bhs.csv) — overall_bhs.csv; 740 bytes
+- [01_Thesis/Results/BenHalluEval/corrected_v2_20row_neural_untrained/results/per_row.csv](../../01_Thesis/Results/BenHalluEval/corrected_v2_20row_neural_untrained/results/per_row.csv) — per_row.csv; 15920 bytes
 - [01_Thesis/Results/BenHalluEval/smoke/outputs/mock-baseline_cot_benhallu_micro_debug_120.jsonl](../../01_Thesis/Results/BenHalluEval/smoke/outputs/mock-baseline_cot_benhallu_micro_debug_120.jsonl) — mock-baseline_cot_benhallu_micro_debug_120.jsonl; 260277 bytes
 - [01_Thesis/Results/BenHalluEval/smoke/outputs/mock-baseline_zero_shot_benhallu_micro_debug_120.jsonl](../../01_Thesis/Results/BenHalluEval/smoke/outputs/mock-baseline_zero_shot_benhallu_micro_debug_120.jsonl) — mock-baseline_zero_shot_benhallu_micro_debug_120.jsonl; 249347 bytes
-- [01_Thesis/Results/BenHalluEval/smoke/results/table1_overall_and_per_task_bhs.csv](../../01_Thesis/Results/BenHalluEval/smoke/results/table1_overall_and_per_task_bhs.csv) — table1_overall_and_per_task_bhs.csv; 948 bytes
-- [01_Thesis/Results/BenHalluEval/smoke/results/table2_granular_hallucination_types.csv](../../01_Thesis/Results/BenHalluEval/smoke/results/table2_granular_hallucination_types.csv) — table2_granular_hallucination_types.csv; 1486 bytes
-- [01_Thesis/Results/BenHalluEval/smoke/results/table3_cot_delta_ablation.csv](../../01_Thesis/Results/BenHalluEval/smoke/results/table3_cot_delta_ablation.csv) — table3_cot_delta_ablation.csv; 200 bytes
-- [01_Thesis/Results/BenHalluEval/smoke/results/table4_weight_sensitivity.csv](../../01_Thesis/Results/BenHalluEval/smoke/results/table4_weight_sensitivity.csv) — table4_weight_sensitivity.csv; 1273 bytes
+- [01_Thesis/Results/BenHalluEval/smoke/results/table1_overall_and_per_task_bhs.csv](../../01_Thesis/Results/BenHalluEval/smoke/results/table1_overall_and_per_task_bhs.csv) — table1_overall_and_per_task_bhs.csv; 959 bytes
+- [01_Thesis/Results/BenHalluEval/smoke/results/table2_granular_hallucination_types.csv](../../01_Thesis/Results/BenHalluEval/smoke/results/table2_granular_hallucination_types.csv) — table2_granular_hallucination_types.csv; 1511 bytes
+- [01_Thesis/Results/BenHalluEval/smoke/results/table3_cot_delta_ablation.csv](../../01_Thesis/Results/BenHalluEval/smoke/results/table3_cot_delta_ablation.csv) — table3_cot_delta_ablation.csv; 205 bytes
+- [01_Thesis/Results/BenHalluEval/smoke/results/table4_weight_sensitivity.csv](../../01_Thesis/Results/BenHalluEval/smoke/results/table4_weight_sensitivity.csv) — table4_weight_sensitivity.csv; 1292 bytes
 - [01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/outputs/bangla-ai-1.7b-q4_zero_shot_track_a_b_first10_each.jsonl](../../01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/outputs/bangla-ai-1.7b-q4_zero_shot_track_a_b_first10_each.jsonl) — bangla-ai-1.7b-q4_zero_shot_track_a_b_first10_each.jsonl; 53790 bytes
 - [01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/outputs/gemma3_1b_zero_shot_track_a_b_first10_each.jsonl](../../01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/outputs/gemma3_1b_zero_shot_track_a_b_first10_each.jsonl) — gemma3_1b_zero_shot_track_a_b_first10_each.jsonl; 53669 bytes
 - [01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/outputs/qwen2.5_1.5b_zero_shot_track_a_b_first10_each.jsonl](../../01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/outputs/qwen2.5_1.5b_zero_shot_track_a_b_first10_each.jsonl) — qwen2.5_1.5b_zero_shot_track_a_b_first10_each.jsonl; 48949 bytes
 - [01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/outputs/qwen3_1.7b_zero_shot_track_a_b_first10_each.jsonl](../../01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/outputs/qwen3_1.7b_zero_shot_track_a_b_first10_each.jsonl) — qwen3_1.7b_zero_shot_track_a_b_first10_each.jsonl; 48955 bytes
-- [01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/results/benhalluscore_20row_summary.csv](../../01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/results/benhalluscore_20row_summary.csv) — benhalluscore_20row_summary.csv; 534 bytes
-- [01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/results/table1_overall_and_per_task_bhs.csv](../../01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/results/table1_overall_and_per_task_bhs.csv) — table1_overall_and_per_task_bhs.csv; 1353 bytes
-- [01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/results/table2_granular_hallucination_types.csv](../../01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/results/table2_granular_hallucination_types.csv) — table2_granular_hallucination_types.csv; 2655 bytes
-- [01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/results/table3_cot_delta_ablation.csv](../../01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/results/table3_cot_delta_ablation.csv) — table3_cot_delta_ablation.csv; 50 bytes
-- [01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/results/table4_weight_sensitivity.csv](../../01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/results/table4_weight_sensitivity.csv) — table4_weight_sensitivity.csv; 2698 bytes
+- [01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/results/benhalluscore_20row_summary.csv](../../01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/results/benhalluscore_20row_summary.csv) — benhalluscore_20row_summary.csv; 539 bytes
+- [01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/results/table1_overall_and_per_task_bhs.csv](../../01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/results/table1_overall_and_per_task_bhs.csv) — table1_overall_and_per_task_bhs.csv; 1374 bytes
+- [01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/results/table2_granular_hallucination_types.csv](../../01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/results/table2_granular_hallucination_types.csv) — table2_granular_hallucination_types.csv; 2704 bytes
+- [01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/results/table3_cot_delta_ablation.csv](../../01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/results/table3_cot_delta_ablation.csv) — table3_cot_delta_ablation.csv; 51 bytes
+- [01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/results/table4_weight_sensitivity.csv](../../01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/results/table4_weight_sensitivity.csv) — table4_weight_sensitivity.csv; 2735 bytes
 - [01_Thesis/Results/BenHalluEval/track_a_first10_baseline/outputs/banglallama-3.2-3b-q4_zero_shot_track_a_first10.jsonl](../../01_Thesis/Results/BenHalluEval/track_a_first10_baseline/outputs/banglallama-3.2-3b-q4_zero_shot_track_a_first10.jsonl) — banglallama-3.2-3b-q4_zero_shot_track_a_first10.jsonl; 11890 bytes
 - [01_Thesis/Results/BenHalluEval/track_a_first10_baseline/outputs/gemma3_1b_zero_shot_track_a_first10.jsonl](../../01_Thesis/Results/BenHalluEval/track_a_first10_baseline/outputs/gemma3_1b_zero_shot_track_a_first10.jsonl) — gemma3_1b_zero_shot_track_a_first10.jsonl; 27939 bytes
 - [01_Thesis/Results/BenHalluEval/track_a_first10_baseline/outputs/qwen3_1.7b_zero_shot_track_a_first10.jsonl](../../01_Thesis/Results/BenHalluEval/track_a_first10_baseline/outputs/qwen3_1.7b_zero_shot_track_a_first10.jsonl) — qwen3_1.7b_zero_shot_track_a_first10.jsonl; 25583 bytes
@@ -85,59 +111,69 @@ Files: 409; bytes: 77516138.
 - [01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/outputs/gemma3_1b_zero_shot_track_a_first10.jsonl](../../01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/outputs/gemma3_1b_zero_shot_track_a_first10.jsonl) — gemma3_1b_zero_shot_track_a_first10.jsonl; 27939 bytes
 - [01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/outputs/qwen2.5_1.5b_zero_shot_track_a_first10.jsonl](../../01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/outputs/qwen2.5_1.5b_zero_shot_track_a_first10.jsonl) — qwen2.5_1.5b_zero_shot_track_a_first10.jsonl; 25579 bytes
 - [01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/outputs/qwen3_1.7b_zero_shot_track_a_first10.jsonl](../../01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/outputs/qwen3_1.7b_zero_shot_track_a_first10.jsonl) — qwen3_1.7b_zero_shot_track_a_first10.jsonl; 25583 bytes
-- [01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/results/table1_overall_and_per_task_bhs.csv](../../01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/results/table1_overall_and_per_task_bhs.csv) — table1_overall_and_per_task_bhs.csv; 1233 bytes
-- [01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/results/table2_granular_hallucination_types.csv](../../01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/results/table2_granular_hallucination_types.csv) — table2_granular_hallucination_types.csv; 2398 bytes
-- [01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/results/table3_cot_delta_ablation.csv](../../01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/results/table3_cot_delta_ablation.csv) — table3_cot_delta_ablation.csv; 50 bytes
-- [01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/results/table4_weight_sensitivity.csv](../../01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/results/table4_weight_sensitivity.csv) — table4_weight_sensitivity.csv; 1 bytes
+- [01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/results/table1_overall_and_per_task_bhs.csv](../../01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/results/table1_overall_and_per_task_bhs.csv) — table1_overall_and_per_task_bhs.csv; 1254 bytes
+- [01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/results/table2_granular_hallucination_types.csv](../../01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/results/table2_granular_hallucination_types.csv) — table2_granular_hallucination_types.csv; 2447 bytes
+- [01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/results/table3_cot_delta_ablation.csv](../../01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/results/table3_cot_delta_ablation.csv) — table3_cot_delta_ablation.csv; 51 bytes
+- [01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/results/table4_weight_sensitivity.csv](../../01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/results/table4_weight_sensitivity.csv) — table4_weight_sensitivity.csv; 2 bytes
 - [01_Thesis/Results/BenHalluEval/update_pipeline_20row/intermediate/five_stage_rows.jsonl](../../01_Thesis/Results/BenHalluEval/update_pipeline_20row/intermediate/five_stage_rows.jsonl) — five_stage_rows.jsonl; 5873368 bytes
-- [01_Thesis/Results/BenHalluEval/update_pipeline_20row_pilot/features_29_dense.csv](../../01_Thesis/Results/BenHalluEval/update_pipeline_20row_pilot/features_29_dense.csv) — features_29_dense.csv; 24165 bytes
+- [01_Thesis/Results/BenHalluEval/update_pipeline_20row_pilot/features_29_dense.csv](../../01_Thesis/Results/BenHalluEval/update_pipeline_20row_pilot/features_29_dense.csv) — features_29_dense.csv; 24206 bytes
 - [01_Thesis/Results/BenHalluEval/update_pipeline_20row_pilot/intermediate/five_stage_rows.jsonl](../../01_Thesis/Results/BenHalluEval/update_pipeline_20row_pilot/intermediate/five_stage_rows.jsonl) — five_stage_rows.jsonl; 4393956 bytes
-- [01_Thesis/Results/BenHalluEval/update_pipeline_20row_pilot/meta_predictions.csv](../../01_Thesis/Results/BenHalluEval/update_pipeline_20row_pilot/meta_predictions.csv) — meta_predictions.csv; 2839 bytes
-- [01_Thesis/Results/BenHalluEval/update_pipeline_20row_pilot/pre_post_matched_comparison.csv](../../01_Thesis/Results/BenHalluEval/update_pipeline_20row_pilot/pre_post_matched_comparison.csv) — pre_post_matched_comparison.csv; 592 bytes
-- [01_Thesis/Results/BenHalluEval/update_pipeline_20row_pilot/update_pipeline_bhs.csv](../../01_Thesis/Results/BenHalluEval/update_pipeline_20row_pilot/update_pipeline_bhs.csv) — update_pipeline_bhs.csv; 337 bytes
-- [01_Thesis/Results/BenHalluEval/update_pipeline_20row_pilot/update_pipeline_bhs_fractional.csv](../../01_Thesis/Results/BenHalluEval/update_pipeline_20row_pilot/update_pipeline_bhs_fractional.csv) — update_pipeline_bhs_fractional.csv; 96 bytes
-- [02_Reference_Projects/IUTCSFESTDATATHON/bengali-hallucination/sample submission.csv](../../02_Reference_Projects/IUTCSFESTDATATHON/bengali-hallucination/sample%20submission.csv) — sample submission.csv; 16513 bytes
-- [02_Reference_Projects/IUTCSFESTDATATHON/bengali-hallucination/test set.csv](../../02_Reference_Projects/IUTCSFESTDATATHON/bengali-hallucination/test%20set.csv) — test set.csv; 2327431 bytes
-- [02_Reference_Projects/REFERENCE_FILE_MANIFEST.csv](../../02_Reference_Projects/REFERENCE_FILE_MANIFEST.csv) — REFERENCE_FILE_MANIFEST.csv; 42252 bytes
+- [01_Thesis/Results/BenHalluEval/update_pipeline_20row_pilot/meta_predictions.csv](../../01_Thesis/Results/BenHalluEval/update_pipeline_20row_pilot/meta_predictions.csv) — meta_predictions.csv; 2860 bytes
+- [01_Thesis/Results/BenHalluEval/update_pipeline_20row_pilot/pre_post_matched_comparison.csv](../../01_Thesis/Results/BenHalluEval/update_pipeline_20row_pilot/pre_post_matched_comparison.csv) — pre_post_matched_comparison.csv; 597 bytes
+- [01_Thesis/Results/BenHalluEval/update_pipeline_20row_pilot/update_pipeline_bhs.csv](../../01_Thesis/Results/BenHalluEval/update_pipeline_20row_pilot/update_pipeline_bhs.csv) — update_pipeline_bhs.csv; 339 bytes
+- [01_Thesis/Results/BenHalluEval/update_pipeline_20row_pilot/update_pipeline_bhs_fractional.csv](../../01_Thesis/Results/BenHalluEval/update_pipeline_20row_pilot/update_pipeline_bhs_fractional.csv) — update_pipeline_bhs_fractional.csv; 98 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/bengali-hallucination/sample submission.csv](../../02_Reference_Projects/IUTCSFESTDATATHON/bengali-hallucination/sample%20submission.csv) — sample submission.csv; 19029 bytes
+- [02_Reference_Projects/IUTCSFESTDATATHON/bengali-hallucination/test set.csv](../../02_Reference_Projects/IUTCSFESTDATATHON/bengali-hallucination/test%20set.csv) — test set.csv; 2329947 bytes
+- [02_Reference_Projects/REFERENCE_FILE_MANIFEST.csv](../../02_Reference_Projects/REFERENCE_FILE_MANIFEST.csv) — REFERENCE_FILE_MANIFEST.csv; 42536 bytes
 
 ### documentation
 
-- [01_Thesis/Code/Evaluation_Pipeline/README.md](../../01_Thesis/Code/Evaluation_Pipeline/README.md) — Evaluation pipeline guide; 5738 bytes
+- [.github/skills/graphify/SKILL.md](../../.github/skills/graphify/SKILL.md) — Graphify; 3170 bytes
+- [01_Thesis/Code/Evaluation_Pipeline/README.md](../../01_Thesis/Code/Evaluation_Pipeline/README.md) — Evaluation pipeline guide; 10834 bytes
 - [01_Thesis/Data/BenHalluEval/README.md](../../01_Thesis/Data/BenHalluEval/README.md) — BenHalluEval data guide; 2450 bytes
-- [01_Thesis/Data/Dialect/README.md](../../01_Thesis/Data/Dialect/README.md) — Real dialect benchmark not yet supplied; 826 bytes
-- [01_Thesis/Docs/AUDIT_REPORT.md](../../01_Thesis/Docs/AUDIT_REPORT.md) — Evaluation Pipeline and Optimization Audit Report; 17117 bytes
-- [01_Thesis/Docs/CODE_REVIEW.md](../../01_Thesis/Docs/CODE_REVIEW.md) — Code review: evaluation, workspace tools, and preserved research; 18396 bytes
-- [01_Thesis/Docs/DATA_GUIDE.md](../../01_Thesis/Docs/DATA_GUIDE.md) — Data guide and integration boundaries; 7893 bytes
-- [01_Thesis/Docs/ORGANIZATION.md](../../01_Thesis/Docs/ORGANIZATION.md) — Workspace organization record; 3593 bytes
-- [01_Thesis/Docs/RESEARCH_REUSE.md](../../01_Thesis/Docs/RESEARCH_REUSE.md) — Research reuse map: Huntrix and CUET_AL_Masaar; 19050 bytes
-- [01_Thesis/Docs/WORKFLOW.md](../../01_Thesis/Docs/WORKFLOW.md) — Reproducible thesis workflow; 8748 bytes
-- [01_Thesis/Docs/catalog/FILE_INDEX.md](../../01_Thesis/Docs/catalog/FILE_INDEX.md) — Workspace file index; 66835 bytes
-- [01_Thesis/Experiments/README.md](../../01_Thesis/Experiments/README.md) — Experiment records; 1028 bytes
-- [01_Thesis/Experiments/TEMPLATE.md](../../01_Thesis/Experiments/TEMPLATE.md) — Experiment record; 3250 bytes
-- [01_Thesis/Experiments/reference_repairs/README.md](../../01_Thesis/Experiments/reference_repairs/README.md) — Reference Repairs and Adaptations; 1786 bytes
-- [01_Thesis/Experiments/reference_repairs/cuet/README.md](../../01_Thesis/Experiments/reference_repairs/cuet/README.md) — CUET_AL_Masaar Reference Adaptation; 962 bytes
-- [01_Thesis/Experiments/reference_repairs/huntrix/README.md](../../01_Thesis/Experiments/reference_repairs/huntrix/README.md) — Huntrix Reference Adaptation & Repairs; 1218 bytes
+- [01_Thesis/Data/Dialect/README.md](../../01_Thesis/Data/Dialect/README.md) — Real dialect benchmark not yet supplied; 835 bytes
+- [01_Thesis/Docs/AUDIT_REPORT.md](../../01_Thesis/Docs/AUDIT_REPORT.md) — Evaluation Pipeline and Optimization Audit Report; 17348 bytes
+- [01_Thesis/Docs/CODE_REVIEW.md](../../01_Thesis/Docs/CODE_REVIEW.md) — Code review: evaluation, workspace tools, and preserved research; 18641 bytes
+- [01_Thesis/Docs/DATA_GUIDE.md](../../01_Thesis/Docs/DATA_GUIDE.md) — Data guide and integration boundaries; 7994 bytes
+- [01_Thesis/Docs/MASTER_ARCHITECTURE.md](../../01_Thesis/Docs/MASTER_ARCHITECTURE.md) — BenHalluEval: Standalone Top 1% Master Architecture for Bengali LLM Hallucination Detection; 23036 bytes
+- [01_Thesis/Docs/ORGANIZATION.md](../../01_Thesis/Docs/ORGANIZATION.md) — Workspace organization record; 3646 bytes
+- [01_Thesis/Docs/RESEARCH_REUSE.md](../../01_Thesis/Docs/RESEARCH_REUSE.md) — Research reuse map: Huntrix and CUET_AL_Masaar; 19233 bytes
+- [01_Thesis/Docs/WORKFLOW.md](../../01_Thesis/Docs/WORKFLOW.md) — Reproducible thesis workflow; 8865 bytes
+- [01_Thesis/Docs/catalog/FILE_INDEX.md](../../01_Thesis/Docs/catalog/FILE_INDEX.md) — Workspace file index; 67275 bytes
+- [01_Thesis/Experiments/2026-11-08_corrected_v2_20row/PROTOCOL.md](../../01_Thesis/Experiments/2026-11-08_corrected_v2_20row/PROTOCOL.md) — Corrected-v2 local 20-row detection pilot; 6184 bytes
+- [01_Thesis/Experiments/2026-11-08_corrected_v2_20row/RESULTS.md](../../01_Thesis/Experiments/2026-11-08_corrected_v2_20row/RESULTS.md) — Corrected-v2 evaluation: completed 20-row results; 12822 bytes
+- [01_Thesis/Experiments/README.md](../../01_Thesis/Experiments/README.md) — Experiment records; 1041 bytes
+- [01_Thesis/Experiments/TEMPLATE.md](../../01_Thesis/Experiments/TEMPLATE.md) — Experiment record; 3317 bytes
+- [01_Thesis/Experiments/reference_repairs/README.md](../../01_Thesis/Experiments/reference_repairs/README.md) — Reference Repairs and Adaptations; 1810 bytes
+- [01_Thesis/Experiments/reference_repairs/cuet/README.md](../../01_Thesis/Experiments/reference_repairs/cuet/README.md) — CUET_AL_Masaar Reference Adaptation; 977 bytes
+- [01_Thesis/Experiments/reference_repairs/huntrix/README.md](../../01_Thesis/Experiments/reference_repairs/huntrix/README.md) — Huntrix Reference Adaptation & Repairs; 1235 bytes
 - [01_Thesis/README.md](../../01_Thesis/README.md) — Thesis workspace; 2286 bytes
-- [01_Thesis/Results/BenHalluEval/smoke/results/table1_overall_and_per_task_bhs.md](../../01_Thesis/Results/BenHalluEval/smoke/results/table1_overall_and_per_task_bhs.md) — table1_overall_and_per_task_bhs.md; 1293 bytes
-- [01_Thesis/Results/BenHalluEval/smoke/results/table2_granular_hallucination_types.md](../../01_Thesis/Results/BenHalluEval/smoke/results/table2_granular_hallucination_types.md) — table2_granular_hallucination_types.md; 2202 bytes
-- [01_Thesis/Results/BenHalluEval/smoke/results/table3_cot_delta_ablation.md](../../01_Thesis/Results/BenHalluEval/smoke/results/table3_cot_delta_ablation.md) — table3_cot_delta_ablation.md; 328 bytes
-- [01_Thesis/Results/BenHalluEval/smoke/results/table4_weight_sensitivity.md](../../01_Thesis/Results/BenHalluEval/smoke/results/table4_weight_sensitivity.md) — table4_weight_sensitivity.md; 2007 bytes
-- [01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/benhalluscore_20row_report.md](../../01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/benhalluscore_20row_report.md) — BenHalluScore baseline: 10 rows per track; 2562 bytes
-- [01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/results/table1_overall_and_per_task_bhs.md](../../01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/results/table1_overall_and_per_task_bhs.md) — table1_overall_and_per_task_bhs.md; 2069 bytes
-- [01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/results/table2_granular_hallucination_types.md](../../01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/results/table2_granular_hallucination_types.md) — table2_granular_hallucination_types.md; 3832 bytes
-- [01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/results/table3_cot_delta_ablation.md](../../01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/results/table3_cot_delta_ablation.md) — table3_cot_delta_ablation.md; 94 bytes
-- [01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/results/table4_weight_sensitivity.md](../../01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/results/table4_weight_sensitivity.md) — table4_weight_sensitivity.md; 3915 bytes
-- [01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/run_manifest.md](../../01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/run_manifest.md) — Run manifest: BenHalluScore, 10 rows per track; 1801 bytes
-- [01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/results/table1_overall_and_per_task_bhs.md](../../01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/results/table1_overall_and_per_task_bhs.md) — table1_overall_and_per_task_bhs.md; 1985 bytes
-- [01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/results/table2_granular_hallucination_types.md](../../01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/results/table2_granular_hallucination_types.md) — table2_granular_hallucination_types.md; 3618 bytes
-- [01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/results/table3_cot_delta_ablation.md](../../01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/results/table3_cot_delta_ablation.md) — table3_cot_delta_ablation.md; 94 bytes
-- [01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/results/table4_weight_sensitivity.md](../../01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/results/table4_weight_sensitivity.md) — table4_weight_sensitivity.md; 10 bytes
-- [01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/run_manifest.md](../../01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/run_manifest.md) — Run manifest: Track-A first-10 baseline; 1633 bytes
-- [01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/track_a_first10_baseline_report.md](../../01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/track_a_first10_baseline_report.md) — Track-A first-10 baseline report; 2081 bytes
-- [01_Thesis/Results/BenHalluEval/update_pipeline_20row_pilot/update_pipeline_report.md](../../01_Thesis/Results/BenHalluEval/update_pipeline_20row_pilot/update_pipeline_report.md) — Updated BenHalluEval detector: 20-row Track-A/Track-B run; 6258 bytes
-- [01_Thesis/Writing/README.md](../../01_Thesis/Writing/README.md) — Thesis writing and publication assets; 1137 bytes
-- [01_Thesis/Writing/chapters/README.md](../../01_Thesis/Writing/chapters/README.md) — Original thesis chapters; 1025 bytes
-- [01_Thesis/Writing/tables/README.md](../../01_Thesis/Writing/tables/README.md) — Reviewed thesis tables; 475 bytes
+- [01_Thesis/Results/BenHalluEval/corrected_v2_20row_cascade_exploratory/results/REPORT.md](../../01_Thesis/Results/BenHalluEval/corrected_v2_20row_cascade_exploratory/results/REPORT.md) — Corrected v2: local 20-row pilot; 2714 bytes
+- [01_Thesis/Results/BenHalluEval/corrected_v2_20row_judge_only/STATUS.md](../../01_Thesis/Results/BenHalluEval/corrected_v2_20row_judge_only/STATUS.md) — Interrupted, superseded attempt — not final thesis results; 849 bytes
+- [01_Thesis/Results/BenHalluEval/corrected_v2_20row_judge_only/results/REPORT.md](../../01_Thesis/Results/BenHalluEval/corrected_v2_20row_judge_only/results/REPORT.md) — Corrected v2: local 20-row pilot; 2589 bytes
+- [01_Thesis/Results/BenHalluEval/corrected_v2_20row_judge_only/results/overall_bhs.json.tmp](../../01_Thesis/Results/BenHalluEval/corrected_v2_20row_judge_only/results/overall_bhs.json.tmp) — overall_bhs.json.tmp; 1343 bytes
+- [01_Thesis/Results/BenHalluEval/corrected_v2_20row_neural_untrained/results/REPORT.md](../../01_Thesis/Results/BenHalluEval/corrected_v2_20row_neural_untrained/results/REPORT.md) — Corrected v2: local 20-row pilot; 2718 bytes
+- [01_Thesis/Results/BenHalluEval/smoke/results/table1_overall_and_per_task_bhs.md](../../01_Thesis/Results/BenHalluEval/smoke/results/table1_overall_and_per_task_bhs.md) — table1_overall_and_per_task_bhs.md; 1305 bytes
+- [01_Thesis/Results/BenHalluEval/smoke/results/table2_granular_hallucination_types.md](../../01_Thesis/Results/BenHalluEval/smoke/results/table2_granular_hallucination_types.md) — table2_granular_hallucination_types.md; 2228 bytes
+- [01_Thesis/Results/BenHalluEval/smoke/results/table3_cot_delta_ablation.md](../../01_Thesis/Results/BenHalluEval/smoke/results/table3_cot_delta_ablation.md) — table3_cot_delta_ablation.md; 334 bytes
+- [01_Thesis/Results/BenHalluEval/smoke/results/table4_weight_sensitivity.md](../../01_Thesis/Results/BenHalluEval/smoke/results/table4_weight_sensitivity.md) — table4_weight_sensitivity.md; 2027 bytes
+- [01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/benhalluscore_20row_report.md](../../01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/benhalluscore_20row_report.md) — BenHalluScore baseline: 10 rows per track; 2563 bytes
+- [01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/results/table1_overall_and_per_task_bhs.md](../../01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/results/table1_overall_and_per_task_bhs.md) — table1_overall_and_per_task_bhs.md; 2091 bytes
+- [01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/results/table2_granular_hallucination_types.md](../../01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/results/table2_granular_hallucination_types.md) — table2_granular_hallucination_types.md; 3882 bytes
+- [01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/results/table3_cot_delta_ablation.md](../../01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/results/table3_cot_delta_ablation.md) — table3_cot_delta_ablation.md; 96 bytes
+- [01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/results/table4_weight_sensitivity.md](../../01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/results/table4_weight_sensitivity.md) — table4_weight_sensitivity.md; 3953 bytes
+- [01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/run_manifest.md](../../01_Thesis/Results/BenHalluEval/track_a_b_first10_each_baseline/run_manifest.md) — Run manifest: BenHalluScore, 10 rows per track; 1802 bytes
+- [01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/results/table1_overall_and_per_task_bhs.md](../../01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/results/table1_overall_and_per_task_bhs.md) — table1_overall_and_per_task_bhs.md; 2007 bytes
+- [01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/results/table2_granular_hallucination_types.md](../../01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/results/table2_granular_hallucination_types.md) — table2_granular_hallucination_types.md; 3668 bytes
+- [01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/results/table3_cot_delta_ablation.md](../../01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/results/table3_cot_delta_ablation.md) — table3_cot_delta_ablation.md; 96 bytes
+- [01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/results/table4_weight_sensitivity.md](../../01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/results/table4_weight_sensitivity.md) — table4_weight_sensitivity.md; 12 bytes
+- [01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/run_manifest.md](../../01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/run_manifest.md) — Run manifest: Track-A first-10 baseline; 1634 bytes
+- [01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/track_a_first10_baseline_report.md](../../01_Thesis/Results/BenHalluEval/track_a_first10_baseline_final/track_a_first10_baseline_report.md) — Track-A first-10 baseline report; 2082 bytes
+- [01_Thesis/Results/BenHalluEval/update_pipeline_20row_pilot/update_pipeline_report.md](../../01_Thesis/Results/BenHalluEval/update_pipeline_20row_pilot/update_pipeline_report.md) — Updated BenHalluEval detector: 20-row Track-A/Track-B run; 6309 bytes
+- [01_Thesis/Writing/README.md](../../01_Thesis/Writing/README.md) — Thesis writing and publication assets; 1150 bytes
+- [01_Thesis/Writing/chapters/04_methodology_master_architecture.md](../../01_Thesis/Writing/chapters/04_methodology_master_architecture.md) — Chapter 4: Methodology — Standalone Master Architecture for Bengali LLM Hallucination Detection; 3458 bytes
+- [01_Thesis/Writing/chapters/README.md](../../01_Thesis/Writing/chapters/README.md) — Original thesis chapters; 1038 bytes
+- [01_Thesis/Writing/tables/README.md](../../01_Thesis/Writing/tables/README.md) — Reviewed thesis tables; 480 bytes
 - [02_Reference_Projects/IUTCSFESTDATATHON/AGENTS.md](../../02_Reference_Projects/IUTCSFESTDATATHON/AGENTS.md) — Agent Workflow; 1525 bytes
 - [02_Reference_Projects/IUTCSFESTDATATHON/DECISION.log](../../02_Reference_Projects/IUTCSFESTDATATHON/DECISION.log) — DECISION.log; 63991 bytes
 - [02_Reference_Projects/IUTCSFESTDATATHON/EXPERIMENT.log](../../02_Reference_Projects/IUTCSFESTDATATHON/EXPERIMENT.log) — EXPERIMENT.log; 207283 bytes
@@ -180,20 +216,26 @@ Files: 409; bytes: 77516138.
 - [02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/report/acl_natbib.bst](../../02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/report/acl_natbib.bst) — acl_natbib.bst; 45442 bytes
 - [02_Reference_Projects/IUT_Datathon_Hallu/README.md](../../02_Reference_Projects/IUT_Datathon_Hallu/README.md) — অলীকবচন — Bengali LLM Hallucination Detection (IUT 12th ICT Fest Datathon 2026); 7538 bytes
 - [02_Reference_Projects/README.md](../../02_Reference_Projects/README.md) — Reference projects: reading guide; 3218 bytes
-- [AGENTS.md](../../AGENTS.md) — Thesis workspace instructions; 4299 bytes
+- [AGENTS.md](../../AGENTS.md) — Thesis workspace instructions; 4335 bytes
 - [README.md](../../README.md) — Bengali Hallucination Thesis Workspace; 3035 bytes
-- [docs/AUDIT_REPORT.md](../../docs/AUDIT_REPORT.md) — Evaluation Pipeline and Optimization Audit Report; 17117 bytes
-- [docs/CODE_REVIEW.md](../../docs/CODE_REVIEW.md) — Code review: evaluation, workspace tools, and preserved research; 18396 bytes
-- [docs/DATA_GUIDE.md](../../docs/DATA_GUIDE.md) — Data guide and integration boundaries; 7893 bytes
-- [docs/ORGANIZATION.md](../../docs/ORGANIZATION.md) — Workspace organization record; 3593 bytes
-- [docs/RESEARCH_REUSE.md](../../docs/RESEARCH_REUSE.md) — Research reuse map: Huntrix and CUET_AL_Masaar; 19050 bytes
-- [docs/WORKFLOW.md](../../docs/WORKFLOW.md) — Reproducible thesis workflow; 8748 bytes
-- [environment/README.md](../../environment/README.md) — Evaluation environment; 1983 bytes
-- [tools/README.md](../../tools/README.md) — Workspace navigation and integrity tools; 2202 bytes
+- [Update_formulation.md](../../Update_formulation.md) — BenHalluEval v2.0: Corrected Mathematical Formulation; 29309 bytes
+- [analyze.md](../../analyze.md) — Project Analysis: Bengali LLM Hallucination Thesis; 13459 bytes
+- [docs/AUDIT_REPORT.md](../../docs/AUDIT_REPORT.md) — Evaluation Pipeline and Optimization Audit Report; 17348 bytes
+- [docs/CODE_REVIEW.md](../../docs/CODE_REVIEW.md) — Code review: evaluation, workspace tools, and preserved research; 18641 bytes
+- [docs/DATA_GUIDE.md](../../docs/DATA_GUIDE.md) — Data guide and integration boundaries; 7994 bytes
+- [docs/ORGANIZATION.md](../../docs/ORGANIZATION.md) — Workspace organization record; 3646 bytes
+- [docs/RESEARCH_REUSE.md](../../docs/RESEARCH_REUSE.md) — Research reuse map: Huntrix and CUET_AL_Masaar; 19233 bytes
+- [docs/WORKFLOW.md](../../docs/WORKFLOW.md) — Reproducible thesis workflow; 8865 bytes
+- [environment/README.md](../../environment/README.md) — Evaluation environment; 2015 bytes
+- [graphify-out/GRAPH_REPORT.md](../../graphify-out/GRAPH_REPORT.md) — Source-linked analysis of analyze.md; 12752 bytes
+- [graphify-out/NODE_INDEX.md](../../graphify-out/NODE_INDEX.md) — Compact node lookup; 3331 bytes
+- [graphify-out/cache/last_query_stamp](../../graphify-out/cache/last_query_stamp) — last_query_stamp; 18 bytes
+- [graphify-out/graph.html](../../graphify-out/graph.html) — graph.html; 61578 bytes
+- [tools/README.md](../../tools/README.md) — Workspace navigation and integrity tools; 2227 bytes
 
 ### figure
 
-- [01_Thesis/Writing/figures/README.md](../../01_Thesis/Writing/figures/README.md) — Reviewed thesis figures; 500 bytes
+- [01_Thesis/Writing/figures/README.md](../../01_Thesis/Writing/figures/README.md) — Reviewed thesis figures; 505 bytes
 - [02_Reference_Projects/IUTCSFESTDATATHON/docs/assets/leaderboard_progression.png](../../02_Reference_Projects/IUTCSFESTDATATHON/docs/assets/leaderboard_progression.png) — leaderboard_progression.png; 58333 bytes
 - [02_Reference_Projects/IUTCSFESTDATATHON/docs/assets/pipeline_architecture.png](../../02_Reference_Projects/IUTCSFESTDATATHON/docs/assets/pipeline_architecture.png) — pipeline_architecture.png; 68003 bytes
 - [02_Reference_Projects/IUTCSFESTDATATHON/docs/assets/uncertainty_reduction.png](../../02_Reference_Projects/IUTCSFESTDATATHON/docs/assets/uncertainty_reduction.png) — uncertainty_reduction.png; 43835 bytes
@@ -205,8 +247,8 @@ Files: 409; bytes: 77516138.
 
 ### license
 
-- [01_Thesis/Experiments/reference_repairs/cuet/LICENSE](../../01_Thesis/Experiments/reference_repairs/cuet/LICENSE) — LICENSE; 1070 bytes
-- [01_Thesis/Experiments/reference_repairs/huntrix/LICENSE](../../01_Thesis/Experiments/reference_repairs/huntrix/LICENSE) — LICENSE; 1069 bytes
+- [01_Thesis/Experiments/reference_repairs/cuet/LICENSE](../../01_Thesis/Experiments/reference_repairs/cuet/LICENSE) — LICENSE; 1091 bytes
+- [01_Thesis/Experiments/reference_repairs/huntrix/LICENSE](../../01_Thesis/Experiments/reference_repairs/huntrix/LICENSE) — LICENSE; 1090 bytes
 - [02_Reference_Projects/IUTCSFESTDATATHON/LICENSE](../../02_Reference_Projects/IUTCSFESTDATATHON/LICENSE) — LICENSE; 1069 bytes
 - [02_Reference_Projects/IUTCSFESTDATATHON/kaggle_datasets/llama_cpp_cuda_b9637_public/LICENSE.llama.cpp.txt](../../02_Reference_Projects/IUTCSFESTDATATHON/kaggle_datasets/llama_cpp_cuda_b9637_public/LICENSE.llama.cpp.txt) — LICENSE.llama.cpp.txt; 1078 bytes
 - [02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/LICENSE](../../02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/LICENSE) — LICENSE; 1069 bytes
@@ -214,8 +256,8 @@ Files: 409; bytes: 77516138.
 
 ### notebook
 
-- [01_Thesis/Experiments/reference_repairs/cuet/CUET_AL_Masaar_inference_notebook.repaired.ipynb](../../01_Thesis/Experiments/reference_repairs/cuet/CUET_AL_Masaar_inference_notebook.repaired.ipynb) — CUET_AL_Masaar_inference_notebook.repaired.ipynb; 102806 bytes
-- [01_Thesis/Experiments/reference_repairs/huntrix/best_gemma12_qat_submission.repaired.ipynb](../../01_Thesis/Experiments/reference_repairs/huntrix/best_gemma12_qat_submission.repaired.ipynb) — Bengali Hallucination Detection - Gemma 12B QAT GGUF Submission; 16459 bytes
+- [01_Thesis/Experiments/reference_repairs/cuet/CUET_AL_Masaar_inference_notebook.repaired.ipynb](../../01_Thesis/Experiments/reference_repairs/cuet/CUET_AL_Masaar_inference_notebook.repaired.ipynb) — CUET_AL_Masaar_inference_notebook.repaired.ipynb; 104949 bytes
+- [01_Thesis/Experiments/reference_repairs/huntrix/best_gemma12_qat_submission.repaired.ipynb](../../01_Thesis/Experiments/reference_repairs/huntrix/best_gemma12_qat_submission.repaired.ipynb) — Bengali Hallucination Detection - Gemma 12B QAT GGUF Submission; 16855 bytes
 - [02_Reference_Projects/IUTCSFESTDATATHON/archive/legacy_notebooks/best_gemma12_qat_submission.ipynb](../../02_Reference_Projects/IUTCSFESTDATATHON/archive/legacy_notebooks/best_gemma12_qat_submission.ipynb) — Bengali Hallucination Detection - Gemma 12B QAT GGUF Submission; 16476 bytes
 - [02_Reference_Projects/IUTCSFESTDATATHON/archive/legacy_notebooks/starter-notebook-datathon.ipynb](../../02_Reference_Projects/IUTCSFESTDATATHON/archive/legacy_notebooks/starter-notebook-datathon.ipynb) — Bangla Hallucination Detection — Starter Notebook; 175072 bytes
 - [02_Reference_Projects/IUTCSFESTDATATHON/kaggle_notebooks/phase2_v85_inference/phase2_v85_inference.ipynb](../../02_Reference_Projects/IUTCSFESTDATATHON/kaggle_notebooks/phase2_v85_inference/phase2_v85_inference.ipynb) — Huntrix — Bengali hallucination detection; 16071 bytes
@@ -234,6 +276,8 @@ Files: 409; bytes: 77516138.
 - [02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/report/Huntrix_Technical_Report.tex](../../02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/report/Huntrix_Technical_Report.tex) — Huntrix_Technical_Report.tex; 22978 bytes
 - [02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/report/references.bib](../../02_Reference_Projects/IUTCSFESTDATATHON/release/phase2-v91-public-submission/report/references.bib) — references.bib; 8723 bytes
 - [02_Reference_Projects/IUT_Datathon_Hallu/CUET_AL_Masaar_report.pdf](../../02_Reference_Projects/IUT_Datathon_Hallu/CUET_AL_Masaar_report.pdf) — CUET_AL_Masaar_report.pdf; 131039 bytes
+- [benhallueval_v2_master_architecture.pdf](../../benhallueval_v2_master_architecture.pdf) — benhallueval_v2_master_architecture.pdf; 287172 bytes
+- [updated_benhallueval_v2_master_architecture.pdf](../../updated_benhallueval_v2_master_architecture.pdf) — updated_benhallueval_v2_master_architecture.pdf; 205070 bytes
 
 ### presentation
 
@@ -282,17 +326,25 @@ Files: 409; bytes: 77516138.
 
 ### sourcecode
 
-- [01_Thesis/Code/Evaluation_Pipeline/eval.py](../../01_Thesis/Code/Evaluation_Pipeline/eval.py) — eval.py; 54002 bytes
-- [01_Thesis/Code/Evaluation_Pipeline/judge_parsing.py](../../01_Thesis/Code/Evaluation_Pipeline/judge_parsing.py) — judge_parsing.py; 10821 bytes
-- [01_Thesis/Code/Evaluation_Pipeline/judge_transport.py](../../01_Thesis/Code/Evaluation_Pipeline/judge_transport.py) — judge_transport.py; 13919 bytes
-- [01_Thesis/Code/Evaluation_Pipeline/make_splits.py](../../01_Thesis/Code/Evaluation_Pipeline/make_splits.py) — make_splits.py; 54629 bytes
-- [01_Thesis/Code/Evaluation_Pipeline/openrouter_config.py](../../01_Thesis/Code/Evaluation_Pipeline/openrouter_config.py) — openrouter_config.py; 5315 bytes
-- [01_Thesis/Code/Evaluation_Pipeline/run_openrouter.py](../../01_Thesis/Code/Evaluation_Pipeline/run_openrouter.py) — run_openrouter.py; 8114 bytes
+- [01_Thesis/Code/Evaluation_Pipeline/eval.py](../../01_Thesis/Code/Evaluation_Pipeline/eval.py) — eval.py; 54958 bytes
+- [01_Thesis/Code/Evaluation_Pipeline/judge_parsing.py](../../01_Thesis/Code/Evaluation_Pipeline/judge_parsing.py) — judge_parsing.py; 11070 bytes
+- [01_Thesis/Code/Evaluation_Pipeline/judge_transport.py](../../01_Thesis/Code/Evaluation_Pipeline/judge_transport.py) — judge_transport.py; 14212 bytes
+- [01_Thesis/Code/Evaluation_Pipeline/make_splits.py](../../01_Thesis/Code/Evaluation_Pipeline/make_splits.py) — make_splits.py; 55609 bytes
+- [01_Thesis/Code/Evaluation_Pipeline/openrouter_config.py](../../01_Thesis/Code/Evaluation_Pipeline/openrouter_config.py) — openrouter_config.py; 5435 bytes
+- [01_Thesis/Code/Evaluation_Pipeline/pipeline_v2_features.py](../../01_Thesis/Code/Evaluation_Pipeline/pipeline_v2_features.py) — pipeline_v2_features.py; 35022 bytes
+- [01_Thesis/Code/Evaluation_Pipeline/pipeline_v2_math.py](../../01_Thesis/Code/Evaluation_Pipeline/pipeline_v2_math.py) — pipeline_v2_math.py; 37088 bytes
+- [01_Thesis/Code/Evaluation_Pipeline/run_openrouter.py](../../01_Thesis/Code/Evaluation_Pipeline/run_openrouter.py) — run_openrouter.py; 8313 bytes
 - [01_Thesis/Code/Evaluation_Pipeline/update_evaluation.py](../../01_Thesis/Code/Evaluation_Pipeline/update_evaluation.py) — update_evaluation.py; 79812 bytes
-- [01_Thesis/Experiments/pipeline_hardening/original_evaluation/eval.py](../../01_Thesis/Experiments/pipeline_hardening/original_evaluation/eval.py) — eval.py; 47301 bytes
-- [01_Thesis/Experiments/pipeline_hardening/original_evaluation/make_splits.py](../../01_Thesis/Experiments/pipeline_hardening/original_evaluation/make_splits.py) — make_splits.py; 46925 bytes
-- [01_Thesis/Experiments/reference_repairs/huntrix/datathon_utils.py](../../01_Thesis/Experiments/reference_repairs/huntrix/datathon_utils.py) — datathon_utils.py; 7693 bytes
-- [01_Thesis/Experiments/reference_repairs/huntrix/structured_overrides.py](../../01_Thesis/Experiments/reference_repairs/huntrix/structured_overrides.py) — structured_overrides.py; 34177 bytes
+- [01_Thesis/Code/Evaluation_Pipeline/update_pipeline_evaluation.py](../../01_Thesis/Code/Evaluation_Pipeline/update_pipeline_evaluation.py) — update_pipeline_evaluation.py; 36579 bytes
+- [01_Thesis/Experiments/2026-11-08_corrected_v2_20row/executed_source/judge_parsing.py](../../01_Thesis/Experiments/2026-11-08_corrected_v2_20row/executed_source/judge_parsing.py) — judge_parsing.py; 11070 bytes
+- [01_Thesis/Experiments/2026-11-08_corrected_v2_20row/executed_source/pipeline_v2_features.py](../../01_Thesis/Experiments/2026-11-08_corrected_v2_20row/executed_source/pipeline_v2_features.py) — pipeline_v2_features.py; 34829 bytes
+- [01_Thesis/Experiments/2026-11-08_corrected_v2_20row/executed_source/pipeline_v2_math.py](../../01_Thesis/Experiments/2026-11-08_corrected_v2_20row/executed_source/pipeline_v2_math.py) — pipeline_v2_math.py; 37023 bytes
+- [01_Thesis/Experiments/2026-11-08_corrected_v2_20row/executed_source/update_evaluation.py](../../01_Thesis/Experiments/2026-11-08_corrected_v2_20row/executed_source/update_evaluation.py) — update_evaluation.py; 79812 bytes
+- [01_Thesis/Experiments/2026-11-08_corrected_v2_20row/executed_source/update_pipeline_evaluation.py](../../01_Thesis/Experiments/2026-11-08_corrected_v2_20row/executed_source/update_pipeline_evaluation.py) — update_pipeline_evaluation.py; 35554 bytes
+- [01_Thesis/Experiments/pipeline_hardening/original_evaluation/eval.py](../../01_Thesis/Experiments/pipeline_hardening/original_evaluation/eval.py) — eval.py; 48129 bytes
+- [01_Thesis/Experiments/pipeline_hardening/original_evaluation/make_splits.py](../../01_Thesis/Experiments/pipeline_hardening/original_evaluation/make_splits.py) — make_splits.py; 47760 bytes
+- [01_Thesis/Experiments/reference_repairs/huntrix/datathon_utils.py](../../01_Thesis/Experiments/reference_repairs/huntrix/datathon_utils.py) — datathon_utils.py; 7903 bytes
+- [01_Thesis/Experiments/reference_repairs/huntrix/structured_overrides.py](../../01_Thesis/Experiments/reference_repairs/huntrix/structured_overrides.py) — structured_overrides.py; 34938 bytes
 - [02_Reference_Projects/IUTCSFESTDATATHON/docs/scripts/build_project_docs.py](../../02_Reference_Projects/IUTCSFESTDATATHON/docs/scripts/build_project_docs.py) — build_project_docs.py; 27067 bytes
 - [02_Reference_Projects/IUTCSFESTDATATHON/kaggle_notebooks/gemma_cross_family_audit/gemma_cross_family_audit.py](../../02_Reference_Projects/IUTCSFESTDATATHON/kaggle_notebooks/gemma_cross_family_audit/gemma_cross_family_audit.py) — gemma_cross_family_audit.py; 15209 bytes
 - [02_Reference_Projects/IUTCSFESTDATATHON/kaggle_notebooks/llama_cpp_cuda_builder/llama_cpp_cuda_builder.py](../../02_Reference_Projects/IUTCSFESTDATATHON/kaggle_notebooks/llama_cpp_cuda_builder/llama_cpp_cuda_builder.py) — llama_cpp_cuda_builder.py; 3873 bytes
@@ -387,12 +439,14 @@ Files: 409; bytes: 77516138.
 - [02_Reference_Projects/IUTCSFESTDATATHON/scripts/weighted_source_overrides.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/weighted_source_overrides.py) — weighted_source_overrides.py; 5803 bytes
 - [02_Reference_Projects/IUTCSFESTDATATHON/scripts/wiki_evidence.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/wiki_evidence.py) — wiki_evidence.py; 4901 bytes
 - [02_Reference_Projects/IUTCSFESTDATATHON/scripts/wikidata_facts.py](../../02_Reference_Projects/IUTCSFESTDATATHON/scripts/wikidata_facts.py) — wikidata_facts.py; 14588 bytes
-- [tools/workspace.py](../../tools/workspace.py) — workspace.py; 18156 bytes
+- [graphify-out/build_analysis.py](../../graphify-out/build_analysis.py) — build_analysis.py; 29050 bytes
+- [tools/workspace.py](../../tools/workspace.py) — workspace.py; 18540 bytes
 
 ### test
 
-- [01_Thesis/Code/Evaluation_Pipeline/test_pipeline.py](../../01_Thesis/Code/Evaluation_Pipeline/test_pipeline.py) — test_pipeline.py; 80103 bytes
-- [01_Thesis/Experiments/pipeline_hardening/original_evaluation/test_pipeline.py](../../01_Thesis/Experiments/pipeline_hardening/original_evaluation/test_pipeline.py) — test_pipeline.py; 62263 bytes
+- [01_Thesis/Code/Evaluation_Pipeline/test_pipeline.py](../../01_Thesis/Code/Evaluation_Pipeline/test_pipeline.py) — test_pipeline.py; 81951 bytes
+- [01_Thesis/Code/Evaluation_Pipeline/test_pipeline_v2.py](../../01_Thesis/Code/Evaluation_Pipeline/test_pipeline_v2.py) — test_pipeline_v2.py; 28032 bytes
+- [01_Thesis/Experiments/pipeline_hardening/original_evaluation/test_pipeline.py](../../01_Thesis/Experiments/pipeline_hardening/original_evaluation/test_pipeline.py) — test_pipeline.py; 63701 bytes
 - [02_Reference_Projects/IUTCSFESTDATATHON/tests/test_analyze_gemma_cross_family_audit.py](../../02_Reference_Projects/IUTCSFESTDATATHON/tests/test_analyze_gemma_cross_family_audit.py) — test_analyze_gemma_cross_family_audit.py; 1795 bytes
 - [02_Reference_Projects/IUTCSFESTDATATHON/tests/test_analyze_source_recovery_audit.py](../../02_Reference_Projects/IUTCSFESTDATATHON/tests/test_analyze_source_recovery_audit.py) — test_analyze_source_recovery_audit.py; 2057 bytes
 - [02_Reference_Projects/IUTCSFESTDATATHON/tests/test_antonym_evidence_overrides.py](../../02_Reference_Projects/IUTCSFESTDATATHON/tests/test_antonym_evidence_overrides.py) — test_antonym_evidence_overrides.py; 3329 bytes
@@ -449,4 +503,5 @@ Files: 409; bytes: 77516138.
 - [02_Reference_Projects/IUTCSFESTDATATHON/tests/test_typed_evidence.py](../../02_Reference_Projects/IUTCSFESTDATATHON/tests/test_typed_evidence.py) — test_typed_evidence.py; 3442 bytes
 - [02_Reference_Projects/IUTCSFESTDATATHON/tests/test_typed_idiom_matcher.py](../../02_Reference_Projects/IUTCSFESTDATATHON/tests/test_typed_idiom_matcher.py) — test_typed_idiom_matcher.py; 3279 bytes
 - [02_Reference_Projects/IUTCSFESTDATATHON/tests/test_verified_fact_overrides.py](../../02_Reference_Projects/IUTCSFESTDATATHON/tests/test_verified_fact_overrides.py) — test_verified_fact_overrides.py; 13684 bytes
-- [tools/test_workspace.py](../../tools/test_workspace.py) — test_workspace.py; 17422 bytes
+- [graphify-out/test_analysis.py](../../graphify-out/test_analysis.py) — test_analysis.py; 3882 bytes
+- [tools/test_workspace.py](../../tools/test_workspace.py) — test_workspace.py; 17762 bytes

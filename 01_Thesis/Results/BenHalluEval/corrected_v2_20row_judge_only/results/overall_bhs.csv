@@ -1,0 +1,3 @@
+n_a,n_b,wrong_a,wrong_b,valid_a,valid_b,n_valid,wrong_valid_a,wrong_valid_b,failures_a,failures_b,coverage,fpr,fnr,valid_fpr,valid_fnr,BHS,op,valid_only,w_a,w_b,model,expected,attempted,complete,two_label_scores,decoded_fallbacks,fast_path,latency_seconds,partial_recorded_rows_BHS
+10,10,10,0,10,10,20,10,0,0,0,1.0,1.0,0.0,1.0,0.0,50.0,50.0,50.0,0.5,0.5,bangla-ai-1.7b-q4,20,20,True,0,20,0,73.14175969999997,
+10,1,2,1,10,1,11,2,1,0,0,1.0,0.2,1.0,0.2,1.0,,60.0,60.0,0.5,0.5,qwen3:1.7b,20,11,False,11,0,0,74.79849389999981,60.0
