@@ -1,8 +1,8 @@
 # Workspace file index
 
-Generated UTC: 2026-11-08T16:43:28.978417+00:00
+Generated UTC: 2026-11-09T04:46:12.778912+00:00
 
-Files: 464; bytes: 91771460.
+Files: 467; bytes: 91877322.
 
 - Metadata only: no code execution, notebook outputs, or data row values.
 - Titles use filenames or the first Markdown heading, not README claims; slide counts, versions, and other README drift are not inferred.
@@ -142,6 +142,7 @@ Files: 464; bytes: 91771460.
 - [01_Thesis/Docs/catalog/FILE_INDEX.md](../../01_Thesis/Docs/catalog/FILE_INDEX.md) — Workspace file index; 67275 bytes
 - [01_Thesis/Experiments/2026-11-08_corrected_v2_20row/PROTOCOL.md](../../01_Thesis/Experiments/2026-11-08_corrected_v2_20row/PROTOCOL.md) — Corrected-v2 local 20-row detection pilot; 6184 bytes
 - [01_Thesis/Experiments/2026-11-08_corrected_v2_20row/RESULTS.md](../../01_Thesis/Experiments/2026-11-08_corrected_v2_20row/RESULTS.md) — Corrected-v2 evaluation: completed 20-row results; 12822 bytes
+- [01_Thesis/Experiments/2026-11-09_days11_14_design/REPORT.md](../../01_Thesis/Experiments/2026-11-09_days11_14_design/REPORT.md) — BenHalluEval: Days 11–14 Research Design and Chapter 3 Draft; 75613 bytes
 - [01_Thesis/Experiments/README.md](../../01_Thesis/Experiments/README.md) — Experiment records; 1041 bytes
 - [01_Thesis/Experiments/TEMPLATE.md](../../01_Thesis/Experiments/TEMPLATE.md) — Experiment record; 3317 bytes
 - [01_Thesis/Experiments/reference_repairs/README.md](../../01_Thesis/Experiments/reference_repairs/README.md) — Reference Repairs and Adaptations; 1810 bytes
@@ -341,6 +342,7 @@ Files: 464; bytes: 91771460.
 - [01_Thesis/Experiments/2026-11-08_corrected_v2_20row/executed_source/pipeline_v2_math.py](../../01_Thesis/Experiments/2026-11-08_corrected_v2_20row/executed_source/pipeline_v2_math.py) — pipeline_v2_math.py; 37023 bytes
 - [01_Thesis/Experiments/2026-11-08_corrected_v2_20row/executed_source/update_evaluation.py](../../01_Thesis/Experiments/2026-11-08_corrected_v2_20row/executed_source/update_evaluation.py) — update_evaluation.py; 79812 bytes
 - [01_Thesis/Experiments/2026-11-08_corrected_v2_20row/executed_source/update_pipeline_evaluation.py](../../01_Thesis/Experiments/2026-11-08_corrected_v2_20row/executed_source/update_pipeline_evaluation.py) — update_pipeline_evaluation.py; 35554 bytes
+- [01_Thesis/Experiments/2026-11-09_days11_14_design/plots.py](../../01_Thesis/Experiments/2026-11-09_days11_14_design/plots.py) — plots.py; 18159 bytes
 - [01_Thesis/Experiments/pipeline_hardening/original_evaluation/eval.py](../../01_Thesis/Experiments/pipeline_hardening/original_evaluation/eval.py) — eval.py; 48129 bytes
 - [01_Thesis/Experiments/pipeline_hardening/original_evaluation/make_splits.py](../../01_Thesis/Experiments/pipeline_hardening/original_evaluation/make_splits.py) — make_splits.py; 47760 bytes
 - [01_Thesis/Experiments/reference_repairs/huntrix/datathon_utils.py](../../01_Thesis/Experiments/reference_repairs/huntrix/datathon_utils.py) — datathon_utils.py; 7903 bytes
@@ -446,6 +448,7 @@ Files: 464; bytes: 91771460.
 
 - [01_Thesis/Code/Evaluation_Pipeline/test_pipeline.py](../../01_Thesis/Code/Evaluation_Pipeline/test_pipeline.py) — test_pipeline.py; 81951 bytes
 - [01_Thesis/Code/Evaluation_Pipeline/test_pipeline_v2.py](../../01_Thesis/Code/Evaluation_Pipeline/test_pipeline_v2.py) — test_pipeline_v2.py; 28032 bytes
+- [01_Thesis/Experiments/2026-11-09_days11_14_design/test_plots.py](../../01_Thesis/Experiments/2026-11-09_days11_14_design/test_plots.py) — test_plots.py; 12090 bytes
 - [01_Thesis/Experiments/pipeline_hardening/original_evaluation/test_pipeline.py](../../01_Thesis/Experiments/pipeline_hardening/original_evaluation/test_pipeline.py) — test_pipeline.py; 63701 bytes
 - [02_Reference_Projects/IUTCSFESTDATATHON/tests/test_analyze_gemma_cross_family_audit.py](../../02_Reference_Projects/IUTCSFESTDATATHON/tests/test_analyze_gemma_cross_family_audit.py) — test_analyze_gemma_cross_family_audit.py; 1795 bytes
 - [02_Reference_Projects/IUTCSFESTDATATHON/tests/test_analyze_source_recovery_audit.py](../../02_Reference_Projects/IUTCSFESTDATATHON/tests/test_analyze_source_recovery_audit.py) — test_analyze_source_recovery_audit.py; 2057 bytes

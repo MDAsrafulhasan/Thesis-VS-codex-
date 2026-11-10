@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-11-08T16:43:28.978417+00:00",
+  "generated_utc": "2026-11-09T04:46:12.778912+00:00",
   "notes": [
     "Metadata only: no code execution, notebook outputs, or data row values.",
     "Titles use filenames or the first Markdown heading, not README claims; slide counts, versions, and other README drift are not inferred.",
@@ -1069,6 +1069,47 @@
         "fit_artifact",
         "run",
         "main"
+      ]
+    },
+    {
+      "path": "01_Thesis/Experiments/2026-11-09_days11_14_design/REPORT.md",
+      "group": "Workspace",
+      "kind": "documentation",
+      "title": "BenHalluEval: Days 11–14 Research Design and Chapter 3 Draft",
+      "bytes": 75613,
+      "sha256": "00a3222a0a171a24abacdf927acdf73faa66a9f319a065bc7e726851c69ea991",
+      "symbols": []
+    },
+    {
+      "path": "01_Thesis/Experiments/2026-11-09_days11_14_design/plots.py",
+      "group": "Workspace",
+      "kind": "sourcecode",
+      "title": "plots.py",
+      "bytes": 18159,
+      "sha256": "6a83852833d234057b189cfbe9faedab9150adca636c37cc677145d70c166c9c",
+      "symbols": [
+        "number",
+        "read_csv",
+        "loss_metrics",
+        "confusion_metrics",
+        "pareto_metrics",
+        "render",
+        "digest",
+        "parser",
+        "main"
+      ]
+    },
+    {
+      "path": "01_Thesis/Experiments/2026-11-09_days11_14_design/test_plots.py",
+      "group": "Workspace",
+      "kind": "test",
+      "title": "test_plots.py",
+      "bytes": 12090,
+      "sha256": "fac0ab5b799419cf8c55ad3166590c8ce688379dc906411dd1935f1e16063425",
+      "symbols": [
+        "read",
+        "ContractTests",
+        "CLITests"
       ]
     },
     {
